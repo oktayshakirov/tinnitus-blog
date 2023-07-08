@@ -18,19 +18,15 @@ export const StyledAppBar = styled(AppBar)`
 `;
 
 export const StyledContainer = styled(Container)`
+  height: 70px;
   display: flex;
   justify-content: space-between;
+  justify-content: center;
   align-items: center;
-`;
-
-export const StyledLogo = styled(Logo)`
-  ${({ theme }) => css`
-    width: ${theme.spacing(4)};
-
-    ${theme.breakpoints.up('sm')} {
-      width: ${theme.spacing(4.5)};
-    }
-  `}
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 25px 25px;
+  margin-bottom: 18px;
 `;
 
 export const StyledMenuButton = styled(IconButton)`
@@ -60,11 +56,31 @@ export const StyledNav = styled('nav')`
 
     li {
       list-style: none;
+      color: white;
+      font-family: sans-serif;
+      font-weight: bold;
+      position: relative;
+      cursor: pointer;
     }
 
     a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
       text-decoration: none;
-      color: ${theme.palette.common.white};
+      font-size: 17px;
+      background: #734b6d;
+      color: white;
+      font-weight: bold;
+      padding: ${theme.spacing(1)} ${theme.spacing(2)};
+      border-radius: 11px;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background: #a5729e;
+        color: #ffffff;
+      }
     }
   `}
 `;

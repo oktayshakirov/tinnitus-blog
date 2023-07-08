@@ -5,7 +5,6 @@ import Sidenav from '@components/Sidenav';
 import { HEADER_MENU } from '@const/header-menu';
 import {
   StyledWrapper,
-  StyledLogo,
   StyledCloseButton,
   StyledNav,
 } from './MainMenuDrawer.styled';
@@ -17,12 +16,13 @@ const MainMenuDrawer = ({ open, toggleMenu, ...rest }: Props) => {
   return (
     <Sidenav open={open} onClose={toggleMenu} {...rest}>
       <StyledWrapper>
-        <StyledLogo />
+        Tinnitus APP
         <StyledCloseButton onClick={toggleMenu}>
           <CloseIcon />
         </StyledCloseButton>
       </StyledWrapper>
       <StyledNav>
+        <Link href="/">Home</Link>
         {HEADER_MENU.map(({ label, path }) => (
           <Link key={label} href={path}>
             <span>{label}</span>

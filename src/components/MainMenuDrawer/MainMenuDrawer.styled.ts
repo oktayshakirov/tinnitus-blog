@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
-import Logo from '@components/Logo';
 
 export const StyledWrapper = styled('div')`
   ${({ theme }) => css`
@@ -12,16 +11,6 @@ export const StyledWrapper = styled('div')`
       ${theme.spacing(2)};
     border-bottom: 1px solid ${theme.palette.grey[500]};
     height: ${theme.spacing(8)};
-  `}
-`;
-
-export const StyledLogo = styled(Logo)`
-  ${({ theme }) => css`
-    width: ${theme.spacing(4)};
-
-    ${theme.breakpoints.up('md')} {
-      width: ${theme.spacing(4.5)};
-    }
   `}
 `;
 

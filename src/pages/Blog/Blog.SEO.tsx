@@ -2,9 +2,9 @@ import { NextSeo } from 'next-seo';
 import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 
 const BlogSEO = () => {
-  const title = "The Modern Man's Handbook | Blog";
+  const title = 'Beyond the Buzz | Blog';
   const description =
-    'Do you struggle as a man in the modern society? Level up your game now with our collection of masculinity blog posts. Learn how to build confidence, gain power and achieve success in your life.';
+    "Living with tinnitus can be challenging, but you're not alone. Discover valuable tips and resources to manage and cope with tinnitus. Explore treatment options, lifestyle adjustments and support. Empower yourself with comprehensive resources. Everyone's experience with tinnitus is unique. Find strategies that suit your needs.";
   const canonical = `${DOMAIN}/blog`;
   const imageUrl = `${DOMAIN}${DEFAULT_OG_IMAGE}`;
 

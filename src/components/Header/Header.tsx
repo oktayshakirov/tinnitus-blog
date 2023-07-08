@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import Link from '@components/Link';
 import MainMenuDrawer from '@components/MainMenuDrawer';
 import { HEADER_MENU } from '@const/header-menu';
 import {
   StyledAppBar,
   StyledContainer,
-  StyledLogo,
   StyledMenuButton,
   StyledNav,
 } from './Header.styled';
@@ -21,14 +20,11 @@ const Header = () => {
   return (
     <StyledAppBar elevation={0} color="transparent" position="static">
       <StyledContainer>
-        <div>
-          <Link href="/">
-            <StyledLogo />
-          </Link>
-        </div>
-
         <StyledNav>
           <ul>
+            <li>
+              <Link href="/">Home</Link> {}
+            </li>
             {HEADER_MENU.map(({ label, path }) => (
               <li key={label}>
                 <Link href={path}>{label}</Link>
@@ -37,7 +33,8 @@ const Header = () => {
           </ul>
         </StyledNav>
         <StyledMenuButton onClick={toggleMainMenu} aria-label="Menu">
-          <MenuIcon />
+          More
+          <KeyboardDoubleArrowDownIcon />
         </StyledMenuButton>
       </StyledContainer>
       <MainMenuDrawer open={isMainMenuOpen} toggleMenu={toggleMainMenu} />
