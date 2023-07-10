@@ -22,7 +22,7 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
       <BlogSEO />
       <Layout>
         <Container>
-          <Headline>Blog</Headline>
+          <Headline>Understanding Tinnitus</Headline>
           <ArticlesGrid articles={postsMeta} />
           {pageCount > 1 && (
             <StyledPagination

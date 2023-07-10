@@ -1,6 +1,6 @@
 export const HEADER_MENU = [
   {
-    label: 'Zen',
+    label: 'Sounds',
     path: '/zen',
   },
   {

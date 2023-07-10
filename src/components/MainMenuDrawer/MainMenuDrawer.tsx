@@ -16,7 +16,7 @@ const MainMenuDrawer = ({ open, toggleMenu, ...rest }: Props) => {
   return (
     <Sidenav open={open} onClose={toggleMenu} {...rest}>
       <StyledWrapper>
-        Tinnitus APP
+        Beyond the Buzz
         <StyledCloseButton onClick={toggleMenu}>
           <CloseIcon />
         </StyledCloseButton>

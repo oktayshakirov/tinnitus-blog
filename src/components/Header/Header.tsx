@@ -33,7 +33,7 @@ const Header = () => {
           </ul>
         </StyledNav>
         <StyledMenuButton onClick={toggleMainMenu} aria-label="Menu">
-          More
+          Show menu
           <KeyboardDoubleArrowDownIcon />
         </StyledMenuButton>
       </StyledContainer>

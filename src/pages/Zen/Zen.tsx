@@ -22,7 +22,7 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
       <ZenSEO />
       <Layout>
         <Container>
-          <Headline>Zen</Headline>
+          <Headline>Zen Sound Therapy</Headline>
           <ArticlesGrid articles={zenMeta} />
           {pageCount > 1 && (
             <StyledPagination
