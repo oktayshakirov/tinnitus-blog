@@ -21,9 +21,9 @@ const BlogPost = ({
   return (
     <>
       <BlogPostSEO
-        title={frontmatter?.title}
-        description={frontmatter?.description}
-        image={frontmatter?.image}
+        title={frontmatter?.title as string}
+        description={frontmatter?.description as string}
+        image={frontmatter?.image as string}
         slug={slug}
         createdAt={createdAt}
         updatedAt={updatedAt}
@@ -31,9 +31,9 @@ const BlogPost = ({
       <Layout>
         <Container>
           <StyledHeadline>
-            <StyledDate>{frontmatter?.date}</StyledDate>
+            <StyledDate>{frontmatter?.date as string}</StyledDate>
             <Typography component="h1" variant="h3">
-              {frontmatter?.title}
+              {frontmatter?.title as string}
             </Typography>
           </StyledHeadline>
           <Grid container spacing={{ xs: 2, md: 4 }}>
