@@ -10,7 +10,6 @@ import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import ArticleIcon from '@mui/icons-material/Article';
 import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
-import AudiotrackIcon from '@mui/icons-material/Audiotrack';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import NextLink from 'next/link';
 import {
