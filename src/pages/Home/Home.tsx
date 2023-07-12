@@ -10,7 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import ArticleIcon from '@mui/icons-material/Article';
 import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
-import AudioTrackIcon from '@mui/icons-material/AudioTrack';
+import AudiotrackIcon from '@mui/icons-material/Audiotrack';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import NextLink from 'next/link';
 import {
@@ -233,7 +233,7 @@ const Home = () => {
                         size="medium"
                         variant="outlined"
                         color="secondary"
-                        startIcon={<AudioTrackIcon />}
+                        startIcon={<AudiotrackIcon />}
                       >
                         Listen Now
                       </Button>
@@ -267,7 +267,7 @@ const Home = () => {
                         size="medium"
                         variant="outlined"
                         color="secondary"
-                        startIcon={<AudioTrackIcon />}
+                        startIcon={<AudiotrackIcon />}
                       >
                         Listen Now
                       </Button>
@@ -301,7 +301,7 @@ const Home = () => {
                         size="medium"
                         variant="outlined"
                         color="secondary"
-                        startIcon={<AudioTrackIcon />}
+                        startIcon={<AudiotrackIcon />}
                       >
                         Listen Now
                       </Button>
