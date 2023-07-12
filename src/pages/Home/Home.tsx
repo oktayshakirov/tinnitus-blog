@@ -10,6 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import ArticleIcon from '@mui/icons-material/Article';
 import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
+import AudiotrackIcon from '@mui/icons-material/Audiotrack';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import NextLink from 'next/link';
 import {
@@ -226,7 +227,18 @@ const Home = () => {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  
+                  <CardActions>
+                    <NextLink href="zen/notched-sounds" passHref>
+                      <Button
+                        size="medium"
+                        variant="outlined"
+                        color="secondary"
+                        startIcon={<AudiotrackIcon />}
+                      >
+                        Listen Now
+                      </Button>
+                    </NextLink>
+                  </CardActions>
                 </StyledCard>
               </Grid>
 
@@ -249,7 +261,18 @@ const Home = () => {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                 
+                  <CardActions>
+                    <NextLink href="zen/white-noise" passHref>
+                      <Button
+                        size="medium"
+                        variant="outlined"
+                        color="secondary"
+                        startIcon={<AudiotrackIcon />}
+                      >
+                        Listen Now
+                      </Button>
+                    </NextLink>
+                  </CardActions>
                 </StyledCard>
               </Grid>
 
@@ -272,7 +295,18 @@ const Home = () => {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  
+                  <CardActions>
+                    <NextLink href="zen/nature-sounds" passHref>
+                      <Button
+                        size="medium"
+                        variant="outlined"
+                        color="secondary"
+                        startIcon={<AudiotrackIcon />}
+                      >
+                        Listen Now
+                      </Button>
+                    </NextLink>
+                  </CardActions>
                 </StyledCard>
               </Grid>
             </Grid>
