@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { colors } from './colors';
-import { Inter } from '@next/font/google';
+import { Inter } from "next/font/google";
 import { theme } from '@theme/theme';
 
 const inter = Inter({ weight: ['400', '600'], subsets: ['latin'] });

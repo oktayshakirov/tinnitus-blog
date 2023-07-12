@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import MDXContent from '@components/MDX';
 import Layout from '@components/Layout';
 import ArticleNavigation from '@components/ArticleNavigation';
-import { Props } from '@pages/Zen/[slug]';
+import { Props } from '@pages/zen/[slug]';
 import ZenPostSEO from './ZenPost.SEO';
 import { StyledHeadline, StyledDate, StyledDivider } from './ZenPost.styled';
 

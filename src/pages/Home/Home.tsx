@@ -10,7 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import ArticleIcon from '@mui/icons-material/Article';
 import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
-import AudiotrackIcon from '@mui/icons-material/Audiotrack';
+import AudioTrackIcon from '@mui/icons-material/AudioTrack';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import NextLink from 'next/link';
 import {
@@ -215,26 +215,25 @@ const Home = () => {
                     <CardMedia
                       component="img"
                       height="180"
-                      image="/images/happy-girl.jpg"
-                      alt="Yoga and Dog"
+                      image="/images/zen1.png"
+                      alt="Zen 1 Playlist cover"
                     />
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        Sound 1
+                        Notched Sounds
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Discover effective strategies for managing tinnitus and
-                        improving your quality of life.
+                      Notched sound therapy reduces tinnitus by using specific 5000hz - 9000hz frequencies.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <NextLink href="blog/managing-tinnitus" passHref>
+                    <NextLink href="zen/notched-sounds" passHref>
                       <Button
                         size="medium"
                         variant="outlined"
                         color="secondary"
-                        startIcon={<AudiotrackIcon />}
+                        startIcon={<AudioTrackIcon />}
                       >
                         Listen Now
                       </Button>
@@ -250,26 +249,25 @@ const Home = () => {
                     <CardMedia
                       component="img"
                       height="180"
-                      image="/images/happy-girl.jpg"
-                      alt="Anxious girl"
+                      image="/images/zen2.jpg"
+                      alt="Zen 2 Playlist cover"
                     />
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        Sound 2
+                        White Noise
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Learn about the perception of sound without an external
-                        source.
+                      White noise therapy promotes relaxation with a soothing, consistent sound.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <NextLink href="blog/what-is-tinnitus" passHref>
+                    <NextLink href="zen/white-noise" passHref>
                       <Button
                         size="medium"
                         variant="outlined"
                         color="secondary"
-                        startIcon={<AudiotrackIcon />}
+                        startIcon={<AudioTrackIcon />}
                       >
                         Listen Now
                       </Button>
@@ -285,26 +283,25 @@ const Home = () => {
                     <CardMedia
                       component="img"
                       height="180"
-                      image="/images/happy-girl.jpg"
-                      alt="Girl with headphones"
+                      image="/images/zen3.jpg"
+                      alt="Zen 3 Playlist cover"
                     />
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        Sound 3
+                      Nature Inspired
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Exploring the benefits and applications of sound therapy
-                        for managing tinnitus.
+                      Delve into the advantages and uses of nature-inspired sounds in sound therapy for tinnitus.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <NextLink href="blog/the-power-of-white-noise" passHref>
+                    <NextLink href="zen/nature-sounds" passHref>
                       <Button
                         size="medium"
                         variant="outlined"
                         color="secondary"
-                        startIcon={<AudiotrackIcon />}
+                        startIcon={<AudioTrackIcon />}
                       >
                         Listen Now
                       </Button>
