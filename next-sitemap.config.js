@@ -1,5 +1,5 @@
 const config = {
-  siteUrl: 'https://masculinity.io',
+  siteUrl: 'https://tinnitus.io',
   generateRobotsTxt: true, // (Optional parameter for creating robots.txt file)
   // Other available options..
 };
