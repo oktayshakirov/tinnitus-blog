@@ -21,9 +21,9 @@ const ZenPost = ({
   return (
     <>
       <ZenPostSEO
-        title={frontmatter?.title as string}
-        description={frontmatter?.description as string}
-        image={frontmatter?.image as string}
+        title={frontmatter?.title}
+        description={frontmatter?.description}
+        image={frontmatter?.image}
         slug={slug}
         createdAt={createdAt}
         updatedAt={updatedAt}
@@ -31,9 +31,9 @@ const ZenPost = ({
       <Layout>
         <Container>
           <StyledHeadline>
-            <StyledDate>{frontmatter?.date as string}</StyledDate>
+            <StyledDate>{frontmatter?.date}</StyledDate>
             <Typography component="h1" variant="h3">
-              {frontmatter?.title as string}
+              {frontmatter?.title}
             </Typography>
           </StyledHeadline>
           <Grid container spacing={{ xs: 2, md: 4 }}>
