@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
-import Logo from '@components/Logo';
 
 export const StyledAppBar = styled(AppBar)`
   ${({ theme }) => css`

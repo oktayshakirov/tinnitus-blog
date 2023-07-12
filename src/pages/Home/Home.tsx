@@ -39,8 +39,8 @@ const Home = () => {
                   <Typography component="h2" variant="h6">
                     Discover the fascinating world of perceiving sound in the
                     absence of an external source. Living with tinnitus can be
-                    challenging, but you're not alone. Explore valuable tips and
-                    resources to manage and cope with tinnitus. Everyone's
+                    challenging, but you&#39;re not alone. Explore valuable tips and
+                    resources to manage and cope with tinnitus. Everyone&#39;s
                     experience with tinnitus is unique.
                   </Typography>
                 </Grid>
