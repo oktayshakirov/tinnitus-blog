@@ -228,7 +228,7 @@ const Home = () => {
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <NextLink href="zen/notched-sounds" passHref>
+                    <NextLink href="zen" passHref>
                       <Button
                         size="medium"
                         variant="outlined"
@@ -262,7 +262,7 @@ const Home = () => {
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <NextLink href="zen/white-noise" passHref>
+                    <NextLink href="zen" passHref>
                       <Button
                         size="medium"
                         variant="outlined"
@@ -296,7 +296,7 @@ const Home = () => {
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <NextLink href="zen/nature-sounds" passHref>
+                    <NextLink href="zen" passHref>
                       <Button
                         size="medium"
                         variant="outlined"
