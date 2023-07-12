@@ -227,18 +227,7 @@ const Home = () => {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  <CardActions>
-                    <NextLink href="zen" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<AudiotrackIcon />}
-                      >
-                        Listen Now
-                      </Button>
-                    </NextLink>
-                  </CardActions>
+                  
                 </StyledCard>
               </Grid>
 
@@ -261,18 +250,7 @@ const Home = () => {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  <CardActions>
-                    <NextLink href="zen" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<AudiotrackIcon />}
-                      >
-                        Listen Now
-                      </Button>
-                    </NextLink>
-                  </CardActions>
+                 
                 </StyledCard>
               </Grid>
 
@@ -295,18 +273,7 @@ const Home = () => {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  <CardActions>
-                    <NextLink href="zen" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<AudiotrackIcon />}
-                      >
-                        Listen Now
-                      </Button>
-                    </NextLink>
-                  </CardActions>
+                  
                 </StyledCard>
               </Grid>
             </Grid>
