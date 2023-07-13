@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>beyond-the-buzz.netlify.app</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/blog</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/tags</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/zen</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/blog/managing-tinnitus</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/blog/the-power-of-white-noise</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/blog/tinnitus-impact-on-mental-health</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/blog/what-is-tinnitus</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/blog/what-role-does-the-brain-play-in-tinnitus</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/zen/nature-sounds</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/zen/notched-sounds</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>beyond-the-buzz.netlify.app/zen/white-noise</loc><lastmod>2023-07-12T20:37:35.591Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/blog</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/tags</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/zen</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/blog/managing-tinnitus</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/blog/the-power-of-white-noise</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/blog/tinnitus-impact-on-mental-health</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/blog/what-is-tinnitus</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/blog/what-role-does-the-brain-play-in-tinnitus</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/zen/nature-sounds</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/zen/notched-sounds</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>beyond-the-buzz.netlify.app/zen/white-noise</loc><lastmod>2023-07-13T06:35:06.206Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
