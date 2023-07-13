@@ -1,3 +1,14 @@
+# Beyond the Buzz
+
+Comprehensive and user-friendly blog site aimed at providing a helpful resource for individuals dealing with tinnitus. Built with Next.js, TypeScript, and Material UI, this blogs features in-depth articles, tips, and advice to better understand and manage tinnitus. In addition to valuable information, the platform also offers therapeutic audio sounds as a unique form of relief for users. The blog site is responsive, ensuring seamless navigation on all devices. Contribute to making this initiative more beneficial.
+
+## Demo 
+
+![Desktop Demo](https://oktayshakirov.com/assets/images/projects/tinnitus-blog.png "Desktop Demo")
+
+Also viewable [here]([https://oktayshakirov.github.io/pigletz-matching](https://beyond-the-buzz.vercel.app/))
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
