@@ -23,6 +23,7 @@ export const StyledContent = styled('div')`
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      
     }
 
     p {
@@ -32,6 +33,7 @@ export const StyledContent = styled('div')`
       text-overflow: ellipsis;
       overflow: hidden;
       color: ${theme.palette.text.secondary};
+      
     }
   `}
 `;
@@ -45,6 +47,8 @@ export const StyledDate = styled(Chip)`
     top: ${theme.spacing(2)};
     left: ${theme.spacing(2)};
     z-index: 1;
+    font-weight: bold;
+
   `}
 `;
 
@@ -84,6 +88,7 @@ export const StyledReadingTime = styled(Chip)`
     background: ${theme.palette.primary.main};
     color: ${theme.palette.common.black};
     margin: 0;
+    font-weight: bold;
 
     &:after {
       display: block;

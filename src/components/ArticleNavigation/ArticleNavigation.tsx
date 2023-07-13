@@ -6,6 +6,8 @@ import ArticleTags from '@components/ArticleTags';
 import { Article } from '@types';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 type TitleProps = {
   children: ReactNode;
@@ -38,18 +40,18 @@ const ArticleNavigation = ({ prev, next, tags = [] }: Props) => (
   <aside>
     <Grid container spacing={{ xs: 4, md: 4 }}>
       <Grid item xs={12}>
-        <Title>Tags</Title>
+        <Title>Tags:</Title>
         <ArticleTags tags={tags} />
       </Grid>
       {prev && (
         <Grid item xs={12} sm={6} md={12}>
-          <Title>Previous article</Title>
+          <Title><ArrowBackIosIcon/>Previous article</Title>
           <ArticleCard article={prev.meta} index={0} />
         </Grid>
       )}
       {next && (
         <Grid item xs={12} sm={6} md={12}>
-          <Title>Next article</Title>
+          <Title>Next article <ArrowForwardIosIcon/></Title>
           <ArticleCard article={next.meta} index={1} />
         </Grid>
       )}
