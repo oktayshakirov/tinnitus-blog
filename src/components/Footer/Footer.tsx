@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledContainer>
-        <StyledCopyright>Tinnitus.io</StyledCopyright>
+        <StyledCopyright>Tinnitus</StyledCopyright>
         <StyledText>Beyond the Buzz</StyledText>
       </StyledContainer>
     </StyledFooter>
