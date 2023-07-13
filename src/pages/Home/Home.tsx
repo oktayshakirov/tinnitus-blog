@@ -215,7 +215,7 @@ const Home = () => {
                     <CardMedia
                       component="img"
                       height="180"
-                      image="/images/zen1.png"
+                      image="/images/zen-notched.png"
                       alt="Zen 1 Playlist cover"
                     />
                     <CardContent>
@@ -249,7 +249,7 @@ const Home = () => {
                     <CardMedia
                       component="img"
                       height="180"
-                      image="/images/zen2.jpg"
+                      image="/images/zen-white.jpg"
                       alt="Zen 2 Playlist cover"
                     />
                     <CardContent>
@@ -283,7 +283,7 @@ const Home = () => {
                     <CardMedia
                       component="img"
                       height="180"
-                      image="/images/zen3.jpg"
+                      image="/images/zen-nature.jpg"
                       alt="Zen 3 Playlist cover"
                     />
                     <CardContent>
