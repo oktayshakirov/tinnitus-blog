@@ -60,12 +60,14 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
+                  <NextLink href="blog/managing-tinnitus" passHref>
                     <CardMedia
                       component="img"
                       height="180"
                       image="/images/yoga-dog.jpg"
                       alt="Yoga and Dog"
                     />
+                    </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
                         Managing Tinnitus
@@ -95,12 +97,14 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
+                  <NextLink href="blog/what-is-tinnitus" passHref>
                     <CardMedia
                       component="img"
                       height="180"
                       image="/images/anxiety-girl.jpg"
                       alt="Anxious girl"
                     />
+                    </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
                         What is Tinnitus ?
@@ -130,12 +134,14 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
+                  <NextLink href="blog/the-power-of-white-noise" passHref>
                     <CardMedia
                       component="img"
                       height="180"
                       image="/images/girl-with-headphones.jpg"
                       alt="Girl with headphones"
                     />
+                    </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
                         The Power of White Noise
@@ -212,12 +218,14 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
+                  <NextLink href="zen/notched-sounds" passHref>
                     <CardMedia
                       component="img"
                       height="180"
-                      image="/images/zen1.png"
+                      image="/images/zen-notched.png"
                       alt="Zen 1 Playlist cover"
                     />
+                    </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
                         Notched Sounds
@@ -246,12 +254,14 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
+                  <NextLink href="zen/white-noise" passHref>
                     <CardMedia
                       component="img"
                       height="180"
-                      image="/images/zen2.jpg"
+                      image="/images/zen-white.jpg"
                       alt="Zen 2 Playlist cover"
                     />
+                    </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
                         White Noise
@@ -280,12 +290,14 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
+                  <NextLink href="zen/nature-sounds" passHref>
                     <CardMedia
                       component="img"
                       height="180"
-                      image="/images/zen3.jpg"
+                      image="/images/zen-nature.jpg"
                       alt="Zen 3 Playlist cover"
                     />
+                    </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
                       Nature Inspired
