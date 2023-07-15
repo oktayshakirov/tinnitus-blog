@@ -39,9 +39,9 @@ const Home = () => {
                   <Typography component="h2" variant="h6">
                     Discover the fascinating world of perceiving sound in the
                     absence of an external source. Living with tinnitus can be
-                    challenging, but you&#39;re not alone. Explore valuable tips and
-                    resources to manage and cope with tinnitus. Everyone&#39;s
-                    experience with tinnitus is unique.
+                    challenging, but you&#39;re not alone. Explore valuable tips
+                    and resources to manage and cope with tinnitus.
+                    Everyone&#39;s experience with tinnitus is unique.
                   </Typography>
                 </Grid>
               </div>
@@ -60,13 +60,13 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
-                  <NextLink href="blog/managing-tinnitus" passHref>
-                    <CardMedia
-                      component="img"
-                      height="180"
-                      image="/images/yoga-dog.jpg"
-                      alt="Yoga and Dog"
-                    />
+                    <NextLink href="blog/managing-tinnitus" passHref>
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/yoga-dog.jpg"
+                        alt="Yoga and Dog"
+                      />
                     </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
@@ -97,13 +97,13 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
-                  <NextLink href="blog/what-is-tinnitus" passHref>
-                    <CardMedia
-                      component="img"
-                      height="180"
-                      image="/images/anxiety-girl.jpg"
-                      alt="Anxious girl"
-                    />
+                    <NextLink href="blog/what-is-tinnitus" passHref>
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/anxiety-girl.jpg"
+                        alt="Anxious girl"
+                      />
                     </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
@@ -134,13 +134,13 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
-                  <NextLink href="blog/the-power-of-white-noise" passHref>
-                    <CardMedia
-                      component="img"
-                      height="180"
-                      image="/images/girl-with-headphones.jpg"
-                      alt="Girl with headphones"
-                    />
+                    <NextLink href="blog/the-power-of-white-noise" passHref>
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/girl-with-headphones.jpg"
+                        alt="Girl with headphones"
+                      />
                     </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
@@ -218,25 +218,26 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
-                  <NextLink href="zen/notched-sounds" passHref>
-                    <CardMedia
-                      component="img"
-                      height="180"
-                      image="/images/zen-notched.png"
-                      alt="Zen 1 Playlist cover"
-                    />
+                    <NextLink href="zen/nature-sounds" passHref>
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/zen-nature.jpg"
+                        alt="Zen 3 Playlist cover"
+                      />
                     </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        Notched Sounds
+                        Nature Inspired
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                      Notched sound therapy reduces tinnitus by using specific 5000hz - 9000hz frequencies.
+                        Delve into the advantages and uses of nature-inspired
+                        sounds in sound therapy for tinnitus.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <NextLink href="zen/notched-sounds" passHref>
+                    <NextLink href="zen/nature-sounds" passHref>
                       <Button
                         size="medium"
                         variant="outlined"
@@ -254,20 +255,21 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
-                  <NextLink href="zen/white-noise" passHref>
-                    <CardMedia
-                      component="img"
-                      height="180"
-                      image="/images/zen-white.jpg"
-                      alt="Zen 2 Playlist cover"
-                    />
+                    <NextLink href="zen/white-noise" passHref>
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/zen-white.jpg"
+                        alt="Zen 2 Playlist cover"
+                      />
                     </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
                         White Noise
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                      White noise therapy promotes relaxation with a soothing, consistent sound.
+                        White noise therapy utilizes a calming and constant
+                        sound to foster a sense of relaxation.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
@@ -290,25 +292,26 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
-                  <NextLink href="zen/nature-sounds" passHref>
-                    <CardMedia
-                      component="img"
-                      height="180"
-                      image="/images/zen-nature.jpg"
-                      alt="Zen 3 Playlist cover"
-                    />
+                    <NextLink href="zen/notched-sounds" passHref>
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/zen-notched.png"
+                        alt="Zen 1 Playlist cover"
+                      />
                     </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                      Nature Inspired
+                        Notched Sounds
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                      Delve into the advantages and uses of nature-inspired sounds in sound therapy for tinnitus.
+                        Notched sound therapy reduces tinnitus by using specific
+                        5000hz - 9000hz frequencies.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <NextLink href="zen/nature-sounds" passHref>
+                    <NextLink href="zen/notched-sounds" passHref>
                       <Button
                         size="medium"
                         variant="outlined"

@@ -7,7 +7,7 @@ import Layout from '@components/Layout';
 import ArticlesGrid from '@components/ArticlesGrid';
 import Headline from '@ui/pages/shared/Headline';
 import BlogSEO from './Blog.SEO';
-import { StyledPagination, StyledHeadline } from './Blog.styled';
+import { StyledPagination, StyledBlogHeadline } from './Blog.styled';
 
 const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
   const [page, setPage] = useState(pageFromUrl);
@@ -22,9 +22,9 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
       <BlogSEO />
       <Layout>
         <Container>
-          <StyledHeadline>
-          <Headline>Understanding Tinnitus</Headline>
-          </StyledHeadline>
+          <StyledBlogHeadline>
+            <Headline>Understanding Tinnitus</Headline>
+          </StyledBlogHeadline>
           <ArticlesGrid articles={postsMeta} />
           {pageCount > 1 && (
             <StyledPagination

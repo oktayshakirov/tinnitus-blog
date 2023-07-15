@@ -9,12 +9,11 @@ export const StyledPagination = styled(Pagination)`
   `}
 `;
 
-export const StyledHeadline = styled(Typography)`
+export const StyledBlogHeadline = styled(Typography)`
   ${({ theme }) => css`
     font-size: ${theme.typography.h4.fontSize};
     color: ${theme.palette.primary.main};
-
-    margin: ${theme.spacing(2)} 0;
+    margin: ${theme.spacing(1)} 0;
     font-weight: bold;
   `}
 `;
