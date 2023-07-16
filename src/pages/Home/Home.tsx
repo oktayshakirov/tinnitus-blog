@@ -166,6 +166,123 @@ const Home = () => {
                   </CardActions>
                 </StyledCard>
               </Grid>
+
+              {/* StyledCard Card 4 */}
+              <Grid item xs={12} sm={4}>
+                <StyledCard>
+                  <CardActionArea>
+                    <NextLink href="blog/tinnitus-and-sleep" passHref>
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/sleeping-kid.jpg"
+                        alt="Sleeping Kid"
+                      />
+                    </NextLink>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Sleep Challenges
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Intersecting Paths: Tinnitus, Sleep and Strategies for
+                        Restful Nights.
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <NextLink href="blog/tinnitus-and-sleep" passHref>
+                      <Button
+                        size="medium"
+                        variant="outlined"
+                        color="secondary"
+                        startIcon={<ArticleIcon />}
+                      >
+                        Read More
+                      </Button>
+                    </NextLink>
+                  </CardActions>
+                </StyledCard>
+              </Grid>
+
+              {/* StyledCard Card 5 */}
+              <Grid item xs={12} sm={4}>
+                <StyledCard>
+                  <CardActionArea>
+                    <NextLink
+                      href="blog/what-role-does-the-brain-play-in-tinnitus"
+                      passHref
+                    >
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/screaming-man.jpg"
+                        alt="Screaming man"
+                      />
+                    </NextLink>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        The Brain&apos;s Impact
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Why Isn&apos;t the Ringing in Your Ear? The Neurological
+                        Puzzle Within the Brain
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <NextLink
+                      href="blog/what-role-does-the-brain-play-in-tinnitus"
+                      passHref
+                    >
+                      <Button
+                        size="medium"
+                        variant="outlined"
+                        color="secondary"
+                        startIcon={<ArticleIcon />}
+                      >
+                        Read More
+                      </Button>
+                    </NextLink>
+                  </CardActions>
+                </StyledCard>
+              </Grid>
+
+              {/* StyledCard Card 6 */}
+              <Grid item xs={12} sm={4}>
+                <StyledCard>
+                  <CardActionArea>
+                    <NextLink href="blog/tinnitus-latest-research" passHref>
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/doctor.jpg"
+                        alt="Female Doctor"
+                      />
+                    </NextLink>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Latest Tinnitus Researches
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Recent Scientific Studies, Potential New Treatments and
+                        Innovative Technologies.
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <NextLink href="blog/tinnitus-latest-research" passHref>
+                      <Button
+                        size="medium"
+                        variant="outlined"
+                        color="secondary"
+                        startIcon={<ArticleIcon />}
+                      >
+                        Read More
+                      </Button>
+                    </NextLink>
+                  </CardActions>
+                </StyledCard>
+              </Grid>
             </Grid>
             <StyledTextContainer>
               <Typography component="h2" variant="h6" align="center">

@@ -7,7 +7,7 @@ import Layout from '@components/Layout';
 import ArticlesGrid from '@components/ArticlesGrid';
 import Headline from '@ui/pages/shared/Headline';
 import ZenSEO from './Zen.SEO';
-import { StyledPagination, StyledZenHeadline } from './Zen.styled';
+import { StyledPagination } from './Zen.styled';
 
 const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
   const [page, setPage] = useState(pageFromUrl);
@@ -22,9 +22,7 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
       <ZenSEO />
       <Layout>
         <Container>
-          <StyledZenHeadline>
-            <Headline>Zen Sound Therapy</Headline>
-          </StyledZenHeadline>
+          <Headline>Zen Sound Therapy</Headline>
           <ArticlesGrid articles={zenMeta} />
           {pageCount > 1 && (
             <StyledPagination
