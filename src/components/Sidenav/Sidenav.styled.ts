@@ -13,7 +13,9 @@ export const StyledDrawer = styled(Drawer)`
 
     .MuiPaper-root {
       width: 100%;
-      background: ${theme.palette.grey['900']};
+      background: rgba(255, 255, 255, 0.005);
+      backdrop-filter: blur(35px);
+      -webkit-backdrop-filter: blur(35px);
 
       ${theme.breakpoints.up('sm')} {
         width: ${theme.spacing(40)};

@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import Link from '@components/Link';
 import MainMenuDrawer from '@components/MainMenuDrawer';
-import { HEADER_MENU } from '@const/header-menu';
 import {
   StyledAppBar,
   StyledContainer,
@@ -23,17 +22,18 @@ const Header = () => {
         <StyledNav>
           <ul>
             <li>
-              <Link href="/">Home</Link> {}
+              <Link href="/">Home</Link>
             </li>
-            {HEADER_MENU.map(({ label, path }) => (
-              <li key={label}>
-                <Link href={path}>{label}</Link>
-              </li>
-            ))}
+            <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link href="/zen">Sounds</Link>
+            </li>
           </ul>
         </StyledNav>
         <StyledMenuButton onClick={toggleMainMenu} aria-label="Menu">
-          <KeyboardDoubleArrowDownIcon />
+          <FormatListBulletedRoundedIcon />
         </StyledMenuButton>
       </StyledContainer>
       <MainMenuDrawer open={isMainMenuOpen} toggleMenu={toggleMainMenu} />

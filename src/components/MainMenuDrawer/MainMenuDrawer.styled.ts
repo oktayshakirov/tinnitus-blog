@@ -21,6 +21,7 @@ export const StyledCloseButton = styled(IconButton)`
 export const StyledNav = styled('nav')`
   ${({ theme }) => css`
     a {
+      font-size: 25px;
       display: block;
       padding: ${theme.spacing(2)} ${theme.spacing(2)};
       color: ${theme.palette.common.white};
