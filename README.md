@@ -6,7 +6,7 @@ Comprehensive and user-friendly blog site aimed at providing a helpful resource 
 
 ![Desktop Demo](https://oktayshakirov.com/assets/images/projects/tinnitus-blog.png "Desktop Demo")
 
-Also viewable [here](https://beyond-the-buzz.vercel.app/)
+<a href="https://beyond-the-buzz.vercel.app"><strong>➥ Live Demo</strong></a>
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
