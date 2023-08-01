@@ -8,7 +8,7 @@ Comprehensive and user-friendly blog site aimed at providing a helpful resource 
 
 
 <p align="center">
-  <a href="https://beyond-the-buzz.vercel.app"><strong>➥ Live Demo</strong></a>
+  <a href="https://www.beyondtinnitus.online/"><strong>➥ Live Demo</strong></a>
 </p>
 
 
