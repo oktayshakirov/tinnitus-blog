@@ -11,17 +11,22 @@ export type Props = {
 
 const BlogPage = (props: Props) => <Blog {...props} />;
 
-// TODO SWITCH FROM SERVER SIDE PROPS TO STATIC
 const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const postsPerPage = 10;
+  const postsPerPage = 6;
   const { page = 1 } = query;
+  const currentPage = Number(page);
+
   const postsMeta = getAllPosts().map((post) => post.meta);
   const pageCount = Math.ceil(postsMeta.length / postsPerPage);
 
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+  const currentPostsMeta = postsMeta.slice(startIndex, endIndex);
+
   return {
     props: {
-      page,
-      postsMeta,
+      page: currentPage,
+      postsMeta: currentPostsMeta,
       pageCount,
     },
   };

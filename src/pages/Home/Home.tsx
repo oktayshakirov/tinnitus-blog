@@ -286,7 +286,6 @@ const Home = () => {
             </Grid>
             <StyledTextContainer>
               <Typography component="h2" variant="h6" align="center">
-                All you need to know about Tinnitus:{' '}
                 <NextLink href="blog" passHref>
                   <Button
                     size="large"
@@ -294,7 +293,7 @@ const Home = () => {
                     sx={{ color: 'white', borderColor: 'white' }}
                     endIcon={<DoubleArrowRoundedIcon />}
                   >
-                    See More Articles
+                    Show All Articles
                   </Button>
                 </NextLink>
               </Typography>
@@ -444,7 +443,6 @@ const Home = () => {
             </Grid>
             <StyledTextContainer>
               <Typography component="h2" variant="h6" align="center">
-                Explore our Sound Therapy:{' '}
                 <NextLink href="zen" passHref>
                   <Button
                     size="large"
