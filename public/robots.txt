@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: beyond-the-buzz.netlify.app
+Host: www.beyondtinnitus.online/
 
 # Sitemaps
-Sitemap: beyond-the-buzz.netlify.app/sitemap.xml
+Sitemap: www.beyondtinnitus.online/sitemap.xml
