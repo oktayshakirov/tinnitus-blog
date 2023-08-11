@@ -6,10 +6,12 @@ Comprehensive and user-friendly blog site aimed at providing a helpful resource 
 
 ![Desktop Demo](https://oktayshakirov.com/assets/images/projects/tinnitus-blog.png "Desktop Demo")
 
-Also viewable [here]([https://oktayshakirov.github.io/pigletz-matching](https://beyond-the-buzz.vercel.app/))
+
+<p align="center">
+  <a href="https://www.beyondtinnitus.online/"><strong>➥ Live Demo</strong></a>
+</p>
 
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
