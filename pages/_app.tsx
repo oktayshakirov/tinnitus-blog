@@ -29,13 +29,12 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Script
         strategy="afterInteractive"
