@@ -22,7 +22,7 @@ const About = ({  }: Props) => {
           </p>
           <Divider style={{ margin: '20px 0' }} />
           <p>
-            Beyond Tinnitus is an open-source project, and I invite you to be a part of this endeavor. If you're a developer, designer, content creator, or anyone passionate about tinnitus awareness, you can contribute to the growth of this platform. Feel free to explore the GitHub repository where the code for this blog resides. Your contributions can help enhance the user experience, add new features, and improve the overall impact of Beyond Tinnitus.
+            Beyond Tinnitus is an open-source project, and I invite you to be a part of this endeavor. If you&apos;re a developer, designer, content creator, or anyone passionate about tinnitus awareness, you can contribute to the growth of this platform. Feel free to explore the GitHub repository where the code for this blog resides. Your contributions can help enhance the user experience, add new features, and improve the overall impact of Beyond Tinnitus.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <a href="https://github.com/oktayshakirov/tinnitus-blog">
@@ -30,12 +30,12 @@ const About = ({  }: Props) => {
             </a>
           </div>
           <Divider style={{ margin: '20px 0' }} />
-          <p style={{ display: 'flex', justifyContent: 'center' }}>
-           * To learn more about me and my journey as a software developer, you can visit <a href="https://oktayshakirov.com" style={{ color: '#FFFF9B', margin: '0 10px', textDecoration: 'none'}} > My Website </a> or find me on <a href="https://www.linkedin.com/in/oktayshakirov/" style={{ color: '#FFFF9B', margin: '0 10px', textDecoration: 'none'}}>Linkedin</a>
+          <p style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+            * To learn more about me and my journey as a software developer, you can visit <a href="https://oktayshakirov.com" style={{ color: '#FFFF9B', textDecoration: 'none', marginRight: '10px'}}>My Website</a> or find me on <a href="https://www.linkedin.com/in/oktayshakirov/" style={{ color: '#FFFF9B', textDecoration: 'none', marginLeft: '10px'}}>LinkedIn</a>.
           </p>
           <p style={{ display: 'flex', justifyContent: 'center' }}>
-            There, you'll find my other projects, experiences and insights of my work.
-            </p>
+            There, you&apos;ll find my other projects, experiences and insights of my work.
+          </p>
         </Container>
       </Layout>
     </>
