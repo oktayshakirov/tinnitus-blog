@@ -30,6 +30,9 @@ const Header = () => {
             <li>
               <Link href="/zen">Sounds</Link>
             </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
           </ul>
         </StyledNav>
         <StyledMenuButton onClick={toggleMainMenu} aria-label="Menu">
