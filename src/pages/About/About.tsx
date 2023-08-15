@@ -30,10 +30,10 @@ const About = ({  }: Props) => {
             </a>
           </div>
           <Divider style={{ margin: '20px 0' }} />
-          <p style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+          <p>
             * To learn more about me and my journey as a software developer, you can visit <a href="https://oktayshakirov.com" style={{ color: '#FFFF9B', textDecoration: 'none', marginRight: '10px'}}>My Website</a> or find me on <a href="https://www.linkedin.com/in/oktayshakirov/" style={{ color: '#FFFF9B', textDecoration: 'none', marginLeft: '10px'}}>LinkedIn</a>.
           </p>
-          <p style={{ display: 'flex', justifyContent: 'center' }}>
+          <p>
             There, you&apos;ll find my other projects, experiences and insights of my work.
           </p>
         </Container>
