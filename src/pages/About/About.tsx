@@ -26,7 +26,7 @@ const About = ({  }: Props) => {
           </p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <a href="https://github.com/oktayshakirov/tinnitus-blog">
-              <img src="./github.png" alt="GitHub Repository" />
+              <img src="./github.png" alt="GitHub Repository" width="98%" />
             </a>
           </div>
           <Divider style={{ margin: '20px 0' }} />
