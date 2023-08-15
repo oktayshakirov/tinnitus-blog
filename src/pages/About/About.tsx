@@ -31,7 +31,7 @@ const About = ({  }: Props) => {
           </div>
           <Divider style={{ margin: '20px 0' }} />
           <p style={{ display: 'flex', justifyContent: 'center' }}>
-           * To learn more about me and my journey as a software developer, you can visit &nbsp;<a href="https://oktayshakirov.com" style={{ color: 'cyan'}} > My Website </a>&nbsp; or find me on &nbsp;<a href="https://www.linkedin.com/in/oktayshakirov/" style={{ color: 'cyan'}}>Linkedin</a>.
+           * To learn more about me and my journey as a software developer, you can visit <a href="https://oktayshakirov.com" style={{ color: '#FFFF9B', margin: '0 10px', textDecoration: 'none'}} > My Website </a> or find me on <a href="https://www.linkedin.com/in/oktayshakirov/" style={{ color: '#FFFF9B', margin: '0 10px', textDecoration: 'none'}}>Linkedin</a>
           </p>
           <p style={{ display: 'flex', justifyContent: 'center' }}>
             There, you'll find my other projects, experiences and insights of my work.
