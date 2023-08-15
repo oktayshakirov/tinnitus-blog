@@ -24,6 +24,7 @@ const MainMenuDrawer = ({ open, toggleMenu, ...rest }: Props) => {
         <Link href="/">Home</Link>
         <Link href="/blog">Blog</Link>
         <Link href="/zen">Sounds</Link>
+        <Link href="/about">About</Link>
       </StyledNav>
     </Sidenav>
   );

@@ -60,43 +60,6 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
-                    <NextLink href="blog/managing-tinnitus" passHref>
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/yoga-dog.jpg"
-                        alt="Yoga and Dog"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Managing Tinnitus
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Discover effective strategies for managing tinnitus and
-                        improving your quality of life.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink href="blog/managing-tinnitus" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<ArticleIcon />}
-                      >
-                        Read More
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
-
-              {/* StyledCard Card 2 */}
-              <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
                     <NextLink href="blog/what-is-tinnitus" passHref>
                       <CardMedia
                         component="img"
@@ -117,6 +80,42 @@ const Home = () => {
                   </CardActionArea>
                   <CardActions>
                     <NextLink href="blog/what-is-tinnitus" passHref>
+                      <Button
+                        size="medium"
+                        variant="outlined"
+                        color="secondary"
+                        startIcon={<ArticleIcon />}
+                      >
+                        Read More
+                      </Button>
+                    </NextLink>
+                  </CardActions>
+                </StyledCard>
+              </Grid>
+              {/* StyledCard Card 1 */}
+                <Grid item xs={12} sm={4}>
+                <StyledCard>
+                  <CardActionArea>
+                    <NextLink href="blog/managing-tinnitus" passHref>
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/yoga-dog.jpg"
+                        alt="Yoga and Dog"
+                      />
+                    </NextLink>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Managing Tinnitus
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Discover effective strategies for managing tinnitus and
+                        improving your quality of life.
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <NextLink href="blog/managing-tinnitus" passHref>
                       <Button
                         size="medium"
                         variant="outlined"
@@ -171,26 +170,25 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
-                    <NextLink href="blog/tinnitus-and-sleep" passHref>
+                    <NextLink href="blog/tinnitus-in-musicians" passHref>
                       <CardMedia
                         component="img"
                         height="180"
-                        image="/images/sleeping-kid.jpg"
+                        image="/images/musician.jpg"
                         alt="Sleeping Kid"
                       />
                     </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        Sleep Challenges
+                      Tinnitus in Musicians
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Intersecting Paths: Tinnitus, Sleep and Strategies for
-                        Restful Nights.
+                      Exploring the Prevalence of Tinnitus Among Musicians and DJs.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <NextLink href="blog/tinnitus-and-sleep" passHref>
+                    <NextLink href="blog/tinnitus-in-musicians" passHref>
                       <Button
                         size="medium"
                         variant="outlined"
@@ -209,29 +207,28 @@ const Home = () => {
                 <StyledCard>
                   <CardActionArea>
                     <NextLink
-                      href="blog/what-role-does-the-brain-play-in-tinnitus"
+                      href="blog/tinnitus-in-history"
                       passHref
                     >
                       <CardMedia
                         component="img"
                         height="180"
-                        image="/images/screaming-man.jpg"
-                        alt="Screaming man"
+                        image="/images/tinnitus-history2.jpg"
+                        alt="Ancient Sculpture"
                       />
                     </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        The Brain&apos;s Impact
+                      Historical Contexts
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Why Isn&apos;t the Ringing in Your Ear? The Neurological
-                        Puzzle Within the Brain
+                      A journey through time, exploring how ancient civilizations perceived tinnitus.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
                     <NextLink
-                      href="blog/what-role-does-the-brain-play-in-tinnitus"
+                      href="blog/tinnitus-in-history"
                       passHref
                     >
                       <Button
@@ -251,26 +248,25 @@ const Home = () => {
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
-                    <NextLink href="blog/tinnitus-latest-research" passHref>
+                    <NextLink href="blog/tinnitus-and-genetics" passHref>
                       <CardMedia
                         component="img"
                         height="180"
-                        image="/images/doctor.jpg"
+                        image="/images/genetics.jpg"
                         alt="Female Doctor"
                       />
                     </NextLink>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        Latest Tinnitus Researches
+                      Tinnitus and Genetics
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Recent Scientific Studies, Potential New Treatments and
-                        Innovative Technologies.
+                      Tracing the hereditary links and delving deep into the genetic fabric of tinnitus.
                       </Typography>
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <NextLink href="blog/tinnitus-latest-research" passHref>
+                    <NextLink href="blog/tinnitus-and-genetics" passHref>
                       <Button
                         size="medium"
                         variant="outlined"
