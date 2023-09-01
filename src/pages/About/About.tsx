@@ -4,6 +4,8 @@ import Divider from '@mui/material/Divider';
 import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const About = ({  }: Props) => {
   return (
@@ -26,20 +28,28 @@ const About = ({  }: Props) => {
           </p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <a href="https://github.com/oktayshakirov/tinnitus-blog">
-              <img src="./github.png" alt="GitHub Repository" width="98%" />
+              <Image src="/github.png" alt="GitHub Repository" width={300} height={170} />
             </a>
           </div>
           <Divider style={{ margin: '20px 0' }} />
           <p>
-            * To learn more about me and my journey as a software developer, you can visit <a href="https://oktayshakirov.com" style={{ color: '#FFFF9B', textDecoration: 'none', marginRight: '10px'}}>My Website</a> or find me on <a href="https://www.linkedin.com/in/oktayshakirov/" style={{ color: '#FFFF9B', textDecoration: 'none', marginLeft: '10px'}}>LinkedIn</a>. There, you&apos;ll find my other projects, experiences, and insights of my work.
+            * To learn more about me and my journey as a software developer, you can visit <a href="https://oktayshakirov.com" style={{ color: '#FFFF9B', textDecoration: 'none' }}>My Website</a> or find me on <a href="https://www.linkedin.com/in/oktayshakirov/" style={{ color: '#FFFF9B', textDecoration: 'none' }}>LinkedIn</a>. There, you&apos;ll find my other projects, experiences, and insights of my work.
           </p>
           <Divider style={{ margin: '20px 0' }} />
           <p>
             For inquiries or further information, you can reach out to me directly via email at <a href="mailto:oktayshakirov@gmail.com" style={{ color: '#FFFF9B', textDecoration: 'none' }}>oktayshakirov@gmail.com</a>. I highly value the feedback and insights of our readers.
           </p>
           <p>
-            Please also familiarize yourself with our <a href="/privacy" style={{ color: '#FFFF9B', textDecoration: 'none' }}>Privacy Policy</a> and <a href="/terms" style={{ color: '#FFFF9B', textDecoration: 'none' }}>Terms of Use</a> before using the site.
-          </p>
+  Please also familiarize yourself with our 
+  <Link href="/privacy" style={{ color: '#FFFF9B', textDecoration: 'none' }}>
+    Privacy Policy
+  </Link> 
+  and 
+  <Link href="/terms" style={{ color: '#FFFF9B', textDecoration: 'none' }}>
+    Terms of Use
+  </Link> 
+  before using the site.
+</p>
         </Container>
       </Layout>
     </>
