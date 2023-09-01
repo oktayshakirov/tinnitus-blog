@@ -5,6 +5,7 @@ import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const About = ({  }: Props) => {
   return (
@@ -27,8 +28,7 @@ const About = ({  }: Props) => {
           </p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <a href="https://github.com/oktayshakirov/tinnitus-blog">
-              {/* Use next/image here */}
-              <img src="./github.png" alt="GitHub Repository" width="98%" />
+              <Image src="/github.png" alt="GitHub Repository" width={512} height={512} />
             </a>
           </div>
           <Divider style={{ margin: '20px 0' }} />
@@ -48,4 +48,4 @@ const About = ({  }: Props) => {
   );
 };
 
-export default
+export default About;

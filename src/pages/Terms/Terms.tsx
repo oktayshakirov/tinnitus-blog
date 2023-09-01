@@ -23,7 +23,7 @@ const Terms = ({ }: Props) => {
 
           <Headline>2. License to Use:</Headline>
           <p>
-            The intellectual property rights for all material on Beyond the Buzz are owned by the blog's creator. Visitors are allowed to view and print pages from this website for personal, non-commercial use, subject to the restrictions set out below and elsewhere in these terms and conditions.
+            The intellectual property rights for all material on Beyond the Buzz are owned by the blog&apos;s creator. Visitors are allowed to view and print pages from this website for personal, non-commercial use, subject to the restrictions set out below and elsewhere in these terms and conditions.
           </p>
 
           <Headline>3. Restrictions:</Headline>
@@ -44,12 +44,12 @@ const Terms = ({ }: Props) => {
 
           <Headline>5. Limitation of Liability:</Headline>
           <p>
-            Beyond the Buzz, or its creator, will not be held liable for any damages arising out of or in connection with the use of this website. This includes, without limitation, damages for loss of profit, data, or goodwill. The blog's owner shall not be held liable for any indirect, consequential, or special liability arising out of or in any way related to a visitor's use of this blog.
+            Beyond the Buzz, or its creator, will not be held liable for any damages arising out of or in connection with the use of this website. This includes, without limitation, damages for loss of profit, data, or goodwill. The blog&apos;s owner shall not be held liable for any indirect, consequential, or special liability arising out of or in any way related to a visitor&apos;s use of this blog.
           </p>
 
           <Headline>6. Changes to the Terms of Use:</Headline>
           <p>
-            The blog's creator reserves the right to update, change, or replace any part of these Terms of Use by posting updates and/or changes to the website. It is the visitor's responsibility to check this page periodically for changes.
+            The blog&apos;s creator reserves the right to update, change, or replace any part of these Terms of Use by posting updates and/or changes to the website. It is the visitor&apos;s responsibility to check this page periodically for changes.
           </p>
 
           <Headline>7. Governing Law:</Headline>
@@ -59,7 +59,7 @@ const Terms = ({ }: Props) => {
 
           <Headline>8. Contact:</Headline>
           <p>
-            If you have any queries or concerns regarding any of the terms mentioned here, please feel free to contact the blog's creator.
+            If you have any queries or concerns regarding any of the terms mentioned here, please feel free to contact the blog&apos;s creator.
           </p>
         </Container>
       </Layout>
