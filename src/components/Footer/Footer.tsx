@@ -1,3 +1,4 @@
+import Link from '@components/Link';
 import {
   StyledFooter,
   StyledContainer,
@@ -9,8 +10,13 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledContainer>
-        <StyledCopyright>Tinnitus</StyledCopyright>
-        <StyledText>Beyond the Buzz</StyledText>
+        <StyledCopyright>Beyond the Buzz</StyledCopyright>
+        <Link href="/privacy" style={{ textDecoration: 'none' }}>
+          <StyledText>Privacy Policy</StyledText>
+        </Link>
+        <Link href="/terms" style={{ textDecoration: 'none' }}>
+          <StyledText>Terms of Use</StyledText>
+        </Link>
       </StyledContainer>
     </StyledFooter>
   );
