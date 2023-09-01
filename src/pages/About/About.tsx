@@ -4,8 +4,6 @@ import Divider from '@mui/material/Divider';
 import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
-import Link from 'next/link';
-import Image from 'next/image';
 
 const About = ({  }: Props) => {
   return (
@@ -28,7 +26,7 @@ const About = ({  }: Props) => {
           </p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <a href="https://github.com/oktayshakirov/tinnitus-blog">
-              <Image src="/github.png" alt="GitHub Repository" width={512} height={512} />
+              <img src="./github.png" alt="GitHub Repository" width="98%" />
             </a>
           </div>
           <Divider style={{ margin: '20px 0' }} />
@@ -40,7 +38,7 @@ const About = ({  }: Props) => {
             For inquiries or further information, you can reach out to me directly via email at <a href="mailto:oktayshakirov@gmail.com" style={{ color: '#FFFF9B', textDecoration: 'none' }}>oktayshakirov@gmail.com</a>. I highly value the feedback and insights of our readers.
           </p>
           <p>
-            Please also familiarize yourself with our <Link href="/privacy"><a style={{ color: '#FFFF9B', textDecoration: 'none' }}>Privacy Policy</a></Link> and <Link href="/terms"><a style={{ color: '#FFFF9B', textDecoration: 'none' }}>Terms of Use</a></Link> before using the site.
+            Please also familiarize yourself with our <a href="/privacy" style={{ color: '#FFFF9B', textDecoration: 'none' }}>Privacy Policy</a> and <a href="/terms" style={{ color: '#FFFF9B', textDecoration: 'none' }}>Terms of Use</a> before using the site.
           </p>
         </Container>
       </Layout>
