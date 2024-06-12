@@ -6,13 +6,13 @@ import Logo2 from '@components/Logo2';
 import Layout from '@components/Layout';
 import HomeSEO from './Home.SEO';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import ArticleIcon from '@mui/icons-material/Article';
 import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
 import AudiotrackIcon from '@mui/icons-material/Audiotrack';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import NextLink from 'next/link';
+import Image from 'next/image';
 import {
   StyledContainer,
   StyledHeadingContainer,
@@ -35,7 +35,6 @@ const Home = () => {
                   Beyond the Buzz
                 </Typography>
                 <Grid item xs={12} md={12}>
-                  {' '}
                   <Typography component="h2" variant="h6">
                     Discover the fascinating world of perceiving sound in the
                     absence of an external source. Living with tinnitus can be
@@ -61,11 +60,12 @@ const Home = () => {
                 <StyledCard>
                   <CardActionArea>
                     <NextLink href="blog/what-is-tinnitus" passHref>
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/anxiety-girl.jpg"
+                      <Image
+                        src="/images/anxiety-girl.jpg"
                         alt="Anxious girl"
+                        width={310}
+                        height={180}
+                        layout="responsive"
                       />
                     </NextLink>
                     <CardContent>
@@ -97,11 +97,12 @@ const Home = () => {
                 <StyledCard>
                   <CardActionArea>
                     <NextLink href="blog/managing-tinnitus" passHref>
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/yoga-dog.jpg"
+                      <Image
+                        src="/images/yoga-dog.jpg"
                         alt="Yoga and Dog"
+                        width={310}
+                        height={180}
+                        layout="responsive"
                       />
                     </NextLink>
                     <CardContent>
@@ -134,11 +135,12 @@ const Home = () => {
                 <StyledCard>
                   <CardActionArea>
                     <NextLink href="blog/the-power-of-white-noise" passHref>
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/girl-with-headphones.jpg"
+                      <Image
+                        src="/images/girl-with-headphones.jpg"
                         alt="Girl with headphones"
+                        width={310}
+                        height={180}
+                        layout="responsive"
                       />
                     </NextLink>
                     <CardContent>
@@ -171,11 +173,12 @@ const Home = () => {
                 <StyledCard>
                   <CardActionArea>
                     <NextLink href="blog/tinnitus-in-musicians" passHref>
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/musician.jpg"
+                      <Image
+                        src="/images/musician.jpg"
                         alt="Sleeping Kid"
+                        width={310}
+                        height={180}
+                        layout="responsive"
                       />
                     </NextLink>
                     <CardContent>
@@ -210,11 +213,12 @@ const Home = () => {
                       href="blog/tinnitus-in-history"
                       passHref
                     >
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/tinnitus-history2.jpg"
+                      <Image
+                        src="/images/tinnitus-history2.jpg"
                         alt="Ancient Sculpture"
+                        width={310}
+                        height={180}
+                        layout="responsive"
                       />
                     </NextLink>
                     <CardContent>
@@ -249,11 +253,12 @@ const Home = () => {
                 <StyledCard>
                   <CardActionArea>
                     <NextLink href="blog/tinnitus-and-genetics" passHref>
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/genetics.jpg"
+                      <Image
+                        src="/images/genetics.jpg"
                         alt="Female Doctor"
+                        width={310}
+                        height={180}
+                        layout="responsive"
                       />
                     </NextLink>
                     <CardContent>
@@ -331,11 +336,12 @@ const Home = () => {
                 <StyledCard>
                   <CardActionArea>
                     <NextLink href="zen/water-sounds" passHref>
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/waterfall-man.jpg"
+                      <Image
+                        src="/images/waterfall-man.jpg"
                         alt="Zen 1 Playlist cover"
+                        width={310}
+                        height={180}
+                        layout="responsive"
                       />
                     </NextLink>
                     <CardContent>
@@ -367,11 +373,12 @@ const Home = () => {
                 <StyledCard>
                   <CardActionArea>
                     <NextLink href="zen/nature-sounds" passHref>
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/zen-nature.jpg"
+                      <Image
+                        src="/images/zen-nature.jpg"
                         alt="Zen 3 Playlist cover"
+                        width={310}
+                        height={180}
+                        layout="responsive"
                       />
                     </NextLink>
                     <CardContent>
@@ -404,11 +411,12 @@ const Home = () => {
                 <StyledCard>
                   <CardActionArea>
                     <NextLink href="zen/white-noise" passHref>
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/zen-white.jpg"
+                      <Image
+                        src="/images/zen-white.jpg"
                         alt="Zen 2 Playlist cover"
+                        width={310}
+                        height={180}
+                        layout="responsive"
                       />
                     </NextLink>
                     <CardContent>
