@@ -19,13 +19,16 @@ const Header = () => {
   return (
     <StyledAppBar elevation={0} color="transparent" position="static">
       <StyledContainer>
+        <StyledMenuButton onClick={toggleMainMenu} aria-label="Menu">
+          <FormatListBulletedRoundedIcon />
+        </StyledMenuButton>
         <StyledNav>
           <ul>
             <li>
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/blog">Blog</Link>
+              <Link href="/blog">Posts</Link>
             </li>
             <li>
               <Link href="/zen">Sounds</Link>
@@ -33,11 +36,11 @@ const Header = () => {
             <li>
               <Link href="/about">About</Link>
             </li>
+            <li>
+              <Link href="/faq">FAQ</Link>
+            </li>
           </ul>
         </StyledNav>
-        <StyledMenuButton onClick={toggleMainMenu} aria-label="Menu">
-          <FormatListBulletedRoundedIcon />
-        </StyledMenuButton>
       </StyledContainer>
       <MainMenuDrawer open={isMainMenuOpen} toggleMenu={toggleMainMenu} />
     </StyledAppBar>

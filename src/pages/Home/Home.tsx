@@ -326,7 +326,43 @@ const Home = () => {
         <Container>
           <StyledTabContainer>
             <Grid container spacing={2}>
-              {/* StyledCard Card 1 */}
+               {/* StyledCard Card 1 */}
+               <Grid item xs={12} sm={4}>
+                <StyledCard>
+                  <CardActionArea>
+                    <NextLink href="zen/water-sounds" passHref>
+                      <CardMedia
+                        component="img"
+                        height="180"
+                        image="/images/waterfall-man.jpg"
+                        alt="Zen 1 Playlist cover"
+                      />
+                    </NextLink>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Water Sounds
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                      Water Sounds bring relaxation with calming consistent effect.
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <NextLink href="zen/water-sounds" passHref>
+                      <Button
+                        size="medium"
+                        variant="outlined"
+                        color="secondary"
+                        startIcon={<AudiotrackIcon />}
+                      >
+                        Listen Now
+                      </Button>
+                    </NextLink>
+                  </CardActions>
+                </StyledCard>
+              </Grid>
+
+              {/* StyledCard Card 2 */}
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
@@ -363,7 +399,7 @@ const Home = () => {
                 </StyledCard>
               </Grid>
 
-              {/* StyledCard Card 2 */}
+              {/* StyledCard Card 3 */}
               <Grid item xs={12} sm={4}>
                 <StyledCard>
                   <CardActionArea>
@@ -400,42 +436,6 @@ const Home = () => {
                 </StyledCard>
               </Grid>
 
-              {/* StyledCard Card 3 */}
-              <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
-                    <NextLink href="zen/notched-sounds" passHref>
-                      <CardMedia
-                        component="img"
-                        height="180"
-                        image="/images/zen-notched.png"
-                        alt="Zen 1 Playlist cover"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Notched Sounds
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Notched sound therapy reduces tinnitus by using specific
-                        5000hz - 9000hz frequencies.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink href="zen/notched-sounds" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<AudiotrackIcon />}
-                      >
-                        Listen Now
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
             </Grid>
             <StyledTextContainer>
               <Typography component="h2" variant="h6" align="center">
