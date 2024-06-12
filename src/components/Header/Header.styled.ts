@@ -9,6 +9,7 @@ export const StyledAppBar = styled(AppBar)`
     display: flex;
     justify-content: center;
     height: ${theme.spacing(8)};
+    box-shadow: none;
 
     ${theme.breakpoints.up('sm')} {
       height: ${theme.spacing(10)};
@@ -17,20 +18,30 @@ export const StyledAppBar = styled(AppBar)`
 `;
 
 export const StyledContainer = styled(Container)`
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 0 0 25px 25px;
-  margin-bottom: 18px;
+  ${({ theme }) => css`
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 25px 25px;
+    margin-bottom: 18px;
+    position: relative;
+
+    ${theme.breakpoints.down('xs')} {
+      padding: 0 16px;
+    }
+  `}
 `;
 
 export const StyledMenuButton = styled(IconButton)`
   ${({ theme }) => css`
     display: flex;
+    color: white;
+    position: absolute;
+    right: 26px;
 
     ${theme.breakpoints.up('sm')} {
       display: none;
@@ -43,19 +54,23 @@ export const StyledNav = styled('nav')`
     display: none;
 
     ${theme.breakpoints.up('sm')} {
-      display: block;
+      display: flex;
+      align-items: center;
     }
 
     ul {
       margin: 0;
       padding: 0;
       display: flex;
-      gap: ${theme.spacing(5)};
+      gap: ${theme.spacing(2)};
+
+      ${theme.breakpoints.up('md')} {
+        gap: ${theme.spacing(5)};
+      }
     }
 
     li {
       list-style: none;
-      color: white;
       font-family: sans-serif;
       font-weight: bold;
       position: relative;
@@ -66,9 +81,8 @@ export const StyledNav = styled('nav')`
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100px;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 14px;
       background: #734b6d;
       color: white;
       font-weight: bold;
@@ -79,6 +93,11 @@ export const StyledNav = styled('nav')`
       &:hover {
         background: #a5729e;
         color: #ffffff;
+      }
+
+      ${theme.breakpoints.up('md')} {
+        font-size: 17px;
+        width: 100px;
       }
     }
   `}

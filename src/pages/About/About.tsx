@@ -5,7 +5,6 @@ import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const About = ({  }: Props) => {
   return (
@@ -24,16 +23,7 @@ const About = ({  }: Props) => {
           </p>
           <Divider style={{ margin: '20px 0' }} />
           <p>
-            Beyond Tinnitus is an open-source project, and I invite you to be a part of this endeavor. If you&apos;re a developer, designer, content creator, or anyone passionate about tinnitus awareness, you can contribute to the growth of this platform. Feel free to explore the GitHub repository where the code for this blog resides. Your contributions can help enhance the user experience, add new features, and improve the overall impact of Beyond Tinnitus.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <a href="https://github.com/oktayshakirov/tinnitus-blog">
-              <Image src="/github.png" alt="GitHub Repository" width={300} height={170} />
-            </a>
-          </div>
-          <Divider style={{ margin: '20px 0' }} />
-          <p>
-            * To learn more about me and my journey as a software developer, you can visit <a href="https://oktayshakirov.com" style={{ color: '#FFFF9B', textDecoration: 'none' }}>My Website</a> or find me on <a href="https://www.linkedin.com/in/oktayshakirov/" style={{ color: '#FFFF9B', textDecoration: 'none' }}>LinkedIn</a>. There, you&apos;ll find my other projects, experiences, and insights of my work.
+            To learn more about me and my journey as a software developer, you can visit <a href="https://oktayshakirov.com" style={{ color: '#FFFF9B', textDecoration: 'none' }}>My Website</a> or find me on <a href="https://www.linkedin.com/in/oktayshakirov/" style={{ color: '#FFFF9B', textDecoration: 'none' }}>LinkedIn</a>. There, you&apos;ll find my other projects.
           </p>
           <Divider style={{ margin: '20px 0' }} />
           <p>
@@ -41,11 +31,11 @@ const About = ({  }: Props) => {
           </p>
           <p>
   Please also familiarize yourself with our 
-  <Link href="/privacy" style={{ color: '#FFFF9B', textDecoration: 'none' }}>
+  <Link href="/privacy" style={{ color: '#FFFF9B', textDecoration: 'none', marginLeft: '7px', marginRight: '7px' }}>
     Privacy Policy
   </Link> 
   and 
-  <Link href="/terms" style={{ color: '#FFFF9B', textDecoration: 'none' }}>
+  <Link href="/terms" style={{ color: '#FFFF9B', textDecoration: 'none', marginLeft: '7px', marginRight: '7px' }}>
     Terms of Use
   </Link> 
   before using the site.
