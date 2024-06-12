@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: www.beyondtinnitus.online/
+Host: https://www.beyondtinnitus.online/
 
 # Sitemaps
-Sitemap: www.beyondtinnitus.online/sitemap.xml
+Sitemap: https://www.beyondtinnitus.online/sitemap.xml
