@@ -46,7 +46,7 @@ const Home = () => {
               </div>
             </StyledHeadingContainer>
             <StyledLogoContainer item md={6}>
-              <Logo width={310} />
+              <Logo  />
             </StyledLogoContainer>
           </Grid>
         </StyledContainer>
@@ -306,7 +306,7 @@ const Home = () => {
         <StyledContainer>
           <Grid container spacing={2}>
             <StyledLogoContainer item md={6}>
-              <Logo2 width={310} />
+              <Logo2 />
             </StyledLogoContainer>
             <StyledHeadingContainer item md={6}>
               <div>
@@ -314,7 +314,6 @@ const Home = () => {
                   The Power of Sound
                 </Typography>
                 <Grid item xs={12} md={12}>
-                  {' '}
                   <Typography component="h2" variant="h6">
                     Find relief and inner harmony with Tinnitus Sound Therapy,
                     featuring white noise, calming melodies, and mindful
