@@ -6,7 +6,7 @@ type Props = {
   width?: number;
 };
 
-const Logo2 = ({ width = 50 }: Props) => (
+const Logo2 = ({ width = 220 }: Props) => (
   <Image src={logo} alt="Logo 2" width={width} height={width} />
 );
 
