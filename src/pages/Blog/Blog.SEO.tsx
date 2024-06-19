@@ -2,7 +2,7 @@ import { NextSeo } from 'next-seo';
 import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 
 const BlogSEO = () => {
-  const title = 'Beyond the Buzz | Blog';
+  const title = 'TinnitusHelp.me | Blog';
   const description =
     "Living with tinnitus can be challenging, but you're not alone. Discover valuable tips and resources to manage and cope with tinnitus. Explore treatment options, lifestyle adjustments and support. Empower yourself with comprehensive resources. Everyone's experience with tinnitus is unique. Find strategies that suit your needs.";
   const canonical = `${DOMAIN}/blog`;

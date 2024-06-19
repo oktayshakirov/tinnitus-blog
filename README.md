@@ -1,17 +1,14 @@
-# Beyond the Buzz
+# TinnitusHelp.me
 
 Comprehensive and user-friendly blog site aimed at providing a helpful resource for individuals dealing with tinnitus. Built with Next.js, TypeScript, and Material UI, this blogs features in-depth articles, tips, and advice to better understand and manage tinnitus. In addition to valuable information, the platform also offers therapeutic audio sounds as a unique form of relief for users. The blog site is responsive, ensuring seamless navigation on all devices. Contribute to making this initiative more beneficial.
 
-## Demo 
+## Demo
 
-![Desktop Demo](https://oktayshakirov.com/assets/images/projects/tinnitus-blog.png "Desktop Demo")
-
+![Desktop Demo](https://oktayshakirov.com/assets/images/projects/tinnitus-blog.png 'Desktop Demo')
 
 <p align="center">
-  <a href="https://www.beyondtinnitus.online/"><strong>➥ Live Demo</strong></a>
+  <a href="https://www.TinnitusHelp.me/"><strong>➥ Live Demo</strong></a>
 </p>
-
-
 
 ## Getting Started
 
