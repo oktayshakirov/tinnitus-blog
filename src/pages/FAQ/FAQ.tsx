@@ -12,7 +12,7 @@ const FAQ = () => {
       <Container>
         <Headline>Frequently Asked Questions</Headline>
         <Typography variant="body1" gutterBottom>
-          Welcome to the Beyond Tinnitus FAQ section. Here you will find answers to common questions about tinnitus, our content, and the resources we offer. Whether you are new to tinnitus or looking for specific information, we hope you find these answers helpful.
+          Welcome to the TinnitusHelp.me FAQ section. Here you will find answers to common questions about tinnitus, our content, and the resources we offer. Whether you are new to tinnitus or looking for specific information, we hope you find these answers helpful.
         </Typography>
         <Divider sx={{ margin: '20px 0' }} />
         

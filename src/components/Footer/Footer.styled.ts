@@ -11,10 +11,11 @@ export const StyledFooter = styled('footer')`
 export const StyledContainer = styled(Container)`
   ${({ theme }) => css`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: ${theme.spacing(1)};
+    padding: ${theme.spacing(1)};
   `}
 `;
 

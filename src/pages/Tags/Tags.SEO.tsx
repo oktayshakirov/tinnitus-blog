@@ -3,7 +3,7 @@ import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 
 const TagsSEO = () => {
   // TODO FIX META INFO
-  const title = "Beyond the Buzz | Tags";
+  const title = "TinnitusHelp.me | Tags";
   const description =
     'What is Tinnitus? How can I find relief from its effects? The ultimate guide to modern tinnitus management will provide answers to these inquiries and more.';
   const canonical = `${DOMAIN}/tags`;
