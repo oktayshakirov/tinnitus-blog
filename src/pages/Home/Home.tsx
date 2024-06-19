@@ -32,7 +32,7 @@ const Home = () => {
             <StyledHeadingContainer item md={6}>
               <div>
                 <Typography component="h1" variant="h3" mb={{ xs: 2, md: 2 }}>
-                  TinnitusHelp.me
+                  Tinnitus Help 
                 </Typography>
                 <Grid item xs={12} md={12}>
                   <Typography component="h2" variant="h6">
