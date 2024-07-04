@@ -1,5 +1,5 @@
 const config = {
-  siteUrl: 'https://www.TinnitusHelp.me/',
+  siteUrl: 'https://www.tinnitushelp.me/',
   generateRobotsTxt: true, 
 };
 
