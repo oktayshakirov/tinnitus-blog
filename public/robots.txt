@@ -1,9 +1,6 @@
-# *
+# User-agent directive
 User-agent: *
 Allow: /
-
-# Host
-Host: https://www.tinnitushelp.me/
 
 # Sitemaps
 Sitemap: https://www.tinnitushelp.me/sitemap.xml
