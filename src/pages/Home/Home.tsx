@@ -22,6 +22,78 @@ import {
   StyledTextContainer,
 } from './Home.styled';
 
+const articles = [
+  {
+    href: 'blog/what-is-tinnitus',
+    src: '/images/anxiety-girl.jpg',
+    alt: 'Anxious girl',
+    title: 'What is Tinnitus?',
+    description: 'Learn about the perception of sound without an external source.',
+  },
+  {
+    href: 'blog/managing-tinnitus',
+    src: '/images/yoga-dog.jpg',
+    alt: 'Yoga and Dog',
+    title: 'Managing Tinnitus',
+    description: 'Discover effective strategies for managing tinnitus and improving your quality of life.',
+  },
+  {
+    href: 'blog/the-power-of-white-noise',
+    src: '/images/girl-with-headphones.jpg',
+    alt: 'Girl with headphones',
+    title: 'The Power of White Noise',
+    description: 'Exploring the benefits and applications of sound therapy for managing tinnitus.',
+  },
+  {
+    href: 'blog/tinnitus-in-musicians',
+    src: '/images/musician.jpg',
+    alt: 'Musician',
+    title: 'Tinnitus in Musicians',
+    description: 'Exploring the prevalence of tinnitus among musicians and DJs.',
+  },
+  {
+    href: 'blog/tinnitus-in-history',
+    src: '/images/tinnitus-history2.jpg',
+    alt: 'Ancient Sculpture',
+    title: 'Historical Contexts',
+    description: 'A journey through time, exploring how ancient civilizations perceived tinnitus.',
+  },
+  {
+    href: 'blog/tinnitus-and-genetics',
+    src: '/images/genetics.jpg',
+    alt: 'Female Doctor',
+    title: 'Tinnitus and Genetics',
+    description: 'Tracing the hereditary links and delving deep into the genetic fabric of tinnitus.',
+  },
+];
+
+const soundTherapies = [
+  {
+    href: 'zen/water-sounds',
+    src: '/images/waterfall-man.jpg',
+    alt: 'Zen 1 Playlist cover',
+    title: 'Water Sounds',
+    description: 'Water Sounds bring relaxation with calming consistent effect.',
+    icon: <AudiotrackIcon />,
+  },
+  {
+    href: 'zen/nature-sounds',
+    src: '/images/zen-nature.jpg',
+    alt: 'Zen 3 Playlist cover',
+    title: 'Nature Inspired',
+    description: 'Delve into the advantages and uses of nature-inspired sounds in sound therapy for tinnitus.',
+    icon: <AudiotrackIcon />,
+  },
+  {
+    href: 'zen/white-noise',
+    src: '/images/zen-white.jpg',
+    alt: 'Zen 2 Playlist cover',
+    title: 'White Noise',
+    description: 'White noise therapy utilizes a calming and constant sound to foster a sense of relaxation.',
+    icon: <AudiotrackIcon />,
+  },
+];
+
 const Home = () => {
   return (
     <>
@@ -55,235 +127,43 @@ const Home = () => {
         <Container>
           <StyledTabContainer>
             <Grid container spacing={2}>
-              {/* StyledCard Card 1 */}
-              <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
-                    <NextLink href="blog/what-is-tinnitus" passHref>
-                      <Image
-                        src="/images/anxiety-girl.jpg"
-                        alt="Anxious girl"
-                        width={310}
-                        height={180}
-                        layout="responsive"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        What is Tinnitus ?
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Learn about the perception of sound without an external
-                        source.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink href="blog/what-is-tinnitus" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<ArticleIcon />}
-                      >
-                        Read More
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
-              {/* StyledCard Card 1 */}
-                <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
-                    <NextLink href="blog/managing-tinnitus" passHref>
-                      <Image
-                        src="/images/yoga-dog.jpg"
-                        alt="Yoga and Dog"
-                        width={310}
-                        height={180}
-                        layout="responsive"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Managing Tinnitus
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Discover effective strategies for managing tinnitus and
-                        improving your quality of life.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink href="blog/managing-tinnitus" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<ArticleIcon />}
-                      >
-                        Read More
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
-
-              {/* StyledCard Card 3 */}
-              <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
-                    <NextLink href="blog/the-power-of-white-noise" passHref>
-                      <Image
-                        src="/images/girl-with-headphones.jpg"
-                        alt="Girl with headphones"
-                        width={310}
-                        height={180}
-                        layout="responsive"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        The Power of White Noise
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Exploring the benefits and applications of sound therapy
-                        for managing tinnitus.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink href="blog/the-power-of-white-noise" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<ArticleIcon />}
-                      >
-                        Read More
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
-
-              {/* StyledCard Card 4 */}
-              <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
-                    <NextLink href="blog/tinnitus-in-musicians" passHref>
-                      <Image
-                        src="/images/musician.jpg"
-                        alt="Sleeping Kid"
-                        width={310}
-                        height={180}
-                        layout="responsive"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                      Tinnitus in Musicians
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                      Exploring the Prevalence of Tinnitus Among Musicians and DJs.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink href="blog/tinnitus-in-musicians" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<ArticleIcon />}
-                      >
-                        Read More
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
-
-              {/* StyledCard Card 5 */}
-              <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
-                    <NextLink
-                      href="blog/tinnitus-in-history"
-                      passHref
-                    >
-                      <Image
-                        src="/images/tinnitus-history2.jpg"
-                        alt="Ancient Sculpture"
-                        width={310}
-                        height={180}
-                        layout="responsive"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                      Historical Contexts
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                      A journey through time, exploring how ancient civilizations perceived tinnitus.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink
-                      href="blog/tinnitus-in-history"
-                      passHref
-                    >
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<ArticleIcon />}
-                      >
-                        Read More
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
-
-              {/* StyledCard Card 6 */}
-              <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
-                    <NextLink href="blog/tinnitus-and-genetics" passHref>
-                      <Image
-                        src="/images/genetics.jpg"
-                        alt="Female Doctor"
-                        width={310}
-                        height={180}
-                        layout="responsive"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                      Tinnitus and Genetics
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                      Tracing the hereditary links and delving deep into the genetic fabric of tinnitus.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink href="blog/tinnitus-and-genetics" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<ArticleIcon />}
-                      >
-                        Read More
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
+              {articles.map((article, index) => (
+                <Grid item xs={12} sm={4} key={index}>
+                  <StyledCard>
+                    <CardActionArea>
+                      <NextLink href={article.href} passHref>
+                        <Image
+                          src={article.src}
+                          alt={article.alt}
+                          width={310}
+                          height={180}
+                          layout="responsive"
+                        />
+                      </NextLink>
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {article.title}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {article.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <NextLink href={article.href} passHref>
+                        <Button
+                          size="medium"
+                          variant="outlined"
+                          color="secondary"
+                          startIcon={<ArticleIcon />}
+                        >
+                          Read More
+                        </Button>
+                      </NextLink>
+                    </CardActions>
+                  </StyledCard>
+                </Grid>
+              ))}
             </Grid>
             <StyledTextContainer>
               <Typography component="h2" variant="h6" align="center">
@@ -330,119 +210,43 @@ const Home = () => {
         <Container>
           <StyledTabContainer>
             <Grid container spacing={2}>
-               {/* StyledCard Card 1 */}
-               <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
-                    <NextLink href="zen/water-sounds" passHref>
-                      <Image
-                        src="/images/waterfall-man.jpg"
-                        alt="Zen 1 Playlist cover"
-                        width={310}
-                        height={180}
-                        layout="responsive"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Water Sounds
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                      Water Sounds bring relaxation with calming consistent effect.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink href="zen/water-sounds" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<AudiotrackIcon />}
-                      >
-                        Listen Now
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
-
-              {/* StyledCard Card 2 */}
-              <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
-                    <NextLink href="zen/nature-sounds" passHref>
-                      <Image
-                        src="/images/zen-nature.jpg"
-                        alt="Zen 3 Playlist cover"
-                        width={310}
-                        height={180}
-                        layout="responsive"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Nature Inspired
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Delve into the advantages and uses of nature-inspired
-                        sounds in sound therapy for tinnitus.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink href="zen/nature-sounds" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<AudiotrackIcon />}
-                      >
-                        Listen Now
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
-
-              {/* StyledCard Card 3 */}
-              <Grid item xs={12} sm={4}>
-                <StyledCard>
-                  <CardActionArea>
-                    <NextLink href="zen/white-noise" passHref>
-                      <Image
-                        src="/images/zen-white.jpg"
-                        alt="Zen 2 Playlist cover"
-                        width={310}
-                        height={180}
-                        layout="responsive"
-                      />
-                    </NextLink>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        White Noise
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        White noise therapy utilizes a calming and constant
-                        sound to foster a sense of relaxation.
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <NextLink href="zen/white-noise" passHref>
-                      <Button
-                        size="medium"
-                        variant="outlined"
-                        color="secondary"
-                        startIcon={<AudiotrackIcon />}
-                      >
-                        Listen Now
-                      </Button>
-                    </NextLink>
-                  </CardActions>
-                </StyledCard>
-              </Grid>
-
+              {soundTherapies.map((therapy, index) => (
+                <Grid item xs={12} sm={4} key={index}>
+                  <StyledCard>
+                    <CardActionArea>
+                      <NextLink href={therapy.href} passHref>
+                        <Image
+                          src={therapy.src}
+                          alt={therapy.alt}
+                          width={310}
+                          height={180}
+                          layout="responsive"
+                        />
+                      </NextLink>
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {therapy.title}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {therapy.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <NextLink href={therapy.href} passHref>
+                        <Button
+                          size="medium"
+                          variant="outlined"
+                          color="secondary"
+                          startIcon={therapy.icon}
+                        >
+                          Listen Now
+                        </Button>
+                      </NextLink>
+                    </CardActions>
+                  </StyledCard>
+                </Grid>
+              ))}
             </Grid>
             <StyledTextContainer>
               <Typography component="h2" variant="h6" align="center">
