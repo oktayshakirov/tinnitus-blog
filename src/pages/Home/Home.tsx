@@ -67,7 +67,7 @@ const articles = [
   },
 ];
 
-const soundTherapies = [
+const sounds = [
   {
     href: 'zen/water-sounds',
     src: '/images/waterfall-man.jpg',
@@ -126,6 +126,7 @@ const Home = () => {
         {/* Blog Articles Tab */}
         <Container>
           <StyledTabContainer>
+          <Typography gutterBottom variant="h4" component="div" align="center">Must Read Posts:</Typography>
             <Grid container spacing={2}>
               {articles.map((article, index) => (
                 <Grid item xs={12} sm={4} key={index}>
@@ -209,8 +210,9 @@ const Home = () => {
 
         <Container>
           <StyledTabContainer>
+          <Typography gutterBottom variant="h4" component="div" align="center">Our Sound Therapy:</Typography>
             <Grid container spacing={2}>
-              {soundTherapies.map((therapy, index) => (
+              {sounds.map((therapy, index) => (
                 <Grid item xs={12} sm={4} key={index}>
                   <StyledCard>
                     <CardActionArea>
