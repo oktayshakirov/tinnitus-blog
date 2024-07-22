@@ -28,42 +28,48 @@ const articles = [
     src: '/images/anxiety-girl.jpg',
     alt: 'Anxious girl',
     title: 'What is Tinnitus?',
-    description: 'Learn about the perception of sound without an external source.',
+    description:
+      'Learn about the perception of sound without an external source.',
   },
   {
     href: 'blog/managing-tinnitus',
     src: '/images/yoga-dog.jpg',
     alt: 'Yoga and Dog',
     title: 'Managing Tinnitus',
-    description: 'Discover effective strategies for managing tinnitus and improving your quality of life.',
+    description:
+      'Discover effective strategies for managing tinnitus and improving your quality of life.',
   },
   {
     href: 'blog/the-power-of-white-noise',
     src: '/images/girl-with-headphones.jpg',
     alt: 'Girl with headphones',
     title: 'The Power of White Noise',
-    description: 'Exploring the benefits and applications of sound therapy for managing tinnitus.',
+    description:
+      'Exploring the benefits and applications of sound therapy for managing tinnitus.',
   },
   {
     href: 'blog/tinnitus-in-musicians',
     src: '/images/musician.jpg',
     alt: 'Musician',
     title: 'Tinnitus in Musicians',
-    description: 'Exploring the prevalence of tinnitus among musicians and DJs.',
+    description:
+      'Exploring the prevalence of tinnitus among musicians and DJs.',
   },
   {
     href: 'blog/tinnitus-in-history',
     src: '/images/tinnitus-history2.jpg',
     alt: 'Ancient Sculpture',
     title: 'Historical Contexts',
-    description: 'A journey through time, exploring how ancient civilizations perceived tinnitus.',
+    description:
+      'A journey through time, exploring how ancient civilizations perceived tinnitus.',
   },
   {
     href: 'blog/tinnitus-and-genetics',
     src: '/images/genetics.jpg',
     alt: 'Female Doctor',
     title: 'Tinnitus and Genetics',
-    description: 'Tracing the hereditary links and delving deep into the genetic fabric of tinnitus.',
+    description:
+      'Tracing the hereditary links and delving deep into the genetic fabric of tinnitus.',
   },
 ];
 
@@ -73,7 +79,8 @@ const sounds = [
     src: '/images/waterfall-man.jpg',
     alt: 'Zen 1 Playlist cover',
     title: 'Water Sounds',
-    description: 'Water Sounds bring relaxation with calming consistent effect.',
+    description:
+      'Water Sounds bring relaxation with calming consistent effect.',
     icon: <AudiotrackIcon />,
   },
   {
@@ -81,7 +88,8 @@ const sounds = [
     src: '/images/zen-nature.jpg',
     alt: 'Zen 3 Playlist cover',
     title: 'Nature Inspired',
-    description: 'Delve into the advantages and uses of nature-inspired sounds in sound therapy for tinnitus.',
+    description:
+      'Delve into the advantages and uses of nature-inspired sounds in sound therapy for tinnitus.',
     icon: <AudiotrackIcon />,
   },
   {
@@ -89,7 +97,8 @@ const sounds = [
     src: '/images/zen-white.jpg',
     alt: 'Zen 2 Playlist cover',
     title: 'White Noise',
-    description: 'White noise therapy utilizes a calming and constant sound to foster a sense of relaxation.',
+    description:
+      'White noise therapy utilizes a calming and constant sound to foster a sense of relaxation.',
     icon: <AudiotrackIcon />,
   },
 ];
@@ -104,7 +113,7 @@ const Home = () => {
             <StyledHeadingContainer item md={6}>
               <div>
                 <Typography component="h1" variant="h3" mb={{ xs: 2, md: 2 }}>
-                  Tinnitus Help 
+                  Tinnitus Help
                 </Typography>
                 <Grid item xs={12} md={12}>
                   <Typography component="h2" variant="h6">
@@ -118,7 +127,7 @@ const Home = () => {
               </div>
             </StyledHeadingContainer>
             <StyledLogoContainer item md={6}>
-              <Logo  />
+              <Logo />
             </StyledLogoContainer>
           </Grid>
         </StyledContainer>
@@ -126,7 +135,14 @@ const Home = () => {
         {/* Blog Articles Tab */}
         <Container>
           <StyledTabContainer>
-          <Typography gutterBottom variant="h4" component="div" align="center">Must Read Posts:</Typography>
+            <Typography
+              gutterBottom
+              variant="h4"
+              component="div"
+              align="center"
+            >
+              Must Read Posts:
+            </Typography>
             <Grid container spacing={2}>
               {articles.map((article, index) => (
                 <Grid item xs={12} sm={4} key={index}>
@@ -210,7 +226,14 @@ const Home = () => {
 
         <Container>
           <StyledTabContainer>
-          <Typography gutterBottom variant="h4" component="div" align="center">Our Sound Therapy:</Typography>
+            <Typography
+              gutterBottom
+              variant="h4"
+              component="div"
+              align="center"
+            >
+              Our Sound Therapy:
+            </Typography>
             <Grid container spacing={2}>
               {sounds.map((therapy, index) => (
                 <Grid item xs={12} sm={4} key={index}>
