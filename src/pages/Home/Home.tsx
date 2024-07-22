@@ -22,7 +22,7 @@ import {
   StyledTextContainer,
 } from './Home.styled';
 
-const articles = [
+const recommended = [
   {
     href: 'blog/what-is-tinnitus',
     src: '/images/anxiety-girl.jpg',
@@ -70,6 +70,32 @@ const articles = [
     title: 'Tinnitus and Genetics',
     description:
       'Tracing the hereditary links and delving deep into the genetic fabric of tinnitus.',
+  },
+];
+
+const latest = [
+  {
+    href: 'blog/youth-and-tinnitus',
+    src: '/images/young-tinnitus.jpg',
+    alt: 'Young Adults and Tinnitus',
+    title: 'Increasing Cases in Kids',
+    description: 'Explore the rising incidence of tinnitus among young adults.',
+  },
+  {
+    href: 'blog/seasonal-variations-in-tinnitus-symptoms',
+    src: '/images/seasonal-tinnitus.jpg',
+    alt: 'Seasonal Impact on Tinnitus',
+    title: 'Seasonal Impacts',
+    description:
+      'Explore whether tinnitus symptoms fluctuate with the seasons and uncover potential triggers.',
+  },
+  {
+    href: 'blog/technology-and-tinnitus',
+    src: '/images/health-app.jpg',
+    alt: 'Tinnitus Technology Apps',
+    title: 'Apps That Help Tinnitus',
+    description:
+      'Explore the latest technological innovations designed to manage tinnitus.',
   },
 ];
 
@@ -132,7 +158,7 @@ const Home = () => {
           </Grid>
         </StyledContainer>
 
-        {/* Blog Articles Tab */}
+        {/* Recommended Posts Tab */}
         <Container>
           <StyledTabContainer>
             <Typography
@@ -144,7 +170,7 @@ const Home = () => {
               Must Read Posts:
             </Typography>
             <Grid container spacing={2}>
-              {articles.map((article, index) => (
+              {recommended.map((article, index) => (
                 <Grid item xs={12} sm={4} key={index}>
                   <StyledCard>
                     <CardActionArea>
@@ -191,7 +217,74 @@ const Home = () => {
                     sx={{ color: 'white', borderColor: 'white' }}
                     endIcon={<DoubleArrowRoundedIcon />}
                   >
-                    Show All Articles
+                    Show All Posts
+                  </Button>
+                </NextLink>
+              </Typography>
+            </StyledTextContainer>
+          </StyledTabContainer>
+        </Container>
+
+        {/* Latest Posts Tab */}
+        <Container>
+          <StyledTabContainer>
+            <Typography
+              gutterBottom
+              variant="h4"
+              component="div"
+              align="center"
+            >
+              Latest Posts:
+            </Typography>
+            <Grid container spacing={2}>
+              {latest.map((article, index) => (
+                <Grid item xs={12} sm={4} key={index}>
+                  <StyledCard>
+                    <CardActionArea>
+                      <NextLink href={article.href} passHref>
+                        <Image
+                          src={article.src}
+                          alt={article.alt}
+                          width={310}
+                          height={180}
+                          layout="responsive"
+                        />
+                      </NextLink>
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {article.title}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {article.description}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <NextLink href={article.href} passHref>
+                        <Button
+                          size="medium"
+                          variant="outlined"
+                          color="secondary"
+                          startIcon={<ArticleIcon />}
+                        >
+                          Read More
+                        </Button>
+                      </NextLink>
+                    </CardActions>
+                  </StyledCard>
+                </Grid>
+              ))}
+            </Grid>
+            <StyledTextContainer>
+              <Typography component="h2" variant="h6" align="center">
+                <NextLink href="blog" passHref>
+                  <Button
+                    size="large"
+                    variant="text"
+                    sx={{ color: 'white', borderColor: 'white' }}
+                    endIcon={<DoubleArrowRoundedIcon />}
+                  >
+                    Show All Posts
                   </Button>
                 </NextLink>
               </Typography>
