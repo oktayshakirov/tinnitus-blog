@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.beyondtinnitus.online/sitemap.xml
+Sitemap: https://www.tinnitushelp.me/sitemap.xml
