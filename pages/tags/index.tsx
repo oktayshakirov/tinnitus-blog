@@ -1,9 +1,17 @@
 import Tags from '@ui/pages/Tags';
+import { getAllTags } from '@lib/mdx';
 
 export type Props = {
   tags: string[];
 };
 
-const ZenPage = (props: Props) => <Tags {...props} tags={['relationship']} />;
+export const getStaticProps = async () => {
+  const tags = getAllTags();
+  return {
+    props: { tags },
+  };
+};
 
-export default ZenPage;
+const TagsPage = ({ tags }: Props) => <Tags tags={tags} />;
+
+export default TagsPage;
