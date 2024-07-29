@@ -70,6 +70,17 @@ export const getAllZen = (): Article[] => {
   return zen;
 };
 
+export function fetchArticlesByTag(tag: string): Promise<Article[]> {
+  const blogArticles = getAllPosts();
+  const zenArticles = getAllZen();
+  const allArticles = [...blogArticles, ...zenArticles];
+  const filteredArticles = allArticles.filter((article) =>
+    article.meta.tags.includes(tag)
+  );
+
+  return Promise.resolve(filteredArticles);
+}
+
 export const getAllTags = (): string[] => {
   const zen = getSlugs(ZEN_PATH).map((slug) =>
     getArticleFromSlug(slug, ArticleType.ZEN)
