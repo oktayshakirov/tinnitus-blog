@@ -46,19 +46,19 @@ export const StyledLogoContainer = styled(Grid)`
       margin-top: ${theme.spacing(0)};
     }
 
-    // animation: floating 3s ease-in-out infinite;
+    animation: floating 3s ease-in-out infinite;
 
-    // @keyframes floating {
-    //   0% {
-    //     transform: translateY(0);
-    //   }
-    //   50% {
-    //     transform: translateY(-10px);
-    //   }
-    //   100% {
-    //     transform: translateY(0);
-    //   }
-    // }
+    @keyframes floating {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
   `}
 `;
 
