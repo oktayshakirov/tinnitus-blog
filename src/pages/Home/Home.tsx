@@ -305,11 +305,11 @@ const Home = () => {
                 </Typography>
                 <Grid item xs={12} md={12}>
                   <Typography component="h2" variant="h6">
-                    Find relief and inner harmony with Tinnitus Sound Therapy,
-                    featuring white noise, calming melodies, and mindful
-                    meditation. Explore the transformative power of these
-                    therapeutic sounds, alleviating tinnitus, enhancing
-                    relaxation and restoring inner balance.
+                    Discover the potential benefits of Tinnitus Sound Therapy,
+                    which includes white noise, calming melodies and mindful
+                    meditation. These therapeutic sounds may help in managing
+                    tinnitus, enhancing relaxation, and promoting a sense of
+                    inner balance.
                   </Typography>
                 </Grid>
               </div>

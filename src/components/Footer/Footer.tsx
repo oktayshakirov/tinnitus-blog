@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <StyledFooter>
-<StyledCopyright>TinnitusHelp.me © 2023 - {currentYear}</StyledCopyright>
+      <StyledCopyright>TinnitusHelp.me © 2023 - {currentYear}</StyledCopyright>
       <StyledContainer>
         <Link href="/privacy" style={{ textDecoration: 'none' }}>
           <StyledText>Privacy Policy</StyledText>
@@ -21,8 +21,12 @@ const Footer = () => {
           <StyledText>Terms of Use</StyledText>
         </Link>
         <StyledText>|</StyledText>
-      <Link href="/about" style={{ textDecoration: 'none' }}>
+        <Link href="/about" style={{ textDecoration: 'none' }}>
           <StyledText>About</StyledText>
+        </Link>
+        <StyledText>|</StyledText>
+        <Link href="/contact" style={{ textDecoration: 'none' }}>
+          <StyledText>Contact</StyledText>
         </Link>
         <StyledText>|</StyledText>
         <Link href="/faq" style={{ textDecoration: 'none' }}>
