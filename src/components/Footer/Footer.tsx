@@ -32,6 +32,10 @@ const Footer = () => {
         <Link href="/faq" style={{ textDecoration: 'none' }}>
           <StyledText>FAQ</StyledText>
         </Link>
+        <StyledText>|</StyledText>
+        <Link href="/tags" style={{ textDecoration: 'none' }}>
+          <StyledText>Tags</StyledText>
+        </Link>
       </StyledContainer>
     </StyledFooter>
   );
