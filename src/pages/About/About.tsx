@@ -61,7 +61,6 @@ const About = ({}: Props) => {
             symptoms, and ultimately find ways to thrive despite its presence.
           </p>
           <Divider style={{ margin: '20px 0' }} />
-
           <p>
             Please also familiarize yourself with our
             <Link
@@ -88,6 +87,19 @@ const About = ({}: Props) => {
               Terms of Use
             </Link>
             before using the site.
+          </p>
+          <Divider style={{ margin: '20px 0' }} />
+          <p>
+            If you have any questions, concerns, or requests regarding this
+            privacy policy or our data practices, please contact us using the
+            information provided on our{' '}
+            <Link
+              href="/contact"
+              style={{ color: '#FFFF9B', textDecoration: 'none' }}
+            >
+              contact
+            </Link>
+            page.
           </p>
         </Container>
       </Layout>
