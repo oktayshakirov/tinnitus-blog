@@ -12,10 +12,14 @@ export const StyledContainer = styled(Container)`
   ${({ theme }) => css`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap; // Allow items to wrap to the next line if needed
     justify-content: center;
     align-items: center;
     gap: ${theme.spacing(1)};
     padding: ${theme.spacing(1)};
+
+    @media (max-width: ${theme.breakpoints.values.sm}px) {
+    }
   `}
 `;
 
