@@ -7,7 +7,7 @@ export const StyledHeadline = styled('div')`
     margin: ${theme.spacing(2)} 0 ${theme.spacing(4)};
 
     ${theme.breakpoints.up('md')} {
-      margin: ${theme.spacing(4)} 0 ${theme.spacing(6)};
+      margin: ${theme.spacing(4)} 0 ${theme.spacing(0)};
     }
   `}
 `;
