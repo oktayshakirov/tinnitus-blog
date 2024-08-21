@@ -11,9 +11,8 @@ declare global {
 
 const AdComponent = () => {
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.adsbygoogle) {
-      // Push an empty object to the adsbygoogle array to render ads
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    if (window.adsbygoogle && window.adsbygoogle.length > 0) {
+      window.adsbygoogle[0].push();
     }
   }, []);
 
