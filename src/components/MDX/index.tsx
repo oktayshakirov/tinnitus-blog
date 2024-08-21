@@ -6,7 +6,6 @@ import Nav from '@components/MDX/Nav';
 import Image from '@components/MDX/Image';
 import Blockquote from '@components/MDX/Blockquote';
 import Highlighter from '@components/MDX/Highlighter';
-import AdComponent from '@components/MDX/Components/AdComponent';
 
 export const components: MDXComponents = {
   a: Link,
@@ -20,7 +19,6 @@ export const components: MDXComponents = {
   Image,
   Blockquote,
   Highlighter,
-  AdComponent,
 };
 
 type Props = {
