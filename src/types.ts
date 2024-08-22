@@ -1,3 +1,5 @@
+// src/types/types.ts
+
 import { ArticleType } from '@enums/articles';
 import { ReadTimeResults } from 'reading-time';
 
@@ -17,3 +19,9 @@ export type Article = {
   content: string;
   meta: ArticleMeta;
 };
+
+declare global {
+  interface Window {
+    adsbygoogle: unknown[];
+  }
+}
