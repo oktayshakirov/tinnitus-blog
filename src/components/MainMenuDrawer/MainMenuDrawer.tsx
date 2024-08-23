@@ -22,7 +22,7 @@ const MainMenuDrawer = ({ open, toggleMenu, ...rest }: Props) => {
       </StyledWrapper>
       <StyledNav>
         <Link href="/">Home</Link>
-        <Link href="/blog">Blog</Link>
+        <Link href="/blog">Posts</Link>
         <Link href="/zen">Sounds</Link>
         <Link href="/tags">Tags</Link>
         <Link href="/about">About</Link>
