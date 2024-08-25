@@ -14,7 +14,7 @@ const About = ({}: Props) => {
           <Headline>About TinnitusHelp.me</Headline>
           <p>
             Welcome to TinnitusHelp.me, your go-to resource for everything
-            related to tinnitus. As a student and someone living with tinnitus,
+            related to tinnitus. As someone living with tinnitus,
             I created this site to provide reliable information, support and
             resources to help you understand, manage and cope with tinnitus
             effectively.
