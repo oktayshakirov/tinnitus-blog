@@ -14,30 +14,21 @@ const Contact = ({}: Props) => {
 
           <h2>We&apos;d Love to Hear from You</h2>
           <p>
-            Whether you have questions, suggestions, or need support, we&apos;re
-            here to help. At TinnitusHelp.me, we are dedicated to providing
-            valuable resources and insights to help manage and understand
-            tinnitus. Your feedback is essential in helping us improve our
-            content and services.
+            Have questions, suggestions, or need support? We’re here to help. At
+            TinnitusHelp.me, we’re committed to providing valuable resources and
+            insights to help you better understand and manage tinnitus. Your
+            feedback is vital to our mission, helping us continually improve and
+            grow.
           </p>
 
           <h2>Contact Information</h2>
           <p>
-            For inquiries, advertising, or partnership opportunities, please
-            feel free to reach out to us:
+            For any inquiries, advertising opportunities, or partnership
+            proposals, please don’t hesitate to get in touch:
           </p>
           <ul>
             <li>
               <strong>Email:</strong>{' '}
-              <Link
-                href="mailto:info@tinnitushelp.me"
-                style={{ color: '#FFFF9B', textDecoration: 'none' }}
-              >
-                info@tinnitushelp.me
-              </Link>
-            </li>
-            <li>
-              <strong>Direct Contact:</strong>{' '}
               <Link
                 href="mailto:oktayshakirov@gmail.com"
                 style={{ color: '#FFFF9B', textDecoration: 'none' }}
@@ -45,14 +36,40 @@ const Contact = ({}: Props) => {
                 oktayshakirov@gmail.com
               </Link>
             </li>
+            <li>
+              <strong>Linkedin:</strong>{' '}
+              <Link
+                href="https://www.linkedin.com/in/oktayshakirov/"
+                style={{ color: '#FFFF9B', textDecoration: 'none' }}
+              >
+                Oktay Shakirov
+              </Link>
+            </li>
+          </ul>
+
+          <h2>More about the developer of TinnitusHelp.me:</h2>
+          <p>
+            If you’re interested in my developer journey and want to explore
+            more of my projects, check out my personal website:
+          </p>
+          <ul>
+            <li>
+              <strong>Website:</strong>{' '}
+              <Link
+                href="http://www.oktayshakirov.com"
+                style={{ color: '#FFFF9B', textDecoration: 'none' }}
+              >
+                oktayshakirov.com
+              </Link>
+            </li>
           </ul>
 
           <h2>Feedback and Suggestions</h2>
           <p>
-            We highly value the feedback and insights of our readers. If you
-            have any suggestions on how we can improve our content, website, or
-            services, please don&apos;t hesitate to share them with us. Your
-            input is crucial in helping us improve our content and community.
+            We greatly value the thoughts and suggestions of our readers. If you
+            have ideas on how we can enhance our content, website, or services,
+            we’d love to hear them. Your input is crucial in helping us create a
+            better experience for our community.
           </p>
         </Container>
       </Layout>
