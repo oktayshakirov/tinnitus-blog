@@ -32,7 +32,6 @@ const About = ({}: Props) => {
             tinnitus. I carefully curate information from trusted sources,
             presenting it in a clear and accessible way.
           </p>
-          <Divider style={{ margin: '20px 0' }} />
           <p>
             Having developed tinnitus in my twenties, I understand the
             challenges it brings—the initial shock, the confusion and the
