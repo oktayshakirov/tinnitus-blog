@@ -14,7 +14,7 @@ const About = ({}: Props) => {
           <Headline>About TinnitusHelp.me</Headline>
           <p>
             Welcome to TinnitusHelp.me, your go-to resource for everything
-            related to tinnitus. As a student and someone living with tinnitus,
+            related to tinnitus. As someone living with tinnitus,
             I created this site to provide reliable information, support and
             resources to help you understand, manage and cope with tinnitus
             effectively.
@@ -32,7 +32,6 @@ const About = ({}: Props) => {
             tinnitus. I carefully curate information from trusted sources,
             presenting it in a clear and accessible way.
           </p>
-          <Divider style={{ margin: '20px 0' }} />
           <p>
             Having developed tinnitus in my twenties, I understand the
             challenges it brings—the initial shock, the confusion and the
