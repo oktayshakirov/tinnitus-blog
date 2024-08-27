@@ -42,8 +42,8 @@ export const global = css`
 
   ins.adsbygoogle {
     display: block;
-    margin: ${theme.spacing(3)} auto;
-    max-width: 100%;
+    margin: 0 auto;
+    width: 90%;
     padding: ${theme.spacing(3)};
     background-color: rgba(0, 0, 0, 0.05);
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
@@ -52,7 +52,6 @@ export const global = css`
     box-sizing: border-box;
     color: ${theme.palette.text.primary};
     overflow: hidden;
-    width: 100%;
 
     ${theme.breakpoints.up('md')} {
       padding: ${theme.spacing(5)};
