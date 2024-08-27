@@ -65,12 +65,25 @@ export const StyledLogoContainer = styled(Grid)`
 export const StyledCard = styled(Card)`
   ${({ theme }) => css`
     max-width: 345px;
+    height: 400px;
     background-color: rgba(0, 0, 0, 0.4);
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
     border-radius: 25px 0 25px 0;
     margin: auto;
     margin-top: ${theme.spacing(3)};
     margin-bottom: ${theme.spacing(3)};
+    display: flex;
+    flex-direction: column;
+
+    .MuiCardContent-root {
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .MuiCardActions-root {
+      margin-top: auto;
+    }
   `}
 `;
 
