@@ -51,6 +51,8 @@ export const global = css`
     text-align: center;
     box-sizing: border-box;
     color: ${theme.palette.text.primary};
+    overflow: hidden; /* Ensures content stays inside the box */
+    width: 100%; /* Make sure ads do not exceed container width */
 
     ${theme.breakpoints.up('md')} {
       padding: ${theme.spacing(5)};
