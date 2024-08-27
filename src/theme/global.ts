@@ -41,20 +41,14 @@ export const global = css`
   }
 
   ins.adsbygoogle {
-    display: block;
-    margin: 0 auto;
-    width: 90%;
-    padding: ${theme.spacing(3)};
-    background-color: rgba(0, 0, 0, 0.05);
+    display: block !important;
+    margin: 0 auto !important;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05) !important;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 25px;
-    text-align: center;
-    box-sizing: border-box;
-    color: ${theme.palette.text.primary};
-    overflow: hidden;
-
-    ${theme.breakpoints.up('md')} {
-      padding: ${theme.spacing(5)};
-    }
+    border-radius: 25px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 `;
