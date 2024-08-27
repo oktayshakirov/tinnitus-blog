@@ -41,14 +41,9 @@ export const global = css`
   }
 
   ins.adsbygoogle {
-    display: block !important;
-    margin: 0 auto !important;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.05) !important;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    margin 1px 0 0 0 !important;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     border-radius: 25px !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
     overflow: hidden !important;
   }
 `;
