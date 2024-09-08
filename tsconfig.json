@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -16,30 +16,14 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@const/*": [
-        "./src/const/*"
-      ],
-      "@enums/*": [
-        "./src/enums/*"
-      ],
-      "@lib/*": [
-        "./src/lib/*"
-      ],
-      "@pages/*": [
-        "./pages/*"
-      ],
-      "@ui/pages/*": [
-        "./src/pages/*"
-      ],
-      "@theme/*": [
-        "./src/theme/*"
-      ],
-      "@types": [
-        "./src/types"
-      ]
+      "@components/*": ["./src/components/*"],
+      "@const/*": ["./src/const/*"],
+      "@enums/*": ["./src/enums/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@pages/*": ["./pages/*"],
+      "@ui/pages/*": ["./src/pages/*"],
+      "@theme/*": ["./src/theme/*"],
+      "@types": ["./src/types"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
