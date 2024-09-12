@@ -1,15 +1,13 @@
 import { css } from '@emotion/react';
 import { colors } from './colors';
-import { Inter } from 'next/font/google';
 import { theme } from '@theme/theme';
-
-const inter = Inter({ weight: ['400', '600'], subsets: ['latin'] });
 
 export const global = css`
   body {
     background: ${colors.gradient}, ${colors.primary};
     color: ${theme.palette.grey[200]}!important;
-    font-family: ${inter.style.fontFamily};
+    fontFamily: 'Nunito, sans-serif;
+    font-size: 1.1rem;
   }
 
   h1,
