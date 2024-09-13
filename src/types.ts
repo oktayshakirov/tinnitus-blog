@@ -13,6 +13,7 @@ export type ArticleMeta = {
   image: string;
   readingTime: ReadTimeResults;
   type: ArticleType;
+  featured: boolean;
 };
 
 export type Article = {
