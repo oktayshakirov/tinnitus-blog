@@ -22,7 +22,7 @@ const HomePage = ({ latestPosts, latestZen, featuredPosts }: HomePageProps) => {
 export const getServerSideProps: GetServerSideProps = async () => {
   const latestPosts = getAllPosts()
     .map((post) => post.meta)
-    .slice(0, 3);
+    .slice(0, 6);
   const latestZen = getAllZen()
     .map((post) => post.meta)
     .slice(0, 3);
