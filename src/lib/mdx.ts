@@ -40,6 +40,7 @@ export const getArticleFromSlug = (
       tags: (data.tags ?? []).sort(),
       date: (data.date ?? new Date()).toString(),
       image: data.image ?? '',
+      featured: data.featured ?? false, // Adding featured field here
       type,
       readingTime,
     },
@@ -68,6 +69,19 @@ export const getAllZen = (): Article[] => {
     })
     .reverse();
   return zen;
+};
+
+export const getFeaturedPosts = (): Article[] => {
+  const posts = getAllPosts()
+    .filter((post) => post.meta.featured === true)
+    .sort((b, a) => {
+      if (new Date(a.meta.date) > new Date(b.meta.date)) return 1;
+      if (new Date(a.meta.date) < new Date(b.meta.date)) return -1;
+      return 0;
+    })
+    .reverse();
+
+  return posts;
 };
 
 export function fetchArticlesByTag(tag: string): Promise<Article[]> {

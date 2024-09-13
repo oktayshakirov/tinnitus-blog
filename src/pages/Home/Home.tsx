@@ -26,60 +26,10 @@ import { ArticleMeta } from '@types';
 type HomeProps = {
   latestPosts: ArticleMeta[];
   latestZen: ArticleMeta[];
+  featuredPosts: ArticleMeta[];
 };
 
-const recommended = [
-  {
-    href: 'blog/what-is-tinnitus',
-    src: '/images/anxiety-girl.jpg',
-    alt: 'Anxious girl',
-    title: 'What is Tinnitus?',
-    description:
-      'Learn about the perception of sound without an external source.',
-  },
-  {
-    href: 'blog/managing-tinnitus',
-    src: '/images/yoga-dog.jpg',
-    alt: 'Yoga and Dog',
-    title: 'Managing Tinnitus',
-    description:
-      'Discover effective strategies for managing tinnitus and improving your quality of life.',
-  },
-  {
-    href: 'blog/the-power-of-white-noise',
-    src: '/images/girl-with-headphones.jpg',
-    alt: 'Girl with headphones',
-    title: 'The Power of White Noise',
-    description:
-      'Exploring the benefits and applications of sound therapy for managing tinnitus.',
-  },
-  {
-    href: 'blog/tinnitus-in-musicians',
-    src: '/images/musician.jpg',
-    alt: 'Musician',
-    title: 'Tinnitus in Musicians',
-    description:
-      'Exploring the prevalence of tinnitus among musicians and DJs.',
-  },
-  {
-    href: 'blog/tinnitus-in-history',
-    src: '/images/tinnitus-history2.jpg',
-    alt: 'Ancient Sculpture',
-    title: 'Historical Contexts',
-    description:
-      'A journey through time, exploring how ancient civilizations perceived tinnitus.',
-  },
-  {
-    href: 'blog/tinnitus-and-genetics',
-    src: '/images/genetics.jpg',
-    alt: 'Female Doctor',
-    title: 'Tinnitus and Genetics',
-    description:
-      'Tracing the hereditary links and delving deep into the genetic fabric of tinnitus.',
-  },
-];
-
-const Home = ({ latestPosts, latestZen }: HomeProps) => {
+const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
   return (
     <>
       <HomeSEO />
@@ -107,8 +57,6 @@ const Home = ({ latestPosts, latestZen }: HomeProps) => {
             </StyledLogoContainer>
           </Grid>
         </StyledContainer>
-
-        {/* Recommended Posts Tab */}
         <Container>
           <StyledTabContainer>
             <Typography
@@ -117,24 +65,24 @@ const Home = ({ latestPosts, latestZen }: HomeProps) => {
               component="div"
               align="center"
             >
-              Must Read Posts:
+              Featured Posts:
             </Typography>
             <Grid container spacing={2}>
-              {recommended.map((article, index) => (
-                <Grid item xs={12} sm={4} key={index}>
+              {featuredPosts.map((article) => (
+                <Grid item xs={12} sm={4} key={article.slug}>
                   <StyledCard>
                     <CardActionArea>
-                      <NextLink href={article.href} passHref>
+                      <NextLink href={`/blog/${article.slug}`} passHref>
                         <Image
-                          src={article.src}
-                          alt={article.alt}
+                          src={article.image}
+                          alt={article.title}
                           width={310}
                           height={180}
                           layout="responsive"
                         />
                       </NextLink>
                       <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography gutterBottom variant="h6" component="div">
                           {article.title}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
@@ -143,7 +91,7 @@ const Home = ({ latestPosts, latestZen }: HomeProps) => {
                       </CardContent>
                     </CardActionArea>
                     <CardActions>
-                      <NextLink href={article.href} passHref>
+                      <NextLink href={`/blog/${article.slug}`} passHref>
                         <Button
                           size="medium"
                           variant="outlined"
@@ -160,7 +108,7 @@ const Home = ({ latestPosts, latestZen }: HomeProps) => {
             </Grid>
             <StyledTextContainer>
               <Typography component="h2" variant="h6" align="center">
-                <NextLink href="blog" passHref>
+                <NextLink href="/blog" passHref>
                   <Button
                     size="large"
                     variant="text"
@@ -174,8 +122,6 @@ const Home = ({ latestPosts, latestZen }: HomeProps) => {
             </StyledTextContainer>
           </StyledTabContainer>
         </Container>
-
-        {/* Latest Posts Tab */}
         <Container>
           <StyledTabContainer>
             <Typography
@@ -241,8 +187,6 @@ const Home = ({ latestPosts, latestZen }: HomeProps) => {
             </StyledTextContainer>
           </StyledTabContainer>
         </Container>
-
-        {/* Sound Therapy Tab */}
         <StyledContainer>
           <Grid container spacing={2}>
             <StyledLogoContainer item md={6}>
@@ -266,7 +210,6 @@ const Home = ({ latestPosts, latestZen }: HomeProps) => {
             </StyledHeadingContainer>
           </Grid>
         </StyledContainer>
-
         <Container>
           <StyledTabContainer>
             <Typography
