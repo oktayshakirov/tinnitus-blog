@@ -21,6 +21,12 @@ import {
   StyledTabContainer,
   StyledTextContainer,
 } from './Home.styled';
+import { ArticleMeta } from '@types';
+
+type HomeProps = {
+  latestPosts: ArticleMeta[];
+  latestZen: ArticleMeta[];
+};
 
 const recommended = [
   {
@@ -73,63 +79,7 @@ const recommended = [
   },
 ];
 
-const latest = [
-  {
-    href: 'blog/youth-and-tinnitus',
-    src: '/images/young-tinnitus.jpg',
-    alt: 'Young Adults and Tinnitus',
-    title: 'Increasing Cases in Kids',
-    description: 'Explore the rising incidence of tinnitus among young adults.',
-  },
-  {
-    href: 'blog/seasonal-variations-in-tinnitus-symptoms',
-    src: '/images/seasonal-tinnitus.jpg',
-    alt: 'Seasonal Impact on Tinnitus',
-    title: 'Seasonal Impacts',
-    description:
-      'Explore whether tinnitus symptoms fluctuate with the seasons and uncover potential triggers.',
-  },
-  {
-    href: 'blog/technology-and-tinnitus',
-    src: '/images/health-app.jpg',
-    alt: 'Tinnitus Technology Apps',
-    title: 'Apps That Help Tinnitus',
-    description:
-      'Explore the latest technological innovations designed to manage tinnitus.',
-  },
-];
-
-const sounds = [
-  {
-    href: 'zen/water-sounds',
-    src: '/images/waterfall-man.jpg',
-    alt: 'Zen 1 Playlist cover',
-    title: 'Water Sounds',
-    description:
-      'Water Sounds bring relaxation with calming consistent effect.',
-    icon: <AudiotrackIcon />,
-  },
-  {
-    href: 'zen/nature-sounds',
-    src: '/images/zen-nature.jpg',
-    alt: 'Zen 3 Playlist cover',
-    title: 'Nature Inspired',
-    description:
-      'Delve into the advantages and uses of nature-inspired sounds in sound therapy for tinnitus.',
-    icon: <AudiotrackIcon />,
-  },
-  {
-    href: 'zen/white-noise',
-    src: '/images/zen-white.jpg',
-    alt: 'Zen 2 Playlist cover',
-    title: 'White Noise',
-    description:
-      'White noise therapy utilizes a calming and constant sound to foster a sense of relaxation.',
-    icon: <AudiotrackIcon />,
-  },
-];
-
-const Home = () => {
+const Home = ({ latestPosts, latestZen }: HomeProps) => {
   return (
     <>
       <HomeSEO />
@@ -237,21 +187,21 @@ const Home = () => {
               Latest Posts:
             </Typography>
             <Grid container spacing={2}>
-              {latest.map((article, index) => (
-                <Grid item xs={12} sm={4} key={index}>
+              {latestPosts.map((article) => (
+                <Grid item xs={12} sm={4} key={article.slug}>
                   <StyledCard>
                     <CardActionArea>
-                      <NextLink href={article.href} passHref>
+                      <NextLink href={`/blog/${article.slug}`} passHref>
                         <Image
-                          src={article.src}
-                          alt={article.alt}
+                          src={article.image}
+                          alt={article.title}
                           width={310}
                           height={180}
                           layout="responsive"
                         />
                       </NextLink>
                       <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography gutterBottom variant="h6" component="div">
                           {article.title}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
@@ -260,7 +210,7 @@ const Home = () => {
                       </CardContent>
                     </CardActionArea>
                     <CardActions>
-                      <NextLink href={article.href} passHref>
+                      <NextLink href={`/blog/${article.slug}`} passHref>
                         <Button
                           size="medium"
                           variant="outlined"
@@ -277,7 +227,7 @@ const Home = () => {
             </Grid>
             <StyledTextContainer>
               <Typography component="h2" variant="h6" align="center">
-                <NextLink href="blog" passHref>
+                <NextLink href="/blog" passHref>
                   <Button
                     size="large"
                     variant="text"
@@ -328,21 +278,21 @@ const Home = () => {
               Our Sound Therapy:
             </Typography>
             <Grid container spacing={2}>
-              {sounds.map((therapy, index) => (
-                <Grid item xs={12} sm={4} key={index}>
+              {latestZen.map((therapy) => (
+                <Grid item xs={12} sm={4} key={therapy.slug}>
                   <StyledCard>
                     <CardActionArea>
-                      <NextLink href={therapy.href} passHref>
+                      <NextLink href={`/zen/${therapy.slug}`} passHref>
                         <Image
-                          src={therapy.src}
-                          alt={therapy.alt}
+                          src={therapy.image}
+                          alt={therapy.title}
                           width={310}
                           height={180}
                           layout="responsive"
                         />
                       </NextLink>
                       <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography gutterBottom variant="h6" component="div">
                           {therapy.title}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
@@ -351,12 +301,12 @@ const Home = () => {
                       </CardContent>
                     </CardActionArea>
                     <CardActions>
-                      <NextLink href={therapy.href} passHref>
+                      <NextLink href={`/zen/${therapy.slug}`} passHref>
                         <Button
                           size="medium"
                           variant="outlined"
                           color="secondary"
-                          startIcon={therapy.icon}
+                          startIcon={<AudiotrackIcon />}
                         >
                           Listen Now
                         </Button>
