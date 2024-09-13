@@ -65,7 +65,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
               component="div"
               align="center"
             >
-              Featured Posts:
+              Must Read Posts:
             </Typography>
             <Grid container spacing={2}>
               {featuredPosts.map((article) => (
@@ -218,7 +218,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
               component="div"
               align="center"
             >
-              Our Sound Therapy:
+              Latest Sounds:
             </Typography>
             <Grid container spacing={2}>
               {latestZen.map((therapy) => (
