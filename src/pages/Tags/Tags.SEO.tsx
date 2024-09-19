@@ -2,10 +2,9 @@ import { NextSeo } from 'next-seo';
 import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 
 const TagsSEO = () => {
-  // TODO FIX META INFO
-  const title = "TinnitusHelp.me | Tags";
+  const title = `${DOMAIN_NAME} | Tags`;
   const description =
-    'What is Tinnitus? How can I find relief from its effects? The ultimate guide to modern tinnitus management will provide answers to these inquiries and more.';
+    'Explore various tinnitus-related topics and keywords through our comprehensive tags page. Quickly find articles, guides, and resources categorized by key terms to help you manage and understand tinnitus better. Discover the content that matters most to you, tailored to your specific needs and interests in tinnitus management and relief.';
   const canonical = `${DOMAIN}/tags`;
   const imageUrl = `${DOMAIN}${DEFAULT_OG_IMAGE}`;
 

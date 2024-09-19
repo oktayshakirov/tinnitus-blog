@@ -2,9 +2,9 @@ import { NextSeo } from 'next-seo';
 import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 
 const ZenSEO = () => {
-  const title = 'Sound Therapy for Tinnitus';
+  const title = `${DOMAIN_NAME} | Sound Therapy - Relaxing Sounds for Tinnitus Relief`;
   const description =
-    "Living with tinnitus can be challenging, but you're not alone. Discover valuable tips and resources to manage and cope with tinnitus. Explore treatment options, lifestyle adjustments and support. Empower yourself with comprehensive resources. Everyone's experience with tinnitus is unique. Find strategies that suit your needs.";
+    "Sound therapy designed to relieve tinnitus symptoms. Explore calming sounds and therapeutic audio to help mask tinnitus and promote relaxation. Whether you're looking for white noise, nature sounds, or specialized tinnitus relief tones, our collection offers effective solutions to enhance your well-being.";
   const canonical = `${DOMAIN}/zen`;
   const imageUrl = `${DOMAIN}${DEFAULT_OG_IMAGE}`;
 

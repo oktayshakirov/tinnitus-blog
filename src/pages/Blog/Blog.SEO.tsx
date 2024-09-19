@@ -2,9 +2,9 @@ import { NextSeo } from 'next-seo';
 import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 
 const BlogSEO = () => {
-  const title = 'TinnitusHelp.me | Blog';
+  const title = `${DOMAIN_NAME} | Blog - Tips, Treatments, and Resources for Tinnitus Management`;
   const description =
-    "Living with tinnitus can be challenging, but you're not alone. Discover valuable tips and resources to manage and cope with tinnitus. Explore treatment options, lifestyle adjustments and support. Empower yourself with comprehensive resources. Everyone's experience with tinnitus is unique. Find strategies that suit your needs.";
+    'Explore our Tinnitus Help Blog for expert advice, treatment options, and practical tips to manage tinnitus. Stay informed with the latest research, lifestyle adjustments, and personal strategies to cope with tinnitus. Empower yourself with actionable insights and comprehensive resources to improve your well-being.';
   const canonical = `${DOMAIN}/blog`;
   const imageUrl = `${DOMAIN}${DEFAULT_OG_IMAGE}`;
 
