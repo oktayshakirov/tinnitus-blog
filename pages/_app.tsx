@@ -35,7 +35,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
           crossOrigin="anonymous"
         ></script>
-        <link rel="canonical" href="https://www.tinnitushelp.me/" />
       </Head>
       <Script
         strategy="afterInteractive"
