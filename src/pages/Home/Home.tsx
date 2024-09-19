@@ -194,7 +194,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </StyledLogoContainer>
             <StyledHeadingContainer item md={6}>
               <div>
-                <Typography component="h1" variant="h3" mb={{ xs: 2, md: 2 }}>
+                <Typography component="h2" variant="h3" mb={{ xs: 2, md: 2 }}>
                   The Power of Sound
                 </Typography>
                 <Grid item xs={12} md={12}>
