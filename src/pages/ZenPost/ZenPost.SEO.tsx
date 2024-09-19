@@ -8,6 +8,7 @@ type Props = {
   slug: string;
   createdAt: string;
   updatedAt: string;
+  tags?: string[];
 };
 const ZenPostSEO = ({
   title,
@@ -16,6 +17,7 @@ const ZenPostSEO = ({
   slug,
   createdAt,
   updatedAt,
+  tags = [],
 }: Props) => {
   const canonical = `${DOMAIN}/Zen/${slug}`;
   const imageUrl = `${DOMAIN}${image}`;
@@ -45,6 +47,7 @@ const ZenPostSEO = ({
           publisherName={DOMAIN_NAME}
           datePublished={new Date(createdAt)?.toISOString()}
           dateModified={new Date(updatedAt)?.toISOString()}
+          keywords={tags}
         />
       )}
     </>

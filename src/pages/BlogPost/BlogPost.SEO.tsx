@@ -8,6 +8,7 @@ type Props = {
   slug: string;
   createdAt: string;
   updatedAt: string;
+  tags?: string[];
 };
 const BlogPostSEO = ({
   title,
@@ -16,6 +17,7 @@ const BlogPostSEO = ({
   slug,
   createdAt,
   updatedAt,
+  tags = [],
 }: Props) => {
   const canonical = `${DOMAIN}/blog/${slug}`;
   const imageUrl = `${DOMAIN}${image}`;
@@ -30,7 +32,12 @@ const BlogPostSEO = ({
           url: canonical,
           title: title,
           description: description,
-          images: [{ url: imageUrl, type: 'image/jpeg' }],
+          type: 'article',
+          article: {
+            publishedTime: new Date(createdAt)?.toISOString(),
+            modifiedTime: new Date(updatedAt)?.toISOString(),
+          },
+          images: [{ url: imageUrl, type: 'image/jpeg', alt: title }],
           siteName: DOMAIN_NAME,
         }}
       />
@@ -45,6 +52,7 @@ const BlogPostSEO = ({
           publisherName={DOMAIN_NAME}
           datePublished={new Date(createdAt)?.toISOString()}
           dateModified={new Date(updatedAt)?.toISOString()}
+          keywords={tags}
         />
       )}
     </>
