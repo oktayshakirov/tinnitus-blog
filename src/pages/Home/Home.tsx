@@ -89,7 +89,6 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                       <NextLink href={`/blog/${article.slug}`} passHref>
                         <Button
                           size="medium"
-                          variant="outlined"
                           color="secondary"
                           startIcon={<ArticleIcon />}
                         >
@@ -149,7 +148,6 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                       <NextLink href={`/blog/${article.slug}`} passHref>
                         <Button
                           size="medium"
-                          variant="outlined"
                           color="secondary"
                           startIcon={<ArticleIcon />}
                         >
@@ -232,7 +230,6 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                       <NextLink href={`/zen/${therapy.slug}`} passHref>
                         <Button
                           size="medium"
-                          variant="outlined"
                           color="secondary"
                           startIcon={<AudiotrackIcon />}
                         >
