@@ -65,7 +65,6 @@ export const StyledLogoContainer = styled(Grid)`
 export const StyledCard = styled(Card)`
   ${({ theme }) => css`
     max-width: 345px;
-    height: 430px;
     background-color: rgba(0, 0, 0, 0.4);
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
     border-radius: 25px 0 25px 0;
@@ -95,7 +94,7 @@ export const StyledCard = styled(Card)`
     .MuiCardActions-root {
       margin-top: auto;
       padding-bottom: ${theme.spacing(2)};
-      justify-content: flex-end;
+      justify-content: center;
     }
   `}
 `;
