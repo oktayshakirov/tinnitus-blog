@@ -65,24 +65,37 @@ export const StyledLogoContainer = styled(Grid)`
 export const StyledCard = styled(Card)`
   ${({ theme }) => css`
     max-width: 345px;
-    height: 400px;
+    height: 430px;
     background-color: rgba(0, 0, 0, 0.4);
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
     border-radius: 25px 0 25px 0;
     margin: auto;
     margin-top: ${theme.spacing(3)};
-    margin-bottom: ${theme.spacing(3)};
+    margin-bottom: ${theme.spacing(1)};
     display: flex;
     flex-direction: column;
 
-    .MuiCardContent-root {
-      flex-grow: 1;
+    h2 {
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-top: auto;
+    }
+
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      margin-top: auto;
     }
 
     .MuiCardActions-root {
       margin-top: auto;
+      padding-bottom: ${theme.spacing(2)};
+      justify-content: flex-end;
     }
   `}
 `;
@@ -103,5 +116,6 @@ export const StyledTextContainer = styled(Container)`
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.09);
     border-radius: 25px;
     padding: ${theme.spacing(1)};
+    margin-top: ${theme.spacing(6)};
   `}
 `;

@@ -59,12 +59,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
         </StyledContainer>
         <Container>
           <StyledTabContainer>
-            <Typography
-              gutterBottom
-              variant="h4"
-              component="div"
-              align="center"
-            >
+            <Typography gutterBottom variant="h4" align="center">
               Must Read Posts:
             </Typography>
             <Grid container spacing={2}>
@@ -82,10 +77,10 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                         />
                       </NextLink>
                       <CardContent>
-                        <Typography gutterBottom variant="h6" component="div">
+                        <Typography gutterBottom component="h2" variant="h6">
                           {article.title}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body1" color="text.secondary">
                           {article.description}
                         </Typography>
                       </CardContent>
@@ -124,12 +119,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
         </Container>
         <Container>
           <StyledTabContainer>
-            <Typography
-              gutterBottom
-              variant="h4"
-              component="div"
-              align="center"
-            >
+            <Typography gutterBottom variant="h4" align="center">
               Latest Posts:
             </Typography>
             <Grid container spacing={2}>
@@ -147,10 +137,10 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                         />
                       </NextLink>
                       <CardContent>
-                        <Typography gutterBottom variant="h6" component="div">
+                        <Typography gutterBottom component="h2" variant="h6">
                           {article.title}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body1" color="text.secondary">
                           {article.description}
                         </Typography>
                       </CardContent>
@@ -212,12 +202,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
         </StyledContainer>
         <Container>
           <StyledTabContainer>
-            <Typography
-              gutterBottom
-              variant="h4"
-              component="div"
-              align="center"
-            >
+            <Typography gutterBottom variant="h4" align="center">
               Latest Sounds:
             </Typography>
             <Grid container spacing={2}>
@@ -235,10 +220,10 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                         />
                       </NextLink>
                       <CardContent>
-                        <Typography gutterBottom variant="h6" component="div">
+                        <Typography gutterBottom component="h2" variant="h6">
                           {therapy.title}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body1" color="text.secondary">
                           {therapy.description}
                         </Typography>
                       </CardContent>
