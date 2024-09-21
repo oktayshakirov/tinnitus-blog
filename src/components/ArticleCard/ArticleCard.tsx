@@ -23,6 +23,7 @@ type Props = {
   index?: number;
   withTags?: boolean;
 } & AllHTMLAttributes<HTMLDivElement>;
+
 const ArticleCard = ({ className, article, index, withTags }: Props) => {
   const { title, description, slug, image, date, tags, type, readingTime } =
     article;
@@ -41,7 +42,7 @@ const ArticleCard = ({ className, article, index, withTags }: Props) => {
             <Typography component="p">{description}</Typography>
           </StyledContent>
         </StyledLink>
-        {withTags && (
+        {withTags && type === ArticleType.POST && (
           <>
             <StyledDivider />
             <StyledFooter>
