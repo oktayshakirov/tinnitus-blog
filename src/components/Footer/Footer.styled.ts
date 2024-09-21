@@ -12,7 +12,7 @@ export const StyledContainer = styled(Container)`
   ${({ theme }) => css`
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; // Allow items to wrap to the next line if needed
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: ${theme.spacing(1)};
@@ -31,5 +31,28 @@ export const StyledText = styled('div')`
   ${({ theme }) => css`
     font-size: ${theme.typography.body2.fontSize};
     color: ${theme.palette.text.secondary};
+  `}
+`;
+
+export const StyledIconContainer = styled('div')`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: center;
+    gap: ${theme.spacing(2)};
+    margin-top: ${theme.spacing(2)};
+
+    a {
+      color: ${theme.palette.text.secondary};
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: ${theme.palette.primary.main};
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
   `}
 `;

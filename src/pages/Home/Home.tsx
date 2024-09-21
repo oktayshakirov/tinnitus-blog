@@ -79,6 +79,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                           alt={article.title}
                           width={310}
                           height={180}
+                          layout="responsive"
                         />
                       </NextLink>
                       <CardContent>
@@ -109,20 +110,6 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                 </Grid>
               ))}
             </Grid>
-            <StyledTextContainer>
-              <Typography component="h2" variant="h6" align="center">
-                <NextLink href="/blog" passHref>
-                  <Button
-                    size="large"
-                    variant="text"
-                    sx={{ color: 'white', borderColor: 'white' }}
-                    endIcon={<DoubleArrowRoundedIcon />}
-                  >
-                    Show All Posts
-                  </Button>
-                </NextLink>
-              </Typography>
-            </StyledTextContainer>
           </StyledTabContainer>
         </Container>
         <Container>
@@ -141,6 +128,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                           alt={article.title}
                           width={310}
                           height={180}
+                          layout="responsive"
                         />
                       </NextLink>
                       <CardContent>
@@ -226,6 +214,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                           alt={therapy.title}
                           width={310}
                           height={180}
+                          layout="responsive"
                         />
                       </NextLink>
                       <CardContent>

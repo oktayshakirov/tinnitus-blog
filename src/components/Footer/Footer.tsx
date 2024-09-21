@@ -1,9 +1,11 @@
 import Link from '@components/Link';
+import { FaFacebook, FaGithub } from 'react-icons/fa';
 import {
   StyledFooter,
   StyledContainer,
   StyledCopyright,
   StyledText,
+  StyledIconContainer,
 } from '@components/Footer/Footer.styled';
 
 const Footer = () => {
@@ -37,6 +39,23 @@ const Footer = () => {
           <StyledText>Tags</StyledText>
         </Link>
       </StyledContainer>
+
+      <StyledIconContainer>
+        <Link
+          href="https://www.facebook.com/www.tinnitushelp.me/"
+          target="_blank"
+          aria-label="Facebook"
+        >
+          <FaFacebook size={24} />
+        </Link>
+        <Link
+          href="https://github.com/oktayshakirov/tinnitus-blog"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <FaGithub size={24} />
+        </Link>
+      </StyledIconContainer>
     </StyledFooter>
   );
 };
