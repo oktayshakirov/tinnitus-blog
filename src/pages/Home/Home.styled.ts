@@ -90,12 +90,6 @@ export const StyledCard = styled(Card)`
       white-space: normal;
       margin-top: auto;
     }
-
-    .MuiCardActions-root {
-      margin-top: auto;
-      padding-bottom: ${theme.spacing(2)};
-      justify-content: center;
-    }
   `}
 `;
 
@@ -115,6 +109,6 @@ export const StyledTextContainer = styled(Container)`
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.09);
     border-radius: 25px;
     padding: ${theme.spacing(1)};
-    margin-top: ${theme.spacing(6)};
+    margin-top: ${theme.spacing(3)};
   `}
 `;

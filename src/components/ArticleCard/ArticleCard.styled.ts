@@ -23,7 +23,6 @@ export const StyledContent = styled('div')`
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      
     }
 
     p {
@@ -33,7 +32,6 @@ export const StyledContent = styled('div')`
       text-overflow: ellipsis;
       overflow: hidden;
       color: ${theme.palette.text.secondary};
-      
     }
   `}
 `;
@@ -48,7 +46,6 @@ export const StyledDate = styled(Chip)`
     left: ${theme.spacing(2)};
     z-index: 1;
     font-weight: bold;
-
   `}
 `;
 
@@ -109,10 +106,8 @@ export const StyledTags = styled('div')`
     align-items: center;
     gap: ${theme.spacing(2)};
     overflow-x: scroll;
-
-    /* Hide scrollbar */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     &::-webkit-scrollbar {
       display: none;
