@@ -4,7 +4,7 @@ import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 const BlogSEO = () => {
   const title = `${DOMAIN_NAME} | Blog - Tips, Treatments, and Resources for Tinnitus Management`;
   const description =
-    'Explore our Tinnitus Help Blog for expert advice, treatment options, and practical tips to manage tinnitus. Stay informed with the latest research, lifestyle adjustments, and personal strategies to cope with tinnitus. Empower yourself with actionable insights and comprehensive resources to improve your well-being.';
+    'Explore our Tinnitus Help Blog for practical tips, treatments, and expert advice. Find relief with research-backed strategies, lifestyle tips, and proven solutions to manage tinnitus.';
   const canonical = `${DOMAIN}/blog`;
   const imageUrl = `${DOMAIN}${DEFAULT_OG_IMAGE}`;
 

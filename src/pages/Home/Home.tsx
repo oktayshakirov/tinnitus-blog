@@ -6,10 +6,8 @@ import Logo2 from '@components/Logo2';
 import Layout from '@components/Layout';
 import HomeSEO from './Home.SEO';
 import CardContent from '@mui/material/CardContent';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-import ArticleIcon from '@mui/icons-material/Article';
+import { Button, CardActionArea } from '@mui/material';
 import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
-import AudiotrackIcon from '@mui/icons-material/Audiotrack';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import NextLink from 'next/link';
 import Image from 'next/image';
@@ -22,6 +20,14 @@ import {
   StyledTextContainer,
 } from './Home.styled';
 import { ArticleMeta } from '@types';
+import {
+  FaSpotify,
+  FaYoutube,
+  FaApple,
+  FaAmazon,
+  FaDeezer,
+} from 'react-icons/fa';
+import { Divider } from '@mui/material';
 
 type HomeProps = {
   latestPosts: ArticleMeta[];
@@ -83,19 +89,23 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                         <Typography variant="body1" color="text.secondary">
                           {article.description}
                         </Typography>
+                        <Divider sx={{ margin: '16px 0' }} />
+                        <div
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            marginTop: '8px',
+                          }}
+                        >
+                          <Typography variant="body2" color="text.secondary">
+                            {article.readingTime.text}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {article.date}
+                          </Typography>
+                        </div>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions>
-                      <NextLink href={`/blog/${article.slug}`} passHref>
-                        <Button
-                          size="medium"
-                          color="secondary"
-                          startIcon={<ArticleIcon />}
-                        >
-                          Read More
-                        </Button>
-                      </NextLink>
-                    </CardActions>
                   </StyledCard>
                 </Grid>
               ))}
@@ -142,19 +152,23 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                         <Typography variant="body1" color="text.secondary">
                           {article.description}
                         </Typography>
+                        <Divider sx={{ margin: '16px 0' }} />
+                        <div
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            marginTop: '8px',
+                          }}
+                        >
+                          <Typography variant="body2" color="text.secondary">
+                            {article.readingTime.text}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {article.date}
+                          </Typography>
+                        </div>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions>
-                      <NextLink href={`/blog/${article.slug}`} passHref>
-                        <Button
-                          size="medium"
-                          color="secondary"
-                          startIcon={<ArticleIcon />}
-                        >
-                          Read More
-                        </Button>
-                      </NextLink>
-                    </CardActions>
                   </StyledCard>
                 </Grid>
               ))}
@@ -224,19 +238,22 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                         <Typography variant="body1" color="text.secondary">
                           {therapy.description}
                         </Typography>
+                        <Divider sx={{ margin: '16px 0' }} />
+                        <div
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-around',
+                            padding: '8px 0',
+                          }}
+                        >
+                          <FaSpotify size={24} />
+                          <FaYoutube size={24} />
+                          <FaApple size={24} />
+                          <FaAmazon size={24} />
+                          <FaDeezer size={24} />
+                        </div>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions>
-                      <NextLink href={`/zen/${therapy.slug}`} passHref>
-                        <Button
-                          size="medium"
-                          color="secondary"
-                          startIcon={<AudiotrackIcon />}
-                        >
-                          Listen Now
-                        </Button>
-                      </NextLink>
-                    </CardActions>
                   </StyledCard>
                 </Grid>
               ))}
