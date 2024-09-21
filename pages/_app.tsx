@@ -30,12 +30,12 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
+      <Script
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
+        crossOrigin="anonymous"
+      />
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
@@ -54,6 +54,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           `,
         }}
       />
+
       <DefaultSeo {...SEO_CONFIG} />
       <ThemeProvider theme={theme}>
         <CssBaseline />
