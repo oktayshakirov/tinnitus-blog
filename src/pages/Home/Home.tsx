@@ -77,9 +77,8 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                         <Image
                           src={article.image}
                           alt={article.title}
-                          width={310}
-                          height={180}
-                          layout="responsive"
+                          width={350}
+                          height={220}
                         />
                       </NextLink>
                       <CardContent>
@@ -126,9 +125,8 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                         <Image
                           src={article.image}
                           alt={article.title}
-                          width={310}
-                          height={180}
-                          layout="responsive"
+                          width={350}
+                          height={220}
                         />
                       </NextLink>
                       <CardContent>
@@ -212,9 +210,8 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                         <Image
                           src={therapy.image}
                           alt={therapy.title}
-                          width={310}
-                          height={180}
-                          layout="responsive"
+                          width={350}
+                          height={220}
                         />
                       </NextLink>
                       <CardContent>
