@@ -28,6 +28,7 @@ import {
   FaDeezer,
 } from 'react-icons/fa';
 import { Divider } from '@mui/material';
+import AdComponent from '@components/MDX/AdComponent';
 
 type HomeProps = {
   latestPosts: ArticleMeta[];
@@ -40,31 +41,30 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
     <>
       <HomeSEO />
       <Layout>
-        <div>
-          <StyledContainer>
-            <Grid container spacing={2}>
-              <StyledHeadingContainer item md={6}>
-                <div>
-                  <Typography component="h1" variant="h3" mb={{ xs: 2, md: 2 }}>
-                    Tinnitus Help
+        <StyledContainer>
+          <Grid container spacing={2}>
+            <StyledHeadingContainer item md={6}>
+              <div>
+                <Typography component="h1" variant="h3" mb={{ xs: 2, md: 2 }}>
+                  Tinnitus Help
+                </Typography>
+                <Grid item xs={12} md={12}>
+                  <Typography component="h2" variant="h6">
+                    Discover the fascinating world of perceiving sound in the
+                    absence of an external source. Living with tinnitus can be
+                    challenging, but you&#39;re not alone. Explore valuable tips
+                    and resources to manage and cope with tinnitus.
+                    Everyone&#39;s experience with tinnitus is unique.
                   </Typography>
-                  <Grid item xs={12} md={12}>
-                    <Typography component="h2" variant="h6">
-                      Discover the fascinating world of perceiving sound in the
-                      absence of an external source. Living with tinnitus can be
-                      challenging, but you&#39;re not alone. Explore valuable
-                      tips and resources to manage and cope with tinnitus.
-                      Everyone&#39;s experience with tinnitus is unique.
-                    </Typography>
-                  </Grid>
-                </div>
-              </StyledHeadingContainer>
-              <StyledLogoContainer item md={6}>
-                <Logo />
-              </StyledLogoContainer>
-            </Grid>
-          </StyledContainer>
-        </div>
+                </Grid>
+              </div>
+            </StyledHeadingContainer>
+            <StyledLogoContainer item md={6}>
+              <Logo />
+            </StyledLogoContainer>
+          </Grid>
+        </StyledContainer>
+        <AdComponent />
         <Container>
           <StyledTabContainer>
             <Typography gutterBottom variant="h4" align="center">
@@ -113,6 +113,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Grid>
           </StyledTabContainer>
         </Container>
+        <AdComponent />
         <Container>
           <StyledTabContainer>
             <Typography gutterBottom variant="h4" align="center">
@@ -175,31 +176,30 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </StyledTextContainer>
           </StyledTabContainer>
         </Container>
-        <div>
-          <StyledContainer>
-            <Grid container spacing={2}>
-              <StyledLogoContainer item md={6}>
-                <Logo2 />
-              </StyledLogoContainer>
-              <StyledHeadingContainer item md={6}>
-                <div>
-                  <Typography component="h2" variant="h3" mb={{ xs: 2, md: 2 }}>
-                    The Power of Sound
+        <StyledContainer>
+          <Grid container spacing={2}>
+            <StyledLogoContainer item md={6}>
+              <Logo2 />
+            </StyledLogoContainer>
+            <StyledHeadingContainer item md={6}>
+              <div>
+                <Typography component="h2" variant="h3" mb={{ xs: 2, md: 2 }}>
+                  The Power of Sound
+                </Typography>
+                <Grid item xs={12} md={12}>
+                  <Typography component="h2" variant="h6">
+                    Discover the potential benefits of Tinnitus Sound Therapy,
+                    which includes white noise, calming melodies and mindful
+                    meditation. These therapeutic sounds may help in managing
+                    tinnitus, enhancing relaxation, and promoting a sense of
+                    inner balance.
                   </Typography>
-                  <Grid item xs={12} md={12}>
-                    <Typography component="h2" variant="h6">
-                      Discover the potential benefits of Tinnitus Sound Therapy,
-                      which includes white noise, calming melodies and mindful
-                      meditation. These therapeutic sounds may help in managing
-                      tinnitus, enhancing relaxation, and promoting a sense of
-                      inner balance.
-                    </Typography>
-                  </Grid>
-                </div>
-              </StyledHeadingContainer>
-            </Grid>
-          </StyledContainer>
-        </div>
+                </Grid>
+              </div>
+            </StyledHeadingContainer>
+          </Grid>
+        </StyledContainer>
+        <AdComponent />
         <Container>
           <StyledTabContainer>
             <Typography gutterBottom variant="h4" align="center">
