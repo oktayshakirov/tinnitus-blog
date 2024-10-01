@@ -5,10 +5,12 @@ import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
 import Link from 'next/link';
+import PrivacySEO from './Privacy.SEO';
 
 const Privacy = ({}: Props) => {
   return (
     <>
+      <PrivacySEO />
       <Layout>
         <Container>
           <Headline>TinnitusHelp.me Privacy Policy</Headline>

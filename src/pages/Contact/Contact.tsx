@@ -4,10 +4,12 @@ import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
 import Link from '@mui/material/Link';
+import ContactSEO from './Contact.SEO';
 
 const Contact = ({}: Props) => {
   return (
     <>
+      <ContactSEO />
       <Layout>
         <Container>
           <Headline>Contact TinnitusHelp.me</Headline>

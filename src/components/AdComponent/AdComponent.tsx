@@ -53,6 +53,7 @@ const AdComponent: React.FC = () => {
           style={{
             textAlign: 'center',
             padding: '80px',
+            margin: '10px 0 10px 0',
             border: '1px dashed #fff',
             color: '#fff',
           }}

@@ -5,10 +5,12 @@ import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
 import Link from 'next/link';
+import AboutSEO from './About.SEO';
 
 const About = ({}: Props) => {
   return (
     <>
+      <AboutSEO />
       <Layout>
         <Container>
           <Headline>About TinnitusHelp.me</Headline>
