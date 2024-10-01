@@ -28,7 +28,7 @@ import {
   FaDeezer,
 } from 'react-icons/fa';
 import { Divider } from '@mui/material';
-import AdComponent from '@components/MDX/AdComponent';
+import AdComponent from '@components/AdComponent';
 
 type HomeProps = {
   latestPosts: ArticleMeta[];

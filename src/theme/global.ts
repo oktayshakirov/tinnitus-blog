@@ -38,10 +38,10 @@ export const global = css`
     flex-grow: 1;
   }
 
-  ins.adsbygoogle {
-    margin 1px 0 0 0 !important;
+ins.adsbygoogle {
+    margin: 2px 0 2px 0 !important;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     border-radius: 25px !important;
     overflow: hidden !important;
-  }
+}
 `;
