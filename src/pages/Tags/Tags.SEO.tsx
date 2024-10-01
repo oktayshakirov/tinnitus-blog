@@ -4,7 +4,7 @@ import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 const TagsSEO = () => {
   const title = `${DOMAIN_NAME} | Tags`;
   const description =
-    'Explore various tinnitus-related topics and keywords through our comprehensive tags page. Quickly find articles, guides, and resources categorized by key terms to help you manage and understand tinnitus better. Discover the content that matters most to you, tailored to your specific needs and interests in tinnitus management and relief.';
+    'Explore tinnitus topics on our tags page. Find articles, guides and resources categorized by key terms to help you manage and understand tinnitus better.';
   const canonical = `${DOMAIN}/tags`;
   const imageUrl = `${DOMAIN}${DEFAULT_OG_IMAGE}`;
 
