@@ -39,7 +39,7 @@ export const global = css`
   }
 
 ins.adsbygoogle {
-    margin: 2px 0 2px 0 !important;
+    margin: 10px 0 10px 0 !important;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     border-radius: 25px !important;
     overflow: hidden !important;

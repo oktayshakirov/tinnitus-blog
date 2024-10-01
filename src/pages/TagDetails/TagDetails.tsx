@@ -8,6 +8,7 @@ import ArticlesGrid from '@components/ArticlesGrid';
 import { StyledPagination } from './TagDetails.styled';
 import { ChangeEvent, useState } from 'react';
 import AdComponent from '@components/AdComponent';
+import TagDetailsSEO from './TagDetails.SEO';
 
 const TagDetails = ({
   slug,
@@ -31,9 +32,10 @@ const TagDetails = ({
 
   return (
     <>
+      <TagDetailsSEO tag={slug} />
       <Layout>
         <Container>
-          <Typography variant="h4" gutterBottom>
+          <Typography component="h1" variant="h4" gutterBottom>
             Articles tagged with: {slug}
           </Typography>
           <ArticlesGrid articles={articlesToDisplay} />
