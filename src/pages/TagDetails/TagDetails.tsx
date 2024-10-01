@@ -7,6 +7,7 @@ import Link from '@components/Link';
 import ArticlesGrid from '@components/ArticlesGrid';
 import { StyledPagination } from './TagDetails.styled';
 import { ChangeEvent, useState } from 'react';
+import AdComponent from '@components/AdComponent';
 
 const TagDetails = ({
   slug,
@@ -55,6 +56,9 @@ const TagDetails = ({
               )}
             />
           )}
+        </Container>
+        <Container>
+          <AdComponent />
         </Container>
       </Layout>
     </>

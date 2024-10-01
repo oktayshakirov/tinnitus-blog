@@ -4,6 +4,7 @@ import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
 import ArticleTags from '@components/ArticleTags';
 import TagsSEO from './Tags.SEO';
+import AdComponent from '@components/AdComponent';
 
 const Tags = ({ tags }: Props) => {
   return (
@@ -13,6 +14,9 @@ const Tags = ({ tags }: Props) => {
         <Container>
           <Headline>Tags</Headline>
           <ArticleTags tags={tags} />
+        </Container>
+        <Container>
+          <AdComponent />
         </Container>
       </Layout>
     </>
