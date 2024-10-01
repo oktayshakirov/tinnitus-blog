@@ -7,6 +7,7 @@ import ArticleNavigation from '@components/ArticleNavigation';
 import { Props } from '@pages/blog/[slug]';
 import BlogPostSEO from './BlogPost.SEO';
 import { StyledDate, StyledDivider, StyledHeadline } from './BlogPost.styled';
+import AdComponent from '@components/AdComponent';
 
 const BlogPost = ({
   content,
@@ -42,11 +43,13 @@ const BlogPost = ({
               <StyledDivider />
             </Grid>
             <Grid item md={4}>
+              <AdComponent />
               <ArticleNavigation
                 prev={prev}
                 next={next}
                 tags={frontmatter?.tags as unknown as string[]}
               />
+              <AdComponent />
             </Grid>
           </Grid>
         </Container>

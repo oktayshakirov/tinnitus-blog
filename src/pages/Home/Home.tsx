@@ -64,7 +64,9 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </StyledLogoContainer>
           </Grid>
         </StyledContainer>
-        <AdComponent />
+        <Container>
+          <AdComponent />
+        </Container>
         <Container>
           <StyledTabContainer>
             <Typography gutterBottom variant="h4" align="center">
@@ -113,7 +115,9 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Grid>
           </StyledTabContainer>
         </Container>
-        <AdComponent />
+        <Container>
+          <AdComponent />
+        </Container>
         <Container>
           <StyledTabContainer>
             <Typography gutterBottom variant="h4" align="center">
@@ -260,7 +264,9 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </StyledTextContainer>
           </StyledTabContainer>
         </Container>
-        <AdComponent />
+        <Container>
+          <AdComponent />
+        </Container>
       </Layout>
     </>
   );

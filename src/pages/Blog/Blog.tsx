@@ -43,7 +43,9 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
             />
           )}
         </Container>
-        <AdComponent />
+        <Container>
+          <AdComponent />
+        </Container>
       </Layout>
     </>
   );

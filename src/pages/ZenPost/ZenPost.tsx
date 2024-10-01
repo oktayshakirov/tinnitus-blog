@@ -7,6 +7,7 @@ import ArticleNavigation from '@components/ArticleNavigation';
 import { Props } from '@pages/zen/[slug]';
 import ZenPostSEO from './ZenPost.SEO';
 import { StyledHeadline, StyledDate, StyledDivider } from './ZenPost.styled';
+import AdComponent from '@components/AdComponent';
 
 const ZenPost = ({
   content,
@@ -42,11 +43,13 @@ const ZenPost = ({
               <StyledDivider />
             </Grid>
             <Grid item md={4}>
+              <AdComponent />
               <ArticleNavigation
                 prev={prev}
                 next={next}
                 tags={frontmatter?.tags as unknown as string[]}
               />
+              <AdComponent />
             </Grid>
           </Grid>
         </Container>

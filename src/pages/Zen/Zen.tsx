@@ -8,6 +8,7 @@ import ArticlesGrid from '@components/ArticlesGrid';
 import Headline from '@ui/pages/shared/Headline';
 import ZenSEO from './Zen.SEO';
 import { StyledPagination } from './Zen.styled';
+import AdComponent from '@components/AdComponent';
 
 const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
   const [page, setPage] = useState(pageFromUrl);
@@ -41,6 +42,9 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
               )}
             />
           )}
+        </Container>
+        <Container>
+          <AdComponent />
         </Container>
       </Layout>
     </>
