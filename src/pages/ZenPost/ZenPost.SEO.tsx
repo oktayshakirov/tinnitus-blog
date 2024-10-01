@@ -19,7 +19,7 @@ const ZenPostSEO = ({
   updatedAt,
   tags = [],
 }: Props) => {
-  const canonical = `${DOMAIN}/Zen/${slug}`;
+  const canonical = `${DOMAIN}/zen/${slug}`;
   const imageUrl = `${DOMAIN}${image}`;
 
   return (
