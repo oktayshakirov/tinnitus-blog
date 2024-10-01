@@ -8,7 +8,7 @@ import ArticlesGrid from '@components/ArticlesGrid';
 import Headline from '@ui/pages/shared/Headline';
 import BlogSEO from './Blog.SEO';
 import { StyledPagination } from './Blog.styled';
-import AdComponent from '@components/MDX/AdComponent';
+import AdComponent from '@components/AdComponent';
 
 const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
   const [page, setPage] = useState(pageFromUrl);

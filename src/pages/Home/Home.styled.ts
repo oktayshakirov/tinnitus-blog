@@ -83,12 +83,13 @@ export const StyledCard = styled(Card)`
 
     p {
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: normal;
       margin-top: auto;
+      font-size: 0.9rem;
     }
   `}
 `;
