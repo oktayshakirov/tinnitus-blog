@@ -44,7 +44,6 @@ const AdComponent: React.FC = () => {
           className="adsbygoogle"
           style={{
             display: 'block',
-            margin: '10px 0 10px 0',
             boxShadow: '0 8px 15px rgba(0, 0, 0, 0.2)',
             borderRadius: '25px',
             overflow: 'hidden',
