@@ -42,7 +42,7 @@ const Footer = () => {
 
       <StyledIconContainer>
         <Link
-          href="https://www.facebook.com/www.tinnitushelp.me/"
+          href="https://www.facebook.com/profile.php?id=61566783718094"
           target="_blank"
           aria-label="Facebook"
         >
