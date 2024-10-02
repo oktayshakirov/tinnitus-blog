@@ -42,7 +42,13 @@ const AdComponent: React.FC = () => {
       {isProduction ? (
         <ins
           className="adsbygoogle"
-          style={{ display: 'block' }}
+          style={{
+            display: 'block',
+            margin: '10px 0 10px 0',
+            boxShadow: '0 8px 15px rgba(0, 0, 0, 0.2)',
+            borderRadius: '25px',
+            overflow: 'hidden',
+          }}
           data-ad-client="ca-pub-5852582960793521"
           data-ad-slot="3785001294"
           data-ad-format="auto"
