@@ -7,6 +7,7 @@ import Link from '@components/Link';
 import ArticlesGrid from '@components/ArticlesGrid';
 import { StyledPagination } from './TagDetails.styled';
 import { ChangeEvent, useState } from 'react';
+import Box from '@mui/material/Box';
 import AdComponent from '@components/AdComponent';
 import TagDetailsSEO from './TagDetails.SEO';
 
@@ -60,7 +61,9 @@ const TagDetails = ({
           )}
         </Container>
         <Container>
-          <AdComponent />
+          <Box pt={4}>
+            <AdComponent />
+          </Box>
         </Container>
       </Layout>
     </>

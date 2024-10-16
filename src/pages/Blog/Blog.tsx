@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 import PaginationItem from '@mui/material/PaginationItem';
 import { Props } from '@pages/blog';
 import Link from '@components/Link';
@@ -44,7 +45,9 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
           )}
         </Container>
         <Container>
-          <AdComponent />
+          <Box pt={3}>
+            <AdComponent />
+          </Box>
         </Container>
       </Layout>
     </>

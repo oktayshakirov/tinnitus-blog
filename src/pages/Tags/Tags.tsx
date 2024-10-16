@@ -1,4 +1,5 @@
 import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
@@ -16,7 +17,9 @@ const Tags = ({ tags }: Props) => {
           <ArticleTags tags={tags} />
         </Container>
         <Container>
-          <AdComponent />
+          <Box pt={4}>
+            <AdComponent />
+          </Box>
         </Container>
       </Layout>
     </>
