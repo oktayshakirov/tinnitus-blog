@@ -6,7 +6,7 @@ export const global = css`
   body {
     background: ${colors.gradient}, ${colors.primary};
     color: ${theme.palette.grey[200]}!important;
-    fontFamily: 'Nunito, sans-serif;
+    fontfamily: 'Nunito, sans-serif';
     font-size: 1.1rem;
   }
 
@@ -36,5 +36,9 @@ export const global = css`
 
   main {
     flex-grow: 1;
+  }
+
+  a {
+    text-decoration: none !important;
   }
 `;
