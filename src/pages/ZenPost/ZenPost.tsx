@@ -42,14 +42,20 @@ const ZenPost = ({
               <MDXContent content={content} />
               <StyledDivider />
             </Grid>
-            <Grid item md={4}>
-              <AdComponent />
-              <ArticleNavigation
-                prev={prev}
-                next={next}
-                tags={frontmatter?.tags as unknown as string[]}
-              />
-              <AdComponent />
+            <Grid item md={4} container direction="column" spacing={4}>
+              <Grid item>
+                <AdComponent />
+              </Grid>
+              <Grid item>
+                <ArticleNavigation
+                  prev={prev}
+                  next={next}
+                  tags={frontmatter?.tags as unknown as string[]}
+                />
+              </Grid>
+              <Grid item>
+                <AdComponent />
+              </Grid>
             </Grid>
           </Grid>
         </Container>
