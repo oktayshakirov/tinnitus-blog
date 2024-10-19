@@ -7,6 +7,7 @@ import Image from '@components/MDX/Image';
 import Blockquote from '@components/MDX/Blockquote';
 import Highlighter from '@components/MDX/Highlighter';
 import AdComponent from '@components/MDX/AdComponent';
+import StreamingPlatforms from './StreamingPlatforms';
 
 export const components: MDXComponents = {
   a: Link,
@@ -21,6 +22,7 @@ export const components: MDXComponents = {
   Blockquote,
   Highlighter,
   AdComponent,
+  StreamingPlatforms,
 };
 
 type Props = {
