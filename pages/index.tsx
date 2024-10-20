@@ -25,8 +25,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
     .slice(0, 6);
   const latestZen = getAllZen()
     .map((post) => post.meta)
-    .slice(0, 3);
-  const featuredPosts = getFeaturedPosts().map((post) => post.meta); // Ensure you're calling the function
+    .slice(0, 6);
+  const featuredPosts = getFeaturedPosts().map((post) => post.meta);
 
   return {
     props: {

@@ -83,6 +83,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                           alt={article.title}
                           width={350}
                           height={220}
+                          loading="lazy"
                         />
                       </NextLink>
                       <CardContent>
@@ -134,6 +135,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                           alt={article.title}
                           width={350}
                           height={220}
+                          loading="lazy"
                         />
                       </NextLink>
                       <CardContent>
@@ -219,6 +221,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                           alt={therapy.title}
                           width={350}
                           height={220}
+                          loading="lazy"
                         />
                       </NextLink>
                       <CardContent>

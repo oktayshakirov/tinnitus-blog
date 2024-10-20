@@ -5,7 +5,11 @@ import Logo from '@components/Logo';
 type Props = ImageProps;
 const Image = ({ fill = true, src, ...rest }: Props) => (
   <StyledImageContainer>
-    {src ? <NextImage fill={fill} src={src} {...rest} /> : <Logo />}
+    {src ? (
+      <NextImage fill={fill} src={src} loading="lazy" {...rest} />
+    ) : (
+      <Logo />
+    )}
   </StyledImageContainer>
 );
 

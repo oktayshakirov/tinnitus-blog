@@ -2,9 +2,9 @@ import NextImage, { ImageProps } from 'next/image';
 import { StyledImageContainer } from './Image.styled';
 
 type Props = ImageProps;
-const Image = ({ fill = true, ...rest }: Props) => (
+const Image = ({ fill = true, loading = 'lazy', ...rest }: Props) => (
   <StyledImageContainer>
-    <NextImage fill={fill} {...rest} />
+    <NextImage fill={fill} loading={loading} {...rest} />
   </StyledImageContainer>
 );
 
