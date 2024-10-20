@@ -27,7 +27,7 @@ const StreamingPlatforms: React.FC<StreamingPlatformsProps> = ({
       imgSrc: '/images/streaming-icons/apple-music.png',
     },
     {
-      name: 'YouTube Music',
+      name: 'YouTube',
       link: youtubeMusicLink,
       imgSrc: '/images/streaming-icons/youtube.png',
     },
@@ -66,7 +66,7 @@ const StreamingPlatforms: React.FC<StreamingPlatformsProps> = ({
           display: 'flex',
           justifyContent: 'center',
           flexWrap: 'wrap',
-          gap: '20px',
+          gap: '10px',
         }}
       >
         {platforms.map((platform) => (
