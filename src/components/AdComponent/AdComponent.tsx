@@ -1,6 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 const AdComponent: React.FC = () => {
+  const adRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const loadAdsScript = () => {
       const script = document.createElement('script');
@@ -13,7 +15,7 @@ const AdComponent: React.FC = () => {
 
     const initializeAds = () => {
       try {
-        if (typeof window !== 'undefined' && window.adsbygoogle) {
+        if (window.adsbygoogle) {
           window.adsbygoogle.push({});
         }
       } catch (e) {
@@ -21,13 +23,25 @@ const AdComponent: React.FC = () => {
       }
     };
 
-    if (typeof window !== 'undefined' && !window.adsbygoogle) {
-      loadAdsScript();
+    const handleAdVisibility = (entries: IntersectionObserverEntry[]) => {
+      if (entries[0].isIntersecting) {
+        if (typeof window !== 'undefined' && !window.adsbygoogle) {
+          loadAdsScript();
+        }
+        initializeAds();
+      }
+    };
+
+    const observer = new IntersectionObserver(handleAdVisibility, {
+      threshold: 0.1,
+    });
+
+    if (adRef.current) {
+      observer.observe(adRef.current);
     }
 
-    initializeAds();
-
     return () => {
+      observer.disconnect();
       const adsScript = document.querySelector('script[src*="adsbygoogle"]');
       if (adsScript) {
         document.body.removeChild(adsScript);
@@ -40,19 +54,21 @@ const AdComponent: React.FC = () => {
   return (
     <>
       {isProduction ? (
-        <ins
-          className="adsbygoogle"
-          style={{
-            display: 'block',
-            boxShadow: '0 8px 15px rgba(0, 0, 0, 0.2)',
-            borderRadius: '25px',
-            overflow: 'hidden',
-          }}
-          data-ad-client="ca-pub-5852582960793521"
-          data-ad-slot="3785001294"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
+        <div ref={adRef}>
+          <ins
+            className="adsbygoogle"
+            style={{
+              display: 'block',
+              boxShadow: '0 8px 15px rgba(0, 0, 0, 0.2)',
+              borderRadius: '25px',
+              overflow: 'hidden',
+            }}
+            data-ad-client="ca-pub-5852582960793521"
+            data-ad-slot="3785001294"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
       ) : (
         <div
           style={{
