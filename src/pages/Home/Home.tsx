@@ -70,58 +70,6 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
         <Container>
           <StyledTabContainer>
             <Typography gutterBottom variant="h4" align="center">
-              Must Read Posts:
-            </Typography>
-            <Grid container spacing={2}>
-              {featuredPosts.map((article) => (
-                <Grid item xs={12} sm={4} key={article.slug}>
-                  <StyledCard>
-                    <CardActionArea>
-                      <NextLink href={`/blog/${article.slug}`} passHref>
-                        <Image
-                          src={article.image}
-                          alt={article.title}
-                          width={350}
-                          height={220}
-                          loading="lazy"
-                        />
-                      </NextLink>
-                      <CardContent>
-                        <Typography gutterBottom component="h2" variant="h6">
-                          {article.title}
-                        </Typography>
-                        <Typography variant="body1" color="text.secondary">
-                          {article.description}
-                        </Typography>
-                        <Divider sx={{ margin: '16px 0' }} />
-                        <div
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            marginTop: '8px',
-                          }}
-                        >
-                          <Typography variant="body2" color="text.secondary">
-                            {article.readingTime.text}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {article.date}
-                          </Typography>
-                        </div>
-                      </CardContent>
-                    </CardActionArea>
-                  </StyledCard>
-                </Grid>
-              ))}
-            </Grid>
-          </StyledTabContainer>
-        </Container>
-        <Container>
-          <AdComponent />
-        </Container>
-        <Container>
-          <StyledTabContainer>
-            <Typography gutterBottom variant="h4" align="center">
               Latest Posts:
             </Typography>
             <Grid container spacing={2}>
@@ -180,6 +128,58 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                 </NextLink>
               </Typography>
             </StyledTextContainer>
+          </StyledTabContainer>
+        </Container>
+        <Container>
+          <AdComponent />
+        </Container>
+        <Container>
+          <StyledTabContainer>
+            <Typography gutterBottom variant="h4" align="center">
+              Must Read Posts:
+            </Typography>
+            <Grid container spacing={2}>
+              {featuredPosts.map((article) => (
+                <Grid item xs={12} sm={4} key={article.slug}>
+                  <StyledCard>
+                    <CardActionArea>
+                      <NextLink href={`/blog/${article.slug}`} passHref>
+                        <Image
+                          src={article.image}
+                          alt={article.title}
+                          width={350}
+                          height={220}
+                          loading="lazy"
+                        />
+                      </NextLink>
+                      <CardContent>
+                        <Typography gutterBottom component="h2" variant="h6">
+                          {article.title}
+                        </Typography>
+                        <Typography variant="body1" color="text.secondary">
+                          {article.description}
+                        </Typography>
+                        <Divider sx={{ margin: '16px 0' }} />
+                        <div
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            marginTop: '8px',
+                          }}
+                        >
+                          <Typography variant="body2" color="text.secondary">
+                            {article.readingTime.text}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {article.date}
+                          </Typography>
+                        </div>
+                      </CardContent>
+                    </CardActionArea>
+                  </StyledCard>
+                </Grid>
+              ))}
+            </Grid>
           </StyledTabContainer>
         </Container>
         <StyledContainer>

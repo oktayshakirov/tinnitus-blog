@@ -40,7 +40,7 @@ export const getArticleFromSlug = (
       tags: (data.tags ?? []).sort(),
       date: (data.date ?? new Date()).toString(),
       image: data.image ?? '',
-      featured: data.featured ?? false, // Adding featured field here
+      featured: data.featured ?? false,
       type,
       readingTime,
     },
