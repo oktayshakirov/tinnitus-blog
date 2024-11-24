@@ -6,6 +6,10 @@ const config = {
     let priority = 0.7;
     let changefreq = 'daily';
 
+    if (path.startsWith('/tags')) {
+      return null;
+    }
+
     if (path === '/') {
       priority = 1.0;
       changefreq = 'daily';
@@ -20,9 +24,6 @@ const config = {
     } else if (path.startsWith('/zen')) {
       priority = 0.6;
       changefreq = 'weekly';
-    } else if (path.startsWith('/tags')) {
-      priority = 0.5;
-      changefreq = 'monthly';
     }
 
     return {
@@ -37,6 +38,7 @@ const config = {
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/tags'],
       },
     ],
     additionalSitemaps: ['https://www.tinnitushelp.me/sitemap.xml'],
