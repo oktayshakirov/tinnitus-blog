@@ -1,5 +1,5 @@
 import Link from '@components/Link';
-import { FaFacebook, FaGithub } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaGithub } from 'react-icons/fa';
 import {
   StyledFooter,
   StyledContainer,
@@ -42,11 +42,18 @@ const Footer = () => {
 
       <StyledIconContainer>
         <Link
-          href="https://www.facebook.com/profile.php?id=61566783718094"
+          href="https://www.facebook.com/TheTinnitusHelp"
           target="_blank"
           aria-label="Facebook"
         >
           <FaFacebook size={24} />
+        </Link>
+        <Link
+          href="https://x.com/TinnitusHelp_me"
+          target="_blank"
+          aria-label="Twitter"
+        >
+          <FaTwitter size={24} />
         </Link>
         <Link
           href="https://github.com/oktayshakirov/tinnitus-blog"
