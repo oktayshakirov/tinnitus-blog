@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
-  const [isAdVisible, setIsAdVisible] = useState(false);
 
   useEffect(() => {
     const loadAdsScript = () => {
@@ -59,31 +58,9 @@ const AdComponent: React.FC = () => {
       return () => observer.disconnect();
     };
 
-    const observeAdContent = () => {
-      if (adRef.current) {
-        const mutationObserver = new MutationObserver(() => {
-          const adElement = adRef.current?.querySelector('ins.adsbygoogle');
-          if (adElement && adElement.childElementCount > 0) {
-            setIsAdVisible(true);
-          } else {
-            setIsAdVisible(false);
-          }
-        });
-
-        mutationObserver.observe(adRef.current, {
-          childList: true,
-          subtree: true,
-        });
-
-        return () => mutationObserver.disconnect();
-      }
-    };
-
     observeAdSlot();
-    const mutationObserverCleanup = observeAdContent();
 
     return () => {
-      mutationObserverCleanup?.();
       const adsScript = document.querySelector('script[src*="adsbygoogle"]');
       if (adsScript) {
         document.body.removeChild(adsScript);
@@ -96,21 +73,19 @@ const AdComponent: React.FC = () => {
   return (
     <div ref={adRef}>
       {isProduction ? (
-        <div style={{ display: isAdVisible ? 'block' : 'none' }}>
-          <ins
-            className="adsbygoogle"
-            style={{
-              display: 'block',
-              boxShadow: '0 8px 15px rgba(0, 0, 0, 0.2)',
-              borderRadius: '25px',
-              overflow: 'hidden',
-            }}
-            data-ad-client="ca-pub-5852582960793521"
-            data-ad-slot="3785001294"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
-        </div>
+        <ins
+          className="adsbygoogle"
+          style={{
+            display: 'block',
+            boxShadow: '0 8px 15px rgba(0, 0, 0, 0.2)',
+            borderRadius: '25px',
+            overflow: 'hidden',
+          }}
+          data-ad-client="ca-pub-5852582960793521"
+          data-ad-slot="3785001294"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
       ) : (
         <div
           style={{
