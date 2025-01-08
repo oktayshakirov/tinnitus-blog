@@ -1,7 +1,10 @@
 # *
 User-agent: *
 Allow: /
-Disallow: /tags/
+Disallow: /tags
+
+# Host
+Host: https://www.tinnitushelp.me/
 
 # Sitemaps
 Sitemap: https://www.tinnitushelp.me/sitemap.xml
