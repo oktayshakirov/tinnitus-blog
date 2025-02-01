@@ -25,5 +25,6 @@ declare global {
     ReactNativeWebView?: {
       postMessage: (message: string) => void;
     };
+    isApp?: boolean;
   }
 }
