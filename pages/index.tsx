@@ -6,7 +6,7 @@ import { ArticleMeta } from '@types';
 type HomePageProps = {
   latestPosts: ArticleMeta[];
   latestZen: ArticleMeta[];
-  featuredPosts: ArticleMeta[]; // Make sure the type here is correct
+  featuredPosts: ArticleMeta[];
 };
 
 const HomePage = ({ latestPosts, latestZen, featuredPosts }: HomePageProps) => {
