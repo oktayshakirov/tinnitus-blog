@@ -13,24 +13,26 @@ import { theme } from '@theme/theme';
 import { GA_TRACKING_ID } from '@const/general';
 import * as gtag from '@lib/gtag';
 
+function getIsAppFlag(): boolean {
+  if (typeof window === 'undefined') return false;
+  const urlParams = new URLSearchParams(window.location.search);
+  return (
+    urlParams.get('isApp') === 'true' ||
+    !!window.isApp ||
+    localStorage.getItem('isApp') === 'true'
+  );
+}
+
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
-  const [isApp, setIsApp] = useState(false);
+  const [isApp, setIsApp] = useState<boolean | null>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const urlParams = new URLSearchParams(window.location.search);
-      const isAppQuery = urlParams.get('isApp');
-      if (isAppQuery === 'true' || window.isApp) {
-        setIsApp(true);
-        localStorage.setItem('isApp', 'true');
-      } else {
-        const storedIsApp = localStorage.getItem('isApp');
-        if (storedIsApp === 'true') {
-          setIsApp(true);
-        }
-      }
+    const flag = getIsAppFlag();
+    if (flag) {
+      localStorage.setItem('isApp', 'true');
     }
+    setIsApp(flag);
   }, []);
 
   useEffect(() => {
@@ -44,6 +46,8 @@ const App = ({ Component, pageProps }: AppProps) => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events, isApp]);
+
+  if (isApp === null) return null;
 
   return (
     <>
@@ -77,7 +81,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           />
         </>
       )}
-
       <DefaultSeo {...SEO_CONFIG} />
       <ThemeProvider theme={theme}>
         <CssBaseline />

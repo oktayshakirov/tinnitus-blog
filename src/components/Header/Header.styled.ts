@@ -8,7 +8,7 @@ export const StyledAppBar = styled(AppBar)`
   ${({ theme }) => css`
     display: flex;
     justify-content: center;
-    height: ${theme.spacing(8)};
+    height: ${theme.spacing(9)};
     box-shadow: none;
 
     ${theme.breakpoints.up('sm')} {

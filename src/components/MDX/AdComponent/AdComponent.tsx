@@ -4,11 +4,14 @@ const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get('isApp') === 'true' || window.isApp) {
-        return;
-      }
+    const isApp =
+      typeof window !== 'undefined' &&
+      (new URLSearchParams(window.location.search).get('isApp') === 'true' ||
+        !!window.isApp ||
+        localStorage.getItem('isApp') === 'true');
+
+    if (isApp) {
+      return;
     }
 
     const loadAdsScript = () => {
