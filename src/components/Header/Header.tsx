@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import Link from '@components/Link';
 import MainMenuDrawer from '@components/MainMenuDrawer';
@@ -9,19 +9,40 @@ import {
   StyledNav,
 } from './Header.styled';
 
+function getIsAppFlag(): boolean {
+  if (typeof window === 'undefined') return false;
+  const urlParams = new URLSearchParams(window.location.search);
+  return (
+    urlParams.get('isApp') === 'true' ||
+    !!window.isApp ||
+    localStorage.getItem('isApp') === 'true'
+  );
+}
+
 const Header = () => {
   const [isMainMenuOpen, setIsMainMenuOpen] = useState(false);
+  const [isApp, setIsApp] = useState<boolean>(() => getIsAppFlag());
 
   const toggleMainMenu = () => {
     setIsMainMenuOpen((prevState) => !prevState);
   };
 
+  useEffect(() => {
+    const flag = getIsAppFlag();
+    if (flag) {
+      setIsApp(true);
+      localStorage.setItem('isApp', 'true');
+    }
+  }, []);
+
   return (
     <StyledAppBar elevation={0} color="transparent" position="static">
       <StyledContainer>
-        <StyledMenuButton onClick={toggleMainMenu} aria-label="Menu">
-          <FormatListBulletedRoundedIcon />
-        </StyledMenuButton>
+        {!isApp && (
+          <StyledMenuButton onClick={toggleMainMenu} aria-label="Menu">
+            <FormatListBulletedRoundedIcon />
+          </StyledMenuButton>
+        )}
         <StyledNav>
           <ul>
             <li>
