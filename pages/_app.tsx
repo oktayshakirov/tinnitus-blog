@@ -19,15 +19,16 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Check for the query parameter
       const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get('isApp') === 'true') {
+      const isAppQuery = urlParams.get('isApp');
+      if (isAppQuery === 'true' || window.isApp) {
         setIsApp(true);
-        return;
-      }
-      // Also check for the global flag set by injectedJavaScript
-      if (window.isApp) {
-        setIsApp(true);
+        localStorage.setItem('isApp', 'true');
+      } else {
+        const storedIsApp = localStorage.getItem('isApp');
+        if (storedIsApp === 'true') {
+          setIsApp(true);
+        }
       }
     }
   }, []);
@@ -49,8 +50,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-
-      {/* Only load scripts when not in the app */}
       {!isApp && (
         <>
           <Script
