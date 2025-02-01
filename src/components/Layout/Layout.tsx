@@ -14,7 +14,9 @@ const Layout = ({ children }: Props) => {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get('isApp') === 'true') {
         setIsApp(true);
-      } else if (window.ReactNativeWebView) {
+        return;
+      }
+      if (window.isApp) {
         setIsApp(true);
       }
     }
