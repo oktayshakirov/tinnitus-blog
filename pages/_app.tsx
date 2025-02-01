@@ -18,8 +18,13 @@ const App = ({ Component, pageProps }: AppProps) => {
   const [isApp, setIsApp] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.ReactNativeWebView) {
-      setIsApp(true);
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('isApp') === 'true') {
+        setIsApp(true);
+      } else if (window.ReactNativeWebView) {
+        setIsApp(true);
+      }
     }
   }, []);
 
@@ -40,6 +45,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+
       {!isApp && (
         <>
           <Script
