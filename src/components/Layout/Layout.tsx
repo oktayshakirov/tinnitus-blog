@@ -2,26 +2,24 @@ import { ReactNode, useEffect, useState } from 'react';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 
-type Props = {
-  children: ReactNode;
-};
+function getIsAppFlag(): boolean {
+  if (typeof window === 'undefined') return false;
+  const urlParams = new URLSearchParams(window.location.search);
+  return (
+    urlParams.get('isApp') === 'true' ||
+    !!window.isApp ||
+    localStorage.getItem('isApp') === 'true'
+  );
+}
 
-const Layout = ({ children }: Props) => {
-  const [isApp, setIsApp] = useState(false);
+const Layout = ({ children }: { children: ReactNode }) => {
+  const [isApp, setIsApp] = useState<boolean>(() => getIsAppFlag());
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const urlParams = new URLSearchParams(window.location.search);
-      const isAppQuery = urlParams.get('isApp');
-      if (isAppQuery === 'true' || window.isApp) {
-        setIsApp(true);
-        localStorage.setItem('isApp', 'true');
-      } else {
-        const storedIsApp = localStorage.getItem('isApp');
-        if (storedIsApp === 'true') {
-          setIsApp(true);
-        }
-      }
+    const flag = getIsAppFlag();
+    if (flag) {
+      setIsApp(true);
+      localStorage.setItem('isApp', 'true');
     }
   }, []);
 
