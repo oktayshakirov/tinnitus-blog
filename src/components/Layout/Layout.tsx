@@ -1,6 +1,8 @@
 import { ReactNode, useEffect, useState } from 'react';
-import Header from '@components/Header';
+import dynamic from 'next/dynamic';
 import Footer from '@components/Footer';
+
+const Header = dynamic(() => import('@components/Header'), { ssr: false });
 
 function getIsAppFlag(): boolean {
   if (typeof window === 'undefined') return false;
@@ -12,8 +14,13 @@ function getIsAppFlag(): boolean {
   );
 }
 
-const Layout = ({ children }: { children: ReactNode }) => {
-  const [isApp, setIsApp] = useState<boolean>(() => getIsAppFlag());
+type Props = {
+  children: ReactNode;
+};
+
+const Layout = ({ children }: Props) => {
+  const [hasMounted, setHasMounted] = useState(false);
+  const [isApp, setIsApp] = useState(false);
 
   useEffect(() => {
     const flag = getIsAppFlag();
@@ -21,7 +28,10 @@ const Layout = ({ children }: { children: ReactNode }) => {
       setIsApp(true);
       localStorage.setItem('isApp', 'true');
     }
+    setHasMounted(true);
   }, []);
+
+  if (!hasMounted) return null;
 
   return (
     <>
