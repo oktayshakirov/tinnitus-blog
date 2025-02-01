@@ -1,5 +1,3 @@
-// src/types/types.ts
-
 import { ArticleType } from '@enums/articles';
 import { ReadTimeResults } from 'reading-time';
 
@@ -24,5 +22,8 @@ export type Article = {
 declare global {
   interface Window {
     adsbygoogle: unknown[];
+    ReactNativeWebView?: {
+      postMessage: (message: string) => void;
+    };
   }
 }
