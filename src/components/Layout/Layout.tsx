@@ -12,12 +12,15 @@ const Layout = ({ children }: Props) => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get('isApp') === 'true') {
+      const isAppQuery = urlParams.get('isApp');
+      if (isAppQuery === 'true' || window.isApp) {
         setIsApp(true);
-        return;
-      }
-      if (window.isApp) {
-        setIsApp(true);
+        localStorage.setItem('isApp', 'true');
+      } else {
+        const storedIsApp = localStorage.getItem('isApp');
+        if (storedIsApp === 'true') {
+          setIsApp(true);
+        }
       }
     }
   }, []);
