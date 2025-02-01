@@ -74,7 +74,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Typography>
             <Grid container spacing={2}>
               {latestPosts.map((article) => (
-                <Grid item xs={12} sm={4} key={article.slug}>
+                <Grid item xs={12} sm={6} md={4} key={article.slug}>
                   <StyledCard>
                     <CardActionArea>
                       <NextLink href={`/blog/${article.slug}`} passHref>
@@ -140,7 +140,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Typography>
             <Grid container spacing={2}>
               {featuredPosts.map((article) => (
-                <Grid item xs={12} sm={4} key={article.slug}>
+                <Grid item xs={12} sm={6} md={4} key={article.slug}>
                   <StyledCard>
                     <CardActionArea>
                       <NextLink href={`/blog/${article.slug}`} passHref>
@@ -212,7 +212,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Typography>
             <Grid container spacing={2}>
               {latestZen.map((therapy) => (
-                <Grid item xs={12} sm={4} key={therapy.slug}>
+                <Grid item xs={12} sm={6} md={4} key={therapy.slug}>
                   <StyledCard>
                     <CardActionArea>
                       <NextLink href={`/zen/${therapy.slug}`} passHref>
