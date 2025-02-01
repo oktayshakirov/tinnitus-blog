@@ -4,6 +4,13 @@ const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('isApp') === 'true' || window.isApp) {
+        return;
+      }
+    }
+
     const loadAdsScript = () => {
       return new Promise((resolve, reject) => {
         const script = document.createElement('script');
@@ -58,12 +65,13 @@ const AdComponent: React.FC = () => {
       return () => observer.disconnect();
     };
 
-    observeAdSlot();
+    const cleanupObserver = observeAdSlot();
 
     return () => {
+      cleanupObserver();
       const adsScript = document.querySelector('script[src*="adsbygoogle"]');
-      if (adsScript) {
-        document.body.removeChild(adsScript);
+      if (adsScript && adsScript.parentNode) {
+        adsScript.parentNode.removeChild(adsScript);
       }
     };
   }, []);
@@ -90,7 +98,7 @@ const AdComponent: React.FC = () => {
           style={{
             textAlign: 'center',
             padding: '80px',
-            margin: '10px 0 10px 0',
+            margin: '10px 0',
             border: '1px dashed #fff',
             color: '#fff',
           }}

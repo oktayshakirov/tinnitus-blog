@@ -4,6 +4,13 @@ const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('isApp') === 'true' || window.isApp) {
+        return;
+      }
+    }
+
     const loadAdsScript = () => {
       return new Promise((resolve, reject) => {
         const script = document.createElement('script');
@@ -38,32 +45,27 @@ const AdComponent: React.FC = () => {
       }
     };
 
-    const observeAdSlot = () => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setupAds();
-              observer.disconnect();
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setupAds();
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-      if (adRef.current) {
-        observer.observe(adRef.current);
-      }
-
-      return () => observer.disconnect();
-    };
-
-    observeAdSlot();
+    if (adRef.current) {
+      observer.observe(adRef.current);
+    }
 
     return () => {
+      observer.disconnect();
       const adsScript = document.querySelector('script[src*="adsbygoogle"]');
-      if (adsScript) {
-        document.body.removeChild(adsScript);
+      if (adsScript && adsScript.parentNode) {
+        adsScript.parentNode.removeChild(adsScript);
       }
     };
   }, []);
