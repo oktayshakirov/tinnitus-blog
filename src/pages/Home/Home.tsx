@@ -20,15 +20,9 @@ import {
   StyledTextContainer,
 } from './Home.styled';
 import { ArticleMeta } from '@types';
-import {
-  FaSpotify,
-  FaYoutube,
-  FaApple,
-  FaAmazon,
-  FaDeezer,
-} from 'react-icons/fa';
 import { Divider } from '@mui/material';
 import AdComponent from '@components/AdComponent';
+import StreamingIcons from '@components/StreamingIcons';
 
 type HomeProps = {
   latestPosts: ArticleMeta[];
@@ -211,14 +205,14 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
               Latest Sounds:
             </Typography>
             <Grid container spacing={2}>
-              {latestZen.map((therapy) => (
-                <Grid item xs={12} sm={6} md={4} key={therapy.slug}>
+              {latestZen.map((sounds) => (
+                <Grid item xs={12} sm={6} md={4} key={sounds.slug}>
                   <StyledCard>
                     <CardActionArea>
-                      <NextLink href={`/zen/${therapy.slug}`} passHref>
+                      <NextLink href={`/zen/${sounds.slug}`} passHref>
                         <Image
-                          src={therapy.image}
-                          alt={therapy.title}
+                          src={sounds.image}
+                          alt={sounds.title}
                           width={350}
                           height={220}
                           loading="lazy"
@@ -226,25 +220,13 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                       </NextLink>
                       <CardContent>
                         <Typography gutterBottom component="h2" variant="h6">
-                          {therapy.title}
+                          {sounds.title}
                         </Typography>
                         <Typography variant="body1" color="text.secondary">
-                          {therapy.description}
+                          {sounds.description}
                         </Typography>
                         <Divider sx={{ margin: '16px 0' }} />
-                        <div
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'space-around',
-                            padding: '8px 0',
-                          }}
-                        >
-                          <FaSpotify size={24} />
-                          <FaYoutube size={24} />
-                          <FaApple size={24} />
-                          <FaAmazon size={24} />
-                          <FaDeezer size={24} />
-                        </div>
+                        <StreamingIcons />
                       </CardContent>
                     </CardActionArea>
                   </StyledCard>

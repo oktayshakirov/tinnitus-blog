@@ -17,6 +17,8 @@ import {
   StyledTags,
 } from './ArticleCard.styled';
 import { getTagsPath } from '@lib/paths';
+import { Divider } from '@mui/material';
+import StreamingIcons from '@components/StreamingIcons';
 
 type Props = {
   article: ArticleMeta;
@@ -40,6 +42,8 @@ const ArticleCard = ({ className, article, index, withTags }: Props) => {
               {title}
             </Typography>
             <Typography component="p">{description}</Typography>
+            <Divider sx={{ margin: '16px 0' }} />
+            {type !== ArticleType.POST && <StreamingIcons />}
           </StyledContent>
         </StyledLink>
         {withTags && type === ArticleType.POST && (
