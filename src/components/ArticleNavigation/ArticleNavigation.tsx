@@ -15,17 +15,15 @@ type TitleProps = {
 const Title = ({ children }: TitleProps) => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
-
-  if (isDesktop) {
-    return (
-      <Typography component="p" variant="h6" mb={2}>
-        {children}
-      </Typography>
-    );
-  }
+  const variant = isDesktop ? 'h6' : 'h4';
 
   return (
-    <Typography component="p" variant="h4" mb={2}>
+    <Typography
+      component="p"
+      variant={variant}
+      mb={2}
+      sx={{ display: 'flex', alignItems: 'center' }}
+    >
       {children}
     </Typography>
   );
@@ -47,7 +45,7 @@ const ArticleNavigation = ({ prev, next, tags = [] }: Props) => (
         <Grid item xs={12} sm={6} md={12}>
           <Title>
             <ArrowBackIosIcon />
-            Previous article
+            Previous
           </Title>
           <ArticleCard article={prev.meta} index={0} />
         </Grid>
@@ -55,7 +53,7 @@ const ArticleNavigation = ({ prev, next, tags = [] }: Props) => (
       {next && (
         <Grid item xs={12} sm={6} md={12}>
           <Title>
-            Next article <ArrowForwardIosIcon />
+            Next <ArrowForwardIosIcon />
           </Title>
           <ArticleCard article={next.meta} index={1} />
         </Grid>

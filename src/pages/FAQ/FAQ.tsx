@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '@mui/material/Container';
+import { StyledContainer } from './FAQ.styled';
 import Divider from '@mui/material/Divider';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
@@ -12,7 +12,7 @@ const FAQ = () => {
     <>
       <FAQSEO />
       <Layout>
-        <Container>
+        <StyledContainer>
           <Headline>Frequently Asked Questions</Headline>
           <Typography variant="body1" gutterBottom>
             Welcome to the TinnitusHelp.me FAQ section. Here you will find
@@ -25,7 +25,11 @@ const FAQ = () => {
           <Box
             component={Paper}
             elevation={3}
-            sx={{ padding: '20px', marginBottom: '20px' }}
+            sx={{
+              padding: '20px',
+              marginBottom: '20px',
+              backgroundColor: '#42275a',
+            }}
           >
             <Typography variant="h6" gutterBottom>
               What is tinnitus?
@@ -41,7 +45,11 @@ const FAQ = () => {
           <Box
             component={Paper}
             elevation={3}
-            sx={{ padding: '20px', marginBottom: '20px' }}
+            sx={{
+              padding: '20px',
+              marginBottom: '20px',
+              backgroundColor: '#42275a',
+            }}
           >
             <Typography variant="h6" gutterBottom>
               How can I manage my tinnitus symptoms?
@@ -57,7 +65,11 @@ const FAQ = () => {
           <Box
             component={Paper}
             elevation={3}
-            sx={{ padding: '20px', marginBottom: '20px' }}
+            sx={{
+              padding: '20px',
+              marginBottom: '20px',
+              backgroundColor: '#42275a',
+            }}
           >
             <Typography variant="h6" gutterBottom>
               What types of sound therapy do you offer?
@@ -73,7 +85,11 @@ const FAQ = () => {
           <Box
             component={Paper}
             elevation={3}
-            sx={{ padding: '20px', marginBottom: '20px' }}
+            sx={{
+              padding: '20px',
+              marginBottom: '20px',
+              backgroundColor: '#42275a',
+            }}
           >
             <Typography variant="h6" gutterBottom>
               Where can I find your sound therapy tracks?
@@ -89,7 +105,11 @@ const FAQ = () => {
           <Box
             component={Paper}
             elevation={3}
-            sx={{ padding: '20px', marginBottom: '20px' }}
+            sx={{
+              padding: '20px',
+              marginBottom: '20px',
+              backgroundColor: '#42275a',
+            }}
           >
             <Typography variant="h6" gutterBottom>
               Can tinnitus be cured?
@@ -105,7 +125,11 @@ const FAQ = () => {
           <Box
             component={Paper}
             elevation={3}
-            sx={{ padding: '20px', marginBottom: '20px' }}
+            sx={{
+              padding: '20px',
+              marginBottom: '20px',
+              backgroundColor: '#42275a',
+            }}
           >
             <Typography variant="h6" gutterBottom>
               How can I stay updated with your latest articles and news?
@@ -120,7 +144,11 @@ const FAQ = () => {
           <Box
             component={Paper}
             elevation={3}
-            sx={{ padding: '20px', marginBottom: '20px' }}
+            sx={{
+              padding: '20px',
+              marginBottom: '20px',
+              backgroundColor: '#42275a',
+            }}
           >
             <Typography variant="h6" gutterBottom>
               How can I contact you for more information?
@@ -167,7 +195,7 @@ const FAQ = () => {
             </Link>
             before using the site.
           </Typography>
-        </Container>
+        </StyledContainer>
       </Layout>
     </>
   );

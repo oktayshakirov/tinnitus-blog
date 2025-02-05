@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '@mui/material/Container';
+import { StyledContainer } from './Terms.styled';
 import Divider from '@mui/material/Divider';
 import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
@@ -12,7 +12,7 @@ const Terms = ({}: Props) => {
     <>
       <TermsSEO />
       <Layout>
-        <Container>
+        <StyledContainer>
           <Headline>Terms of Use for TinnitusHelp.me</Headline>
           <p>
             Welcome to TinnitusHelp.me, a blog dedicated to tinnitus education,
@@ -174,7 +174,7 @@ const Terms = ({}: Props) => {
             </Link>
             .
           </p>
-        </Container>
+        </StyledContainer>
       </Layout>
     </>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '@mui/material/Container';
+import { StyledContainer } from './Privacy.styled';
 import Divider from '@mui/material/Divider';
 import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
@@ -12,7 +12,7 @@ const Privacy = ({}: Props) => {
     <>
       <PrivacySEO />
       <Layout>
-        <Container>
+        <StyledContainer>
           <Headline>TinnitusHelp.me Privacy Policy</Headline>
           <p>
             Welcome to TinnitusHelp.me, a blog dedicated to tinnitus education,
@@ -223,7 +223,7 @@ const Privacy = ({}: Props) => {
             provide you with the ability to manage your cookie preferences and
             opt out of certain tracking mechanisms as described in this policy.
           </p>
-        </Container>
+        </StyledContainer>
       </Layout>
     </>
   );
