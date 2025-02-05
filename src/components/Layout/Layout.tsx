@@ -37,7 +37,7 @@ const Layout = ({ children }: Props) => {
     <>
       {!isApp && <Header />}
       <main>{children}</main>
-      {!isApp && <Footer />}
+      <Footer isApp={isApp} />
     </>
   );
 };
