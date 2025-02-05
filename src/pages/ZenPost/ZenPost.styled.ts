@@ -17,7 +17,7 @@ export const StyledContainer = styled(Container)`
 
 export const StyledHeadline = styled('div')`
   ${({ theme }) => css`
-    margin: ${theme.spacing(2)} 0 ${theme.spacing(4)};
+    margin: ${theme.spacing(2)} 0 ${theme.spacing(0)};
 
     ${theme.breakpoints.up('md')} {
       margin: ${theme.spacing(4)} 0 ${theme.spacing(0)};
