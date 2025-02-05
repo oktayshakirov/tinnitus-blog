@@ -1,13 +1,18 @@
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import MDXContent from '@components/MDX';
 import Layout from '@components/Layout';
 import ArticleNavigation from '@components/ArticleNavigation';
 import { Props } from '@pages/zen/[slug]';
 import ZenPostSEO from './ZenPost.SEO';
-import { StyledHeadline, StyledDate, StyledDivider } from './ZenPost.styled';
+import {
+  StyledHeadline,
+  StyledDate,
+  StyledDivider,
+  StyledContainer,
+} from './ZenPost.styled';
 import AdComponent from '@components/AdComponent';
+import GoBackLink from '@components/GoBackLink';
 
 const ZenPost = ({
   content,
@@ -30,7 +35,8 @@ const ZenPost = ({
         updatedAt={updatedAt}
       />
       <Layout>
-        <Container>
+        <StyledContainer>
+          <GoBackLink option="zen" />
           <StyledHeadline>
             <StyledDate>{frontmatter?.date}</StyledDate>
             <Typography component="h1" variant="h3">
@@ -38,11 +44,11 @@ const ZenPost = ({
             </Typography>
           </StyledHeadline>
           <Grid container spacing={{ xs: 2, md: 4 }}>
-            <Grid item md={8}>
+            <Grid item xs={12} md={8}>
               <MDXContent content={content} />
               <StyledDivider />
             </Grid>
-            <Grid item md={4} container direction="column" spacing={4}>
+            <Grid item xs={12} md={4} container direction="column" spacing={4}>
               <Grid item>
                 <AdComponent />
               </Grid>
@@ -58,7 +64,7 @@ const ZenPost = ({
               </Grid>
             </Grid>
           </Grid>
-        </Container>
+        </StyledContainer>
       </Layout>
     </>
   );

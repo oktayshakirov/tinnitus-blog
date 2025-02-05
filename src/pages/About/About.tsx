@@ -1,18 +1,18 @@
 import React from 'react';
-import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
 import Link from 'next/link';
 import AboutSEO from './About.SEO';
+import { StyledContainer } from './About.styled';
 
 const About = ({}: Props) => {
   return (
     <>
       <AboutSEO />
       <Layout>
-        <Container>
+        <StyledContainer>
           <Headline>About TinnitusHelp.me</Headline>
           <p>
             Welcome to TinnitusHelp.me, your go-to resource for everything
@@ -89,7 +89,7 @@ const About = ({}: Props) => {
             </Link>
             page.
           </p>
-        </Container>
+        </StyledContainer>
       </Layout>
     </>
   );

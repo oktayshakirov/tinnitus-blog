@@ -8,7 +8,7 @@ import Layout from '@components/Layout';
 import ArticlesGrid from '@components/ArticlesGrid';
 import Headline from '@ui/pages/shared/Headline';
 import BlogSEO from './Blog.SEO';
-import { StyledPagination } from './Blog.styled';
+import { StyledPagination, StyledContainer } from './Blog.styled';
 import AdComponent from '@components/AdComponent';
 
 const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
@@ -23,7 +23,7 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
     <>
       <BlogSEO />
       <Layout>
-        <Container>
+        <StyledContainer>
           <Headline>Tinnitus Help Blog</Headline>
           <ArticlesGrid articles={postsMeta} />
           {pageCount > 1 && (
@@ -43,12 +43,12 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
               )}
             />
           )}
-        </Container>
-        <Container>
-          <Box pt={3}>
-            <AdComponent />
-          </Box>
-        </Container>
+          <Container>
+            <Box pt={3}>
+              <AdComponent />
+            </Box>
+          </Container>
+        </StyledContainer>
       </Layout>
     </>
   );

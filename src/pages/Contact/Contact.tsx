@@ -1,17 +1,17 @@
 import React from 'react';
-import Container from '@mui/material/Container';
 import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
 import Link from '@mui/material/Link';
 import ContactSEO from './Contact.SEO';
+import { StyledContainer } from './Contact.styled';
 
 const Contact = ({}: Props) => {
   return (
     <>
       <ContactSEO />
       <Layout>
-        <Container>
+        <StyledContainer>
           <Headline>Contact TinnitusHelp.me</Headline>
 
           <h2>We&apos;d Love to Hear from You</h2>
@@ -73,7 +73,7 @@ const Contact = ({}: Props) => {
             we’d love to hear them. Your input is crucial in helping us create a
             better experience for our community.
           </p>
-        </Container>
+        </StyledContainer>
       </Layout>
     </>
   );

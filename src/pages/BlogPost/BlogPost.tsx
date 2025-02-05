@@ -1,13 +1,18 @@
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Layout from '@components/Layout';
 import MDXContent from '@components/MDX';
 import ArticleNavigation from '@components/ArticleNavigation';
 import { Props } from '@pages/blog/[slug]';
 import BlogPostSEO from './BlogPost.SEO';
-import { StyledDate, StyledDivider, StyledHeadline } from './BlogPost.styled';
+import {
+  StyledDate,
+  StyledDivider,
+  StyledHeadline,
+  StyledContainer,
+} from './BlogPost.styled';
 import AdComponent from '@components/AdComponent';
+import GoBackLink from '@components/GoBackLink';
 
 const BlogPost = ({
   content,
@@ -30,7 +35,8 @@ const BlogPost = ({
         updatedAt={updatedAt}
       />
       <Layout>
-        <Container>
+        <StyledContainer>
+          <GoBackLink option="blog" />
           <StyledHeadline>
             <StyledDate>{frontmatter?.date}</StyledDate>
             <Typography component="h1" variant="h3">
@@ -38,11 +44,11 @@ const BlogPost = ({
             </Typography>
           </StyledHeadline>
           <Grid container spacing={{ xs: 2, md: 4 }}>
-            <Grid item md={8}>
+            <Grid item xs={12} md={8}>
               <MDXContent content={content} />
               <StyledDivider />
             </Grid>
-            <Grid item md={4} container direction="column" spacing={4}>
+            <Grid item xs={12} md={4} direction="column" spacing={4}>
               <Grid item>
                 <AdComponent />
               </Grid>
@@ -58,7 +64,7 @@ const BlogPost = ({
               </Grid>
             </Grid>
           </Grid>
-        </Container>
+        </StyledContainer>
       </Layout>
     </>
   );
