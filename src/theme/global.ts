@@ -4,7 +4,7 @@ import { theme } from '@theme/theme';
 
 export const global = css`
   body {
-    background: ${colors.gradient}, ${colors.primary};
+    background: ${colors.background};
     color: ${theme.palette.grey[200]}!important;
     fontfamily: 'Nunito, sans-serif';
     font-size: 1.1rem;
