@@ -24,7 +24,7 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
       <BlogSEO />
       <Layout>
         <StyledContainer>
-          <Headline>Tinnitus Help Blog</Headline>
+          <Headline>BLOG POSTS</Headline>
           <ArticlesGrid articles={postsMeta} />
           {pageCount > 1 && (
             <StyledPagination

@@ -9,7 +9,6 @@ import {
   StyledCard,
   StyledContent,
   StyledDate,
-  StyledDivider,
   StyledFooter,
   StyledLink,
   StyledReadingTime,
@@ -42,13 +41,17 @@ const ArticleCard = ({ className, article, index, withTags }: Props) => {
               {title}
             </Typography>
             <Typography component="p">{description}</Typography>
-            <Divider sx={{ margin: '16px 0' }} />
-            {type !== ArticleType.POST && <StreamingIcons />}
+            {type !== ArticleType.POST && (
+              <>
+                <Divider sx={{ margin: '16px 0' }} />
+                <StreamingIcons />
+              </>
+            )}
           </StyledContent>
         </StyledLink>
         {withTags && type === ArticleType.POST && (
           <>
-            <StyledDivider />
+            <Divider sx={{ mx: 2 }} />
             <StyledFooter>
               <StyledReadingTime label={readingTime.text} />
               <StyledTags>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box } from '@mui/material';
 import {
   FaSpotify,
   FaYoutube,
@@ -8,19 +9,13 @@ import {
 } from 'react-icons/fa';
 
 const StreamingIcons = () => (
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'space-around',
-      padding: '8px 0',
-    }}
-  >
+  <Box display="flex" justifyContent="space-around">
     <FaSpotify size={24} />
     <FaYoutube size={24} />
     <FaApple size={24} />
     <FaAmazon size={24} />
     <FaDeezer size={24} />
-  </div>
+  </Box>
 );
 
 export default StreamingIcons;

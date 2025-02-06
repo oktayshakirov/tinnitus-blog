@@ -24,7 +24,7 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
       <ZenSEO />
       <Layout>
         <StyledContainer>
-          <Headline>Zen Sound Therapy</Headline>
+          <Headline>ZEN SOUNDS</Headline>
           <ArticlesGrid articles={zenMeta} />
           {pageCount > 1 && (
             <StyledPagination
