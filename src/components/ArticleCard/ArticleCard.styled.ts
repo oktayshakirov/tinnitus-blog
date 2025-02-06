@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 import Link from '@components/Link';
 import { alpha } from '@mui/system/colorManipulator';
 import Chip from '@mui/material/Chip';
-import Divider from '@mui/material/Divider';
 
 export const StyledCard = styled('div')`
   ${({ theme }) => css`
@@ -61,12 +60,6 @@ export const StyledLink = styled(Link)`
         }
       }
     }
-  `}
-`;
-
-export const StyledDivider = styled(Divider)`
-  ${({ theme }) => css`
-    margin: 0 ${theme.spacing(2)};
   `}
 `;
 
