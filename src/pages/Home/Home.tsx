@@ -60,9 +60,9 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
     <>
       <HomeSEO />
       <Layout>
-        <StyledContainer>
-          <Grid container spacing={2}>
-            {!isApp && (
+        {!isApp && (
+          <StyledContainer>
+            <Grid container spacing={2}>
               <StyledHeadingContainer item md={6}>
                 <Box>
                   <Typography component="h1" variant="h3" mb={{ xs: 2, md: 2 }}>
@@ -79,12 +79,12 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                   </Grid>
                 </Box>
               </StyledHeadingContainer>
-            )}
-            <StyledLogoContainer item md={6}>
-              <Logo />
-            </StyledLogoContainer>
-          </Grid>
-        </StyledContainer>
+              <StyledLogoContainer item md={6}>
+                <Logo />
+              </StyledLogoContainer>
+            </Grid>
+          </StyledContainer>
+        )}
         <Container>
           <AdComponent />
         </Container>
@@ -203,12 +203,12 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Grid>
           </StyledTabContainer>
         </Container>
-        <StyledContainer>
-          <Grid container spacing={2}>
-            <StyledLogoContainer item md={6}>
-              <Logo2 />
-            </StyledLogoContainer>
-            {!isApp && (
+        {!isApp && (
+          <StyledContainer>
+            <Grid container spacing={2}>
+              <StyledLogoContainer item md={6}>
+                <Logo2 />
+              </StyledLogoContainer>
               <StyledHeadingContainer item md={6}>
                 <Box>
                   <Typography component="h2" variant="h3" mb={{ xs: 2, md: 2 }}>
@@ -225,9 +225,9 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                   </Grid>
                 </Box>
               </StyledHeadingContainer>
-            )}
-          </Grid>
-        </StyledContainer>
+            </Grid>
+          </StyledContainer>
+        )}
         <Container>
           <StyledTabContainer>
             <Typography gutterBottom variant="h4" align="center">
