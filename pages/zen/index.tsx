@@ -12,15 +12,20 @@ export type Props = {
 const ZenPage = (props: Props) => <Zen {...props} />;
 
 const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const zenPerPage = 10;
+  const zenPerPage = 6;
   const { page = 1 } = query;
+  const currentPage = Number(page);
+
   const zenMeta = getAllZen().map((post) => post.meta);
   const pageCount = Math.ceil(zenMeta.length / zenPerPage);
+  const startIndex = (currentPage - 1) * zenPerPage;
+  const endIndex = startIndex + zenPerPage;
+  const currentZenMeta = zenMeta.slice(startIndex, endIndex);
 
   return {
     props: {
-      page,
-      zenMeta,
+      page: currentPage,
+      zenMeta: currentZenMeta,
       pageCount,
     },
   };

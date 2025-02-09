@@ -6,24 +6,20 @@ import Logo from '@components/Logo';
 import Logo2 from '@components/Logo2';
 import Layout from '@components/Layout';
 import HomeSEO from './Home.SEO';
-import CardContent from '@mui/material/CardContent';
-import { Button, CardActionArea, Box } from '@mui/material';
+import { Button, Box } from '@mui/material';
 import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import NextLink from 'next/link';
-import Image from 'next/image';
+import ArticleCard from '@components/ArticleCard';
 import {
   StyledContainer,
   StyledHeadingContainer,
   StyledLogoContainer,
-  StyledCard,
   StyledTabContainer,
   StyledTextContainer,
 } from './Home.styled';
 import { ArticleMeta } from '@types';
-import { Divider } from '@mui/material';
 import AdComponent from '@components/AdComponent';
-import StreamingIcons from '@components/StreamingIcons';
 
 type HomeProps = {
   latestPosts: ArticleMeta[];
@@ -93,45 +89,10 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <Typography gutterBottom variant="h4" align="center">
               Latest Posts:
             </Typography>
-            <Grid container spacing={2}>
-              {latestPosts.map((article) => (
+            <Grid container spacing={4}>
+              {latestPosts.map((article, index) => (
                 <Grid item xs={12} sm={6} md={4} key={article.slug}>
-                  <StyledCard>
-                    <CardActionArea>
-                      <NextLink href={`/blog/${article.slug}`} passHref>
-                        <Image
-                          src={article.image}
-                          alt={article.title}
-                          width={350}
-                          height={220}
-                          loading="lazy"
-                        />
-                      </NextLink>
-                      <CardContent>
-                        <Typography gutterBottom component="h2" variant="h6">
-                          {article.title}
-                        </Typography>
-                        <Typography variant="body1" color="text.secondary">
-                          {article.description}
-                        </Typography>
-                        <Divider sx={{ margin: '16px 0' }} />
-                        <Box
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            marginTop: '8px',
-                          }}
-                        >
-                          <Typography variant="body2" color="text.secondary">
-                            {article.readingTime.text}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {article.date}
-                          </Typography>
-                        </Box>
-                      </CardContent>
-                    </CardActionArea>
-                  </StyledCard>
+                  <ArticleCard article={article} index={index} withTags />
                 </Grid>
               ))}
             </Grid>
@@ -159,45 +120,10 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <Typography gutterBottom variant="h4" align="center">
               Must Read Posts:
             </Typography>
-            <Grid container spacing={2}>
-              {featuredPosts.map((article) => (
+            <Grid container spacing={4}>
+              {featuredPosts.map((article, index) => (
                 <Grid item xs={12} sm={6} md={4} key={article.slug}>
-                  <StyledCard>
-                    <CardActionArea>
-                      <NextLink href={`/blog/${article.slug}`} passHref>
-                        <Image
-                          src={article.image}
-                          alt={article.title}
-                          width={350}
-                          height={220}
-                          loading="lazy"
-                        />
-                      </NextLink>
-                      <CardContent>
-                        <Typography gutterBottom component="h2" variant="h6">
-                          {article.title}
-                        </Typography>
-                        <Typography variant="body1" color="text.secondary">
-                          {article.description}
-                        </Typography>
-                        <Divider sx={{ margin: '16px 0' }} />
-                        <Box
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            marginTop: '8px',
-                          }}
-                        >
-                          <Typography variant="body2" color="text.secondary">
-                            {article.readingTime.text}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {article.date}
-                          </Typography>
-                        </Box>
-                      </CardContent>
-                    </CardActionArea>
-                  </StyledCard>
+                  <ArticleCard article={article} index={index} withTags />
                 </Grid>
               ))}
             </Grid>
@@ -233,32 +159,10 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <Typography gutterBottom variant="h4" align="center">
               Latest Sounds:
             </Typography>
-            <Grid container spacing={2}>
-              {latestZen.map((sounds) => (
+            <Grid container spacing={4}>
+              {latestZen.map((sounds, index) => (
                 <Grid item xs={12} sm={6} md={4} key={sounds.slug}>
-                  <StyledCard>
-                    <CardActionArea>
-                      <NextLink href={`/zen/${sounds.slug}`} passHref>
-                        <Image
-                          src={sounds.image}
-                          alt={sounds.title}
-                          width={350}
-                          height={220}
-                          loading="lazy"
-                        />
-                      </NextLink>
-                      <CardContent>
-                        <Typography gutterBottom component="h2" variant="h6">
-                          {sounds.title}
-                        </Typography>
-                        <Typography variant="body1" color="text.secondary">
-                          {sounds.description}
-                        </Typography>
-                        <Divider sx={{ margin: '16px 0' }} />
-                        <StreamingIcons />
-                      </CardContent>
-                    </CardActionArea>
-                  </StyledCard>
+                  <ArticleCard article={sounds} index={index} />
                 </Grid>
               ))}
             </Grid>

@@ -1,15 +1,21 @@
 import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import Link from '@components/Link';
-import { alpha } from '@mui/system/colorManipulator';
 import Chip from '@mui/material/Chip';
 
 export const StyledCard = styled('div')`
   ${({ theme }) => css`
     position: relative;
     overflow: hidden;
-    background: ${alpha(theme.palette.common.white, 0.05)};
-    border-radius: ${theme.spacing(0.5)};
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 25px 0 25px 0;
+    margin: auto;
+    margin-top: ${theme.spacing(1)};
+    margin-bottom: ${theme.spacing(1)};
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   `}
 `;
 
@@ -17,19 +23,22 @@ export const StyledContent = styled('div')`
   ${({ theme }) => css`
     border-top: 1px solid ${theme.palette.grey[800]};
     padding: ${theme.spacing(2)};
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 
     h2 {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      margin-bottom: ${theme.spacing(1)};
     }
 
     p {
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
-      text-overflow: ellipsis;
       overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      margin: 0;
       color: ${theme.palette.text.secondary};
     }
   `}
@@ -53,6 +62,9 @@ export const StyledLink = styled(Link)`
     && {
       color: ${theme.palette.common.white};
       text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
 
       &:active {
         img {
@@ -69,6 +81,7 @@ export const StyledFooter = styled('div')`
     align-items: center;
     gap: ${theme.spacing(3)};
     padding: ${theme.spacing(1.5)} ${theme.spacing(2)};
+    margin-top: auto;
   `}
 `;
 
@@ -110,6 +123,7 @@ export const StyledTags = styled('div')`
 
 export const StyledTag = styled('span')`
   text-transform: uppercase;
+  font-size: 1rem;
 
   a {
     text-decoration: none;
