@@ -15,7 +15,6 @@ export const StyledCard = styled('div')`
     margin-bottom: ${theme.spacing(1)};
     display: flex;
     flex-direction: column;
-    height: 100%;
   `}
 `;
 
