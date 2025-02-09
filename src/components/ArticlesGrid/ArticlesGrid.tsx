@@ -9,11 +9,10 @@ type Props = {
 };
 const ArticlesGrid = ({
   articles,
-  containerProps = { spacing: { xs: 2, md: 4 } },
   itemProps = { xs: 12, sm: 6, md: 4 },
 }: Props) => {
   return (
-    <Grid container {...containerProps}>
+    <Grid container spacing={4}>
       {articles.map((article, index) => (
         <Grid key={article.slug} item {...itemProps}>
           <ArticleCard article={article} index={index} withTags />

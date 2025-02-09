@@ -8,7 +8,11 @@ import Layout from '@components/Layout';
 import ArticlesGrid from '@components/ArticlesGrid';
 import Headline from '@ui/pages/shared/Headline';
 import BlogSEO from './Blog.SEO';
-import { StyledPagination, StyledContainer } from './Blog.styled';
+import {
+  StyledPagination,
+  StyledContainer,
+  StyledTabContainer,
+} from './Blog.styled';
 import AdComponent from '@components/AdComponent';
 
 const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
@@ -24,25 +28,27 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
       <BlogSEO />
       <Layout>
         <StyledContainer>
-          <Headline>BLOG POSTS</Headline>
-          <ArticlesGrid articles={postsMeta} />
-          {pageCount > 1 && (
-            <StyledPagination
-              count={pageCount}
-              color="primary"
-              page={page}
-              onChange={handleChange}
-              hidePrevButton
-              hideNextButton
-              renderItem={(item) => (
-                <PaginationItem
-                  component={Link}
-                  href={`/blog${item.page === 1 ? '' : `?page=${item.page}`}`}
-                  {...item}
-                />
-              )}
-            />
-          )}
+          <StyledTabContainer>
+            <Headline>BLOG POSTS</Headline>
+            <ArticlesGrid articles={postsMeta} />
+            {pageCount > 1 && (
+              <StyledPagination
+                count={pageCount}
+                color="primary"
+                page={page}
+                onChange={handleChange}
+                hidePrevButton
+                hideNextButton
+                renderItem={(item) => (
+                  <PaginationItem
+                    component={Link}
+                    href={`/blog${item.page === 1 ? '' : `?page=${item.page}`}`}
+                    {...item}
+                  />
+                )}
+              />
+            )}
+          </StyledTabContainer>
           <Container>
             <Box pt={3}>
               <AdComponent />

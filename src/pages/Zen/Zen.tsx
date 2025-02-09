@@ -8,7 +8,11 @@ import Layout from '@components/Layout';
 import ArticlesGrid from '@components/ArticlesGrid';
 import Headline from '@ui/pages/shared/Headline';
 import ZenSEO from './Zen.SEO';
-import { StyledPagination, StyledContainer } from './Zen.styled';
+import {
+  StyledPagination,
+  StyledContainer,
+  StyledTabContainer,
+} from './Zen.styled';
 import AdComponent from '@components/AdComponent';
 
 const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
@@ -24,25 +28,27 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
       <ZenSEO />
       <Layout>
         <StyledContainer>
-          <Headline>ZEN SOUNDS</Headline>
-          <ArticlesGrid articles={zenMeta} />
-          {pageCount > 1 && (
-            <StyledPagination
-              count={pageCount}
-              color="primary"
-              page={page}
-              onChange={handleChange}
-              hidePrevButton
-              hideNextButton
-              renderItem={(item) => (
-                <PaginationItem
-                  component={Link}
-                  href={`/Zen${item.page === 1 ? '' : `?page=${item.page}`}`}
-                  {...item}
-                />
-              )}
-            />
-          )}
+          <StyledTabContainer>
+            <Headline>ZEN SOUNDS</Headline>
+            <ArticlesGrid articles={zenMeta} />
+            {pageCount > 1 && (
+              <StyledPagination
+                count={pageCount}
+                color="primary"
+                page={page}
+                onChange={handleChange}
+                hidePrevButton
+                hideNextButton
+                renderItem={(item) => (
+                  <PaginationItem
+                    component={Link}
+                    href={`/zen${item.page === 1 ? '' : `?page=${item.page}`}`}
+                    {...item}
+                  />
+                )}
+              />
+            )}
+          </StyledTabContainer>
         </StyledContainer>
         <Container>
           <Box pt={3}>
