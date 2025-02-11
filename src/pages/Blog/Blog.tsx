@@ -29,7 +29,7 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
       <Layout>
         <StyledContainer>
           <StyledTabContainer>
-            <Headline>BLOG POSTS</Headline>
+            <Headline>POSTS</Headline>
             <ArticlesGrid articles={postsMeta} />
             {pageCount > 1 && (
               <StyledPagination
