@@ -29,7 +29,7 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
       <Layout>
         <StyledContainer>
           <StyledTabContainer>
-            <Headline>ZEN SOUNDS</Headline>
+            <Headline>SOUNDS</Headline>
             <ArticlesGrid articles={zenMeta} />
             {pageCount > 1 && (
               <StyledPagination

@@ -7,6 +7,7 @@ import {
   StyledText,
   StyledIconContainer,
 } from '@components/Footer/Footer.styled';
+import Box from '@mui/material/Box';
 
 type FooterProps = {
   isApp?: boolean;
@@ -39,31 +40,35 @@ const Footer = ({ isApp = false }: FooterProps) => {
           <StyledText>FAQ</StyledText>
         </Link>
       </StyledContainer>
-      {!isApp && (
-        <StyledIconContainer>
-          <Link
-            href="https://www.facebook.com/TheTinnitusHelp"
-            target="_blank"
-            aria-label="Facebook"
-          >
-            <FaFacebook size={24} />
-          </Link>
-          <Link
-            href="https://x.com/TinnitusHelp_me"
-            target="_blank"
-            aria-label="Twitter"
-          >
-            <FaTwitter size={24} />
-          </Link>
-          <Link
-            href="https://github.com/oktayshakirov/tinnitus-blog"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <FaGithub size={24} />
-          </Link>
-        </StyledIconContainer>
-      )}
+      <StyledIconContainer>
+        {isApp ? (
+          <Box sx={{ height: '60px' }} />
+        ) : (
+          <>
+            <Link
+              href="https://www.facebook.com/TheTinnitusHelp"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <FaFacebook size={24} />
+            </Link>
+            <Link
+              href="https://x.com/TinnitusHelp_me"
+              target="_blank"
+              aria-label="Twitter"
+            >
+              <FaTwitter size={24} />
+            </Link>
+            <Link
+              href="https://github.com/oktayshakirov/tinnitus-blog"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <FaGithub size={24} />
+            </Link>
+          </>
+        )}
+      </StyledIconContainer>
     </StyledFooter>
   );
 };
