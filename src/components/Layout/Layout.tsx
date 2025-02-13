@@ -19,15 +19,22 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
-  const [isApp, setIsApp] = useState(false);
+  const [isApp, setIsApp] = useState<boolean>(() => {
+    if (typeof document !== 'undefined') {
+      return document.documentElement.classList.contains('is-app');
+    }
+    return false;
+  });
 
   useEffect(() => {
-    const flag = getIsAppFlag();
-    if (flag) {
-      setIsApp(true);
-      localStorage.setItem('isApp', 'true');
+    if (!isApp) {
+      const flag = getIsAppFlag();
+      if (flag) {
+        setIsApp(true);
+        localStorage.setItem('isApp', 'true');
+      }
     }
-  }, []);
+  }, [isApp]);
 
   return (
     <>
