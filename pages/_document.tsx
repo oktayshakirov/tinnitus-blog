@@ -4,6 +4,22 @@ const Document = () => {
   return (
     <Html lang="en">
       <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                (function() {
+                  var isApp = false;
+                  try {
+                    var urlParams = new URLSearchParams(window.location.search);
+                    isApp = urlParams.get('isApp') === 'true' || window.isApp || localStorage.getItem('isApp') === 'true';
+                  } catch(e) {}
+                  if (isApp) {
+                    document.documentElement.classList.add('is-app');
+                  }
+                })();
+              `,
+          }}
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
