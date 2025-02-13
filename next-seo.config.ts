@@ -3,6 +3,7 @@ import { DOMAIN, DOMAIN_NAME } from '@const/general';
 
 const config: DefaultSeoProps = {
   titleTemplate: `%s`,
+  canonical: DOMAIN,
   openGraph: {
     type: 'website',
     locale: 'en_US',
