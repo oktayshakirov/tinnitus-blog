@@ -35,7 +35,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
           <Grid container spacing={2}>
             <StyledHeadingContainer item md={6}>
               <Box>
-                <Typography component="h1" variant="h3" mb={{ xs: 2, md: 2 }}>
+                <Typography component="h1" variant="h3" mb={2}>
                   Tinnitus Help
                 </Typography>
                 <Grid item xs={12} md={12}>
@@ -109,7 +109,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </StyledLogoContainer>
             <StyledHeadingContainer item md={6}>
               <Box>
-                <Typography component="h2" variant="h3" mb={{ xs: 2, md: 2 }}>
+                <Typography component="h2" variant="h3" mb={2}>
                   The Power of Sound
                 </Typography>
                 <Grid item xs={12} md={12}>
