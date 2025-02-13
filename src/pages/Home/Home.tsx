@@ -5,30 +5,20 @@ import Logo from '@components/Logo';
 import Logo2 from '@components/Logo2';
 import Layout from '@components/Layout';
 import HomeSEO from './Home.SEO';
-import CardContent from '@mui/material/CardContent';
-import { Button, CardActionArea } from '@mui/material';
+import { Button, Box } from '@mui/material';
 import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import NextLink from 'next/link';
-import Image from 'next/image';
 import {
   StyledContainer,
   StyledHeadingContainer,
   StyledLogoContainer,
-  StyledCard,
   StyledTabContainer,
   StyledTextContainer,
 } from './Home.styled';
 import { ArticleMeta } from '@types';
-import {
-  FaSpotify,
-  FaYoutube,
-  FaApple,
-  FaAmazon,
-  FaDeezer,
-} from 'react-icons/fa';
-import { Divider } from '@mui/material';
 import AdComponent from '@components/AdComponent';
+import ArticleCard from '@components/ArticleCard';
 
 type HomeProps = {
   latestPosts: ArticleMeta[];
@@ -44,7 +34,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
         <StyledContainer>
           <Grid container spacing={2}>
             <StyledHeadingContainer item md={6}>
-              <div>
+              <Box>
                 <Typography component="h1" variant="h3" mb={{ xs: 2, md: 2 }}>
                   Tinnitus Help
                 </Typography>
@@ -57,7 +47,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                     Everyone&#39;s experience with tinnitus is unique.
                   </Typography>
                 </Grid>
-              </div>
+              </Box>
             </StyledHeadingContainer>
             <StyledLogoContainer item md={6}>
               <Logo />
@@ -72,45 +62,10 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <Typography gutterBottom variant="h4" align="center">
               Latest Posts:
             </Typography>
-            <Grid container spacing={2}>
-              {latestPosts.map((article) => (
-                <Grid item xs={12} sm={4} key={article.slug}>
-                  <StyledCard>
-                    <CardActionArea>
-                      <NextLink href={`/blog/${article.slug}`} passHref>
-                        <Image
-                          src={article.image}
-                          alt={article.title}
-                          width={350}
-                          height={220}
-                          loading="lazy"
-                        />
-                      </NextLink>
-                      <CardContent>
-                        <Typography gutterBottom component="h2" variant="h6">
-                          {article.title}
-                        </Typography>
-                        <Typography variant="body1" color="text.secondary">
-                          {article.description}
-                        </Typography>
-                        <Divider sx={{ margin: '16px 0' }} />
-                        <div
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            marginTop: '8px',
-                          }}
-                        >
-                          <Typography variant="body2" color="text.secondary">
-                            {article.readingTime.text}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {article.date}
-                          </Typography>
-                        </div>
-                      </CardContent>
-                    </CardActionArea>
-                  </StyledCard>
+            <Grid container spacing={4}>
+              {latestPosts.map((article, index) => (
+                <Grid item xs={12} sm={6} md={4} key={article.slug}>
+                  <ArticleCard article={article} index={index} withTags />
                 </Grid>
               ))}
             </Grid>
@@ -138,45 +93,10 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <Typography gutterBottom variant="h4" align="center">
               Must Read Posts:
             </Typography>
-            <Grid container spacing={2}>
-              {featuredPosts.map((article) => (
-                <Grid item xs={12} sm={4} key={article.slug}>
-                  <StyledCard>
-                    <CardActionArea>
-                      <NextLink href={`/blog/${article.slug}`} passHref>
-                        <Image
-                          src={article.image}
-                          alt={article.title}
-                          width={350}
-                          height={220}
-                          loading="lazy"
-                        />
-                      </NextLink>
-                      <CardContent>
-                        <Typography gutterBottom component="h2" variant="h6">
-                          {article.title}
-                        </Typography>
-                        <Typography variant="body1" color="text.secondary">
-                          {article.description}
-                        </Typography>
-                        <Divider sx={{ margin: '16px 0' }} />
-                        <div
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            marginTop: '8px',
-                          }}
-                        >
-                          <Typography variant="body2" color="text.secondary">
-                            {article.readingTime.text}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {article.date}
-                          </Typography>
-                        </div>
-                      </CardContent>
-                    </CardActionArea>
-                  </StyledCard>
+            <Grid container spacing={4}>
+              {featuredPosts.map((article, index) => (
+                <Grid item xs={12} sm={6} md={4} key={article.slug}>
+                  <ArticleCard article={article} index={index} withTags />
                 </Grid>
               ))}
             </Grid>
@@ -188,7 +108,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
               <Logo2 />
             </StyledLogoContainer>
             <StyledHeadingContainer item md={6}>
-              <div>
+              <Box>
                 <Typography component="h2" variant="h3" mb={{ xs: 2, md: 2 }}>
                   The Power of Sound
                 </Typography>
@@ -201,7 +121,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                     inner balance.
                   </Typography>
                 </Grid>
-              </div>
+              </Box>
             </StyledHeadingContainer>
           </Grid>
         </StyledContainer>
@@ -210,44 +130,10 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <Typography gutterBottom variant="h4" align="center">
               Latest Sounds:
             </Typography>
-            <Grid container spacing={2}>
-              {latestZen.map((therapy) => (
-                <Grid item xs={12} sm={4} key={therapy.slug}>
-                  <StyledCard>
-                    <CardActionArea>
-                      <NextLink href={`/zen/${therapy.slug}`} passHref>
-                        <Image
-                          src={therapy.image}
-                          alt={therapy.title}
-                          width={350}
-                          height={220}
-                          loading="lazy"
-                        />
-                      </NextLink>
-                      <CardContent>
-                        <Typography gutterBottom component="h2" variant="h6">
-                          {therapy.title}
-                        </Typography>
-                        <Typography variant="body1" color="text.secondary">
-                          {therapy.description}
-                        </Typography>
-                        <Divider sx={{ margin: '16px 0' }} />
-                        <div
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'space-around',
-                            padding: '8px 0',
-                          }}
-                        >
-                          <FaSpotify size={24} />
-                          <FaYoutube size={24} />
-                          <FaApple size={24} />
-                          <FaAmazon size={24} />
-                          <FaDeezer size={24} />
-                        </div>
-                      </CardContent>
-                    </CardActionArea>
-                  </StyledCard>
+            <Grid container spacing={4}>
+              {latestZen.map((sounds, index) => (
+                <Grid item xs={12} sm={6} md={4} key={sounds.slug}>
+                  <ArticleCard article={sounds} index={index} />
                 </Grid>
               ))}
             </Grid>
