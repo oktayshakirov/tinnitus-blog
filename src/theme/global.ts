@@ -41,4 +41,8 @@ export const global = css`
   a {
     text-decoration: none !important;
   }
+
+  .header-hidden {
+    display: none;
+  }
 `;
