@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
 
 export const StyledContainer = styled(Container)`
   ${({ theme }) => css`
@@ -61,13 +62,44 @@ export const StyledLogoContainer = styled(Grid)`
   `}
 `;
 
+export const StyledCard = styled(Card)`
+  ${({ theme }) => css`
+    max-width: 345px;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 25px 0 25px 0;
+    margin: auto;
+    margin-top: ${theme.spacing(3)};
+    margin-bottom: ${theme.spacing(1)};
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-top: auto;
+    }
+
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      margin-top: auto;
+      font-size: 0.9rem;
+    }
+  `}
+`;
+
 export const StyledTabContainer = styled(Container)`
   ${({ theme }) => css`
     background-color: rgba(0, 0, 0, 0.05);
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
     border-radius: 25px;
-    margin-bottom: ${theme.spacing(5)};
-    margin-top: ${theme.spacing(5)};
+    margin-bottom: ${theme.spacing(6)};
     padding: ${theme.spacing(3)};
   `}
 `;
