@@ -19,31 +19,21 @@ export const StyledHeadingContainer = styled(Grid)`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    margin-bottom: ${theme.spacing(3)};
 
     h2 {
       color: ${theme.palette.text.secondary};
-    }
-
-    ${theme.breakpoints.up('md')} {
-      margin-bottom: ${theme.spacing(0)};
     }
   `}
 `;
 
 export const StyledLogoContainer = styled(Grid)`
-  ${({ theme }) => css`
+  ${({}) => css`
     display: flex;
     justify-content: center;
-    margin-top: ${theme.spacing(2)};
     flex: 1;
     margin-left: auto;
     margin-right: auto;
     max-width: fit-content;
-
-    ${theme.breakpoints.up('md')} {
-      margin-top: ${theme.spacing(0)};
-    }
 
     animation: floating 3s ease-in-out infinite;
 
