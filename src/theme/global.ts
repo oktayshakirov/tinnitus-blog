@@ -42,6 +42,7 @@ export const global = css`
     text-decoration: none !important;
   }
 
-.is-app .header {
-  display: none;
+  .is-app .header {
+    display: none;
+  }
 `;
