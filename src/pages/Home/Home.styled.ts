@@ -5,12 +5,11 @@ import Grid from '@mui/material/Grid';
 
 export const StyledContainer = styled(Container)`
   ${({ theme }) => css`
-    padding-top: ${theme.spacing(2)};
-    padding-bottom: ${theme.spacing(5)};
+    padding-top: ${theme.spacing(3)};
+    padding-bottom: ${theme.spacing(0)};
 
     ${theme.breakpoints.up('md')} {
-      padding-top: ${theme.spacing(5)};
-      padding-bottom: ${theme.spacing(10)};
+      padding-bottom: ${theme.spacing(5)};
     }
   `}
 `;
@@ -23,13 +22,21 @@ export const StyledHeadingContainer = styled(Grid)`
     h1,
     h2 {
       text-align: center;
+      font-size: 3rem;
       ${theme.breakpoints.up('md')} {
         text-align: left;
+        font-size: 3.5rem;
       }
     }
 
     h3 {
       color: ${theme.palette.text.secondary};
+      text-align: center;
+      font-size: 0.9rem;
+      ${theme.breakpoints.up('md')} {
+        text-align: left;
+        font-size: 1.3rem;
+      }
     }
   `}
 `;
