@@ -36,15 +36,15 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <StyledHeadingContainer item md={6}>
               <Box>
                 <Typography component="h1" variant="h3" mb={2}>
-                  Tinnitus Help.me
+                  Tinnitus Help
                 </Typography>
                 <Grid item xs={12} md={12}>
                   <Typography component="h3" variant="h6">
                     Discover the fascinating phenomenon of tinnitus – perceiving
                     sound without any external source. Living with this
                     condition can be challenging, but you’re not alone. Explore
-                    valuable tips and resources to help you manage and cope,
-                    because everyone’s experience is unique.
+                    valuable tips to help you manage and cope, because
+                    everyone’s experience is unique.
                   </Typography>
                 </Grid>
               </Box>
@@ -110,14 +110,14 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <StyledHeadingContainer item md={6}>
               <Box>
                 <Typography component="h2" variant="h3" mb={2}>
-                  The Power of Sound
+                  Tinnitus Zen
                 </Typography>
                 <Grid item xs={12} md={12}>
                   <Typography component="h3" variant="h6">
-                    Experience the potential benefits of sound therapy for
-                    tinnitus, blending white noise, calming melodies, and
-                    mindful meditation. These therapeutic sounds may help manage
-                    the condition, enhancing your overall sense of well-being.
+                    Experience sound therapy’s benefits for tinnitus by blending
+                    white noise, calming melodies and natural ambiance. These
+                    soothing sounds may ease your condition and boost overall
+                    well-being.
                   </Typography>
                 </Grid>
               </Box>
