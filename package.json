@@ -17,6 +17,7 @@
     "@mdx-js/react": "^2.2.1",
     "@mui/icons-material": "^5.13.7",
     "@mui/material": "^5.11.2",
+    "firebase-admin": "^13.1.0",
     "gray-matter": "^4.0.3",
     "next": "^15.1.4",
     "next-mdx-remote": "4.2.0",
