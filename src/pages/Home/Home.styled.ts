@@ -20,7 +20,15 @@ export const StyledHeadingContainer = styled(Grid)`
     display: flex;
     align-items: center;
 
+    h1,
     h2 {
+      text-align: center;
+      ${theme.breakpoints.up('md')} {
+        text-align: left;
+      }
+    }
+
+    h3 {
       color: ${theme.palette.text.secondary};
     }
   `}

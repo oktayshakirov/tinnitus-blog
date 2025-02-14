@@ -36,15 +36,15 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <StyledHeadingContainer item md={6}>
               <Box>
                 <Typography component="h1" variant="h3" mb={2}>
-                  Tinnitus Help
+                  Tinnitus Help.me
                 </Typography>
                 <Grid item xs={12} md={12}>
-                  <Typography component="h2" variant="h6">
-                    Discover the fascinating world of perceiving sound in the
-                    absence of an external source. Living with tinnitus can be
-                    challenging, but you&#39;re not alone. Explore valuable tips
-                    and resources to manage and cope with tinnitus.
-                    Everyone&#39;s experience with tinnitus is unique.
+                  <Typography component="h3" variant="h6">
+                    Discover the fascinating phenomenon of tinnitus – perceiving
+                    sound without any external source. Living with this
+                    condition can be challenging, but you’re not alone. Explore
+                    valuable tips and resources to help you manage and cope,
+                    because everyone’s experience is unique.
                   </Typography>
                 </Grid>
               </Box>
@@ -113,12 +113,11 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                   The Power of Sound
                 </Typography>
                 <Grid item xs={12} md={12}>
-                  <Typography component="h2" variant="h6">
-                    Discover the potential benefits of Tinnitus Sound Therapy,
-                    which includes white noise, calming melodies and mindful
-                    meditation. These therapeutic sounds may help in managing
-                    tinnitus, enhancing relaxation, and promoting a sense of
-                    inner balance.
+                  <Typography component="h3" variant="h6">
+                    Experience the potential benefits of sound therapy for
+                    tinnitus, blending white noise, calming melodies, and
+                    mindful meditation. These therapeutic sounds may help manage
+                    the condition, enhancing your overall sense of well-being.
                   </Typography>
                 </Grid>
               </Box>

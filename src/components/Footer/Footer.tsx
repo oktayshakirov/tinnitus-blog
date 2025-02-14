@@ -1,5 +1,5 @@
 import Link from '@components/Link';
-import { FaFacebook, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaGithub, FaApple } from 'react-icons/fa';
 import {
   StyledFooter,
   StyledContainer,
@@ -65,6 +65,13 @@ const Footer = ({ isApp = false }: FooterProps) => {
               aria-label="GitHub"
             >
               <FaGithub size={24} />
+            </Link>
+            <Link
+              href="https://apps.apple.com/de/app/tinnitushelp-me/id6741688965?l=en-GB"
+              target="_blank"
+              aria-label="Apple App Store"
+            >
+              <FaApple size={24} />
             </Link>
           </>
         )}
