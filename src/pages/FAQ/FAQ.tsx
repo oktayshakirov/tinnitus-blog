@@ -28,7 +28,7 @@ const FAQ = () => {
             sx={{
               padding: '20px',
               marginBottom: '20px',
-              backgroundColor: '#42275a',
+              backgroundColor: '#5B3964',
             }}
           >
             <Typography variant="h6" gutterBottom>
@@ -48,7 +48,7 @@ const FAQ = () => {
             sx={{
               padding: '20px',
               marginBottom: '20px',
-              backgroundColor: '#42275a',
+              backgroundColor: '#5B3964',
             }}
           >
             <Typography variant="h6" gutterBottom>
@@ -68,7 +68,7 @@ const FAQ = () => {
             sx={{
               padding: '20px',
               marginBottom: '20px',
-              backgroundColor: '#42275a',
+              backgroundColor: '#5B3964',
             }}
           >
             <Typography variant="h6" gutterBottom>
@@ -88,7 +88,7 @@ const FAQ = () => {
             sx={{
               padding: '20px',
               marginBottom: '20px',
-              backgroundColor: '#42275a',
+              backgroundColor: '#5B3964',
             }}
           >
             <Typography variant="h6" gutterBottom>
@@ -108,7 +108,7 @@ const FAQ = () => {
             sx={{
               padding: '20px',
               marginBottom: '20px',
-              backgroundColor: '#42275a',
+              backgroundColor: '#5B3964',
             }}
           >
             <Typography variant="h6" gutterBottom>
@@ -128,7 +128,7 @@ const FAQ = () => {
             sx={{
               padding: '20px',
               marginBottom: '20px',
-              backgroundColor: '#42275a',
+              backgroundColor: '#5B3964',
             }}
           >
             <Typography variant="h6" gutterBottom>
@@ -147,7 +147,7 @@ const FAQ = () => {
             sx={{
               padding: '20px',
               marginBottom: '20px',
-              backgroundColor: '#42275a',
+              backgroundColor: '#5B3964',
             }}
           >
             <Typography variant="h6" gutterBottom>

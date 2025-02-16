@@ -46,6 +46,13 @@ const Footer = ({ isApp = false }: FooterProps) => {
         ) : (
           <>
             <Link
+              href="https://github.com/oktayshakirov/tinnitus-blog"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <FaGithub size={24} />
+            </Link>
+            <Link
               href="https://www.facebook.com/TheTinnitusHelp"
               target="_blank"
               aria-label="Facebook"
@@ -58,13 +65,6 @@ const Footer = ({ isApp = false }: FooterProps) => {
               aria-label="Twitter"
             >
               <FaTwitter size={24} />
-            </Link>
-            <Link
-              href="https://github.com/oktayshakirov/tinnitus-blog"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <FaGithub size={24} />
             </Link>
             <Link
               href="https://apps.apple.com/de/app/tinnitushelp-me/id6741688965?l=en-GB"

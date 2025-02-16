@@ -26,6 +26,10 @@ const Document = () => {
           }
         `}</style>
         <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/fontisto@3.0.4/css/fontisto/fontisto.min.css"
+        />
+        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/apple-touch-icon.png"

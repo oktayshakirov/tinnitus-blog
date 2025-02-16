@@ -2,6 +2,8 @@ import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import Pagination from '@mui/material/Pagination';
 import Container from '@mui/material/Container';
+import { colors } from '@theme/colors';
+import Box from '@mui/material/Box';
 
 export const StyledPagination = styled(Pagination)`
   ${({ theme }) => css`
@@ -31,4 +33,8 @@ export const StyledTabContainer = styled(Container)`
     border-radius: 25px;
     padding: ${theme.spacing(3)};
   `}
+`;
+
+export const HighlightContainer = styled(Box)`
+  color: ${colors.highlight};
 `;
