@@ -12,7 +12,6 @@ import {
   StyledPagination,
   StyledContainer,
   StyledTabContainer,
-  HighlightContainer,
 } from './Zen.styled';
 import AdComponent from '@components/AdComponent';
 
@@ -30,18 +29,16 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
       <Layout>
         <StyledContainer>
           <StyledTabContainer>
-            <HighlightContainer>
-              <Headline>
-                <i
-                  className="fi fi-music-note"
-                  style={{
-                    fontSize: '0.8em',
-                    marginRight: '0.5em',
-                  }}
-                />
-                SOUNDS
-              </Headline>
-            </HighlightContainer>
+            <Headline>
+              <i
+                className="fi fi-music-note"
+                style={{
+                  fontSize: '0.8em',
+                  marginRight: '0.5em',
+                }}
+              />
+              SOUNDS
+            </Headline>
             <ArticlesGrid articles={zenMeta} />
             {pageCount > 1 && (
               <StyledPagination

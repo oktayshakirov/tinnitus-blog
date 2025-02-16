@@ -6,6 +6,7 @@ import ArticlesGrid from '@components/ArticlesGrid';
 import Box from '@mui/material/Box';
 import AdComponent from '@components/AdComponent';
 import TagDetailsSEO from './TagDetails.SEO';
+import { StyledContainer, StyledTabContainer } from './TagDetails.styled';
 
 const TagDetails = ({
   slug,
@@ -20,17 +21,21 @@ const TagDetails = ({
     <>
       <TagDetailsSEO tag={slug} />
       <Layout>
-        <Container>
-          <Typography component="h1" variant="h4" gutterBottom>
-            Articles tagged with: {slug}
-          </Typography>
-          <ArticlesGrid articles={articlesToDisplay} />
-        </Container>
-        <Container>
-          <Box pt={4}>
-            <AdComponent />
-          </Box>
-        </Container>
+        <StyledContainer>
+          <StyledTabContainer>
+            <Container>
+              <Typography component="h1" variant="h4" gutterBottom>
+                Articles tagged with: {slug}
+              </Typography>
+              <ArticlesGrid articles={articlesToDisplay} />
+            </Container>
+          </StyledTabContainer>
+          <Container>
+            <Box pt={3}>
+              <AdComponent />
+            </Box>
+          </Container>
+        </StyledContainer>
       </Layout>
     </>
   );

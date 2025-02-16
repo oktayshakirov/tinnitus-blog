@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { colors } from '@theme/colors';
 
 export const StyledContainer = styled(Container)`
   ${({ theme }) => css`
@@ -42,8 +41,4 @@ export const StyledTabContainer = styled(Container)`
     border-radius: 25px;
     padding: ${theme.spacing(3)};
   `}
-`;
-
-export const HighlightContainer = styled(Box)`
-  color: ${colors.highlight};
 `;

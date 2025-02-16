@@ -18,9 +18,9 @@ export const theme = responsiveFontSizes(
     palette: {
       mode: 'dark',
       primary: {
-        main: colors.highlight,
+        main: colors.primary,
       },
-      divider: colors.highlight,
+      divider: colors.primary,
     },
   })
 );
