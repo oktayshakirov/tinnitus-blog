@@ -9,7 +9,6 @@ import {
   StyledCardTags,
   StyledButton,
   StyledTabContainer,
-  HighlightContainer,
 } from './Tags.styled';
 import Link from 'next/link';
 
@@ -19,18 +18,16 @@ const Tags = ({ tags }: Props) => (
     <Layout>
       <StyledContainer>
         <StyledTabContainer>
-          <HighlightContainer>
-            <Headline>
-              <i
-                className="fi fi-hashtag"
-                style={{
-                  fontSize: '0.8em',
-                  marginRight: '0.5em',
-                }}
-              />
-              TAGS
-            </Headline>
-          </HighlightContainer>
+          <Headline>
+            <i
+              className="fi fi-hashtag"
+              style={{
+                fontSize: '0.8em',
+                marginRight: '0.5em',
+              }}
+            />
+            TAGS
+          </Headline>
           <StyledCardTags>
             <Grid container spacing={3}>
               {tags.map((tag) => (
