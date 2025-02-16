@@ -1,7 +1,5 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
-import { grey } from '@mui/material/colors';
-
-const customColor = '#FFDAB9';
+import { colors } from './colors';
 
 export const theme = responsiveFontSizes(
   createTheme({
@@ -20,13 +18,9 @@ export const theme = responsiveFontSizes(
     palette: {
       mode: 'dark',
       primary: {
-        main: customColor,
+        main: colors.highlight,
       },
-      divider: customColor,
-      background: {
-        default: grey[900],
-        paper: grey[900],
-      },
+      divider: colors.highlight,
     },
   })
 );

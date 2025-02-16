@@ -12,6 +12,7 @@ import {
   StyledPagination,
   StyledContainer,
   StyledTabContainer,
+  HighlightContainer,
 } from './Blog.styled';
 import AdComponent from '@components/AdComponent';
 
@@ -29,7 +30,18 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
       <Layout>
         <StyledContainer>
           <StyledTabContainer>
-            <Headline>POSTS</Headline>
+            <HighlightContainer>
+              <Headline>
+                <i
+                  className="fi fi-quote-a-left"
+                  style={{
+                    fontSize: '0.8em',
+                    marginRight: '0.5em',
+                  }}
+                />
+                POSTS
+              </Headline>
+            </HighlightContainer>
             <ArticlesGrid articles={postsMeta} />
             {pageCount > 1 && (
               <StyledPagination
