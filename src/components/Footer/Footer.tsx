@@ -1,5 +1,5 @@
 import Link from '@components/Link';
-import { FaFacebook, FaTwitter, FaGithub, FaApple } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaGithub } from 'react-icons/fa';
 import {
   StyledFooter,
   StyledContainer,
@@ -8,6 +8,7 @@ import {
   StyledIconContainer,
 } from '@components/Footer/Footer.styled';
 import Box from '@mui/material/Box';
+import AppsBanner from '@components/AppsBanner';
 
 type FooterProps = {
   isApp?: boolean;
@@ -18,6 +19,7 @@ const Footer = ({ isApp = false }: FooterProps) => {
 
   return (
     <StyledFooter>
+      {!isApp && <AppsBanner />}
       <StyledCopyright>TinnitusHelp.me © 2023 - {currentYear}</StyledCopyright>
       <StyledContainer>
         <Link href="/privacy" style={{ textDecoration: 'none' }}>
@@ -65,13 +67,6 @@ const Footer = ({ isApp = false }: FooterProps) => {
               aria-label="Twitter"
             >
               <FaTwitter size={24} />
-            </Link>
-            <Link
-              href="https://apps.apple.com/de/app/tinnitushelp-me/id6741688965?l=en-GB"
-              target="_blank"
-              aria-label="Apple App Store"
-            >
-              <FaApple size={24} />
             </Link>
           </>
         )}
