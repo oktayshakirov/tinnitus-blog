@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import Link from '@components/Link';
 import Chip from '@mui/material/Chip';
+import { colors } from '@theme/colors';
 
 export const StyledCard = styled('div')`
   ${({ theme }) => css`
@@ -44,7 +45,7 @@ export const StyledContent = styled('div')`
   `}
 `;
 
-export const StyledDate = styled(Chip)`
+export const StyledTime = styled(Chip)`
   ${({ theme }) => css`
     background: ${theme.palette.primary.main};
     color: ${theme.palette.common.black};
@@ -110,7 +111,7 @@ export const StyledTags = styled('div')`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    gap: ${theme.spacing(2)};
+    gap: ${theme.spacing(1.5)};
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -123,10 +124,12 @@ export const StyledTags = styled('div')`
 
 export const StyledTag = styled('span')`
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  color: ${colors.primary};
 
   a {
     text-decoration: none;
     white-space: nowrap;
+    color: inherit;
   }
 `;

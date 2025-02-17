@@ -8,16 +8,16 @@ import Image from '@components/Image';
 import {
   StyledCard,
   StyledContent,
-  StyledDate,
+  StyledTime,
   StyledFooter,
   StyledLink,
-  StyledReadingTime,
-  StyledTag,
   StyledTags,
+  StyledTag,
 } from './ArticleCard.styled';
 import { getTagsPath } from '@lib/paths';
 import { Divider } from '@mui/material';
 import StreamingIcons from '@components/StreamingIcons';
+import { FaHashtag, FaClock } from 'react-icons/fa';
 
 type Props = {
   article: ArticleMeta;
@@ -26,8 +26,7 @@ type Props = {
 } & AllHTMLAttributes<HTMLDivElement>;
 
 const ArticleCard = ({ className, article, index, withTags }: Props) => {
-  const { title, description, slug, image, date, tags, type, readingTime } =
-    article;
+  const { title, description, slug, image, tags, type, readingTime } = article;
   const path = type === ArticleType.POST ? '/blog' : '/zen';
 
   return (
@@ -35,7 +34,16 @@ const ArticleCard = ({ className, article, index, withTags }: Props) => {
       <StyledCard className={className}>
         <StyledLink href={`${path}/${slug}`}>
           <Image src={image} alt={title} />
-          <StyledDate label={date} />
+          {type === ArticleType.POST && (
+            <StyledTime
+              icon={
+                <FaClock
+                  style={{ color: 'inherit', transform: 'translateY(-2px)' }}
+                />
+              }
+              label={readingTime.text}
+            />
+          )}
           <StyledContent>
             <Typography component="h2" variant="h6" mb={1}>
               {title}
@@ -49,17 +57,30 @@ const ArticleCard = ({ className, article, index, withTags }: Props) => {
             )}
           </StyledContent>
         </StyledLink>
-        {withTags && type === ArticleType.POST && (
+        {withTags && (
           <>
             <Divider sx={{ mx: 2 }} />
             <StyledFooter>
-              <StyledReadingTime label={readingTime.text} />
               <StyledTags>
-                {tags.map((tag) => (
+                {tags.slice(0, 2).map((tag) => (
                   <StyledTag key={tag}>
-                    <Link href={getTagsPath(tag)}>{tag}</Link>
+                    <Link href={getTagsPath(tag)}>
+                      <FaHashtag
+                        style={{
+                          color: 'inherit',
+                          marginRight: '0.3rem',
+                          transform: 'translateY(2px)',
+                        }}
+                      />
+                      {tag}
+                    </Link>
                   </StyledTag>
                 ))}
+                {tags.length > 2 && (
+                  <StyledTag key="extra">
+                    <span>+{tags.length - 2}</span>
+                  </StyledTag>
+                )}
               </StyledTags>
             </StyledFooter>
           </>
