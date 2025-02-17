@@ -21,7 +21,7 @@ const Document = () => {
           }}
         />
         <style>{`
-          .is-app .header {
+          .is-app .isApp {
             display: none !important;
           }
         `}</style>

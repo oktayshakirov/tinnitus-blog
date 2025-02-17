@@ -24,7 +24,7 @@ export const StyledContainer = styled(Container)`
     justify-content: center;
     align-items: center;
     padding: 0 16px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4);
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
     border-radius: 0 0 25px 25px;
     margin-bottom: 18px;
@@ -101,33 +101,4 @@ export const StyledNav = styled('nav')`
       }
     }
   `}
-`;
-
-export const StyledPromotionalBar = styled(Container)`
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 25px;
-  padding: 10px;
-  text-align: center;
-  font-size: 1rem;
-  width: 90%;
-
-  a {
-    font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 0 5px;
-  }
-
-  p {
-    margin: 0;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 0.85rem;
-    padding: 8px 0;
-  }
 `;

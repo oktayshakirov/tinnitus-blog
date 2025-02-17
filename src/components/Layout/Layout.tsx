@@ -18,7 +18,7 @@ const Layout = ({ children }: Props) => {
 
   return (
     <>
-      <div className="header">
+      <div className="isApp">
         <Header />
       </div>
       <main>{children}</main>
