@@ -11,7 +11,7 @@ import {
   StyledDivider,
   StyledContainer,
 } from './ZenPost.styled';
-import AdComponent from '@components/MDX/AdComponent';
+import AdComponent from '@components/AdComponent';
 import GoBackLink from '@components/GoBackLink';
 
 const ZenPost = ({
