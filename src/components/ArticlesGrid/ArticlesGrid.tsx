@@ -14,8 +14,8 @@ const ArticlesGrid = ({
   return (
     <Grid container spacing={4}>
       {articles.map((article, index) => (
-        <Grid key={article.slug} item {...itemProps}>
-          <ArticleCard article={article} index={index} withTags />
+        <Grid key={article.slug} item {...itemProps} sx={{ display: 'flex' }}>
+          <ArticleCard article={article} index={index} />
         </Grid>
       ))}
     </Grid>

@@ -5,6 +5,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Link from '@mui/material/Link';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import NoSsr from '@mui/material/NoSsr';
 
 const GoBackLink = ({ option = 'blog' }) => {
   const theme = useTheme();
@@ -18,19 +19,21 @@ const GoBackLink = ({ option = 'blog' }) => {
       : { href: '/blog', text: 'All Posts' };
 
   return (
-    <NextLink href={href} passHref>
-      <Link
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          textDecoration: 'none',
-          color: 'white',
-        }}
-      >
-        <ArrowBackIosIcon sx={{ mr: 0.5, color: 'white' }} />
-        <Typography sx={{ color: 'white' }}>{text}</Typography>
-      </Link>
-    </NextLink>
+    <NoSsr>
+      <NextLink href={href} passHref>
+        <Link
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            textDecoration: 'none',
+            color: 'white',
+          }}
+        >
+          <ArrowBackIosIcon sx={{ mr: 0.5, color: 'white' }} />
+          <Typography sx={{ color: 'white' }}>{text}</Typography>
+        </Link>
+      </NextLink>
+    </NoSsr>
   );
 };
 
