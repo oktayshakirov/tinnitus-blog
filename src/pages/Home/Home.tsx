@@ -65,7 +65,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <Grid container spacing={4}>
               {latestPosts.map((article, index) => (
                 <Grid item xs={12} sm={6} md={4} key={article.slug}>
-                  <ArticleCard article={article} index={index} withTags />
+                  <ArticleCard article={article} index={index} />
                 </Grid>
               ))}
             </Grid>
@@ -96,7 +96,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             <Grid container spacing={4}>
               {featuredPosts.map((article, index) => (
                 <Grid item xs={12} sm={6} md={4} key={article.slug}>
-                  <ArticleCard article={article} index={index} withTags />
+                  <ArticleCard article={article} index={index} />
                 </Grid>
               ))}
             </Grid>

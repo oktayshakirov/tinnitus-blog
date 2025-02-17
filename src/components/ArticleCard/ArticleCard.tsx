@@ -22,10 +22,9 @@ import { FaHashtag, FaClock } from 'react-icons/fa';
 type Props = {
   article: ArticleMeta;
   index?: number;
-  withTags?: boolean;
 } & AllHTMLAttributes<HTMLDivElement>;
 
-const ArticleCard = ({ className, article, index, withTags }: Props) => {
+const ArticleCard = ({ className, article, index }: Props) => {
   const { title, description, slug, image, tags, type, readingTime } = article;
   const path = type === ArticleType.POST ? '/blog' : '/zen';
 
@@ -57,7 +56,7 @@ const ArticleCard = ({ className, article, index, withTags }: Props) => {
             )}
           </StyledContent>
         </StyledLink>
-        {withTags && (
+        {type === ArticleType.POST && (
           <>
             <Divider sx={{ mx: 2 }} />
             <StyledFooter>
