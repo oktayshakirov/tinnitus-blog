@@ -29,6 +29,7 @@ export const StyledContent = styled('div')`
 
     h2 {
       margin-bottom: ${theme.spacing(1)};
+      font-size: 1.1rem;
     }
 
     p {

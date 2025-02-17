@@ -36,7 +36,7 @@ type Props = {
 };
 const ArticleNavigation = ({ prev, next, tags = [] }: Props) => (
   <aside>
-    <Grid container spacing={{ xs: 4, md: 4 }}>
+    <Grid container spacing={{ xs: 4, md: 4 }} paddingY={4}>
       <Grid item xs={12}>
         <Title>Tags:</Title>
         <ArticleTags tags={tags} />
