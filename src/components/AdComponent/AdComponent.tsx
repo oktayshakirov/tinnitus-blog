@@ -15,14 +15,18 @@ const AdComponent: React.FC = () => {
     }
 
     const loadAdsScript = () => {
-      return new Promise((resolve, reject) => {
+      return new Promise<void>((resolve, reject) => {
+        if (document.querySelector('script[src*="adsbygoogle.js"]')) {
+          resolve();
+          return;
+        }
         const script = document.createElement('script');
         script.src =
           'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
         script.async = true;
         script.crossOrigin = 'anonymous';
-        script.onload = resolve;
-        script.onerror = reject;
+        script.onload = () => resolve();
+        script.onerror = () => reject();
         document.body.appendChild(script);
       });
     };
@@ -30,7 +34,10 @@ const AdComponent: React.FC = () => {
     const initializeAds = () => {
       try {
         if (window.adsbygoogle) {
-          window.adsbygoogle.push({});
+          const insEl = adRef.current?.querySelector('ins.adsbygoogle');
+          if (insEl && !insEl.getAttribute('data-adsbygoogle-status')) {
+            window.adsbygoogle.push({});
+          }
         }
       } catch (e) {
         console.error('Adsbygoogle initialization error:', e);
@@ -48,33 +55,24 @@ const AdComponent: React.FC = () => {
       }
     };
 
-    const observeAdSlot = () => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setupAds();
-              observer.disconnect();
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setupAds();
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-      if (adRef.current) {
-        observer.observe(adRef.current);
-      }
-      return () => observer.disconnect();
-    };
-
-    const cleanupObserver = observeAdSlot();
+    if (adRef.current) {
+      observer.observe(adRef.current);
+    }
 
     return () => {
-      cleanupObserver();
-      const adsScript = document.querySelector('script[src*="adsbygoogle"]');
-      if (adsScript && adsScript.parentNode) {
-        adsScript.parentNode.removeChild(adsScript);
-      }
+      observer.disconnect();
     };
   }, []);
 

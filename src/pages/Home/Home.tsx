@@ -15,6 +15,7 @@ import {
   StyledLogoContainer,
   StyledTabContainer,
   StyledTextContainer,
+  StyledGrid,
 } from './Home.styled';
 import { ArticleMeta } from '@types';
 import AdComponent from '@components/AdComponent';
@@ -64,9 +65,9 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Typography>
             <Grid container spacing={4}>
               {latestPosts.map((article, index) => (
-                <Grid item xs={12} sm={6} md={4} key={article.slug}>
+                <StyledGrid key={article.slug}>
                   <ArticleCard article={article} index={index} />
-                </Grid>
+                </StyledGrid>
               ))}
             </Grid>
             <StyledTextContainer>
@@ -95,9 +96,9 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Typography>
             <Grid container spacing={4}>
               {featuredPosts.map((article, index) => (
-                <Grid item xs={12} sm={6} md={4} key={article.slug}>
+                <StyledGrid key={article.slug}>
                   <ArticleCard article={article} index={index} />
-                </Grid>
+                </StyledGrid>
               ))}
             </Grid>
           </StyledTabContainer>
@@ -131,9 +132,9 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Typography>
             <Grid container spacing={4}>
               {latestZen.map((sounds, index) => (
-                <Grid item xs={12} sm={6} md={4} key={sounds.slug}>
+                <StyledGrid key={sounds.slug}>
                   <ArticleCard article={sounds} index={index} />
-                </Grid>
+                </StyledGrid>
               ))}
             </Grid>
             <StyledTextContainer>

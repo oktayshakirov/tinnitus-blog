@@ -86,3 +86,16 @@ export const StyledTextContainer = styled(Container)`
     margin-top: ${theme.spacing(3)};
   `}
 `;
+
+export const StyledGrid = styled(Grid)`
+  ${({}) => css`
+    display: flex;
+  `}
+`;
+
+StyledGrid.defaultProps = {
+  item: true,
+  xs: 12,
+  sm: 6,
+  md: 4,
+};

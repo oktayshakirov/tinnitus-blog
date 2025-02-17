@@ -7,7 +7,7 @@ export const global = css`
     background: ${colors.background};
     color: ${theme.palette.grey[200]}!important;
     fontfamily: 'Nunito, sans-serif';
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   h1,
