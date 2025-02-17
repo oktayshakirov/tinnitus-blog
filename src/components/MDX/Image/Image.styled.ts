@@ -8,19 +8,10 @@ export const StyledImageContainer = styled('div')`
     aspect-ratio: 16 / 9;
     width: 100%;
     border-radius: ${theme.spacing(0.5)};
-
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
+    min-height: 200px;
 
     ${theme.breakpoints.down('md')} {
       aspect-ratio: 4 / 3;
-    }
-
-    ${theme.breakpoints.up('md')} {
-      max-height: ${theme.spacing(50)};
     }
   `}
 `;
