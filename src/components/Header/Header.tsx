@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
-import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import Link from '@components/Link';
 import MainMenuDrawer from '@components/MainMenuDrawer';
 import {
@@ -8,7 +7,6 @@ import {
   StyledContainer,
   StyledMenuButton,
   StyledNav,
-  StyledPromotionalBar,
 } from './Header.styled';
 
 const Header = () => {
@@ -50,22 +48,6 @@ const Header = () => {
         </StyledContainer>
         <MainMenuDrawer open={isMainMenuOpen} toggleMenu={toggleMainMenu} />
       </StyledAppBar>
-      <StyledPromotionalBar>
-        <p>
-          Get our app on{' '}
-          <Link
-            href="https://apps.apple.com/de/app/tinnitushelp-me/id6741688965?l=en-GB"
-            target="_blank"
-          >
-            <FaApple /> iOS
-          </Link>{' '}
-          &{' '}
-          <Link href="https://android.example.com" target="_blank">
-            <FaGooglePlay /> Android
-          </Link>
-          !
-        </p>
-      </StyledPromotionalBar>
     </>
   );
 };
