@@ -1,21 +1,21 @@
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
-const axios = require('axios');
+const admin = require('firebase-admin');
 
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-async function waitForDeployment() {
-  console.log('Waiting for deployment to finish...');
-  await delay(60000);
-  console.log('Continuing with sync...');
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert({
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+      privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    }),
+  });
 }
 
 const cachePath = path.join(__dirname, 'cache.json');
-
 let cache = { posts: [], sounds: [] };
+
 if (fs.existsSync(cachePath)) {
   try {
     const raw = fs.readFileSync(cachePath, 'utf8');
@@ -27,7 +27,6 @@ if (fs.existsSync(cachePath)) {
 
 async function processFiles(directory, type) {
   const files = fs.readdirSync(directory);
-
   for (const file of files) {
     const filePath = path.join(directory, file);
     const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -39,14 +38,10 @@ async function processFiles(directory, type) {
         continue;
       }
       try {
-        await axios.post(
-          'https://tinnitushelp.me/api/triggerPushNotification',
-          {
-            type,
-            title: data.title,
-            docId: data.title,
-          }
-        );
+        await admin.firestore().collection(type).doc(data.title).set({
+          title: data.title,
+          createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
         console.log(`Successfully added "${data.title}"`);
         cache[type].push(data.title);
       } catch (error) {
@@ -59,8 +54,6 @@ async function processFiles(directory, type) {
 }
 
 async function run() {
-  await waitForDeployment();
-
   try {
     await processFiles(path.join(__dirname, '../../content/posts'), 'posts');
     await processFiles(path.join(__dirname, '../../content/zen'), 'sounds');
