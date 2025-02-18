@@ -3,6 +3,16 @@ const path = require('path');
 const matter = require('gray-matter');
 const axios = require('axios');
 
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function waitForDeployment() {
+  console.log('Waiting for deployment to finish...');
+  await delay(60000);
+  console.log('Continuing with sync...');
+}
+
 const cachePath = path.join(__dirname, 'cache.json');
 
 let cache = { posts: [], sounds: [] };
@@ -49,6 +59,8 @@ async function processFiles(directory, type) {
 }
 
 async function run() {
+  await waitForDeployment();
+
   try {
     await processFiles(path.join(__dirname, '../../content/posts'), 'posts');
     await processFiles(path.join(__dirname, '../../content/zen'), 'sounds');
