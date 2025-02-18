@@ -14,5 +14,13 @@
         "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["pages/api/*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }
