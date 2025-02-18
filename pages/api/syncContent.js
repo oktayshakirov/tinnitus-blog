@@ -29,11 +29,14 @@ async function processFiles(directory, type) {
         continue;
       }
       try {
-        await axios.post('http://tinnitushelp.me/api/triggerPushNotification', {
-          type,
-          title: data.title,
-          docId: data.title,
-        });
+        await axios.post(
+          'https://tinnitushelp.me/api/triggerPushNotification',
+          {
+            type,
+            title: data.title,
+            docId: data.title,
+          }
+        );
         console.log(`Successfully added "${data.title}"`);
         cache[type].push(data.title);
       } catch (error) {
