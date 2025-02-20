@@ -14,11 +14,11 @@ const App = ({}: Props) => {
         <StyledContainer>
           <Headline>TinnitusHelp.me App</Headline>
           <Image
-            src="/app.png"
+            src="/app.jpg"
             alt="Download on the App Store"
             layout="responsive"
-            width={300}
-            height={100}
+            width={815}
+            height={351}
           />
           <p>
             Discover a calmer world with TinnitusHelp.me App - your personalized
