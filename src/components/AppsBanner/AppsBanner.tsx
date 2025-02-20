@@ -27,17 +27,17 @@ const AppsBanner = () => {
             target="_blank"
           >
             <Image
-              src="/app-store-badge-ios.svg"
+              src="/app-store-badge-ios.png"
               alt="Download on the App Store"
-              width={135}
+              width={120}
               height={40}
             />
           </Link>
           <Link href="/" target="_blank">
             <Image
-              src="/google-play-badge.svg"
+              src="/google-play-badge.png"
               alt="Get it on Google Play"
-              width={135}
+              width={123}
               height={40}
             />
           </Link>

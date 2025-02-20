@@ -19,7 +19,6 @@ export const StyledContainer = styled(Container)`
 
     ${theme.breakpoints.up('md')} {
       padding-top: ${theme.spacing(5)};
-      padding-bottom: ${theme.spacing(10)};
     }
   `}
 `;
