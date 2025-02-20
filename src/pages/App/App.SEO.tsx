@@ -1,11 +1,11 @@
 import { NextSeo } from 'next-seo';
 import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 
-const AboutSEO = () => {
-  const title = `App | ${DOMAIN_NAME}`;
+const AppSEO = () => {
+  const title = `TinnitusHelp.me App | ${DOMAIN_NAME}`;
   const description =
-    'Learn more about TinnitusHelp.me, our mission and the team behind our tinnitus resources. We are dedicated to providing support and reliable information to help manage tinnitus effectively.';
-  const canonical = `${DOMAIN}/about`;
+    'Discover a calmer world with TinnitusHelp.me - your personalized companion for managing tinnitus. Our app offers educational articles, relaxing soundscapes, mindfulness practices, lifestyle tips, and fun facts to help you regain control and find moments of peace.';
+  const canonical = `${DOMAIN}/app`;
   const imageUrl = `${DOMAIN}${DEFAULT_OG_IMAGE}`;
 
   return (
@@ -24,4 +24,4 @@ const AboutSEO = () => {
   );
 };
 
-export default AboutSEO;
+export default AppSEO;
