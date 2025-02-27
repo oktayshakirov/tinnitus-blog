@@ -9,9 +9,5 @@ export const StyledImageContainer = styled('div')`
     width: 100%;
     border-radius: ${theme.spacing(0.5)};
     min-height: 200px;
-
-    ${theme.breakpoints.down('md')} {
-      aspect-ratio: 4 / 3;
-    }
   `}
 `;
