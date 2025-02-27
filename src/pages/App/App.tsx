@@ -27,6 +27,29 @@ const App = ({}: Props) => {
             personalized approach to help you regain control and find moments of
             peace.
           </p>
+          <p>
+            Rated <strong>5 stars</strong> on the App Store and Google Play, the
+            TinnitusHelp.me App has quickly become the preferred tinnitus
+            companion for thousands worldwide. With an intuitive design and a
+            range of scientifically backed features, it empowers users to take
+            charge of their tinnitus relief journey.
+          </p>
+          <h2>Why Choose TinnitusHelp.me?</h2>
+          <ul>
+            <li>
+              <strong>Proven Success:</strong> Highly rated by users for its
+              effectiveness in reducing tinnitus distress and improving overall
+              well-being.
+            </li>
+            <li>
+              <strong>Trusted by Experts:</strong> Recommended by health
+              professionals as a supportive tool for managing tinnitus symptoms.
+            </li>
+            <li>
+              <strong>Constantly Evolving:</strong> Regular updates ensure new
+              features, content, and improvements based on user feedback.
+            </li>
+          </ul>
           <h2>Key Features:</h2>
           <ul>
             <li>
@@ -53,6 +76,12 @@ const App = ({}: Props) => {
               facts about tinnitus.
             </li>
           </ul>
+          <p>
+            Whether you&apos;re newly experiencing tinnitus or have been
+            managing it for years, the TinnitusHelp.me App provides the support
+            you need to make a positive change in your daily life. Join
+            thousands of users and start your journey to relief today!
+          </p>
         </StyledContainer>
       </Layout>
     </>

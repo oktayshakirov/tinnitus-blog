@@ -18,7 +18,10 @@ const AppsBanner = () => {
           </Typography>
           <Typography variant="body2">
             Managing tinnitus is even easier with our app. Stay up to date with
-            the new posts and sounds.
+            the new posts and sounds.{' '}
+            <Link href="/app" style={{ textDecoration: 'underline' }}>
+              Learn more
+            </Link>
           </Typography>
         </TextSection>
         <BadgeSection>
