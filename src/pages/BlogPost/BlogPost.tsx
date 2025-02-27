@@ -48,7 +48,7 @@ const BlogPost = ({
               <MDXContent content={content} />
               <StyledDivider />
             </Grid>
-            <Grid item xs={12} md={4} direction="column" spacing={4}>
+            <Grid container item xs={12} md={4} direction="column" spacing={4}>
               <Grid item>
                 <AdComponent />
               </Grid>
