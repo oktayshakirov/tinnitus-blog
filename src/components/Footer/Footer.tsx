@@ -9,6 +9,7 @@ import {
 } from '@components/Footer/Footer.styled';
 import Box from '@mui/material/Box';
 import AppsBanner from '@components/AppsBanner';
+import { usePathname } from 'next/navigation';
 
 type FooterProps = {
   isApp?: boolean;
@@ -16,10 +17,12 @@ type FooterProps = {
 
 const Footer = ({ isApp = false }: FooterProps) => {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const shouldHideAppsBanner = isApp || pathname === '/app';
 
   return (
     <StyledFooter>
-      {!isApp && <AppsBanner />}
+      {!shouldHideAppsBanner && <AppsBanner />}
       <StyledCopyright>TinnitusHelp.me © 2023 - {currentYear}</StyledCopyright>
       <StyledContainer>
         <Link href="/privacy" style={{ textDecoration: 'none' }}>
