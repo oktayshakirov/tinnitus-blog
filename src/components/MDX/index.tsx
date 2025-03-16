@@ -8,6 +8,7 @@ import Blockquote from '@components/MDX/Blockquote';
 import Highlighter from '@components/MDX/Highlighter';
 import AdComponent from '@components/MDX/AdComponent';
 import StreamingPlatforms from './StreamingPlatforms';
+import Table from '@components/MDX/Table';
 
 export const components: MDXComponents = {
   a: Link,
@@ -23,6 +24,7 @@ export const components: MDXComponents = {
   Highlighter,
   AdComponent,
   StreamingPlatforms,
+  table: Table,
 };
 
 type Props = {
