@@ -36,7 +36,10 @@ const AppsBanner = () => {
               height={40}
             />
           </Link>
-          <Link href="/" target="_blank">
+          <Link
+            href="https://play.google.com/store/apps/details?id=com.shadev.tinnitushelpme"
+            target="_blank"
+          >
             <Image
               src="/google-play-badge.png"
               alt="Get it on Google Play"
