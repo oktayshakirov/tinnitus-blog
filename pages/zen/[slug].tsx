@@ -7,6 +7,7 @@ import ZenPost from '@ui/pages/ZenPost';
 import rehypeSlug from 'rehype-slug';
 import { getAllZen } from '@lib/mdx';
 import { Article } from '@types';
+import remarkGfm from 'remark-gfm';
 
 export type Props = {
   content: MDXRemoteProps;
@@ -48,7 +49,7 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
     scope: {},
     mdxOptions: {
       development: false,
-      remarkPlugins: [],
+      remarkPlugins: [remarkGfm],
       rehypePlugins: [rehypeSlug],
     },
   });
