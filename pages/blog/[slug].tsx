@@ -8,6 +8,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeToc from 'rehype-toc';
 import { getAllPosts } from '@lib/mdx';
 import { Article } from '@types';
+import remarkGfm from 'remark-gfm';
 
 export type Props = {
   slug: string;
@@ -48,7 +49,7 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
     scope: {},
     mdxOptions: {
       development: false,
-      remarkPlugins: [],
+      remarkPlugins: [remarkGfm],
       rehypePlugins: [rehypeSlug, [rehypeToc]],
     },
   });
