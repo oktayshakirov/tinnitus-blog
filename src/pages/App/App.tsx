@@ -192,7 +192,7 @@ const App = ({}: Props) => {
                 fontWeight: 800,
               }}
             >
-              TinnitusHelp.me App
+              Tinnitus Help App
             </Typography>
             <Typography
               variant="h6"
@@ -209,7 +209,7 @@ const App = ({}: Props) => {
 
           <Box
             sx={{
-              mb: 8,
+              mb: 2,
               position: 'relative',
               borderRadius: '16px',
               overflow: 'hidden',
@@ -312,7 +312,6 @@ const App = ({}: Props) => {
               display: 'grid',
               gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
               gap: 3,
-              mb: 8,
             }}
           >
             {FEATURES.map((feature) => (
