@@ -133,7 +133,7 @@ const FEATURES: Feature[] = [
     description: 'Regular updates with new features and content',
     highlight: 'Weekly Updates',
   },
-] as const;
+];
 
 const KEY_FEATURES: KeyFeature[] = [
   {
@@ -152,7 +152,7 @@ const KEY_FEATURES: KeyFeature[] = [
     icon: <FaLightbulb />,
     title: 'Lifestyle Tips',
   },
-] as const;
+];
 
 const REVIEWS: Review[] = [
   {
@@ -176,7 +176,7 @@ const REVIEWS: Review[] = [
     text: "I've been using this app for 6 months now, and my quality of life has improved significantly. The variety of sounds and the ability to customize them to my needs is fantastic.",
     date: '3 months ago',
   },
-] as const;
+];
 
 const App = ({}: Props) => {
   return (
