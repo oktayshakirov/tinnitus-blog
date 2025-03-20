@@ -119,9 +119,7 @@ const AdComponent: React.FC = () => {
                 borderRadius: '4px',
               }}
             >
-              {retryCount > 0
-                ? `Loading ad... (Attempt ${retryCount}/${maxRetries})`
-                : 'Loading ad...'}
+              Loading ad...
             </div>
           )}
         </>

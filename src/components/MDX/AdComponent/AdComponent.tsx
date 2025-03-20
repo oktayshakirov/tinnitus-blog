@@ -23,7 +23,10 @@ const AdComponent: React.FC = () => {
         if (window.adsbygoogle) {
           const insEl = adRef.current?.querySelector('ins.adsbygoogle');
           if (insEl && !insEl.getAttribute('data-adsbygoogle-status')) {
+            // Clear any existing content
+            insEl.innerHTML = '';
             window.adsbygoogle.push({});
+
             // Set a timeout to check if the ad loaded
             setTimeout(() => {
               const status = insEl.getAttribute('data-adsbygoogle-status');
@@ -33,7 +36,7 @@ const AdComponent: React.FC = () => {
                 } else {
                   setIsLoading(false);
                 }
-              } else {
+              } else if (status === 'done') {
                 setIsLoading(false);
               }
             }, 2000);
@@ -99,6 +102,7 @@ const AdComponent: React.FC = () => {
               borderRadius: '25px',
               overflow: 'hidden',
               minHeight: '100px',
+              backgroundColor: '#f5f5f5',
             }}
             data-ad-layout="in-article"
             data-ad-format="fluid"
@@ -117,11 +121,10 @@ const AdComponent: React.FC = () => {
                 backgroundColor: 'rgba(255, 255, 255, 0.8)',
                 padding: '8px 16px',
                 borderRadius: '4px',
+                zIndex: 1,
               }}
             >
-              {retryCount > 0
-                ? `Loading ad... (Attempt ${retryCount}/${maxRetries})`
-                : 'Loading ad...'}
+              Loading ad...
             </div>
           )}
         </>
