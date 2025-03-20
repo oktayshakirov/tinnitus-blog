@@ -18,31 +18,50 @@ const AdComponent: React.FC = () => {
       return;
     }
 
+    const checkAdStatus = (insEl: HTMLElement) => {
+      const status = insEl.getAttribute('data-adsbygoogle-status');
+      const adStatus = insEl.getAttribute('data-ad-status');
+      const height = insEl.style.height;
+      const minHeight = insEl.style.minHeight;
+
+      // Check if ad is actually loaded and visible
+      if (
+        status === 'done' &&
+        adStatus !== 'unfilled' &&
+        height !== '0px' &&
+        minHeight !== '0px'
+      ) {
+        setIsLoading(false);
+        return true;
+      }
+      return false;
+    };
+
     const initializeAds = () => {
       try {
         if (window.adsbygoogle) {
-          const insEl = adRef.current?.querySelector('ins.adsbygoogle');
+          const insEl = adRef.current?.querySelector(
+            'ins.adsbygoogle'
+          ) as HTMLElement;
           if (insEl && !insEl.getAttribute('data-adsbygoogle-status')) {
-            // Clear any existing content
-            insEl.innerHTML = '';
+            // Set initial dimensions
+            insEl.style.minHeight = '100px';
+            insEl.style.height = 'auto';
+
             window.adsbygoogle.push({});
 
             // Set a timeout to check if the ad loaded
             setTimeout(() => {
-              const status = insEl.getAttribute('data-adsbygoogle-status');
-              if (!status || status === 'unfilled') {
+              if (!checkAdStatus(insEl)) {
                 if (retryCount < maxRetries) {
                   setRetryCount((prev) => prev + 1);
                 } else {
                   setIsLoading(false);
                 }
-              } else if (status === 'done') {
-                setIsLoading(false);
               }
             }, 2000);
           }
         } else if (retryCount < maxRetries) {
-          // If adsbygoogle is not available, retry after a delay
           setTimeout(() => {
             setRetryCount((prev) => prev + 1);
           }, 1000);
@@ -102,6 +121,7 @@ const AdComponent: React.FC = () => {
               borderRadius: '25px',
               overflow: 'hidden',
               minHeight: '100px',
+              height: 'auto',
               backgroundColor: '#f5f5f5',
             }}
             data-ad-layout="in-article"
