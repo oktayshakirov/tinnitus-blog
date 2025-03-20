@@ -1,1 +1,1 @@
-export { default } from './AdComponent';
+export { default } from '@components/AdComponent/AdComponent';
