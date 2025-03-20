@@ -54,6 +54,11 @@ const App = ({ Component, pageProps }: AppProps) => {
               href="https://pagead2.googlesyndication.com"
             />
             <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
+            <script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
+              crossOrigin="anonymous"
+            />
           </>
         )}
       </Head>
@@ -78,11 +83,12 @@ const App = ({ Component, pageProps }: AppProps) => {
       />
       {!isApp && (
         <Script
+          id="adsbygoogle-init"
           strategy="afterInteractive"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
-          crossOrigin="anonymous"
-          onLoad={() => {
-            window.adsbygoogle = window.adsbygoogle || [];
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.adsbygoogle = window.adsbygoogle || [];
+            `,
           }}
         />
       )}
