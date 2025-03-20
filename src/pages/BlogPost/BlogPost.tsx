@@ -50,9 +50,6 @@ const BlogPost = ({
             </Grid>
             <Grid container item xs={12} md={4} direction="column" spacing={4}>
               <Grid item>
-                <AdComponent />
-              </Grid>
-              <Grid item>
                 <ArticleNavigation
                   prev={prev}
                   next={next}

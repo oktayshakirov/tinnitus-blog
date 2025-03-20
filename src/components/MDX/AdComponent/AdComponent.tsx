@@ -1,7 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
+  const initializationAttempted = useRef(false);
+  const [shouldShow, setShouldShow] = useState(true);
 
   useEffect(() => {
     const isApp =
@@ -12,28 +14,50 @@ const AdComponent: React.FC = () => {
 
     if (isApp) return;
 
-    const initializeAds = () => {
+    const checkAdStatus = (insEl: HTMLElement) => {
+      const status = insEl.getAttribute('data-adsbygoogle-status');
+      const adStatus = insEl.getAttribute('data-ad-status');
+
+      if (status === 'done' && adStatus === 'unfilled') {
+        setShouldShow(false);
+      }
+    };
+
+    const initializeInArticleAd = () => {
+      if (initializationAttempted.current) return;
+
       try {
         if (window.adsbygoogle) {
           const insEl = adRef.current?.querySelector(
             'ins.adsbygoogle'
           ) as HTMLElement;
           if (insEl && !insEl.getAttribute('data-adsbygoogle-status')) {
+            initializationAttempted.current = true;
             window.adsbygoogle.push({});
+
+            const checkInterval = setInterval(() => {
+              if (insEl.getAttribute('data-adsbygoogle-status') === 'done') {
+                checkAdStatus(insEl);
+                clearInterval(checkInterval);
+              }
+            }, 100);
+
+            setTimeout(() => {
+              clearInterval(checkInterval);
+            }, 5000);
           }
         }
       } catch (e) {
-        console.error('Adsbygoogle initialization error:', e);
+        console.error('In-article ad initialization error:', e);
+        setShouldShow(false);
       }
     };
-
-    initializeAds();
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            initializeAds();
+            initializeInArticleAd();
             observer.disconnect();
           }
         });
@@ -50,6 +74,8 @@ const AdComponent: React.FC = () => {
 
   const isProduction = process.env.NODE_ENV === 'production';
 
+  if (!shouldShow) return null;
+
   return (
     <div ref={adRef} style={{ position: 'relative', margin: '20px 0' }}>
       {isProduction ? (
@@ -62,7 +88,6 @@ const AdComponent: React.FC = () => {
             minHeight: '100px',
             height: 'auto',
             width: '100%',
-            backgroundColor: '#f5f5f5',
           }}
           data-ad-layout="in-article"
           data-ad-format="fluid"
@@ -79,7 +104,7 @@ const AdComponent: React.FC = () => {
             color: '#fff',
           }}
         >
-          Ad Example
+          In-Article Ad
         </div>
       )}
     </div>
