@@ -1,110 +1,124 @@
 import { useEffect, useRef, useState } from 'react';
 
+const AD_CHECK_INTERVAL = 50;
+const AD_TIMEOUT = 1500;
+
 const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
-  const initializationAttempted = useRef(false);
-  const [shouldShow, setShouldShow] = useState(true);
+  const checkIntervalRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout>();
+  const [shouldRender, setShouldRender] = useState(true);
+  const [adHeight, setAdHeight] = useState(0);
 
   useEffect(() => {
-    const isApp =
-      typeof window !== 'undefined' &&
-      (new URLSearchParams(window.location.search).get('isApp') === 'true' ||
-        !!window.isApp ||
-        localStorage.getItem('isApp') === 'true');
+    if (typeof window === 'undefined') return;
 
-    if (isApp) return;
+    const isApp =
+      new URLSearchParams(window.location.search).get('isApp') === 'true' ||
+      !!window.isApp ||
+      localStorage.getItem('isApp') === 'true';
+
+    if (isApp) {
+      setShouldRender(false);
+      return;
+    }
+
+    const cleanup = () => {
+      if (checkIntervalRef.current) clearInterval(checkIntervalRef.current);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
 
     const checkAdStatus = (insEl: HTMLElement) => {
       const status = insEl.getAttribute('data-adsbygoogle-status');
       const adStatus = insEl.getAttribute('data-ad-status');
+      const hostEl = insEl.querySelector<HTMLElement>('[id^="aswift_"]');
 
-      if (status === 'done' && adStatus === 'unfilled') {
-        setShouldShow(false);
+      if (status === 'done') {
+        cleanup();
+
+        if (adStatus === 'unfilled' || !hostEl) {
+          setShouldRender(false);
+          return;
+        }
+
+        const height = hostEl.offsetHeight;
+        if (height > 0) {
+          setAdHeight(height);
+        } else {
+          setShouldRender(false);
+        }
       }
     };
 
-    const initializeDisplayAd = () => {
-      if (initializationAttempted.current) return;
-
+    const initializeAd = () => {
       try {
-        if (window.adsbygoogle) {
-          const insEl = adRef.current?.querySelector(
-            'ins.adsbygoogle'
-          ) as HTMLElement;
-          if (insEl && !insEl.getAttribute('data-adsbygoogle-status')) {
-            initializationAttempted.current = true;
-            window.adsbygoogle.push({});
+        if (!window.adsbygoogle) return;
 
-            const checkInterval = setInterval(() => {
-              if (insEl.getAttribute('data-adsbygoogle-status') === 'done') {
-                checkAdStatus(insEl);
-                clearInterval(checkInterval);
-              }
-            }, 100);
+        const insEl =
+          adRef.current?.querySelector<HTMLElement>('ins.adsbygoogle');
+        if (!insEl || insEl.getAttribute('data-adsbygoogle-status')) return;
 
-            setTimeout(() => {
-              clearInterval(checkInterval);
-            }, 5000);
-          }
-        }
+        window.adsbygoogle.push({});
+
+        checkIntervalRef.current = setInterval(() => {
+          checkAdStatus(insEl);
+        }, AD_CHECK_INTERVAL);
+
+        timeoutRef.current = setTimeout(() => {
+          cleanup();
+          if (!adHeight) setShouldRender(false);
+        }, AD_TIMEOUT);
       } catch (e) {
-        console.error('Display ad initialization error:', e);
-        setShouldShow(false);
+        console.error('Ad initialization error:', e);
+        setShouldRender(false);
       }
     };
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            initializeDisplayAd();
-            observer.disconnect();
-          }
-        });
+        if (entries[0].isIntersecting) {
+          initializeAd();
+          observer.disconnect();
+        }
       },
       { threshold: 0.1 }
     );
 
-    if (adRef.current) {
-      observer.observe(adRef.current);
-    }
+    if (adRef.current) observer.observe(adRef.current);
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      cleanup();
+      observer.disconnect();
+    };
+  }, [adHeight]);
 
-  const isProduction = process.env.NODE_ENV === 'production';
-
-  if (!shouldShow) return null;
+  if (!shouldRender) return null;
 
   return (
-    <div ref={adRef} style={{ position: 'relative' }}>
-      {isProduction ? (
+    <div
+      ref={adRef}
+      style={{
+        position: 'relative',
+        height: adHeight || 0,
+        transition: 'height 0.2s ease-in-out',
+      }}
+    >
+      {process.env.NODE_ENV === 'production' && (
         <ins
           className="adsbygoogle"
           style={{
             display: 'block',
-            borderRadius: '25px',
-            overflow: 'hidden',
-            minHeight: '100px',
-            height: 'auto',
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            top: 0,
+            left: 0,
           }}
           data-ad-client="ca-pub-5852582960793521"
           data-ad-slot="3785001294"
           data-ad-format="auto"
           data-full-width-responsive="true"
         />
-      ) : (
-        <div
-          style={{
-            textAlign: 'center',
-            padding: '80px',
-            margin: '10px 0',
-            border: '1px dashed #fff',
-            color: '#fff',
-          }}
-        >
-          Display Ad
-        </div>
       )}
     </div>
   );
