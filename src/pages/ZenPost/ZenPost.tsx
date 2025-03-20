@@ -50,9 +50,6 @@ const ZenPost = ({
             </Grid>
             <Grid item xs={12} md={4} container direction="column" spacing={4}>
               <Grid item>
-                <AdComponent />
-              </Grid>
-              <Grid item>
                 <ArticleNavigation
                   prev={prev}
                   next={next}
