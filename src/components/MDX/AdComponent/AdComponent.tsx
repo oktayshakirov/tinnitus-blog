@@ -44,10 +44,16 @@ const AdComponent: React.FC = () => {
             'ins.adsbygoogle'
           ) as HTMLElement;
           if (insEl && !insEl.getAttribute('data-adsbygoogle-status')) {
+            // Clear any existing content
+            insEl.innerHTML = '';
+
             // Set initial dimensions
             insEl.style.minHeight = '100px';
             insEl.style.height = 'auto';
+            insEl.style.display = 'block';
+            insEl.style.width = '100%';
 
+            // Initialize the ad
             window.adsbygoogle.push({});
 
             // Set a timeout to check if the ad loaded
@@ -110,7 +116,12 @@ const AdComponent: React.FC = () => {
   return (
     <div
       ref={adRef}
-      style={{ minHeight: isLoading ? '100px' : 'auto', position: 'relative' }}
+      style={{
+        minHeight: isLoading ? '100px' : 'auto',
+        position: 'relative',
+        width: '100%',
+        margin: '20px 0',
+      }}
     >
       {isProduction ? (
         <>
@@ -122,6 +133,7 @@ const AdComponent: React.FC = () => {
               overflow: 'hidden',
               minHeight: '100px',
               height: 'auto',
+              width: '100%',
               backgroundColor: '#f5f5f5',
             }}
             data-ad-layout="in-article"
