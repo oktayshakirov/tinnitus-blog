@@ -47,6 +47,15 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {!isApp && (
+          <>
+            <link
+              rel="preconnect"
+              href="https://pagead2.googlesyndication.com"
+            />
+            <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
+          </>
+        )}
       </Head>
       <DefaultSeo {...SEO_CONFIG} />
       <Script
@@ -68,13 +77,14 @@ const App = ({ Component, pageProps }: AppProps) => {
         }}
       />
       {!isApp && (
-        <>
-          <Script
-            strategy="afterInteractive"
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
-            crossOrigin="anonymous"
-          />
-        </>
+        <Script
+          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
+          crossOrigin="anonymous"
+          onLoad={() => {
+            window.adsbygoogle = window.adsbygoogle || [];
+          }}
+        />
       )}
 
       <ThemeProvider theme={theme}>
