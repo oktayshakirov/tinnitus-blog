@@ -56,26 +56,7 @@ const AdComponent: React.FC = () => {
         console.error('Ad script load error:', e);
       }
     };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setupAds();
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (adRef.current) {
-      observer.observe(adRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
+    setupAds();
   }, []);
 
   const isProduction = process.env.NODE_ENV === 'production';
