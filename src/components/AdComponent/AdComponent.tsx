@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
+  const isProduction = process.env.NODE_ENV === 'production';
 
   useEffect(() => {
     const isApp =
@@ -10,73 +11,44 @@ const AdComponent: React.FC = () => {
         !!window.isApp ||
         localStorage.getItem('isApp') === 'true');
 
-    if (isApp) {
+    if (isApp || !isProduction) {
       return;
     }
 
     const loadAdsScript = () => {
       return new Promise<void>((resolve, reject) => {
-        if (document.querySelector('script[src*="adsbygoogle.js"]')) {
+        if (window.adsbygoogle) {
           resolve();
           return;
         }
+
         const script = document.createElement('script');
         script.src =
           'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
         script.async = true;
         script.crossOrigin = 'anonymous';
         script.onload = () => resolve();
-        script.onerror = () => reject();
-        document.body.appendChild(script);
+        script.onerror = reject;
+        document.head.appendChild(script);
       });
     };
 
     const initializeAds = () => {
       try {
-        if (window.adsbygoogle) {
-          const insEl = adRef.current?.querySelector('ins.adsbygoogle');
-          if (insEl && !insEl.getAttribute('data-adsbygoogle-status')) {
-            window.adsbygoogle.push({});
-          }
+        if (window.adsbygoogle && adRef.current) {
+          window.adsbygoogle.push({});
         }
       } catch (e) {
         console.error('Adsbygoogle initialization error:', e);
       }
     };
 
-    const setupAds = async () => {
-      try {
-        if (typeof window !== 'undefined' && !window.adsbygoogle) {
-          await loadAdsScript();
-        }
-        initializeAds();
-      } catch (e) {
-        console.error('Ad script load error:', e);
-      }
-    };
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setupAds();
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (adRef.current) {
-      observer.observe(adRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  const isProduction = process.env.NODE_ENV === 'production';
+    loadAdsScript()
+      .then(initializeAds)
+      .catch((e) => {
+        console.error('Ads script loading error:', e);
+      });
+  }, [isProduction]);
 
   return (
     <div ref={adRef}>
@@ -87,6 +59,7 @@ const AdComponent: React.FC = () => {
             display: 'block',
             borderRadius: '25px',
             overflow: 'hidden',
+            minHeight: '90px',
           }}
           data-ad-client="ca-pub-5852582960793521"
           data-ad-slot="3785001294"
