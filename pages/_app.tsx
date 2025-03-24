@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
-import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo';
 import { Global } from '@emotion/react';
@@ -14,35 +13,25 @@ import { theme } from '@theme/theme';
 import { GA_TRACKING_ID } from '@const/general';
 import * as gtag from '@lib/gtag';
 
-const AdsWrapper = () => {
-  const [isApp, setIsApp] = useState<boolean>(false);
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const appFlag =
-      urlParams.get('isApp') === 'true' ||
-      !!window.isApp ||
-      localStorage.getItem('isApp') === 'true';
-    setIsApp(appFlag);
-    if (appFlag) {
-      localStorage.setItem('isApp', 'true');
-    }
-  }, []);
-  if (isApp) return null;
+function getIsAppFlag(): boolean {
+  if (typeof window === 'undefined') return false;
+  const urlParams = new URLSearchParams(window.location.search);
   return (
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
-      crossOrigin="anonymous"
-    />
+    urlParams.get('isApp') === 'true' ||
+    !!window.isApp ||
+    localStorage.getItem('isApp') === 'true'
   );
-};
-const DynamicAdsWrapper = dynamic(() => Promise.resolve(AdsWrapper), {
-  ssr: false,
-});
+}
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
+  const isApp = getIsAppFlag();
+
+  useEffect(() => {
+    if (isApp) {
+      localStorage.setItem('isApp', 'true');
+    }
+  }, [isApp]);
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -58,13 +47,21 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {!isApp && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+            />
+            <script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
+              crossOrigin="anonymous"
+            />
+          </>
+        )}
       </Head>
-
       <DefaultSeo {...SEO_CONFIG} />
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
       <Script
         id="google-analytics"
         strategy="afterInteractive"
@@ -79,7 +76,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           `,
         }}
       />
-      <DynamicAdsWrapper />
+
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Global styles={global} />
