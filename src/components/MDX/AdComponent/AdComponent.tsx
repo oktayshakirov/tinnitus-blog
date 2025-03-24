@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
   const isProduction = process.env.NODE_ENV === 'production';
+  const [isAppFlag, setIsAppFlag] = useState<boolean | null>(null);
 
   useEffect(() => {
     const isApp =
@@ -10,10 +11,12 @@ const AdComponent: React.FC = () => {
       (new URLSearchParams(window.location.search).get('isApp') === 'true' ||
         !!window.isApp ||
         localStorage.getItem('isApp') === 'true');
+    setIsAppFlag(isApp);
+  }, []);
 
-    if (isApp || !isProduction) {
-      return;
-    }
+  useEffect(() => {
+    if (isAppFlag === null) return;
+    if (isAppFlag || !isProduction) return;
 
     const loadAdsScript = () => {
       return new Promise<void>((resolve, reject) => {
@@ -21,7 +24,6 @@ const AdComponent: React.FC = () => {
           resolve();
           return;
         }
-
         const script = document.createElement('script');
         script.src =
           'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
@@ -48,7 +50,10 @@ const AdComponent: React.FC = () => {
       .catch((e) => {
         console.error('Ads script loading error:', e);
       });
-  }, [isProduction]);
+  }, [isAppFlag, isProduction]);
+  if (isAppFlag === null || isAppFlag) {
+    return null;
+  }
 
   return (
     <div ref={adRef}>

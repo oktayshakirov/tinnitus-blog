@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
   const isProduction = process.env.NODE_ENV === 'production';
+  const [shouldRenderAd, setShouldRenderAd] = useState<boolean>(false);
 
   useEffect(() => {
     const isApp =
@@ -10,10 +11,13 @@ const AdComponent: React.FC = () => {
       (new URLSearchParams(window.location.search).get('isApp') === 'true' ||
         !!window.isApp ||
         localStorage.getItem('isApp') === 'true');
-
-    if (isApp || !isProduction) {
-      return;
+    if (!isApp && isProduction) {
+      setShouldRenderAd(true);
     }
+  }, [isProduction]);
+
+  useEffect(() => {
+    if (!shouldRenderAd) return;
 
     const loadAdsScript = () => {
       return new Promise<void>((resolve, reject) => {
@@ -21,7 +25,6 @@ const AdComponent: React.FC = () => {
           resolve();
           return;
         }
-
         const script = document.createElement('script');
         script.src =
           'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
@@ -48,7 +51,11 @@ const AdComponent: React.FC = () => {
       .catch((e) => {
         console.error('Ads script loading error:', e);
       });
-  }, [isProduction]);
+  }, [shouldRenderAd]);
+
+  if (!shouldRenderAd) {
+    return null;
+  }
 
   return (
     <div ref={adRef}>
