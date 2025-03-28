@@ -21,16 +21,17 @@ const BlogPostSEO = ({
 }: Props) => {
   const canonical = `${DOMAIN}/blog/${slug}`;
   const imageUrl = `${DOMAIN}${image}`;
+  const fullTitle = `${title} | Tinnitus Help`;
 
   return (
     <>
       <NextSeo
-        title={title}
+        title={fullTitle}
         description={description}
         canonical={canonical}
         openGraph={{
           url: canonical,
-          title: title,
+          title: fullTitle,
           description: description,
           type: 'article',
           article: {
@@ -40,12 +41,16 @@ const BlogPostSEO = ({
           images: [{ url: imageUrl, type: 'image/jpeg', alt: title }],
           siteName: DOMAIN_NAME,
         }}
+        twitter={{
+          cardType: 'summary_large_image',
+          site: '@TinnitusHelp_me',
+        }}
       />
       {title && description && (
         <ArticleJsonLd
           type="BlogPosting"
           url={canonical}
-          title={title}
+          title={fullTitle}
           images={[imageUrl]}
           description={description}
           authorName={DOMAIN_NAME}
