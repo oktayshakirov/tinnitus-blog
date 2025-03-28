@@ -20,6 +20,10 @@ const PrivacySEO = () => {
         images: [{ url: imageUrl, type: 'image/jpeg' }],
         siteName: DOMAIN_NAME,
       }}
+      twitter={{
+        cardType: 'summary_large_image',
+        site: '@TinnitusHelp_me',
+      }}
     />
   );
 };
