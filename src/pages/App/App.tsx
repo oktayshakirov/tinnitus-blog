@@ -90,7 +90,7 @@ const AppStoreBadges = () => (
     }}
   >
     <Link
-      href="https://apps.apple.com/de/app/tinnitushelp-me/id6741688965?l=en-GB"
+      href="https://apps.apple.com/de/app/tinnitushelp-me/id6741688965"
       target="_blank"
     >
       <Image
