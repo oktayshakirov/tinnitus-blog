@@ -6,6 +6,7 @@ import {
   StyledCopyright,
   StyledText,
   StyledIconContainer,
+  StyledDisclaimer,
 } from '@components/Footer/Footer.styled';
 import Box from '@mui/material/Box';
 import AppsBanner from '@components/AppsBanner';
@@ -22,6 +23,14 @@ const Footer = ({ isApp = false }: FooterProps) => {
 
   return (
     <StyledFooter>
+      {pathname !== '/disclaimer' && (
+        <StyledDisclaimer>
+          This site provides informational content only; it is not medical
+          advice. Consult a qualified health professional for any tinnitus or
+          health questions.{' '}
+          <Link href="/disclaimer">Read our full Disclaimer</Link>.
+        </StyledDisclaimer>
+      )}
       {!shouldHideAppsBanner && <AppsBanner />}
       <StyledCopyright>TinnitusHelp.me © 2023 - {currentYear}</StyledCopyright>
       <StyledContainer>

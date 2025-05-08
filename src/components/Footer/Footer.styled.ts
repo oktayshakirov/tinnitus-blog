@@ -56,3 +56,11 @@ export const StyledIconContainer = styled('div')`
     }
   `}
 `;
+
+export const StyledDisclaimer = styled('div')`
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+`;
