@@ -14,7 +14,14 @@ const config = {
       priority = 1.0;
       changefreq = 'daily';
     } else if (
-      ['/about', '/contact', '/faq', '/privacy', '/terms'].includes(path)
+      [
+        '/about',
+        '/contact',
+        '/faq',
+        '/privacy',
+        '/terms',
+        '/disclaimer',
+      ].includes(path)
     ) {
       priority = 0.6;
       changefreq = 'monthly';
