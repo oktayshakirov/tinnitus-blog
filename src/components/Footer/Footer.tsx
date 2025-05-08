@@ -23,7 +23,7 @@ const Footer = ({ isApp = false }: FooterProps) => {
 
   return (
     <StyledFooter>
-      {pathname !== '/disclaimer' && (
+      {!['/disclaimer', '/about', '/contact'].includes(pathname) && (
         <StyledDisclaimer>
           This site provides informational content only; it is not medical
           advice. Consult a qualified health professional for any tinnitus or
