@@ -23,15 +23,19 @@ const Footer = ({ isApp = false }: FooterProps) => {
 
   return (
     <StyledFooter>
+      <StyledContainer>
+        {!shouldHideAppsBanner && <AppsBanner />}
+      </StyledContainer>
       {!['/disclaimer', '/about', '/contact'].includes(pathname) && (
-        <StyledDisclaimer>
-          This site provides informational content only; it is not medical
-          advice. Consult a qualified health professional for any tinnitus or
-          health questions.{' '}
-          <Link href="/disclaimer">Read our full Disclaimer</Link>.
-        </StyledDisclaimer>
+        <StyledContainer>
+          <StyledDisclaimer>
+            This site provides informational content only; it is not medical
+            advice. Consult a qualified health professional for any tinnitus or
+            health questions.{' '}
+            <Link href="/disclaimer">Read our full Disclaimer</Link>.
+          </StyledDisclaimer>
+        </StyledContainer>
       )}
-      {!shouldHideAppsBanner && <AppsBanner />}
       <StyledCopyright>TinnitusHelp.me © 2023 - {currentYear}</StyledCopyright>
       <StyledContainer>
         <Link href="/privacy" style={{ textDecoration: 'none' }}>

@@ -25,6 +25,7 @@ const MainMenuDrawer = ({ open, toggleMenu, ...rest }: Props) => {
         <Link href="/blog">Posts</Link>
         <Link href="/zen">Sounds</Link>
         <Link href="/tags">Tags</Link>
+        <Link href="/app">App</Link>
         <Link href="/about">About</Link>
         <Link href="/contact">Contact</Link>
         <Link href="/faq">FAQ</Link>

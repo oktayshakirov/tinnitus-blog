@@ -58,9 +58,11 @@ export const StyledIconContainer = styled('div')`
 `;
 
 export const StyledDisclaimer = styled('div')`
-  margin-bottom: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 25px;
+  margin-bottom: 10px;
   padding: 15px;
   font-size: 1rem;
   width: 100%;
-  text-align: center;
 `;

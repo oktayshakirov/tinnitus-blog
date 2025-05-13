@@ -8,7 +8,6 @@ export const StyledContainer = styled(Container)`
   margin-bottom: 10px;
   padding: 15px;
   font-size: 1rem;
-  width: 95%;
 `;
 
 export const BannerWrapper = styled(Box)(({ theme }) => ({
