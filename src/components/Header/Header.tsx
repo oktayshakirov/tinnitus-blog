@@ -38,6 +38,9 @@ const Header = () => {
                 <Link href="/tags">Tags</Link>
               </li>
               <li>
+                <Link href="/app">App</Link>
+              </li>
+              <li>
                 <Link href="/about">About</Link>
               </li>
               <li>
