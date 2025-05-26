@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-const AdComponent: React.FC = () => {
-  const adRef = useRef<HTMLDivElement>(null);
+const AdComponentMDX: React.FC = () => {
+  const adInsRef = useRef<HTMLModElement>(null);
   const isProduction = process.env.NODE_ENV === 'production';
   const [isAppFlag, setIsAppFlag] = useState<boolean | null>(null);
 
@@ -15,56 +15,48 @@ const AdComponent: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (isAppFlag === null) return;
-    if (isAppFlag || !isProduction) return;
-
-    const loadAdsScript = () => {
-      return new Promise<void>((resolve, reject) => {
-        if (window.adsbygoogle) {
-          resolve();
-          return;
-        }
-        const script = document.createElement('script');
-        script.src =
-          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
-        script.async = true;
-        script.crossOrigin = 'anonymous';
-        script.onload = () => resolve();
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
-    };
+    if (isAppFlag === null || isAppFlag || !isProduction) {
+      return;
+    }
 
     const initializeAds = () => {
-      try {
-        if (window.adsbygoogle && adRef.current) {
+      const adSlot = adInsRef.current;
+      if (
+        adSlot &&
+        window.adsbygoogle &&
+        !adSlot.hasAttribute('data-adsbygoogle-status')
+      ) {
+        try {
           window.adsbygoogle.push({});
+        } catch (e) {
+          console.error('Adsbygoogle MDX push error:', e);
         }
-      } catch (e) {
-        console.error('Adsbygoogle initialization error:', e);
       }
     };
 
-    loadAdsScript()
-      .then(initializeAds)
-      .catch((e) => {
-        console.error('Ads script loading error:', e);
-      });
+    if (window.adsbygoogle) {
+      initializeAds();
+    } else {
+      console.warn(
+        'AdSense MDX: adsbygoogle not found. Ensure it is loaded globally in _app.tsx.'
+      );
+    }
   }, [isAppFlag, isProduction]);
+
   if (isAppFlag === null || isAppFlag) {
     return null;
   }
 
   return (
-    <div ref={adRef}>
+    <div>
       {isProduction ? (
         <ins
+          ref={adInsRef}
           className="adsbygoogle"
           style={{
             display: 'block',
             borderRadius: '25px',
             overflow: 'hidden',
-            minHeight: '90px',
           }}
           data-ad-layout="in-article"
           data-ad-format="fluid"
@@ -88,4 +80,4 @@ const AdComponent: React.FC = () => {
   );
 };
 
-export default AdComponent;
+export default AdComponentMDX;
