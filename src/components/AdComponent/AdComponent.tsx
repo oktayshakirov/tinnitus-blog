@@ -20,13 +20,7 @@ const AdComponent: React.FC = () => {
   useEffect(() => {
     if (shouldRenderAd && adRef.current) {
       try {
-        if (typeof window.adsbygoogle !== 'undefined') {
-          window.adsbygoogle.push({});
-        } else {
-          console.warn(
-            'AdSense script not yet loaded, ad will not be pushed by AdComponent.'
-          );
-        }
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch (e) {
         console.error('Adsbygoogle.push({}) error in AdComponent:', e);
       }

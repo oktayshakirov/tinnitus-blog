@@ -8,11 +8,15 @@ import { DefaultSeo } from 'next-seo';
 import { Global } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
-import SEO_CONFIG from '../next-seo.config'; //
-import { global } from '@theme/global'; //
-import { theme } from '@theme/theme'; //
-import { GA_TRACKING_ID } from '@const/general'; //
-import * as gtag from '@lib/gtag'; //
+import SEO_CONFIG from '../next-seo.config';
+import { global } from '@theme/global';
+import { theme } from '@theme/theme';
+import { GA_TRACKING_ID } from '@const/general';
+import * as gtag from '@lib/gtag';
+
+if (typeof window !== 'undefined') {
+  window.adsbygoogle = window.adsbygoogle || [];
+}
 
 const AdsWrapper = () => {
   useEffect(() => {
@@ -25,8 +29,8 @@ const AdsWrapper = () => {
         const script = document.createElement('script');
         script.async = true;
         script.src =
-          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521'; //
-        script.crossOrigin = 'anonymous'; //
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
+        script.crossOrigin = 'anonymous';
         document.head.appendChild(script);
       }
       localStorage.removeItem('isApp');
@@ -62,7 +66,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <DefaultSeo {...SEO_CONFIG} />
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} //
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
       />
       <Script
         id="google-analytics"
