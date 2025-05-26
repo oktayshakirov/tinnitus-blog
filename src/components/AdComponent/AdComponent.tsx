@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 
 const AdComponent: React.FC = () => {
-  const adInsRef = useRef<HTMLModElement>(null);
+  const adRef = useRef<HTMLDivElement>(null);
   const isProduction = process.env.NODE_ENV === 'production';
-  const [isAppFlag, setIsAppFlag] = useState<boolean | null>(null);
+  const [shouldRenderAd, setShouldRenderAd] = useState<boolean>(false);
 
   useEffect(() => {
     const isApp =
@@ -11,55 +11,62 @@ const AdComponent: React.FC = () => {
       (new URLSearchParams(window.location.search).get('isApp') === 'true' ||
         !!window.isApp ||
         localStorage.getItem('isApp') === 'true');
-    setIsAppFlag(isApp);
-  }, []);
+    if (!isApp && isProduction) {
+      setShouldRenderAd(true);
+    }
+  }, [isProduction]);
 
   useEffect(() => {
-    if (isAppFlag === null || isAppFlag || !isProduction) {
-      return;
-    }
+    if (!shouldRenderAd) return;
 
-    const initializeRealAds = () => {
-      const adSlot = adInsRef.current;
-      if (
-        adSlot &&
-        window.adsbygoogle &&
-        !adSlot.hasAttribute('data-adsbygoogle-status')
-      ) {
-        try {
-          window.adsbygoogle.push({});
-        } catch (e) {
-          console.error('Adsbygoogle push error (Layout Ad):', e);
+    const loadAdsScript = () => {
+      return new Promise<void>((resolve, reject) => {
+        if (window.adsbygoogle) {
+          resolve();
+          return;
         }
+        const script = document.createElement('script');
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
+        script.async = true;
+        script.crossOrigin = 'anonymous';
+        script.onload = () => resolve();
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    };
+
+    const initializeAds = () => {
+      try {
+        if (window.adsbygoogle && adRef.current) {
+          window.adsbygoogle.push({});
+        }
+      } catch (e) {
+        console.error('Adsbygoogle initialization error:', e);
       }
     };
 
-    if (window.adsbygoogle) {
-      initializeRealAds();
-    } else {
-      console.warn(
-        'AdSense script (adsbygoogle) not found for Layout Ad in production. Ensure it is loaded globally in _app.tsx.'
-      );
-    }
-  }, [isAppFlag, isProduction]);
-  if (isAppFlag === null) {
-    return null;
-  }
+    loadAdsScript()
+      .then(initializeAds)
+      .catch((e) => {
+        console.error('Ads script loading error:', e);
+      });
+  }, [shouldRenderAd]);
 
-  if (isAppFlag) {
+  if (!shouldRenderAd) {
     return null;
   }
 
   return (
-    <div>
+    <div ref={adRef}>
       {isProduction ? (
         <ins
-          ref={adInsRef}
           className="adsbygoogle"
           style={{
             display: 'block',
             borderRadius: '25px',
             overflow: 'hidden',
+            minHeight: '90px',
           }}
           data-ad-client="ca-pub-5852582960793521"
           data-ad-slot="3785001294"
@@ -76,7 +83,7 @@ const AdComponent: React.FC = () => {
             color: '#fff',
           }}
         >
-          Ad Example (Layout)
+          Ad Example
         </div>
       )}
     </div>
