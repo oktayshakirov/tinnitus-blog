@@ -6,51 +6,31 @@ const AdComponent: React.FC = () => {
   const [shouldRenderAd, setShouldRenderAd] = useState<boolean>(false);
 
   useEffect(() => {
-    const isApp =
-      typeof window !== 'undefined' &&
-      (new URLSearchParams(window.location.search).get('isApp') === 'true' ||
-        !!window.isApp ||
-        localStorage.getItem('isApp') === 'true');
-    if (!isApp && isProduction) {
+    const appFlag =
+      document.documentElement.classList.contains('is-app') ||
+      localStorage.getItem('isApp') === 'true';
+
+    if (!appFlag && isProduction) {
       setShouldRenderAd(true);
+    } else {
+      setShouldRenderAd(false);
     }
   }, [isProduction]);
 
   useEffect(() => {
-    if (!shouldRenderAd) return;
-
-    const loadAdsScript = () => {
-      return new Promise<void>((resolve, reject) => {
-        if (window.adsbygoogle) {
-          resolve();
-          return;
-        }
-        const script = document.createElement('script');
-        script.src =
-          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
-        script.async = true;
-        script.crossOrigin = 'anonymous';
-        script.onload = () => resolve();
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
-    };
-
-    const initializeAds = () => {
+    if (shouldRenderAd && adRef.current) {
       try {
-        if (window.adsbygoogle && adRef.current) {
+        if (typeof window.adsbygoogle !== 'undefined') {
           window.adsbygoogle.push({});
+        } else {
+          console.warn(
+            'AdSense script not yet loaded, ad will not be pushed by AdComponent.'
+          );
         }
       } catch (e) {
-        console.error('Adsbygoogle initialization error:', e);
+        console.error('Adsbygoogle.push({}) error in AdComponent:', e);
       }
-    };
-
-    loadAdsScript()
-      .then(initializeAds)
-      .catch((e) => {
-        console.error('Ads script loading error:', e);
-      });
+    }
   }, [shouldRenderAd]);
 
   if (!shouldRenderAd) {
@@ -83,7 +63,7 @@ const AdComponent: React.FC = () => {
             color: '#fff',
           }}
         >
-          Ad Example
+          Ad Example (Layout AdComponent)
         </div>
       )}
     </div>

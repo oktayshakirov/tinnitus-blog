@@ -3,55 +3,37 @@ import { useEffect, useRef, useState } from 'react';
 const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
   const isProduction = process.env.NODE_ENV === 'production';
-  const [isAppFlag, setIsAppFlag] = useState<boolean | null>(null);
+  const [shouldRenderAd, setShouldRenderAd] = useState<boolean>(false);
 
   useEffect(() => {
-    const isApp =
-      typeof window !== 'undefined' &&
-      (new URLSearchParams(window.location.search).get('isApp') === 'true' ||
-        !!window.isApp ||
-        localStorage.getItem('isApp') === 'true');
-    setIsAppFlag(isApp);
-  }, []);
+    const appFlag =
+      document.documentElement.classList.contains('is-app') ||
+      localStorage.getItem('isApp') === 'true';
+
+    if (!appFlag && isProduction) {
+      setShouldRenderAd(true);
+    } else {
+      setShouldRenderAd(false);
+    }
+  }, [isProduction]);
 
   useEffect(() => {
-    if (isAppFlag === null) return;
-    if (isAppFlag || !isProduction) return;
-
-    const loadAdsScript = () => {
-      return new Promise<void>((resolve, reject) => {
-        if (window.adsbygoogle) {
-          resolve();
-          return;
-        }
-        const script = document.createElement('script');
-        script.src =
-          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
-        script.async = true;
-        script.crossOrigin = 'anonymous';
-        script.onload = () => resolve();
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
-    };
-
-    const initializeAds = () => {
+    if (shouldRenderAd && adRef.current) {
       try {
-        if (window.adsbygoogle && adRef.current) {
+        if (typeof window.adsbygoogle !== 'undefined') {
           window.adsbygoogle.push({});
+        } else {
+          console.warn(
+            'AdSense script not yet loaded, ad will not be pushed by MDX AdComponent.'
+          );
         }
       } catch (e) {
-        console.error('Adsbygoogle initialization error:', e);
+        console.error('Adsbygoogle.push({}) error in MDX AdComponent:', e);
       }
-    };
+    }
+  }, [shouldRenderAd]);
 
-    loadAdsScript()
-      .then(initializeAds)
-      .catch((e) => {
-        console.error('Ads script loading error:', e);
-      });
-  }, [isAppFlag, isProduction]);
-  if (isAppFlag === null || isAppFlag) {
+  if (!shouldRenderAd) {
     return null;
   }
 
@@ -81,7 +63,7 @@ const AdComponent: React.FC = () => {
             color: '#fff',
           }}
         >
-          Ad Example
+          Ad Example (MDX AdComponent)
         </div>
       )}
     </div>
