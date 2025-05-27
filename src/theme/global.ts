@@ -6,7 +6,7 @@ export const global = css`
   body {
     background: ${colors.background};
     color: ${theme.palette.grey[200]}!important;
-    fontfamily: 'Nunito, sans-serif';
+    font-family: 'Nunito, sans-serif';
     font-size: 1rem;
   }
 
@@ -40,5 +40,11 @@ export const global = css`
 
   a {
     text-decoration: none !important;
+  }
+
+  /* AdSense unfilled ad slot fix */
+
+  div:has(> ins.adsbygoogle[data-ad-status='unfilled']) {
+    display: none !important;
   }
 `;
