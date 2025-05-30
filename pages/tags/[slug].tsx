@@ -1,52 +1,112 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import TagArticles from '@ui/pages/TagArticles';
-import { getAllTags } from '@lib/mdx';
+import TagArticlesComponent from '@ui/pages/TagArticles';
+import { getAllTags, fetchArticlesByTag } from '@lib/mdx';
 import { kebabize } from '@lib/strings';
-import { fetchArticlesByTag } from '@lib/mdx';
-import { Article } from '@types';
+import { ArticleMeta } from '@types';
 
-export type Props = {
-  slug: string;
-  articles: Article[];
+const ARTICLES_PER_PAGE = 6;
+
+export type TagPageProps = {
+  tagSlug: string;
+  articles: ArticleMeta[];
+  page: number;
+  pageCount: number;
 };
 
-const TagPage = (props: Props) => <TagArticles {...props} />;
+const TagPageContainer = (props: TagPageProps) => (
+  <TagArticlesComponent {...props} />
+);
 
-const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const tags = getAllTags();
+  const paths = [];
 
-  const paths = tags.map((tag) => ({
-    params: {
-      slug: kebabize(tag),
-    },
-  }));
+  for (const tag of tags) {
+    const articlesForTag = await fetchArticlesByTag(tag);
+    const pageCount = Math.ceil(articlesForTag.length / ARTICLES_PER_PAGE);
+    const kebabizedTag = kebabize(tag);
+
+    paths.push({ params: { slug: kebabizedTag } });
+
+    for (let i = 2; i <= pageCount; i++) {
+      paths.push({ params: { slug: `${kebabizedTag}--page-${i}` } });
+    }
+  }
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: false,
   };
 };
 
-const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params?.slug as string;
+export const getStaticProps: GetStaticProps<
+  TagPageProps,
+  { slug: string }
+> = async (context) => {
+  const combinedSlug = context.params?.slug as string;
 
-  if (!slug) {
+  if (!combinedSlug) {
     return { notFound: true };
   }
 
-  const articles = await fetchArticlesByTag(slug);
+  let pageSpecificTagSlug: string;
+  let page: number;
 
-  if (!articles || articles.length === 0) {
+  if (combinedSlug.includes('--page-')) {
+    const parts = combinedSlug.split('--page-');
+    pageSpecificTagSlug = parts[0];
+    page = parseInt(parts[1], 10);
+  } else {
+    pageSpecificTagSlug = combinedSlug;
+    page = 1;
+  }
+
+  const allOriginalTags = getAllTags();
+  const originalTag = allOriginalTags.find(
+    (t) => kebabize(t) === pageSpecificTagSlug
+  );
+
+  if (!originalTag) {
     return { notFound: true };
   }
+
+  const allArticlesForTag = await fetchArticlesByTag(originalTag);
+
+  if (!allArticlesForTag) {
+    return {
+      props: {
+        tagSlug: originalTag,
+        articles: [],
+        page: 1,
+        pageCount: 0,
+      },
+    };
+  }
+
+  const pageCount = Math.ceil(allArticlesForTag.length / ARTICLES_PER_PAGE);
+
+  if (
+    page < 1 ||
+    (page > pageCount && pageCount > 0) ||
+    (page > 1 && pageCount === 0)
+  ) {
+    return { notFound: true };
+  }
+
+  const startIndex = (page - 1) * ARTICLES_PER_PAGE;
+  const endIndex = startIndex + ARTICLES_PER_PAGE;
+  const currentArticlesMeta = allArticlesForTag
+    .slice(startIndex, endIndex)
+    .map((article) => article.meta);
 
   return {
     props: {
-      slug,
-      articles,
+      tagSlug: originalTag,
+      articles: currentArticlesMeta,
+      page,
+      pageCount,
     },
   };
 };
 
-export { getStaticProps, getStaticPaths };
-export default TagPage;
+export default TagPageContainer;
