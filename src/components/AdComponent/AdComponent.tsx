@@ -10,7 +10,7 @@ const AdComponent: React.FC = () => {
       document.documentElement.classList.contains('is-app') ||
       localStorage.getItem('isApp') === 'true';
 
-    if (!appFlag && isProduction) {
+    if (!appFlag) {
       setShouldRenderAd(true);
     } else {
       setShouldRenderAd(false);
@@ -57,7 +57,7 @@ const AdComponent: React.FC = () => {
             color: '#fff',
           }}
         >
-          Ad Example (Layout AdComponent)
+          Ad Example (Layout)
         </div>
       )}
     </div>

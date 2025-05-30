@@ -1,5 +1,4 @@
 export const theme = {
-  // ... existing theme configuration
   custom: {
     glassMorphism: {
       background: 'rgba(255, 255, 255, 0.03)',

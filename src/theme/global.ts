@@ -42,8 +42,6 @@ export const global = css`
     text-decoration: none !important;
   }
 
-  /* AdSense unfilled ad slot fix */
-
   div:has(> ins.adsbygoogle[data-ad-status='unfilled']) {
     display: none !important;
   }
