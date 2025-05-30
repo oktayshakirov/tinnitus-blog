@@ -5,10 +5,10 @@ import Typography from '@mui/material/Typography';
 import ArticlesGrid from '@components/ArticlesGrid';
 import Box from '@mui/material/Box';
 import AdComponent from '@components/AdComponent';
-import TagDetailsSEO from './TagDetails.SEO';
-import { StyledContainer, StyledTabContainer } from './TagDetails.styled';
+import TagArticlesSEO from './TagArticles.SEO';
+import { StyledContainer, StyledTabContainer } from './TagArticles.styled';
 
-const TagDetails = ({
+const TagArticles = ({
   slug,
   articles,
 }: {
@@ -19,7 +19,7 @@ const TagDetails = ({
 
   return (
     <>
-      <TagDetailsSEO tag={slug} />
+      <TagArticlesSEO tag={slug} />
       <Layout>
         <StyledContainer>
           <StyledTabContainer>
@@ -41,4 +41,4 @@ const TagDetails = ({
   );
 };
 
-export default TagDetails;
+export default TagArticles;
