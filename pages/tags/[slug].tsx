@@ -1,5 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import TagDetails from '@ui/pages/TagDetails';
+import TagArticles from '@ui/pages/TagArticles';
 import { getAllTags } from '@lib/mdx';
 import { kebabize } from '@lib/strings';
 import { fetchArticlesByTag } from '@lib/mdx';
@@ -10,7 +10,7 @@ export type Props = {
   articles: Article[];
 };
 
-const TagPage = (props: Props) => <TagDetails {...props} />;
+const TagPage = (props: Props) => <TagArticles {...props} />;
 
 const getStaticPaths: GetStaticPaths = async () => {
   const tags = getAllTags();

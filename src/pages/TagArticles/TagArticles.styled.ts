@@ -1,3 +1,4 @@
+import Pagination from '@mui/material/Pagination';
 import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
@@ -21,3 +22,9 @@ export const StyledTabContainer = styled(Container)`
     padding: ${theme.spacing(3)};
   `}
 `;
+
+export const StyledPagination = styled(Pagination)(({ theme }) => ({
+  marginTop: theme.spacing(4),
+  display: 'flex',
+  justifyContent: 'center',
+}));

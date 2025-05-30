@@ -5,7 +5,7 @@ type Props = {
   tag: string;
 };
 
-const TagDetailsSEO = ({ tag }: Props) => {
+const TagArticlesSEO = ({ tag }: Props) => {
   const title = `Articles tagged with: ${tag} | ${DOMAIN_NAME}`;
   const description = `Explore articles, guides, and resources categorized under the "${tag}" tag. Find relevant content to help you manage and understand tinnitus better.`;
   const canonical = `${DOMAIN}/tags/${tag}`;
@@ -27,4 +27,4 @@ const TagDetailsSEO = ({ tag }: Props) => {
   );
 };
 
-export default TagDetailsSEO;
+export default TagArticlesSEO;

@@ -63,6 +63,5 @@ export const StyledDisclaimer = styled('div')`
   border-radius: 25px;
   margin-bottom: 10px;
   padding: 15px;
-  font-size: 1rem;
   width: 100%;
 `;

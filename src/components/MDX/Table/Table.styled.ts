@@ -25,13 +25,13 @@ export const StyledTable = styled('table')`
       width: auto;
     }
 
-    tr:first-child th:nth-last-child(-n + 3):first-child,
-    tr:first-child th:nth-last-child(-n + 3):first-child ~ th {
+    tr:first-of-type th:nth-last-of-type(-n + 3):first-of-type,
+    tr:first-of-type th:nth-last-of-type(-n + 3):first-of-type ~ th {
       width: ${100 / 3}%;
     }
 
-    tr:first-child th:nth-last-child(-n + 2):first-child,
-    tr:first-child th:nth-last-child(-n + 2):first-child ~ th {
+    tr:first-of-type th:nth-last-of-type(-n + 2):first-of-type,
+    tr:first-of-type th:nth-last-of-type(-n + 2):first-of-type ~ th {
       width: 50%;
     }
 
@@ -63,13 +63,13 @@ export const StyledTable = styled('table')`
     }
 
     @media (max-width: 600px) {
-      &:has(th:nth-child(4)) {
+      &:has(th:nth-of-type(4)) {
         display: block;
         overflow-x: auto;
         width: 100%;
       }
 
-      &:not(:has(th:nth-child(4))) {
+      &:not(:has(th:nth-of-type(4))) {
         display: table;
         width: 100%;
       }
