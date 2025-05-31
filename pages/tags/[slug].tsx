@@ -1,69 +1,30 @@
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import TagArticlesComponent from '@ui/pages/TagArticles';
-import { getAllTags, fetchArticlesByTag } from '@lib/mdx';
+import type { GetServerSideProps } from 'next';
+import TagArticlesComponent, { TagArticlesProps } from '@ui/pages/TagArticles';
+import { fetchArticlesByTag, getAllTags } from '@lib/mdx';
 import { kebabize } from '@lib/strings';
-import { ArticleMeta } from '@types';
 
-const ARTICLES_PER_PAGE = 6;
-
-export type TagPageProps = {
-  tagSlug: string;
-  articles: ArticleMeta[];
-  page: number;
-  pageCount: number;
-};
+export type TagPageProps = TagArticlesProps;
 
 const TagPageContainer = (props: TagPageProps) => (
   <TagArticlesComponent {...props} />
 );
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const tags = getAllTags();
-  const paths = [];
-
-  for (const tag of tags) {
-    const articlesForTag = await fetchArticlesByTag(tag);
-    const pageCount = Math.ceil(articlesForTag.length / ARTICLES_PER_PAGE);
-    const kebabizedTag = kebabize(tag);
-
-    paths.push({ params: { slug: kebabizedTag } });
-
-    for (let i = 2; i <= pageCount; i++) {
-      paths.push({ params: { slug: `${kebabizedTag}--page-${i}` } });
-    }
-  }
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps<
+export const getServerSideProps: GetServerSideProps<
   TagPageProps,
   { slug: string }
 > = async (context) => {
-  const combinedSlug = context.params?.slug as string;
+  const articlesPerPage = 6;
 
-  if (!combinedSlug) {
+  const kebabizedTagSlug = context.params?.slug;
+  if (!kebabizedTagSlug) {
     return { notFound: true };
   }
 
-  let pageSpecificTagSlug: string;
-  let page: number;
-
-  if (combinedSlug.includes('--page-')) {
-    const parts = combinedSlug.split('--page-');
-    pageSpecificTagSlug = parts[0];
-    page = parseInt(parts[1], 10);
-  } else {
-    pageSpecificTagSlug = combinedSlug;
-    page = 1;
-  }
+  const page = Number(context.query.page) || 1;
 
   const allOriginalTags = getAllTags();
   const originalTag = allOriginalTags.find(
-    (t) => kebabize(t) === pageSpecificTagSlug
+    (t) => kebabize(t) === kebabizedTagSlug
   );
 
   if (!originalTag) {
@@ -83,18 +44,26 @@ export const getStaticProps: GetStaticProps<
     };
   }
 
-  const pageCount = Math.ceil(allArticlesForTag.length / ARTICLES_PER_PAGE);
+  const pageCount = Math.ceil(allArticlesForTag.length / articlesPerPage);
 
   if (
     page < 1 ||
-    (page > pageCount && pageCount > 0) ||
-    (page > 1 && pageCount === 0)
+    (pageCount > 0 && page > pageCount) ||
+    (pageCount === 0 && page > 1)
   ) {
+    if (pageCount > 0 && (page < 1 || page > pageCount)) {
+      return {
+        redirect: {
+          destination: `/tags/${kebabizedTagSlug}`,
+          permanent: false,
+        },
+      };
+    }
     return { notFound: true };
   }
 
-  const startIndex = (page - 1) * ARTICLES_PER_PAGE;
-  const endIndex = startIndex + ARTICLES_PER_PAGE;
+  const startIndex = (page - 1) * articlesPerPage;
+  const endIndex = startIndex + articlesPerPage;
   const currentArticlesMeta = allArticlesForTag
     .slice(startIndex, endIndex)
     .map((article) => article.meta);

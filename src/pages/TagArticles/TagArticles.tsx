@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import Container from '@mui/material/Container';
 import Layout from '@components/Layout';
 import { ArticleMeta } from '@types';
@@ -15,6 +15,7 @@ import {
 import PaginationItem from '@mui/material/PaginationItem';
 import Link from '@components/Link';
 import { kebabize } from '@lib/strings';
+import { useRouter } from 'next/router';
 
 export type TagArticlesProps = {
   tagSlug: string;
@@ -26,10 +27,20 @@ export type TagArticlesProps = {
 const TagArticles = ({
   tagSlug,
   articles,
-  page,
+  page: initialPage,
   pageCount,
 }: TagArticlesProps) => {
+  const router = useRouter();
   const kebabizedTagForLink = kebabize(tagSlug);
+
+  const handlePageChange = (event: ChangeEvent<unknown>, value: number) => {
+    const newPath = `/tags/${kebabizedTagForLink}${
+      value === 1 ? '' : `?page=${value}`
+    }`;
+    router.push(newPath, undefined, { shallow: false }).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  };
 
   return (
     <>
@@ -50,25 +61,28 @@ const TagArticles = ({
                 <ArticlesGrid articles={articles} />
               ) : (
                 <Typography sx={{ mt: 2 }}>
-                  No articles found for this tag on this page.
+                  No articles found for this tag
+                  {initialPage > 1 ? ` on page ${initialPage}` : ''}.
                 </Typography>
               )}
               {pageCount > 1 && (
                 <StyledPagination
                   count={pageCount}
-                  page={page}
+                  page={initialPage}
+                  siblingCount={0}
                   color="primary"
-                  hidePrevButton
-                  hideNextButton
-                  renderItem={(item) => {
-                    let href = `/tags/${kebabizedTagForLink}`;
-                    if (item.page && item.page > 1) {
-                      href += `--page-${item.page}`;
-                    }
-                    return (
-                      <PaginationItem component={Link} href={href} {...item} />
-                    );
-                  }}
+                  onChange={handlePageChange}
+                  renderItem={(item) => (
+                    <PaginationItem
+                      component={Link}
+                      href={`/tags/${kebabizedTagForLink}${
+                        item.page === 1 || !item.page
+                          ? ''
+                          : `?page=${item.page}`
+                      }`}
+                      {...item}
+                    />
+                  )}
                 />
               )}
             </Container>
