@@ -45,9 +45,8 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
                 count={pageCount}
                 color="primary"
                 page={page}
+                siblingCount={0}
                 onChange={handleChange}
-                hidePrevButton
-                hideNextButton
                 renderItem={(item) => (
                   <PaginationItem
                     component={Link}

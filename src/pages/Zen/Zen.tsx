@@ -45,9 +45,8 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
                 count={pageCount}
                 color="primary"
                 page={page}
+                siblingCount={0}
                 onChange={handleChange}
-                hidePrevButton
-                hideNextButton
                 renderItem={(item) => (
                   <PaginationItem
                     component={Link}
