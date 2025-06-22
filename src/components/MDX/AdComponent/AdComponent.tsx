@@ -40,7 +40,6 @@ const AdComponent: React.FC = () => {
             display: 'block',
             borderRadius: '25px',
             overflow: 'hidden',
-            minHeight: '90px',
           }}
           data-ad-layout="in-article"
           data-ad-format="fluid"

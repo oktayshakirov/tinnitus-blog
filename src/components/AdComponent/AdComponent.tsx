@@ -40,7 +40,6 @@ const AdComponent: React.FC = () => {
             display: 'block',
             borderRadius: '25px',
             overflow: 'hidden',
-            minHeight: '90px',
           }}
           data-ad-client="ca-pub-5852582960793521"
           data-ad-slot="3785001294"
