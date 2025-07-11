@@ -34,9 +34,10 @@ const TagArticles = ({
   const kebabizedTagForLink = kebabize(tagSlug);
 
   const handlePageChange = (event: ChangeEvent<unknown>, value: number) => {
-    const newPath = `/tags/${kebabizedTagForLink}${
-      value === 1 ? '' : `?page=${value}`
-    }`;
+    const newPath =
+      value === 1
+        ? `/tags/${kebabizedTagForLink}`
+        : `/tags/${kebabizedTagForLink}/page/${value}`;
     router.push(newPath, undefined, { shallow: false }).then(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -69,17 +70,18 @@ const TagArticles = ({
                 <StyledPagination
                   count={pageCount}
                   page={initialPage}
-                  siblingCount={0}
                   color="primary"
+                  hidePrevButton
+                  hideNextButton
                   onChange={handlePageChange}
                   renderItem={(item) => (
                     <PaginationItem
                       component={Link}
-                      href={`/tags/${kebabizedTagForLink}${
-                        item.page === 1 || !item.page
-                          ? ''
-                          : `?page=${item.page}`
-                      }`}
+                      href={
+                        item.page === 1
+                          ? `/tags/${kebabizedTagForLink}`
+                          : `/tags/${kebabizedTagForLink}/page/${item.page}`
+                      }
                       {...item}
                     />
                   )}

@@ -2,7 +2,6 @@ import { ChangeEvent, useState } from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import PaginationItem from '@mui/material/PaginationItem';
-import { Props } from '@pages/blog';
 import Link from '@components/Link';
 import Layout from '@components/Layout';
 import ArticlesGrid from '@components/ArticlesGrid';
@@ -14,6 +13,13 @@ import {
   StyledTabContainer,
 } from './Blog.styled';
 import AdComponent from '@components/AdComponent';
+import { ArticleMeta } from '@types';
+
+export type Props = {
+  postsMeta: ArticleMeta[];
+  page: number;
+  pageCount: number;
+};
 
 const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
   const [page, setPage] = useState(pageFromUrl);
@@ -44,13 +50,14 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
               <StyledPagination
                 count={pageCount}
                 color="primary"
+                hidePrevButton
+                hideNextButton
                 page={page}
-                siblingCount={0}
                 onChange={handleChange}
                 renderItem={(item) => (
                   <PaginationItem
                     component={Link}
-                    href={`/blog${item.page === 1 ? '' : `?page=${item.page}`}`}
+                    href={item.page === 1 ? '/blog' : `/blog/page/${item.page}`}
                     {...item}
                   />
                 )}
