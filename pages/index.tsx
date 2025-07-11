@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import Home from '@ui/pages/Home';
 import { getFeaturedPosts, getAllPosts, getAllZen } from '@lib/mdx';
 import { ArticleMeta } from '@types';
@@ -19,7 +19,7 @@ const HomePage = ({ latestPosts, latestZen, featuredPosts }: HomePageProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const latestPosts = getAllPosts()
     .map((post) => post.meta)
     .slice(0, 6);

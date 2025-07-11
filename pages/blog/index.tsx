@@ -1,7 +1,7 @@
-import { GetServerSideProps } from 'next';
 import Blog from '@ui/pages/Blog';
 import { getAllPosts } from '@lib/mdx';
 import { ArticleMeta } from '@types';
+import { GetStaticProps } from 'next';
 
 export type Props = {
   postsMeta: ArticleMeta[];
@@ -9,28 +9,22 @@ export type Props = {
   pageCount: number;
 };
 
-const BlogPage = (props: Props) => <Blog {...props} />;
+const POSTS_PER_PAGE = 6;
 
-const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const postsPerPage = 6;
-  const { page = 1 } = query;
-  const currentPage = Number(page);
+const BlogIndexPage = (props: Props) => <Blog {...props} />;
 
+export const getStaticProps: GetStaticProps = async () => {
   const postsMeta = getAllPosts().map((post) => post.meta);
-  const pageCount = Math.ceil(postsMeta.length / postsPerPage);
-
-  const startIndex = (currentPage - 1) * postsPerPage;
-  const endIndex = startIndex + postsPerPage;
-  const currentPostsMeta = postsMeta.slice(startIndex, endIndex);
+  const pageCount = Math.ceil(postsMeta.length / POSTS_PER_PAGE);
+  const currentPostsMeta = postsMeta.slice(0, POSTS_PER_PAGE);
 
   return {
     props: {
-      page: currentPage,
+      page: 1,
       postsMeta: currentPostsMeta,
       pageCount,
     },
   };
 };
 
-export { getServerSideProps };
-export default BlogPage;
+export default BlogIndexPage;
