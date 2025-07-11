@@ -13,6 +13,12 @@ import { global } from '@theme/global';
 import { theme } from '@theme/theme';
 import { GA_TRACKING_ID } from '@const/general';
 import * as gtag from '@lib/gtag';
+import { Nunito } from 'next/font/google';
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 if (typeof window !== 'undefined') {
   window.adsbygoogle = window.adsbygoogle || [];
@@ -59,6 +65,11 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${nunito.style.fontFamily};
+        }
+      `}</style>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

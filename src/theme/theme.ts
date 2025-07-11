@@ -12,9 +12,6 @@ export const theme = responsiveFontSizes(
         xl: 1920,
       },
     },
-    typography: {
-      fontFamily: 'Nunito, sans-serif',
-    },
     palette: {
       mode: 'dark',
       primary: {
