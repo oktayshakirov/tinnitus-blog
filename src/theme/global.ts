@@ -3,10 +3,6 @@ import { colors } from './colors';
 import { theme } from '@theme/theme';
 
 export const global = css`
-  * {
-    font-family: 'Nunito', sans-serif;
-  }
-
   body {
     background: ${colors.background};
     color: ${theme.palette.grey[200]}!important;
