@@ -8,12 +8,12 @@ import { DefaultSeo } from 'next-seo';
 import { Global } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
+import { Nunito } from 'next/font/google';
 import SEO_CONFIG from '../next-seo.config';
 import { global } from '@theme/global';
 import { theme } from '@theme/theme';
 import { GA_TRACKING_ID } from '@const/general';
 import * as gtag from '@lib/gtag';
-import { Nunito } from 'next/font/google';
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -69,9 +69,32 @@ const App = ({ Component, pageProps }: AppProps) => {
         html {
           font-family: ${nunito.style.fontFamily};
         }
+
+        .is-app .isApp {
+          display: none !important;
+        }
       `}</style>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          rel="preload"
+          href="https://cdn.jsdelivr.net/npm/fontisto@3.0.4/css/fontisto/fontisto.min.css"
+          as="style"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/fontisto@3.0.4/css/fontisto/fontisto.min.css"
+          media="print"
+          onLoad={(e) => {
+            (e.target as HTMLLinkElement).media = 'all';
+          }}
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/fontisto@3.0.4/css/fontisto/fontisto.min.css"
+          />
+        </noscript>
       </Head>
 
       <DefaultSeo {...SEO_CONFIG} />
