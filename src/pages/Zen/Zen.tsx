@@ -31,7 +31,7 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
 
   return (
     <>
-      <ZenSEO />
+      <ZenSEO page={pageFromUrl} />
       <Layout>
         <StyledContainer>
           <StyledTabContainer>
