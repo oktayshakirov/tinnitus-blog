@@ -31,7 +31,7 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
 
   return (
     <>
-      <BlogSEO />
+      <BlogSEO page={pageFromUrl} />
       <Layout>
         <StyledContainer>
           <StyledTabContainer>
