@@ -36,7 +36,7 @@ const ArticleCard = ({ className, article, index }: Props) => {
             src={image}
             alt={title}
             priority={index === 0}
-            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           {type === ArticleType.POST && (
             <StyledTime

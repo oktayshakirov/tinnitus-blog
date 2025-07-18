@@ -3,12 +3,14 @@ import { StyledImageContainer } from './Image.styled';
 import Logo from '@components/Logo';
 
 type Props = ImageProps & { fetchPriority?: 'high' | 'low' | 'auto' };
+
 const Image = ({
   fill = true,
   src,
   priority,
   loading,
   fetchPriority,
+  sizes,
   ...rest
 }: Props) => (
   <StyledImageContainer>
@@ -19,6 +21,7 @@ const Image = ({
         priority={priority}
         loading={priority ? 'eager' : loading ?? 'lazy'}
         fetchPriority={priority ? 'high' : fetchPriority}
+        sizes={sizes ?? '100vw'}
         {...rest}
       />
     ) : (
