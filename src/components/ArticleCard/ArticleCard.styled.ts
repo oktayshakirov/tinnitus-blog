@@ -16,6 +16,7 @@ export const StyledCard = styled('div')`
     margin-bottom: ${theme.spacing(1)};
     display: flex;
     flex-direction: column;
+    min-height: 370px; // Ensures consistent card height, adjust as needed
   `}
 `;
 
@@ -30,6 +31,12 @@ export const StyledContent = styled('div')`
     h2 {
       margin-bottom: ${theme.spacing(1)};
       font-size: 1.1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
     }
 
     p {
@@ -115,6 +122,7 @@ export const StyledTags = styled('div')`
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    min-height: 30px;
 
     &::-webkit-scrollbar {
       display: none;

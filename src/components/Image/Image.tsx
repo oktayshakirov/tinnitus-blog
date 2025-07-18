@@ -2,8 +2,15 @@ import NextImage, { ImageProps } from 'next/image';
 import { StyledImageContainer } from './Image.styled';
 import Logo from '@components/Logo';
 
-type Props = ImageProps;
-const Image = ({ fill = true, src, priority, loading, ...rest }: Props) => (
+type Props = ImageProps & { fetchPriority?: 'high' | 'low' | 'auto' };
+const Image = ({
+  fill = true,
+  src,
+  priority,
+  loading,
+  fetchPriority,
+  ...rest
+}: Props) => (
   <StyledImageContainer>
     {src ? (
       <NextImage
@@ -11,6 +18,7 @@ const Image = ({ fill = true, src, priority, loading, ...rest }: Props) => (
         src={src}
         priority={priority}
         loading={priority ? 'eager' : loading ?? 'lazy'}
+        fetchPriority={priority ? 'high' : fetchPriority}
         {...rest}
       />
     ) : (
