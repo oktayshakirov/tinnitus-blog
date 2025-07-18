@@ -5,7 +5,8 @@ export const StyledImageContainer = styled('div')`
   ${({ theme }) => css`
     position: relative;
     overflow: hidden;
-    height: ${theme.spacing(25)};
+    aspect-ratio: 16 / 9;
+    height: auto;
 
     ${theme.breakpoints.up('md')} {
       height: ${theme.spacing(30)};
