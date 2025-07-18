@@ -32,7 +32,12 @@ const ArticleCard = ({ className, article, index }: Props) => {
     <Grow in timeout={(index || 0) * 150}>
       <StyledCard className={className}>
         <StyledLink href={`${path}/${slug}`}>
-          <Image src={image} alt={title} priority={index === 0} />
+          <Image
+            src={image}
+            alt={title}
+            priority={index === 0}
+            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+          />
           {type === ArticleType.POST && (
             <StyledTime
               icon={
