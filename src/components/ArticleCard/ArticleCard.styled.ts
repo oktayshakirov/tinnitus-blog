@@ -16,7 +16,7 @@ export const StyledCard = styled('div')`
     margin-bottom: ${theme.spacing(1)};
     display: flex;
     flex-direction: column;
-    min-height: 370px; // Ensures consistent card height, adjust as needed
+    min-height: 370px;
   `}
 `;
 
