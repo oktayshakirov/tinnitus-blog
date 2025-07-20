@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Script from 'next/script';
 
 const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
@@ -15,7 +16,7 @@ const AdComponent: React.FC = () => {
     } else {
       setShouldRenderAd(false);
     }
-  }, [isProduction]);
+  }, []);
 
   useEffect(() => {
     if (shouldRenderAd && adRef.current) {
@@ -33,6 +34,12 @@ const AdComponent: React.FC = () => {
 
   return (
     <div ref={adRef}>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       {isProduction ? (
         <ins
           className="adsbygoogle"
