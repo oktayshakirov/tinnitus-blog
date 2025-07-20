@@ -11,9 +11,9 @@
     "postbuild": "next-sitemap"
   },
   "browserslist": [
-    "> 0.5%",
-    "not dead",
-    "not op_mini all"
+    "defaults and supports es6-module",
+    "not IE 11",
+    "not dead"
   ],
   "dependencies": {
     "@emotion/react": "^11.10.5",
