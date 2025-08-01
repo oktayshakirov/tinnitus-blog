@@ -33,10 +33,10 @@ const Contact = ({}: Props) => {
               <li>
                 <strong>Email:</strong>{' '}
                 <Link
-                  href="mailto:oktayshakirov@gmail.com"
+                  href="mailto:contact@tinnitushelp.me"
                   style={{ color: '#FFFF9B', textDecoration: 'none' }}
                 >
-                  oktayshakirov@gmail.com
+                  contact@tinnitushelp.me
                 </Link>
               </li>
               <li>

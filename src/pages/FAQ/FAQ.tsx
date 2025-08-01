@@ -157,10 +157,10 @@ const FAQ = () => {
               If you have any questions or need further information, feel free
               to reach out to us via email at{' '}
               <a
-                href="mailto:oktayshakirov@gmail.com"
+                href="mailto:contact@tinnitushelp.me"
                 style={{ color: '#FFFF9B', textDecoration: 'none' }}
               >
-                oktayshakirov@gmail.com
+                contact@tinnitushelp.me
               </a>
               . We value the feedback and insights from our readers.
             </Typography>
