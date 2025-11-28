@@ -2,9 +2,23 @@ import React from 'react';
 import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
-import Link from '@mui/material/Link';
+import Link from '@components/Link';
 import ContactSEO from './Contact.SEO';
-import { StyledContainer, StyledTabContainer } from './Contact.styled';
+import {
+  StyledContainer,
+  StyledTabContainer,
+  StyledSocialSection,
+  StyledSocialTitle,
+  StyledIconContainer,
+  StyledContactInfo,
+} from './Contact.styled';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaGithub,
+  FaInstagram,
+  FaTelegramPlane,
+} from 'react-icons/fa';
 
 const Contact = ({}: Props) => {
   return (
@@ -27,45 +41,76 @@ const Contact = ({}: Props) => {
             <h2>Contact Information</h2>
             <p>
               For any inquiries, advertising opportunities, or partnership
-              proposals, please don’t hesitate to get in touch:
+              proposals, please don&apos;t hesitate to get in touch:
             </p>
-            <ul>
-              <li>
-                <strong>Email:</strong>{' '}
-                <Link
-                  href="mailto:contact@tinnitushelp.me"
-                  style={{ color: '#FFFF9B', textDecoration: 'none' }}
-                >
-                  contact@tinnitushelp.me
-                </Link>
-              </li>
-              <li>
-                <strong>Linkedin:</strong>{' '}
-                <Link
-                  href="https://www.linkedin.com/in/oktayshakirov/"
-                  style={{ color: '#FFFF9B', textDecoration: 'none' }}
-                >
-                  Oktay Shakirov
-                </Link>
-              </li>
-            </ul>
+            <StyledContactInfo>
+              <ul>
+                <li>
+                  <strong>Email:</strong>{' '}
+                  <Link
+                    href="mailto:contact@tinnitushelp.me"
+                    style={{ color: '#FFFF9B', textDecoration: 'none' }}
+                  >
+                    contact@tinnitushelp.me
+                  </Link>
+                </li>
+                <li>
+                  <strong>Developer:</strong>{' '}
+                  <Link
+                    href="http://www.oktayshakirov.com"
+                    target="_blank"
+                    style={{ color: '#FFFF9B', textDecoration: 'none' }}
+                  >
+                    oktayshakirov.com
+                  </Link>
+                </li>
+              </ul>
+            </StyledContactInfo>
 
-            <h2>More about the developer of TinnitusHelp.me:</h2>
-            <p>
-              If you’re interested in my developer journey and want to explore
-              more of my projects, check out my personal website:
-            </p>
-            <ul>
-              <li>
-                <strong>Website:</strong>{' '}
+            <StyledSocialSection>
+              <StyledSocialTitle>Connect With Us</StyledSocialTitle>
+              <p style={{ marginBottom: '1rem', opacity: 0.9 }}>
+                Follow us on social media for the latest updates, tips, and
+                community support:
+              </p>
+              <StyledIconContainer>
                 <Link
-                  href="http://www.oktayshakirov.com"
-                  style={{ color: '#FFFF9B', textDecoration: 'none' }}
+                  href="https://www.facebook.com/TheTinnitusHelp"
+                  target="_blank"
+                  aria-label="Facebook"
                 >
-                  oktayshakirov.com
+                  <FaFacebookF size={28} />
                 </Link>
-              </li>
-            </ul>
+                <Link
+                  href="https://x.com/TinnitusHelp_me"
+                  target="_blank"
+                  aria-label="Twitter"
+                >
+                  <FaTwitter size={28} />
+                </Link>
+                <Link
+                  href="https://instagram.com/tinnitushelp.me"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram size={28} />
+                </Link>
+                <Link
+                  href="https://t.me/tinnitushelpme"
+                  target="_blank"
+                  aria-label="Telegram"
+                >
+                  <FaTelegramPlane size={28} />
+                </Link>
+                <Link
+                  href="https://github.com/oktayshakirov/tinnitus-blog"
+                  target="_blank"
+                  aria-label="GitHub"
+                >
+                  <FaGithub size={28} />
+                </Link>
+              </StyledIconContainer>
+            </StyledSocialSection>
 
             <h2>Feedback and Suggestions</h2>
             <p>

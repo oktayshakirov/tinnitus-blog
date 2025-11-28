@@ -1,5 +1,11 @@
 import Link from '@components/Link';
-import { FaFacebook, FaTwitter, FaGithub } from 'react-icons/fa';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaGithub,
+  FaInstagram,
+  FaTelegramPlane,
+} from 'react-icons/fa';
 import {
   StyledFooter,
   StyledContainer,
@@ -75,7 +81,7 @@ const Footer = ({ isApp = false }: FooterProps) => {
               target="_blank"
               aria-label="Facebook"
             >
-              <FaFacebook size={24} />
+              <FaFacebookF size={24} />
             </Link>
             <Link
               href="https://x.com/TinnitusHelp_me"
@@ -83,6 +89,20 @@ const Footer = ({ isApp = false }: FooterProps) => {
               aria-label="Twitter"
             >
               <FaTwitter size={24} />
+            </Link>
+            <Link
+              href="https://instagram.com/tinnitushelp.me"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <FaInstagram size={24} />
+            </Link>
+            <Link
+              href="https://t.me/tinnitushelpme"
+              target="_blank"
+              aria-label="Telegram"
+            >
+              <FaTelegramPlane size={24} />
             </Link>
           </>
         )}
