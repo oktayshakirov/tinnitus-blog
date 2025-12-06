@@ -3,8 +3,11 @@ import Script from 'next/script';
 
 const AdComponent: React.FC = () => {
   const adRef = useRef<HTMLDivElement>(null);
+  const insRef = useRef<HTMLModElement>(null);
   const isProduction = process.env.NODE_ENV === 'production';
   const [shouldRenderAd, setShouldRenderAd] = useState<boolean>(false);
+  const [scriptLoaded, setScriptLoaded] = useState<boolean>(false);
+  const adInitialized = useRef<boolean>(false);
 
   useEffect(() => {
     const appFlag =
@@ -19,14 +22,23 @@ const AdComponent: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (shouldRenderAd && adRef.current) {
+    if (
+      shouldRenderAd &&
+      scriptLoaded &&
+      insRef.current &&
+      !adInitialized.current
+    ) {
       try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        const insElement = insRef.current;
+        if (insElement && !insElement.hasAttribute('data-adsbygoogle-status')) {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          adInitialized.current = true;
+        }
       } catch (e) {
         console.error('Adsbygoogle.push({}) error in AdComponent:', e);
       }
     }
-  }, [shouldRenderAd]);
+  }, [shouldRenderAd, scriptLoaded]);
 
   if (!shouldRenderAd) {
     return null;
@@ -39,9 +51,11 @@ const AdComponent: React.FC = () => {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521"
         crossOrigin="anonymous"
         strategy="afterInteractive"
+        onLoad={() => setScriptLoaded(true)}
       />
       {isProduction ? (
         <ins
+          ref={insRef}
           className="adsbygoogle"
           style={{
             display: 'block',

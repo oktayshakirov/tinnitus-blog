@@ -3,6 +3,9 @@ import dynamic from 'next/dynamic';
 import Footer from '@components/Footer';
 
 const Header = dynamic(() => import('@components/Header'), { ssr: true });
+const AppDownloadPopup = dynamic(() => import('@components/AppDownloadPopup'), {
+  ssr: false,
+});
 
 type Props = {
   children: ReactNode;
@@ -23,6 +26,7 @@ const Layout = ({ children }: Props) => {
       </div>
       <main>{children}</main>
       <Footer isApp={isApp} />
+      <AppDownloadPopup isApp={isApp} />
     </>
   );
 };
