@@ -61,6 +61,7 @@ const ZenPost = ({
               </Grid>
             </Grid>
           </Grid>
+          <AdComponent />
         </StyledContainer>
       </Layout>
     </>

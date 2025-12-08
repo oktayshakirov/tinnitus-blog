@@ -33,6 +33,9 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
     <>
       <BlogSEO page={pageFromUrl} />
       <Layout>
+        <Container>
+          <AdComponent />
+        </Container>
         <StyledContainer>
           <StyledTabContainer>
             <Headline>

@@ -47,6 +47,9 @@ const TagArticles = ({
     <>
       <TagArticlesSEO tag={tagSlug} />
       <Layout>
+        <Container>
+          <AdComponent />
+        </Container>
         <StyledContainer>
           <StyledTabContainer>
             <Container>

@@ -16,6 +16,9 @@ const Tags = ({ tags }: Props) => (
   <>
     <TagsSEO />
     <Layout>
+      <Container>
+        <AdComponent />
+      </Container>
       <StyledContainer>
         <StyledTabContainer>
           <Headline>

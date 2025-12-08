@@ -61,6 +61,7 @@ const BlogPost = ({
               </Grid>
             </Grid>
           </Grid>
+          <AdComponent />
         </StyledContainer>
       </Layout>
     </>
