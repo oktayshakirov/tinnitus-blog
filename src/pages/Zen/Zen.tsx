@@ -33,6 +33,9 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
     <>
       <ZenSEO page={pageFromUrl} />
       <Layout>
+        <Container>
+          <AdComponent />
+        </Container>
         <StyledContainer>
           <StyledTabContainer>
             <Headline>

@@ -38,7 +38,6 @@ const AdComponent: React.FC = () => {
       try {
         const insElement = insRef.current;
 
-        // Wait for adsbygoogle to be available and element to be ready
         const intervalId = setInterval(() => {
           try {
             if (
@@ -57,32 +56,25 @@ const AdComponent: React.FC = () => {
           }
         }, 100);
 
-        // Cleanup interval after 5 seconds if it hasn't cleared
         setTimeout(() => clearInterval(intervalId), 5000);
       } catch (e) {
         console.error('Adsbygoogle.push({}) error in MDX AdComponent:', e);
       }
     };
 
-    // Initialize ad on mount
-    // Small delay to ensure DOM is ready
     const mountTimeout = setTimeout(() => {
       initializeAd();
     }, 100);
 
-    // Handle route changes
     const handleRouteChange = () => {
-      // Reset the ad element by removing status attribute to allow re-initialization
       if (insRef.current) {
         const insElement = insRef.current;
         if (insElement.hasAttribute('data-adsbygoogle-status')) {
           insElement.removeAttribute('data-adsbygoogle-status');
         }
-        // Clear content to allow fresh ad load
         insElement.innerHTML = '';
       }
 
-      // Re-initialize after a short delay to ensure route change is complete
       setTimeout(() => {
         initializeAd();
       }, 100);

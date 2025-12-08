@@ -103,6 +103,9 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Grid>
           </StyledTabContainer>
         </Container>
+        <Container>
+          <AdComponent />
+        </Container>
         <StyledContainer>
           <Grid container spacing={2}>
             <StyledLogoContainer item md={6}>
