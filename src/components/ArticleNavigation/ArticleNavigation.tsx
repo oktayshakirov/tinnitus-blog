@@ -8,6 +8,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import AdComponent from '@components/AdComponent';
 
 type TitleProps = {
   children: ReactNode;
@@ -33,33 +34,91 @@ type Props = {
   prev: Article | null;
   next: Article | null;
   tags: string[];
+  blogRecommendations?: Article[];
+  zenRecommendations?: Article[];
 };
-const ArticleNavigation = ({ prev, next, tags = [] }: Props) => (
-  <aside>
-    <Grid container spacing={{ xs: 4, md: 4 }} paddingY={4}>
-      <Grid item xs={12}>
-        <Title>Tags:</Title>
-        <ArticleTags tags={tags} />
+const ArticleNavigation = ({
+  prev,
+  next,
+  tags = [],
+  blogRecommendations = [],
+  zenRecommendations = [],
+}: Props) => {
+  let cardIndex = 2;
+
+  return (
+    <aside>
+      <Grid container spacing={{ xs: 4, md: 4 }} paddingY={4}>
+        <Grid item xs={12}>
+          <Title>Tags:</Title>
+          <ArticleTags tags={tags} />
+        </Grid>
+        {prev && (
+          <Grid item xs={12} sm={6} md={12}>
+            <Title>
+              <ArrowBackIosIcon />
+              Previous
+            </Title>
+            <ArticleCard article={prev.meta} index={0} />
+          </Grid>
+        )}
+        {next && (
+          <Grid item xs={12} sm={6} md={12}>
+            <Title>
+              Next <ArrowForwardIosIcon />
+            </Title>
+            <ArticleCard article={next.meta} index={1} />
+          </Grid>
+        )}
+        {blogRecommendations.length > 0 && (
+          <>
+            <Grid item xs={12}>
+              <AdComponent />
+            </Grid>
+            <Grid item xs={12}>
+              <Title>Recommended Posts:</Title>
+              <Grid container spacing={{ xs: 2, md: 2 }}>
+                {blogRecommendations.map((article) => {
+                  const currentIndex = cardIndex++;
+                  return (
+                    <Grid key={article.meta.slug} item xs={12} sm={6} md={12}>
+                      <ArticleCard
+                        article={article.meta}
+                        index={currentIndex}
+                      />
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            </Grid>
+          </>
+        )}
+        {zenRecommendations.length > 0 && (
+          <>
+            <Grid item xs={12}>
+              <AdComponent />
+            </Grid>
+            <Grid item xs={12}>
+              <Title>Recommended Sounds:</Title>
+              <Grid container spacing={{ xs: 2, md: 2 }}>
+                {zenRecommendations.map((article) => {
+                  const currentIndex = cardIndex++;
+                  return (
+                    <Grid key={article.meta.slug} item xs={12} sm={6} md={12}>
+                      <ArticleCard
+                        article={article.meta}
+                        index={currentIndex}
+                      />
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            </Grid>
+          </>
+        )}
       </Grid>
-      {prev && (
-        <Grid item xs={12} sm={6} md={12}>
-          <Title>
-            <ArrowBackIosIcon />
-            Previous
-          </Title>
-          <ArticleCard article={prev.meta} index={0} />
-        </Grid>
-      )}
-      {next && (
-        <Grid item xs={12} sm={6} md={12}>
-          <Title>
-            Next <ArrowForwardIosIcon />
-          </Title>
-          <ArticleCard article={next.meta} index={1} />
-        </Grid>
-      )}
-    </Grid>
-  </aside>
-);
+    </aside>
+  );
+};
 
 export default ArticleNavigation;

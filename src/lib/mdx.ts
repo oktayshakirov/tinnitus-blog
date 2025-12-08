@@ -121,3 +121,17 @@ export const getAllTags = (): string[] => {
     )
   );
 };
+
+export const getRandomPosts = (excludeSlug: string, count = 3): Article[] => {
+  const posts = getAllPosts();
+  const filtered = posts.filter((post) => post.meta.slug !== excludeSlug);
+  const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+};
+
+export const getRandomZen = (excludeSlug: string, count = 3): Article[] => {
+  const zen = getAllZen();
+  const filtered = zen.filter((zenPost) => zenPost.meta.slug !== excludeSlug);
+  const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+};

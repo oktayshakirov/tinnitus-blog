@@ -5,7 +5,7 @@ import { MDXRemoteProps } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import ZenPost from '@ui/pages/ZenPost';
 import rehypeSlug from 'rehype-slug';
-import { getAllZen } from '@lib/mdx';
+import { getAllZen, getRandomPosts, getRandomZen } from '@lib/mdx';
 import { Article } from '@types';
 import remarkGfm from 'remark-gfm';
 
@@ -14,6 +14,8 @@ export type Props = {
   slug: string;
   prev: Article | null;
   next: Article | null;
+  blogRecommendations: Article[];
+  zenRecommendations: Article[];
   createdAt: string;
   updatedAt: string;
 };
@@ -42,6 +44,8 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
   const zenIndex = zen.findIndex((zenPost) => zenPost.meta.slug === slug);
   const prev = zen[zenIndex - 1] || null;
   const next = zen[zenIndex + 1] || null;
+  const blogRecommendations = getRandomPosts(slug as string, 3);
+  const zenRecommendations = getRandomZen(slug as string, 2);
 
   const markdown = fs.readFileSync(filePath, 'utf-8');
   const content = await serialize(markdown, {
@@ -62,6 +66,8 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
       content,
       prev,
       next,
+      blogRecommendations,
+      zenRecommendations,
       createdAt: createdAt.toString(),
       updatedAt: updatedAt.toString(),
     },
