@@ -19,6 +19,8 @@ const BlogPost = ({
   slug,
   prev,
   next,
+  blogRecommendations,
+  zenRecommendations,
   createdAt,
   updatedAt,
 }: Props) => {
@@ -54,10 +56,9 @@ const BlogPost = ({
                   prev={prev}
                   next={next}
                   tags={frontmatter?.tags as unknown as string[]}
+                  blogRecommendations={blogRecommendations}
+                  zenRecommendations={zenRecommendations}
                 />
-              </Grid>
-              <Grid item>
-                <AdComponent />
               </Grid>
             </Grid>
           </Grid>
