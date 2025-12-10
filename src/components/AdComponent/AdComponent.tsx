@@ -12,6 +12,7 @@ const AdComponent: React.FC = () => {
   const insRef = useRef<HTMLModElement>(null);
   const isProduction = process.env.NODE_ENV === 'production';
   const [shouldRenderAd, setShouldRenderAd] = useState<boolean>(false);
+  const [isAdEmpty, setIsAdEmpty] = useState<boolean>(false);
 
   useEffect(() => {
     const appFlag =
@@ -26,9 +27,40 @@ const AdComponent: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (!shouldRenderAd) {
+    if (!shouldRenderAd || !insRef.current) {
       return;
     }
+
+    const checkAdStatus = () => {
+      if (!insRef.current) {
+        return;
+      }
+
+      const insElement = insRef.current;
+      const adStatus = insElement.getAttribute('data-adsbygoogle-status');
+
+      if (adStatus === 'unfilled' || adStatus === 'error') {
+        setIsAdEmpty(true);
+        if (adRef.current) {
+          adRef.current.style.display = 'none';
+        }
+      } else if (adStatus === 'done') {
+        const hasContent =
+          insElement.children.length > 0 ||
+          insElement.innerHTML.trim().length > 0;
+        if (!hasContent) {
+          setIsAdEmpty(true);
+          if (adRef.current) {
+            adRef.current.style.display = 'none';
+          }
+        } else {
+          setIsAdEmpty(false);
+          if (adRef.current) {
+            adRef.current.style.display = '';
+          }
+        }
+      }
+    };
 
     const initializeAd = () => {
       if (!insRef.current) {
@@ -37,6 +69,10 @@ const AdComponent: React.FC = () => {
 
       try {
         const insElement = insRef.current;
+        setIsAdEmpty(false);
+        if (adRef.current) {
+          adRef.current.style.display = '';
+        }
 
         const intervalId = setInterval(() => {
           try {
@@ -62,11 +98,35 @@ const AdComponent: React.FC = () => {
       }
     };
 
+    const observer = new MutationObserver(() => {
+      checkAdStatus();
+    });
+
+    if (insRef.current) {
+      observer.observe(insRef.current, {
+        attributes: true,
+        attributeFilter: ['data-adsbygoogle-status'],
+        childList: true,
+        subtree: true,
+      });
+    }
+
     const mountTimeout = setTimeout(() => {
       initializeAd();
     }, 100);
 
+    const statusCheckInterval = setInterval(() => {
+      checkAdStatus();
+    }, 500);
+
+    setTimeout(() => {
+      clearInterval(statusCheckInterval);
+    }, 10000);
+
     const handleRouteChange = () => {
+      observer.disconnect();
+      clearInterval(statusCheckInterval);
+
       if (insRef.current) {
         const insElement = insRef.current;
         if (insElement.hasAttribute('data-adsbygoogle-status')) {
@@ -75,8 +135,21 @@ const AdComponent: React.FC = () => {
         insElement.innerHTML = '';
       }
 
+      setIsAdEmpty(false);
+      if (adRef.current) {
+        adRef.current.style.display = '';
+      }
+
       setTimeout(() => {
         initializeAd();
+        if (insRef.current) {
+          observer.observe(insRef.current, {
+            attributes: true,
+            attributeFilter: ['data-adsbygoogle-status'],
+            childList: true,
+            subtree: true,
+          });
+        }
       }, 100);
     };
 
@@ -84,16 +157,26 @@ const AdComponent: React.FC = () => {
 
     return () => {
       clearTimeout(mountTimeout);
+      clearInterval(statusCheckInterval);
+      observer.disconnect();
       Router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [shouldRenderAd]);
 
-  if (!shouldRenderAd) {
+  if (!shouldRenderAd || isAdEmpty) {
     return null;
   }
 
   return (
-    <div ref={adRef}>
+    <div
+      ref={adRef}
+      style={{
+        width: '100%',
+        maxWidth: '100%',
+        overflow: 'hidden',
+        margin: '10px 0',
+      }}
+    >
       {isProduction ? (
         <ins
           ref={insRef}
@@ -102,6 +185,9 @@ const AdComponent: React.FC = () => {
             display: 'block',
             borderRadius: '25px',
             overflow: 'hidden',
+            width: '100%',
+            maxWidth: '100%',
+            minHeight: '0',
           }}
           data-ad-client="ca-pub-5852582960793521"
           data-ad-slot="3785001294"
