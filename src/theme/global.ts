@@ -44,4 +44,17 @@ export const global = css`
   div:has(> ins.adsbygoogle[data-ad-status='unfilled']) {
     display: none !important;
   }
+
+  /* Ensure ad containers take full width and aren't affected by Grid negative margins */
+  div:has(> ins.adsbygoogle) {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  ins.adsbygoogle {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 `;

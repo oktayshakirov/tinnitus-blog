@@ -93,7 +93,15 @@ const AdComponent: React.FC = () => {
   }
 
   return (
-    <div ref={adRef}>
+    <div
+      ref={adRef}
+      style={{
+        width: '100%',
+        marginLeft: 0,
+        marginRight: 0,
+        boxSizing: 'border-box',
+      }}
+    >
       {isProduction ? (
         <ins
           ref={insRef}
@@ -102,6 +110,8 @@ const AdComponent: React.FC = () => {
             display: 'block',
             borderRadius: '25px',
             overflow: 'hidden',
+            width: '100%',
+            maxWidth: '100%',
           }}
           data-ad-layout="in-article"
           data-ad-format="fluid"
