@@ -6,7 +6,12 @@ const config = {
     let priority = 0.7;
     let changefreq = 'daily';
 
+    // Exclude tag pages
     if (path.startsWith('/tags')) {
+      return null;
+    }
+
+    if (path.match(/\/blog\/page\/\d+$/) || path.match(/\/zen\/page\/\d+$/)) {
       return null;
     }
 
