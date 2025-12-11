@@ -41,21 +41,7 @@ export const global = css`
     text-decoration: none !important;
   }
 
-  div:has(> ins.adsbygoogle[data-ad-status='unfilled']),
-  div:has(> ins.adsbygoogle[data-adsbygoogle-status='unfilled']),
-  div:has(> ins.adsbygoogle[data-ad-status='error']),
-  div:has(> ins.adsbygoogle[data-adsbygoogle-status='error']) {
-    display: none !important;
-  }
-
-  div:has(
-      > ins.adsbygoogle[data-ad-status='filled']:not(:has(iframe, img, a, div))
-    ),
-  div:has(
-      > ins.adsbygoogle[data-adsbygoogle-status='filled']:not(
-          :has(iframe, img, a, div)
-        )
-    ) {
+  div:has(> ins.adsbygoogle[data-ad-status='unfilled']) {
     display: none !important;
   }
 `;
