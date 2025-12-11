@@ -30,95 +30,53 @@ const AdComponent: React.FC = () => {
       return;
     }
 
-    const checkAdContent = () => {
-      const insElement = insRef.current;
-      const adContainer = adRef.current;
-      if (!insElement || !adContainer) return;
-
-      const adStatus =
-        insElement.getAttribute('data-ad-status') ||
-        insElement.getAttribute('data-adsbygoogle-status');
-
-      if (adStatus === 'unfilled' || adStatus === 'error') {
-        adContainer.style.display = 'none';
+    const initializeAd = () => {
+      if (!insRef.current) {
         return;
       }
 
-      if (adStatus === 'filled' || adStatus === 'done') {
-        const iframe = insElement.querySelector(
-          'iframe'
-        ) as HTMLIFrameElement | null;
-        const hasValidIframe =
-          iframe &&
-          iframe.offsetHeight > 0 &&
-          iframe.offsetWidth > 0 &&
-          (iframe.getAttribute('src') || '').length > 10;
+      try {
+        const insElement = insRef.current;
 
-        const hasContent =
-          hasValidIframe ||
-          insElement.querySelector('img') ||
-          insElement.querySelector('a') ||
-          insElement.querySelector('[id^="aswift_"]');
-
-        adContainer.style.display = hasContent ? '' : 'none';
-      }
-    };
-
-    const initializeAd = () => {
-      if (!insRef.current) return;
-
-      const insElement = insRef.current;
-      const intervalId = setInterval(() => {
-        if (
-          window.adsbygoogle &&
-          insElement &&
-          !insElement.hasAttribute('data-adsbygoogle-status') &&
-          !insElement.hasAttribute('data-ad-status')
-        ) {
+        const intervalId = setInterval(() => {
           try {
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-            clearInterval(intervalId);
+            if (
+              window.adsbygoogle &&
+              insElement &&
+              !insElement.hasAttribute('data-adsbygoogle-status')
+            ) {
+              (window.adsbygoogle = window.adsbygoogle || []).push({});
+              clearInterval(intervalId);
+            }
           } catch (err) {
             if (process.env.NODE_ENV === 'development') {
-              console.error('Error pushing ads:', err);
+              console.error('Error pushing ads in MDX AdComponent:', err);
             }
             clearInterval(intervalId);
           }
-        }
-      }, 100);
+        }, 100);
 
-      setTimeout(() => clearInterval(intervalId), 5000);
+        setTimeout(() => clearInterval(intervalId), 5000);
+      } catch (e) {
+        console.error('Adsbygoogle.push({}) error in MDX AdComponent:', e);
+      }
     };
 
-    const observer = new MutationObserver(checkAdContent);
-    if (insRef.current) {
-      observer.observe(insRef.current, {
-        attributes: true,
-        attributeFilter: ['data-ad-status', 'data-adsbygoogle-status'],
-        childList: true,
-        subtree: true,
-      });
-    }
-
-    const mountTimeout = setTimeout(initializeAd, 100);
-    const checkTimeout = setTimeout(checkAdContent, 3000);
+    const mountTimeout = setTimeout(() => {
+      initializeAd();
+    }, 100);
 
     const handleRouteChange = () => {
-      observer.disconnect();
-      clearTimeout(checkTimeout);
       if (insRef.current) {
-        insRef.current.innerHTML = '';
+        const insElement = insRef.current;
+        if (insElement.hasAttribute('data-adsbygoogle-status')) {
+          insElement.removeAttribute('data-adsbygoogle-status');
+        }
+        insElement.innerHTML = '';
       }
+
       setTimeout(() => {
         initializeAd();
-        if (insRef.current) {
-          observer.observe(insRef.current, {
-            attributes: true,
-            attributeFilter: ['data-ad-status', 'data-adsbygoogle-status'],
-            childList: true,
-            subtree: true,
-          });
-        }
       }, 100);
     };
 
@@ -126,8 +84,6 @@ const AdComponent: React.FC = () => {
 
     return () => {
       clearTimeout(mountTimeout);
-      clearTimeout(checkTimeout);
-      observer.disconnect();
       Router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [shouldRenderAd]);
