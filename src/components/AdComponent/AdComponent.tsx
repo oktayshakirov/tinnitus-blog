@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Router from 'next/router';
 
 declare global {
@@ -12,144 +12,109 @@ const AdComponent: React.FC = () => {
   const insRef = useRef<HTMLModElement>(null);
   const isProduction = process.env.NODE_ENV === 'production';
   const [shouldRenderAd, setShouldRenderAd] = useState<boolean>(false);
-  const checkTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const observerRef = useRef<MutationObserver | null>(null);
 
   useEffect(() => {
     const appFlag =
       document.documentElement.classList.contains('is-app') ||
       localStorage.getItem('isApp') === 'true';
-    setShouldRenderAd(!appFlag);
-  }, []);
 
-  const checkAdContent = useCallback(() => {
-    const insElement = insRef.current;
-    const adContainer = adRef.current;
-
-    if (!insElement || !adContainer) {
-      return;
-    }
-
-    const adStatus = insElement.getAttribute('data-adsbygoogle-status');
-
-    if (adStatus === 'unfilled' || adStatus === 'error') {
-      adContainer.style.display = 'none';
-      return;
-    }
-
-    if (adStatus === 'done' || adStatus === 'filled') {
-      const iframe = insElement.querySelector(
-        'iframe'
-      ) as HTMLIFrameElement | null;
-
-      if (iframe) {
-        if (iframe.offsetHeight === 0 && iframe.offsetWidth === 0) {
-          adContainer.style.display = 'none';
-          return;
-        }
-        adContainer.style.display = '';
-        return;
-      }
-
-      if (
-        !insElement.querySelector('img') &&
-        !insElement.querySelector('a, div, span') &&
-        insElement.innerHTML.trim().length < 50
-      ) {
-        adContainer.style.display = 'none';
-        return;
-      }
-
-      adContainer.style.display = '';
+    if (!appFlag) {
+      setShouldRenderAd(true);
+    } else {
+      setShouldRenderAd(false);
     }
   }, []);
-
-  const debouncedCheck = useCallback(() => {
-    if (checkTimeoutRef.current) {
-      clearTimeout(checkTimeoutRef.current);
-    }
-    checkTimeoutRef.current = setTimeout(checkAdContent, 100);
-  }, [checkAdContent]);
 
   useEffect(() => {
     if (!shouldRenderAd) {
       return;
     }
 
-    const initializeAd = () => {
+    const checkAdContent = () => {
       const insElement = insRef.current;
-      if (!insElement) {
+      const adContainer = adRef.current;
+      if (!insElement || !adContainer) return;
+
+      const adStatus =
+        insElement.getAttribute('data-ad-status') ||
+        insElement.getAttribute('data-adsbygoogle-status');
+
+      if (adStatus === 'unfilled' || adStatus === 'error') {
+        adContainer.style.display = 'none';
         return;
       }
 
-      if (adRef.current) {
-        adRef.current.style.display = '';
-      }
+      if (adStatus === 'filled' || adStatus === 'done') {
+        const iframe = insElement.querySelector(
+          'iframe'
+        ) as HTMLIFrameElement | null;
+        const hasValidIframe =
+          iframe &&
+          iframe.offsetHeight > 0 &&
+          iframe.offsetWidth > 0 &&
+          (iframe.getAttribute('src') || '').length > 10;
 
+        const hasContent =
+          hasValidIframe ||
+          insElement.querySelector('img') ||
+          insElement.querySelector('a') ||
+          insElement.querySelector('[id^="aswift_"]');
+
+        adContainer.style.display = hasContent ? '' : 'none';
+      }
+    };
+
+    const initializeAd = () => {
+      if (!insRef.current) return;
+
+      const insElement = insRef.current;
       const intervalId = setInterval(() => {
-        try {
-          if (
-            window.adsbygoogle &&
-            insElement &&
-            !insElement.hasAttribute('data-adsbygoogle-status')
-          ) {
+        if (
+          window.adsbygoogle &&
+          insElement &&
+          !insElement.hasAttribute('data-adsbygoogle-status') &&
+          !insElement.hasAttribute('data-ad-status')
+        ) {
+          try {
             (window.adsbygoogle = window.adsbygoogle || []).push({});
             clearInterval(intervalId);
+          } catch (err) {
+            if (process.env.NODE_ENV === 'development') {
+              console.error('Error pushing ads:', err);
+            }
+            clearInterval(intervalId);
           }
-        } catch (err) {
-          if (process.env.NODE_ENV === 'development') {
-            console.error('Error pushing ads in AdComponent:', err);
-          }
-          clearInterval(intervalId);
         }
       }, 100);
 
       setTimeout(() => clearInterval(intervalId), 5000);
     };
 
-    observerRef.current = new MutationObserver(debouncedCheck);
-
+    const observer = new MutationObserver(checkAdContent);
     if (insRef.current) {
-      observerRef.current.observe(insRef.current, {
+      observer.observe(insRef.current, {
         attributes: true,
-        attributeFilter: ['data-adsbygoogle-status'],
+        attributeFilter: ['data-ad-status', 'data-adsbygoogle-status'],
         childList: true,
         subtree: true,
       });
     }
 
     const mountTimeout = setTimeout(initializeAd, 100);
-    const contentCheckInterval = setInterval(checkAdContent, 1000);
-    const stopCheckingTimeout = setTimeout(() => {
-      clearInterval(contentCheckInterval);
-      checkAdContent();
-    }, 8000);
+    const checkTimeout = setTimeout(checkAdContent, 3000);
 
     const handleRouteChange = () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
+      observer.disconnect();
+      clearTimeout(checkTimeout);
+      if (insRef.current) {
+        insRef.current.innerHTML = '';
       }
-      clearInterval(contentCheckInterval);
-      clearTimeout(stopCheckingTimeout);
-
-      const insElement = insRef.current;
-      if (insElement) {
-        if (insElement.hasAttribute('data-adsbygoogle-status')) {
-          insElement.removeAttribute('data-adsbygoogle-status');
-        }
-        insElement.innerHTML = '';
-      }
-
-      if (adRef.current) {
-        adRef.current.style.display = '';
-      }
-
       setTimeout(() => {
         initializeAd();
-        if (insRef.current && observerRef.current) {
-          observerRef.current.observe(insRef.current, {
+        if (insRef.current) {
+          observer.observe(insRef.current, {
             attributes: true,
-            attributeFilter: ['data-adsbygoogle-status'],
+            attributeFilter: ['data-ad-status', 'data-adsbygoogle-status'],
             childList: true,
             subtree: true,
           });
@@ -161,17 +126,11 @@ const AdComponent: React.FC = () => {
 
     return () => {
       clearTimeout(mountTimeout);
-      clearTimeout(stopCheckingTimeout);
-      if (checkTimeoutRef.current) {
-        clearTimeout(checkTimeoutRef.current);
-      }
-      clearInterval(contentCheckInterval);
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
+      clearTimeout(checkTimeout);
+      observer.disconnect();
       Router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [shouldRenderAd, checkAdContent, debouncedCheck]);
+  }, [shouldRenderAd]);
 
   if (!shouldRenderAd) {
     return null;
