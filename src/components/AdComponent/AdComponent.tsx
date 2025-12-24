@@ -49,20 +49,14 @@ const AdComponent: React.FC = () => {
               clearInterval(intervalId);
             }
           } catch (err) {
-            if (process.env.NODE_ENV === 'development') {
-              console.error('Error pushing ads in AdComponent:', err);
-            }
             clearInterval(intervalId);
           }
         }, 100);
 
         setTimeout(() => clearInterval(intervalId), 10000);
-      } catch (e) {
-        console.error('Adsbygoogle.push({}) error in AdComponent:', e);
-      }
+      } catch (e) {}
     };
 
-    // Listen for script load event
     const handleScriptLoad = () => {
       initializeAd();
     };
@@ -71,7 +65,6 @@ const AdComponent: React.FC = () => {
       window.addEventListener('adsbygoogle-loaded', handleScriptLoad);
     }
 
-    // Initial mount
     const mountTimeout = setTimeout(() => {
       initializeAd();
     }, 100);
