@@ -30,16 +30,6 @@ const AdComponent: React.FC = () => {
       return;
     }
 
-    // Check if adsbygoogle script is loaded and ready
-    const isAdSenseReady = (): boolean => {
-      return (
-        typeof window !== 'undefined' &&
-        window.adsbygoogle &&
-        Array.isArray(window.adsbygoogle) &&
-        document.querySelector('script[src*="adsbygoogle.js"]') !== null
-      );
-    };
-
     const initializeAd = () => {
       if (!insRef.current) {
         return;
@@ -48,47 +38,25 @@ const AdComponent: React.FC = () => {
       try {
         const insElement = insRef.current;
 
-        // Check if ad is already initialized
-        if (insElement.hasAttribute('data-adsbygoogle-status')) {
-          return;
-        }
-
-        // Wait for AdSense script to be ready
-        const checkAndInitialize = () => {
-          if (!isAdSenseReady()) {
-            return false;
-          }
-
+        const intervalId = setInterval(() => {
           try {
             if (
+              window.adsbygoogle &&
               insElement &&
               !insElement.hasAttribute('data-adsbygoogle-status')
             ) {
               (window.adsbygoogle = window.adsbygoogle || []).push({});
-              return true;
+              clearInterval(intervalId);
             }
           } catch (err) {
             if (process.env.NODE_ENV === 'development') {
               console.error('Error pushing ads in MDX AdComponent:', err);
             }
-          }
-          return false;
-        };
-
-        // Try immediately if ready
-        if (checkAndInitialize()) {
-          return;
-        }
-
-        // Otherwise poll until ready
-        let attempts = 0;
-        const maxAttempts = 50; // 5 seconds max (50 * 100ms)
-        const intervalId = setInterval(() => {
-          attempts++;
-          if (checkAndInitialize() || attempts >= maxAttempts) {
             clearInterval(intervalId);
           }
         }, 100);
+
+        setTimeout(() => clearInterval(intervalId), 10000);
       } catch (e) {
         console.error('Adsbygoogle.push({}) error in MDX AdComponent:', e);
       }
@@ -99,28 +67,27 @@ const AdComponent: React.FC = () => {
       initializeAd();
     };
 
-    window.addEventListener('adsbygoogle-loaded', handleScriptLoad);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('adsbygoogle-loaded', handleScriptLoad);
+    }
 
-    // Initial mount - wait a bit for DOM to be ready
+    // Initial mount
     const mountTimeout = setTimeout(() => {
       initializeAd();
-    }, 300);
+    }, 100);
 
     const handleRouteChange = () => {
       if (insRef.current) {
         const insElement = insRef.current;
-        
-        // Reset the ad element state
         if (insElement.hasAttribute('data-adsbygoogle-status')) {
           insElement.removeAttribute('data-adsbygoogle-status');
         }
         insElement.innerHTML = '';
       }
 
-      // Wait longer for route change to ensure DOM is ready and script is loaded
       setTimeout(() => {
         initializeAd();
-      }, 500);
+      }, 300);
     };
 
     Router.events.on('routeChangeComplete', handleRouteChange);
@@ -128,7 +95,9 @@ const AdComponent: React.FC = () => {
     return () => {
       clearTimeout(mountTimeout);
       Router.events.off('routeChangeComplete', handleRouteChange);
-      window.removeEventListener('adsbygoogle-loaded', handleScriptLoad);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('adsbygoogle-loaded', handleScriptLoad);
+      }
     };
   }, [shouldRenderAd]);
 
