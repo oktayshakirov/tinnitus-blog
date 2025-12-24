@@ -37,24 +37,15 @@ const AdsWrapper = () => {
         script.src =
           'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
         script.crossOrigin = 'anonymous';
-        
-        // Add onload handler to ensure script is ready
+
         script.onload = () => {
-          // Dispatch custom event when script is loaded
           if (typeof window !== 'undefined') {
             window.dispatchEvent(new Event('adsbygoogle-loaded'));
           }
         };
-        
-        script.onerror = () => {
-          if (process.env.NODE_ENV === 'development') {
-            console.error('Failed to load Google AdSense script');
-          }
-        };
-        
+
         document.head.appendChild(script);
       } else {
-        // Script already exists, dispatch event immediately
         if (typeof window !== 'undefined') {
           window.dispatchEvent(new Event('adsbygoogle-loaded'));
         }
