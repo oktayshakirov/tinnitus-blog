@@ -5,6 +5,7 @@ import {
   FaGithub,
   FaInstagram,
   FaTelegramPlane,
+  FaTiktok,
 } from 'react-icons/fa';
 import {
   StyledFooter,
@@ -96,6 +97,13 @@ const Footer = ({ isApp = false }: FooterProps) => {
               aria-label="Instagram"
             >
               <FaInstagram size={24} />
+            </Link>
+            <Link
+              href="https://www.tiktok.com/@tinnitushelp.me"
+              target="_blank"
+              aria-label="TikTok"
+            >
+              <FaTiktok size={24} />
             </Link>
             <Link
               href="https://t.me/tinnitushelpme"
