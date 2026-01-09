@@ -18,6 +18,7 @@ import {
   FaGithub,
   FaInstagram,
   FaTelegramPlane,
+  FaTiktok,
 } from 'react-icons/fa';
 
 const Contact = ({}: Props) => {
@@ -94,6 +95,13 @@ const Contact = ({}: Props) => {
                   aria-label="Instagram"
                 >
                   <FaInstagram size={28} />
+                </Link>
+                <Link
+                  href="https://www.tiktok.com/@tinnitushelp.me"
+                  target="_blank"
+                  aria-label="TikTok"
+                >
+                  <FaTiktok size={28} />
                 </Link>
                 <Link
                   href="https://t.me/tinnitushelpme"
