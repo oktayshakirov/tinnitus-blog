@@ -1,94 +1,115 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const admin = require('firebase-admin');
 const fs = require('fs');
 const path = require('path');
+const admin = require('firebase-admin');
 
 // Initialize Firebase Admin
-function initializeFirebase() {
-  if (!admin.apps.length) {
-    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+if (!admin.apps.length) {
+  const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
 
-    if (
-      !process.env.FIREBASE_PROJECT_ID ||
-      !process.env.FIREBASE_CLIENT_EMAIL ||
-      !privateKey
-    ) {
-      throw new Error(
-        'Missing Firebase credentials. Please set FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, and FIREBASE_PRIVATE_KEY environment variables.'
-      );
-    }
-
-    admin.initializeApp({
-      credential: admin.credential.cert({
-        projectId: process.env.FIREBASE_PROJECT_ID,
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: privateKey,
-      }),
-    });
+  if (
+    !process.env.FIREBASE_PROJECT_ID ||
+    !process.env.FIREBASE_CLIENT_EMAIL ||
+    !privateKey
+  ) {
+    throw new Error(
+      'Missing Firebase credentials. Please set FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, and FIREBASE_PRIVATE_KEY environment variables.'
+    );
   }
-  return admin;
+
+  admin.initializeApp({
+    credential: admin.credential.cert({
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+      privateKey: privateKey,
+    }),
+  });
 }
 
-// Read views data
-const VIEWS_DATA_PATH = path.join(__dirname, '..', 'data', 'initial-views.json');
-const viewsData = JSON.parse(fs.readFileSync(VIEWS_DATA_PATH, 'utf-8'));
+// Parse view key to extract type and slug
+function parseViewKey(viewKey) {
+  const parts = viewKey.split('_');
+  if (parts.length < 2) {
+    throw new Error(`Invalid view key format: ${viewKey}`);
+  }
+  const type = parts[0];
+  const slug = parts.slice(1).join('_'); // In case slug contains underscores
+  return { type, slug };
+}
 
-// Main function
 async function importViews() {
   try {
-    console.log('Initializing Firebase...');
-    initializeFirebase();
+    // Read the views.json file
+    const viewsFilePath = path.join(__dirname, '../data/views.json');
+    const viewsData = JSON.parse(fs.readFileSync(viewsFilePath, 'utf8'));
 
-    console.log(`Importing ${Object.keys(viewsData).length} view entries...\n`);
-
-    const db = admin.firestore();
-    const batch = db.batch();
+    const viewsRef = admin.firestore().collection('views');
+    const batch = admin.firestore().batch();
     let batchCount = 0;
-    const BATCH_SIZE = 500; // Firestore batch limit
+    const BATCH_LIMIT = 500; // Firestore batch limit
 
-    for (const [viewKey, views] of Object.entries(viewsData)) {
-      const viewsRef = db.collection('views').doc(viewKey);
+    let totalProcessed = 0;
+    let totalSuccess = 0;
+    let totalErrors = 0;
 
-      // Parse type and slug from key (format: "type_slug")
-      const [type, ...slugParts] = viewKey.split('_');
-      const slug = slugParts.join('_');
+    console.log(`Starting import of ${Object.keys(viewsData).length} views...\n`);
 
-      // Set the document with initial view count
-      batch.set(
-        viewsRef,
-        {
-          count: views,
-          type,
-          slug,
-          lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
-        },
-        { merge: true }
-      );
+    for (const [viewKey, count] of Object.entries(viewsData)) {
+      try {
+        const { type, slug } = parseViewKey(viewKey);
+        const docRef = viewsRef.doc(viewKey);
 
-      batchCount++;
+        // Set the document with the view count
+        batch.set(
+          docRef,
+          {
+            count: count,
+            type: type,
+            slug: slug,
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+          },
+          { merge: true }
+        );
 
-      // Commit batch if we reach the limit
-      if (batchCount >= BATCH_SIZE) {
-        await batch.commit();
-        console.log(`Committed batch of ${batchCount} entries`);
-        batchCount = 0;
+        batchCount++;
+        totalProcessed++;
+
+        // Firestore has a limit of 500 operations per batch
+        if (batchCount >= BATCH_LIMIT) {
+          await batch.commit();
+          console.log(`Committed batch of ${batchCount} views`);
+          batchCount = 0;
+        }
+      } catch (error) {
+        console.error(`Error processing view key "${viewKey}":`, error.message);
+        totalErrors++;
       }
     }
 
-    // Commit remaining entries
+    // Commit any remaining operations
     if (batchCount > 0) {
       await batch.commit();
-      console.log(`Committed final batch of ${batchCount} entries`);
+      console.log(`Committed final batch of ${batchCount} views`);
+      totalSuccess = totalProcessed - totalErrors;
     }
 
-    console.log(`\n✅ Successfully imported ${Object.keys(viewsData).length} view entries to Firebase!`);
-    console.log(`Total views imported: ${Object.values(viewsData).reduce((a, b) => a + b, 0)}`);
-
-    process.exit(0);
+    console.log('\n=== Import Summary ===');
+    console.log(`Total views processed: ${totalProcessed}`);
+    console.log(`Successfully imported: ${totalSuccess}`);
+    console.log(`Errors: ${totalErrors}`);
+    console.log('\nImport completed!');
   } catch (error) {
-    console.error('❌ Error importing views:', error);
+    console.error('Error importing views:', error);
     process.exit(1);
   }
 }
 
-importViews();
+// Run the import
+importViews()
+  .then(() => {
+    console.log('\nScript finished successfully');
+    process.exit(0);
+  })
+  .catch((error) => {
+    console.error('Fatal error:', error);
+    process.exit(1);
+  });
