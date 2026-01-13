@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "next dev",
-    "build": "next build && node pages/api/syncContent.js",
+    "build": "next build && node pages/api/syncContent.js && node scripts/import-ga-views.js",
     "start:prod": "next start",
     "lint": "next lint",
     "format": "prettier --write .",

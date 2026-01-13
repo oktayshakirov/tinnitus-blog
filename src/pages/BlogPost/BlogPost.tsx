@@ -13,6 +13,7 @@ import {
 } from './BlogPost.styled';
 import AdComponent from '@components/AdComponent';
 import GoBackLink from '@components/GoBackLink';
+import ViewsCounter from '@components/ViewsCounter';
 
 const BlogPost = ({
   content,
@@ -41,6 +42,7 @@ const BlogPost = ({
           <GoBackLink option="blog" />
           <StyledHeadline>
             <StyledDate>{frontmatter?.date}</StyledDate>
+            <ViewsCounter type="blog" slug={slug} />
             <Typography component="h1" variant="h3">
               {frontmatter?.title}
             </Typography>
