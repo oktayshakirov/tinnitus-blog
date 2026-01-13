@@ -13,6 +13,7 @@ import {
 } from './ZenPost.styled';
 import AdComponent from '@components/AdComponent';
 import GoBackLink from '@components/GoBackLink';
+import ViewsCounter from '@components/ViewsCounter';
 
 const ZenPost = ({
   content,
@@ -41,6 +42,7 @@ const ZenPost = ({
           <GoBackLink option="zen" />
           <StyledHeadline>
             <StyledDate>{frontmatter?.date}</StyledDate>
+            <ViewsCounter type="zen" slug={slug} />
             <Typography component="h1" variant="h3">
               {frontmatter?.title}
             </Typography>
