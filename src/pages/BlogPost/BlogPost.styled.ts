@@ -17,10 +17,10 @@ export const StyledContainer = styled(Container)`
 
 export const StyledHeadline = styled('div')`
   ${({ theme }) => css`
-    margin: ${theme.spacing(2)} 0 ${theme.spacing(4)};
+    margin: ${theme.spacing(2)} 0 ${theme.spacing(2)};
 
     ${theme.breakpoints.up('md')} {
-      margin: ${theme.spacing(4)} 0 ${theme.spacing(6)};
+      margin: ${theme.spacing(4)} 0 ${theme.spacing(3)};
     }
   `}
 `;
@@ -40,7 +40,7 @@ export const StyledMetaRow = styled('div')`
     display: flex;
     align-items: center;
     gap: ${theme.spacing(2)};
-    margin: 0 0 ${theme.spacing(1)} 0;
+    margin: ${theme.spacing(1)} 0 0 0;
     flex-wrap: wrap;
   `}
 `;

@@ -43,6 +43,9 @@ const ZenPost = ({
         <StyledContainer>
           <GoBackLink option="zen" />
           <StyledHeadline>
+            <Typography component="h1" variant="h3">
+              {frontmatter?.title}
+            </Typography>
             <StyledMetaRow>
               <StyledDate>
                 <FaCalendarAlt />
@@ -50,9 +53,6 @@ const ZenPost = ({
               </StyledDate>
               <ViewsCounter type="zen" slug={slug} />
             </StyledMetaRow>
-            <Typography component="h1" variant="h3">
-              {frontmatter?.title}
-            </Typography>
           </StyledHeadline>
           <Grid container spacing={{ xs: 2, md: 4 }}>
             <Grid item xs={12} md={8}>
