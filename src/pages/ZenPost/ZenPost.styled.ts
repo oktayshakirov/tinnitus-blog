@@ -28,7 +28,20 @@ export const StyledHeadline = styled('div')`
 export const StyledDate = styled('p')`
   ${({ theme }) => css`
     color: ${theme.palette.text.secondary};
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: ${theme.spacing(0.5)};
+  `}
+`;
+
+export const StyledMetaRow = styled('div')`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: ${theme.spacing(2)};
     margin: 0 0 ${theme.spacing(1)} 0;
+    flex-wrap: wrap;
   `}
 `;
 

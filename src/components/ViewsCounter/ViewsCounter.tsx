@@ -1,10 +1,22 @@
 import { useEffect, useState, useRef } from 'react';
 import { FaEye } from 'react-icons/fa';
+import { styled } from '@mui/material/styles';
+import { css } from '@emotion/react';
 
 interface ViewsCounterProps {
   type: string;
   slug: string;
 }
+
+const StyledViewsCounter = styled('p')`
+  ${({ theme }) => css`
+    color: ${theme.palette.text.secondary};
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: ${theme.spacing(0.5)};
+  `}
+`;
 
 const ViewsCounter = ({ type, slug }: ViewsCounterProps) => {
   const [views, setViews] = useState<number | null>(null);
@@ -95,10 +107,10 @@ const ViewsCounter = ({ type, slug }: ViewsCounterProps) => {
   }
 
   return (
-    <span className="flex items-center text-sm text-gray-600 dark:text-gray-400">
-      <FaEye className="mr-2 opacity-80" />
+    <StyledViewsCounter>
+      <FaEye />
       {views.toLocaleString()} {views === 1 ? 'view' : 'views'}
-    </span>
+    </StyledViewsCounter>
   );
 };
 

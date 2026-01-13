@@ -10,10 +10,12 @@ import {
   StyledDate,
   StyledDivider,
   StyledContainer,
+  StyledMetaRow,
 } from './ZenPost.styled';
 import AdComponent from '@components/AdComponent';
 import GoBackLink from '@components/GoBackLink';
 import ViewsCounter from '@components/ViewsCounter';
+import { FaCalendarAlt } from 'react-icons/fa';
 
 const ZenPost = ({
   content,
@@ -41,8 +43,13 @@ const ZenPost = ({
         <StyledContainer>
           <GoBackLink option="zen" />
           <StyledHeadline>
-            <StyledDate>{frontmatter?.date}</StyledDate>
-            <ViewsCounter type="zen" slug={slug} />
+            <StyledMetaRow>
+              <StyledDate>
+                <FaCalendarAlt />
+                {frontmatter?.date}
+              </StyledDate>
+              <ViewsCounter type="zen" slug={slug} />
+            </StyledMetaRow>
             <Typography component="h1" variant="h3">
               {frontmatter?.title}
             </Typography>

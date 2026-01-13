@@ -10,10 +10,12 @@ import {
   StyledDivider,
   StyledHeadline,
   StyledContainer,
+  StyledMetaRow,
 } from './BlogPost.styled';
 import AdComponent from '@components/AdComponent';
 import GoBackLink from '@components/GoBackLink';
 import ViewsCounter from '@components/ViewsCounter';
+import { FaCalendarAlt } from 'react-icons/fa';
 
 const BlogPost = ({
   content,
@@ -41,8 +43,13 @@ const BlogPost = ({
         <StyledContainer>
           <GoBackLink option="blog" />
           <StyledHeadline>
-            <StyledDate>{frontmatter?.date}</StyledDate>
-            <ViewsCounter type="blog" slug={slug} />
+            <StyledMetaRow>
+              <StyledDate>
+                <FaCalendarAlt />
+                {frontmatter?.date}
+              </StyledDate>
+              <ViewsCounter type="blog" slug={slug} />
+            </StyledMetaRow>
             <Typography component="h1" variant="h3">
               {frontmatter?.title}
             </Typography>
