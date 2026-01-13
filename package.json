@@ -4,12 +4,11 @@
   "private": true,
   "scripts": {
     "start": "next dev",
-    "build": "next build && node pages/api/syncContent.js && npm run import-views",
+    "build": "next build && node pages/api/syncContent.js",
     "start:prod": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "postbuild": "next-sitemap",
-    "import-views": "node scripts/import-views-to-firebase.js"
+    "postbuild": "next-sitemap"
   },
   "browserslist": [
     "defaults and supports es6-module",
