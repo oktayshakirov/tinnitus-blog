@@ -53,8 +53,10 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
     scope: {},
     mdxOptions: {
       development: false,
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypeSlug],
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- plugin type incompatibility across unified versions
+      remarkPlugins: [remarkGfm] as any,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      rehypePlugins: [rehypeSlug] as any,
     },
   });
 

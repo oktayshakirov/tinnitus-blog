@@ -51,10 +51,5 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.1"
-  },
-  "resolutions": {
-    "unified": "^10.1.2",
-    "vfile": "^5.3.7",
-    "vfile-message": "^3.1.4"
   }
 }
