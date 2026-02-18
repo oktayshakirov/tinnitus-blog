@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import type { IconType } from 'react-icons';
 import {
   FaTimes,
   FaMobile,
@@ -44,7 +45,7 @@ const STORAGE_KEYS = {
 };
 
 interface Benefit {
-  icon: React.ComponentType<{ className?: string; size?: number }>;
+  icon: IconType;
   title: string;
   description: string;
 }
