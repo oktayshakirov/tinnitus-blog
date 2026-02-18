@@ -1,4 +1,4 @@
-import { AllHTMLAttributes } from 'react';
+import type { AllHTMLAttributes } from 'react';
 import { ArticleMeta } from '@types';
 import Typography from '@mui/material/Typography';
 import Grow from '@mui/material/Grow';
@@ -18,6 +18,7 @@ import { getTagsPath } from '@lib/paths';
 import { Divider } from '@mui/material';
 import StreamingIcons from '@components/StreamingIcons';
 import { FaHashtag, FaClock } from 'react-icons/fa';
+import Icon from '@components/Icon';
 
 type Props = {
   article: ArticleMeta;
@@ -41,7 +42,8 @@ const ArticleCard = ({ className, article, index }: Props) => {
           {type === ArticleType.POST && (
             <StyledTime
               icon={
-                <FaClock
+                <Icon
+                  icon={FaClock}
                   style={{ color: 'inherit', transform: 'translateY(-2px)' }}
                 />
               }
@@ -69,7 +71,8 @@ const ArticleCard = ({ className, article, index }: Props) => {
                 {tags.slice(0, 2).map((tag) => (
                   <StyledTag key={tag}>
                     <Link href={getTagsPath(tag)}>
-                      <FaHashtag
+                      <Icon
+                        icon={FaHashtag}
                         style={{
                           color: 'inherit',
                           marginRight: '0.3rem',

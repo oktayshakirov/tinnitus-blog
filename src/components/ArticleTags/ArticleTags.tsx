@@ -1,9 +1,10 @@
-import { AllHTMLAttributes } from 'react';
+import type { AllHTMLAttributes } from 'react';
 import Grow from '@mui/material/Grow';
 import Link from '@components/Link';
 import { getTagsPath } from '@lib/paths';
 import { StyledTag, StyledTags } from './ArticleTags.styled';
 import { FaHashtag } from 'react-icons/fa';
+import Icon from '@components/Icon';
 
 type Props = {
   tags: string[];
@@ -15,7 +16,8 @@ const ArticleTags = ({ className, tags }: Props) => (
       <Grow key={tag} in timeout={index * 150}>
         <StyledTag>
           <Link href={getTagsPath(tag)}>
-            <FaHashtag
+            <Icon
+              icon={FaHashtag}
               style={{
                 marginRight: '0.3rem',
                 transform: 'translateY(2px)',

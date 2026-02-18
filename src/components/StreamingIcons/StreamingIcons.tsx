@@ -7,14 +7,15 @@ import {
   FaAmazon,
   FaDeezer,
 } from 'react-icons/fa';
+import Icon from '@components/Icon';
 
 const StreamingIcons = () => (
   <Box display="flex" justifyContent="space-around">
-    <FaSpotify size={24} />
-    <FaYoutube size={24} />
-    <FaApple size={24} />
-    <FaAmazon size={24} />
-    <FaDeezer size={24} />
+    <Icon icon={FaSpotify} size={24} />
+    <Icon icon={FaYoutube} size={24} />
+    <Icon icon={FaApple} size={24} />
+    <Icon icon={FaAmazon} size={24} />
+    <Icon icon={FaDeezer} size={24} />
   </Box>
 );
 

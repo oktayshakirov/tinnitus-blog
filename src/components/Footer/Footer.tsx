@@ -7,6 +7,7 @@ import {
   FaTelegramPlane,
   FaTiktok,
 } from 'react-icons/fa';
+import Icon from '@components/Icon';
 import {
   StyledFooter,
   StyledContainer,
@@ -75,42 +76,42 @@ const Footer = ({ isApp = false }: FooterProps) => {
               target="_blank"
               aria-label="GitHub"
             >
-              <FaGithub size={24} />
+              <Icon icon={FaGithub} size={24} />
             </Link>
             <Link
               href="https://www.facebook.com/TheTinnitusHelp"
               target="_blank"
               aria-label="Facebook"
             >
-              <FaFacebookF size={24} />
+              <Icon icon={FaFacebookF} size={24} />
             </Link>
             <Link
               href="https://x.com/TinnitusHelp_me"
               target="_blank"
               aria-label="Twitter"
             >
-              <FaTwitter size={24} />
+              <Icon icon={FaTwitter} size={24} />
             </Link>
             <Link
               href="https://instagram.com/tinnitushelp.me"
               target="_blank"
               aria-label="Instagram"
             >
-              <FaInstagram size={24} />
+              <Icon icon={FaInstagram} size={24} />
             </Link>
             <Link
               href="https://www.tiktok.com/@tinnitushelp.me"
               target="_blank"
               aria-label="TikTok"
             >
-              <FaTiktok size={24} />
+              <Icon icon={FaTiktok} size={24} />
             </Link>
             <Link
               href="https://t.me/tinnitushelpme"
               target="_blank"
               aria-label="Telegram"
             >
-              <FaTelegramPlane size={24} />
+              <Icon icon={FaTelegramPlane} size={24} />
             </Link>
           </>
         )}
