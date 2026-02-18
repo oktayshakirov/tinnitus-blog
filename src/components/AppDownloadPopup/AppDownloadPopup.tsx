@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import type { IconBaseProps, IconType } from 'react-icons';
+import type { IconType } from 'react-icons';
 import {
   FaTimes,
   FaMobile,
@@ -12,6 +12,7 @@ import {
   FaBell,
   FaCheckCircle,
 } from 'react-icons/fa';
+import Icon from '@components/Icon';
 import {
   StyledPopupBackdrop,
   StyledPopupContainer,
@@ -43,11 +44,6 @@ const STORAGE_KEYS = {
   IS_APP: 'isApp',
   PAGE_VIEWS: 'pageViews',
 };
-
-type AppIconProps = IconBaseProps & { icon: IconType };
-
-const AppIcon = ({ icon: Icon, ...props }: AppIconProps): JSX.Element =>
-  React.createElement(Icon as unknown as React.ComponentType<IconBaseProps>, props);
 
 interface Benefit {
   icon: IconType;
@@ -250,7 +246,7 @@ const AppDownloadPopup = ({ isApp = false }: AppDownloadPopupProps) => {
           <StyledPopupHeader>
             <div className="header-content">
               <div className="icon-wrapper">
-                <AppIcon icon={FaMobile} className="icon" aria-hidden="true" />
+                <Icon icon={FaMobile} className="icon" aria-hidden="true" />
               </div>
               <div className="title-section">
                 <h3 id="popup-title">Get the App</h3>
@@ -263,7 +259,7 @@ const AppDownloadPopup = ({ isApp = false }: AppDownloadPopupProps) => {
                 >
                   <div className="stars" aria-hidden="true">
                     {[...Array(5)].map((_, i) => (
-                      <AppIcon key={i} icon={FaStar} size={12} />
+                      <Icon key={i} icon={FaStar} size={12} />
                     ))}
                   </div>
                   <span className="rating-text">4.9/5 rating</span>
@@ -271,12 +267,12 @@ const AppDownloadPopup = ({ isApp = false }: AppDownloadPopupProps) => {
               </div>
             </div>
             <StyledCloseButton onClick={handleClose} aria-label="Close popup">
-              <AppIcon icon={FaTimes} size={14} aria-hidden="true" />
+              <Icon icon={FaTimes} size={14} aria-hidden="true" />
             </StyledCloseButton>
           </StyledPopupHeader>
 
           <StyledSocialProof>
-            <AppIcon
+            <Icon
               icon={FaShieldAlt}
               className="shield-icon"
               aria-hidden="true"
@@ -288,11 +284,10 @@ const AppDownloadPopup = ({ isApp = false }: AppDownloadPopupProps) => {
             <h4 className="benefits-title">Why download the app?</h4>
             <StyledBenefitsList>
               {benefits.map((benefit, index) => {
-                const IconComponent = benefit.icon;
                 return (
                   <StyledBenefitItem key={index}>
-                    <AppIcon
-                      icon={IconComponent}
+                    <Icon
+                      icon={benefit.icon}
                       className="benefit-icon"
                       size={16}
                       aria-hidden="true"

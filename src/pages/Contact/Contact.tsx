@@ -20,6 +20,7 @@ import {
   FaTelegramPlane,
   FaTiktok,
 } from 'react-icons/fa';
+import Icon from '@components/Icon';
 
 const Contact = ({}: Props) => {
   return (
@@ -80,42 +81,42 @@ const Contact = ({}: Props) => {
                   target="_blank"
                   aria-label="Facebook"
                 >
-                  <FaFacebookF size={28} />
+                  <Icon icon={FaFacebookF} size={28} />
                 </Link>
                 <Link
                   href="https://x.com/TinnitusHelp_me"
                   target="_blank"
                   aria-label="Twitter"
                 >
-                  <FaTwitter size={28} />
+                  <Icon icon={FaTwitter} size={28} />
                 </Link>
                 <Link
                   href="https://instagram.com/tinnitushelp.me"
                   target="_blank"
                   aria-label="Instagram"
                 >
-                  <FaInstagram size={28} />
+                  <Icon icon={FaInstagram} size={28} />
                 </Link>
                 <Link
                   href="https://www.tiktok.com/@tinnitushelp.me"
                   target="_blank"
                   aria-label="TikTok"
                 >
-                  <FaTiktok size={28} />
+                  <Icon icon={FaTiktok} size={28} />
                 </Link>
                 <Link
                   href="https://t.me/tinnitushelpme"
                   target="_blank"
                   aria-label="Telegram"
                 >
-                  <FaTelegramPlane size={28} />
+                  <Icon icon={FaTelegramPlane} size={28} />
                 </Link>
                 <Link
                   href="https://github.com/oktayshakirov/tinnitus-blog"
                   target="_blank"
                   aria-label="GitHub"
                 >
-                  <FaGithub size={28} />
+                  <Icon icon={FaGithub} size={28} />
                 </Link>
               </StyledIconContainer>
             </StyledSocialSection>

@@ -29,6 +29,7 @@ import {
 } from './App.styled';
 import Rating from '@mui/material/Rating';
 import Link from 'next/link';
+import Icon from '@components/Icon';
 
 interface Feature {
   icon: React.ReactNode;
@@ -116,19 +117,19 @@ const AppStoreBadges = () => (
 
 const FEATURES: Feature[] = [
   {
-    icon: <FaBookReader />,
+    icon: <Icon icon={FaBookReader} />,
     title: 'Educational Articles',
     description: 'Explore our extensive library of tinnitus articles',
     highlight: '100+ Articles',
   },
   {
-    icon: <FaHeadphones />,
+    icon: <Icon icon={FaHeadphones} />,
     title: 'Stream Anywhere',
     description: 'Listen on Spotify, Apple Music, YouTube & more',
     highlight: 'All Platforms',
   },
   {
-    icon: <FaRegClock />,
+    icon: <Icon icon={FaRegClock} />,
     title: 'Always Improving',
     description: 'Regular updates with new features and content',
     highlight: 'Weekly Updates',
@@ -137,19 +138,19 @@ const FEATURES: Feature[] = [
 
 const KEY_FEATURES: KeyFeature[] = [
   {
-    icon: <FaBookReader />,
+    icon: <Icon icon={FaBookReader} />,
     title: 'Learn & Understand',
   },
   {
-    icon: <FaHeadphones />,
+    icon: <Icon icon={FaHeadphones} />,
     title: 'Sound Therapy',
   },
   {
-    icon: <FaBrain />,
+    icon: <Icon icon={FaBrain} />,
     title: 'Mindfulness',
   },
   {
-    icon: <FaLightbulb />,
+    icon: <Icon icon={FaLightbulb} />,
     title: 'Lifestyle Tips',
   },
 ];
@@ -268,7 +269,10 @@ const App = ({}: Props) => {
               }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <FaStar style={{ color: '#FFD700', marginRight: '4px' }} />
+                <Icon
+                  icon={FaStar}
+                  style={{ color: '#FFD700', marginRight: '4px' }}
+                />
                 <Typography sx={{ fontWeight: 'bold' }}>4.9/5</Typography>
               </Box>
               <Typography color="text.secondary" sx={{ fontSize: '0.9rem' }}>
@@ -299,7 +303,7 @@ const App = ({}: Props) => {
                   gap: 1,
                 }}
               >
-                <FaQuoteLeft size={14} style={{ opacity: 0.5 }} />
+                <Icon icon={FaQuoteLeft} size={14} style={{ opacity: 0.5 }} />
                 <Box component="span">
                   Rated <strong>5 stars</strong> by thousands of users worldwide
                 </Box>
@@ -389,7 +393,7 @@ const App = ({}: Props) => {
                 <ReviewCard key={review.name}>
                   <div className="review-header">
                     <div className="avatar">
-                      <FaUser size={24} />
+                      <Icon icon={FaUser} size={24} />
                     </div>
                     <Box>
                       <Typography variant="subtitle1" fontWeight="bold">
@@ -402,7 +406,8 @@ const App = ({}: Props) => {
                   </div>
 
                   <Box sx={{ mb: 2 }}>
-                    <FaQuoteLeft
+                    <Icon
+                      icon={FaQuoteLeft}
                       size={20}
                       style={{
                         color: 'rgba(255, 255, 255, 0.3)',
@@ -416,8 +421,8 @@ const App = ({}: Props) => {
                     <Rating
                       value={review.rating}
                       readOnly
-                      icon={<FaStar />}
-                      emptyIcon={<FaStar />}
+                      icon={<Icon icon={FaStar} />}
+                      emptyIcon={<Icon icon={FaStar} />}
                     />
                   </div>
 
@@ -438,7 +443,7 @@ const App = ({}: Props) => {
                   mb: 2,
                 }}
               >
-                <FaStar /> 4.9 out of 5 stars
+                <Icon icon={FaStar} /> 4.9 out of 5 stars
               </Typography>
               <Typography variant="subtitle1" color="text.secondary">
                 Based on 1,000+ reviews from App Store and Google Play
@@ -455,7 +460,7 @@ const App = ({}: Props) => {
               TinnitusHelp.me. Download now and start your journey to a calmer
               life today!
             </Typography>
-            <FaChevronDown className="bounce-arrow" size={24} />
+            <Icon icon={FaChevronDown} className="bounce-arrow" size={24} />
 
             <AppStoreBadges />
           </CallToActionSection>

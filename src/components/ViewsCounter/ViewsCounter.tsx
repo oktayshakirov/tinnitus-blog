@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { FaEye } from 'react-icons/fa';
 import { styled } from '@mui/material/styles';
 import { css } from '@emotion/react';
+import Icon from '@components/Icon';
 
 interface ViewsCounterProps {
   type: string;
@@ -108,7 +109,7 @@ const ViewsCounter = ({ type, slug }: ViewsCounterProps) => {
 
   return (
     <StyledViewsCounter>
-      <FaEye />
+      <Icon icon={FaEye} />
       {views.toLocaleString()} {views === 1 ? 'view' : 'views'}
     </StyledViewsCounter>
   );

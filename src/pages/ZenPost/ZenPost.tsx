@@ -16,6 +16,7 @@ import AdComponent from '@components/AdComponent';
 import GoBackLink from '@components/GoBackLink';
 import ViewsCounter from '@components/ViewsCounter';
 import { FaCalendarAlt } from 'react-icons/fa';
+import Icon from '@components/Icon';
 
 const ZenPost = ({
   content,
@@ -28,13 +29,18 @@ const ZenPost = ({
   updatedAt,
 }: Props) => {
   const { frontmatter } = content;
+  const title = typeof frontmatter?.title === 'string' ? frontmatter.title : undefined;
+  const description =
+    typeof frontmatter?.description === 'string' ? frontmatter.description : undefined;
+  const image = typeof frontmatter?.image === 'string' ? frontmatter.image : undefined;
+  const date = typeof frontmatter?.date === 'string' ? frontmatter.date : undefined;
 
   return (
     <>
       <ZenPostSEO
-        title={frontmatter?.title}
-        description={frontmatter?.description}
-        image={frontmatter?.image}
+        title={title}
+        description={description}
+        image={image}
         slug={slug}
         createdAt={createdAt}
         updatedAt={updatedAt}
@@ -44,12 +50,12 @@ const ZenPost = ({
           <GoBackLink option="zen" />
           <StyledHeadline>
             <Typography component="h1" variant="h3">
-              {frontmatter?.title}
+              {title}
             </Typography>
             <StyledMetaRow>
               <StyledDate>
-                <FaCalendarAlt />
-                {frontmatter?.date}
+                <Icon icon={FaCalendarAlt} />
+                {date}
               </StyledDate>
               <ViewsCounter type="zen" slug={slug} />
             </StyledMetaRow>
