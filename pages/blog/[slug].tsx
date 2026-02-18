@@ -5,7 +5,6 @@ import { MDXRemoteProps } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import BlogPost from '@ui/pages/BlogPost';
 import rehypeSlug from 'rehype-slug';
-import rehypeToc from 'rehype-toc';
 import { getAllPosts, getRandomZen, getRandomPosts } from '@lib/mdx';
 import { Article } from '@types';
 import remarkGfm from 'remark-gfm';
@@ -56,7 +55,7 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any -- plugin type incompatibility across unified versions
       remarkPlugins: [remarkGfm] as any,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      rehypePlugins: [rehypeSlug, [rehypeToc]] as any,
+      rehypePlugins: [rehypeSlug] as any,
     },
   });
 
