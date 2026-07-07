@@ -1,111 +1,23 @@
-import { useEffect, useState, useRef } from 'react';
-import Router from 'next/router';
-
-declare global {
-  interface Window {
-    adsbygoogle: unknown[];
-  }
-}
+import { useAdSlot, useAdsEnabled } from '@lib/useAdSlot';
 
 const AdComponent: React.FC = () => {
-  const adRef = useRef<HTMLDivElement>(null);
-  const insRef = useRef<HTMLModElement>(null);
   const isProduction = process.env.NODE_ENV === 'production';
-  const [shouldRenderAd, setShouldRenderAd] = useState<boolean>(false);
-
-  useEffect(() => {
-    const appFlag =
-      document.documentElement.classList.contains('is-app') ||
-      localStorage.getItem('isApp') === 'true';
-
-    if (!appFlag) {
-      setShouldRenderAd(true);
-    } else {
-      setShouldRenderAd(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!shouldRenderAd) {
-      return;
-    }
-
-    const initializeAd = () => {
-      if (!insRef.current) {
-        return;
-      }
-
-      try {
-        const insElement = insRef.current;
-
-        const intervalId = setInterval(() => {
-          try {
-            if (
-              window.adsbygoogle &&
-              insElement &&
-              !insElement.hasAttribute('data-adsbygoogle-status')
-            ) {
-              (window.adsbygoogle = window.adsbygoogle || []).push({});
-              clearInterval(intervalId);
-            }
-          } catch (err) {
-            clearInterval(intervalId);
-          }
-        }, 100);
-
-        setTimeout(() => clearInterval(intervalId), 10000);
-      } catch (e) {}
-    };
-
-    const handleScriptLoad = () => {
-      initializeAd();
-    };
-
-    if (typeof window !== 'undefined') {
-      window.addEventListener('adsbygoogle-loaded', handleScriptLoad);
-    }
-
-    const mountTimeout = setTimeout(() => {
-      initializeAd();
-    }, 100);
-
-    const handleRouteChange = () => {
-      if (insRef.current) {
-        const insElement = insRef.current;
-        if (insElement.hasAttribute('data-adsbygoogle-status')) {
-          insElement.removeAttribute('data-adsbygoogle-status');
-        }
-        insElement.innerHTML = '';
-      }
-
-      setTimeout(() => {
-        initializeAd();
-      }, 300);
-    };
-
-    Router.events.on('routeChangeComplete', handleRouteChange);
-
-    return () => {
-      clearTimeout(mountTimeout);
-      Router.events.off('routeChangeComplete', handleRouteChange);
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('adsbygoogle-loaded', handleScriptLoad);
-      }
-    };
-  }, [shouldRenderAd]);
+  const shouldRenderAd = useAdsEnabled();
+  const insRef = useAdSlot({ enabled: shouldRenderAd });
 
   if (!shouldRenderAd) {
     return null;
   }
 
   return (
-    <div ref={adRef}>
+    <div>
       {isProduction ? (
         <ins
           ref={insRef}
           className="adsbygoogle"
           style={{
             display: 'block',
+            width: '100%',
             borderRadius: '25px',
             overflow: 'hidden',
           }}
