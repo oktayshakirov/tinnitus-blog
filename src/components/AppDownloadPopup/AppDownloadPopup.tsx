@@ -8,7 +8,7 @@ import {
   FaMobile,
   FaStar,
   FaShieldAlt,
-  FaDownload,
+  FaThLarge,
   FaBell,
   FaCheckCircle,
 } from 'react-icons/fa';
@@ -141,18 +141,18 @@ const AppDownloadPopup = ({ isApp = false }: AppDownloadPopupProps) => {
     () => [
       {
         icon: FaCheckCircle,
-        title: 'Track your tinnitus management journey',
-        description: 'Monitor your progress over time',
+        title: 'Daily tinnitus journal',
+        description: 'Log how you feel, build a streak and spot your triggers',
+      },
+      {
+        icon: FaThLarge,
+        title: 'Home-screen widgets',
+        description: 'Daily tips, sounds and your journal streak at a glance',
       },
       {
         icon: FaBell,
         title: 'Push notifications for new content',
         description: 'Never miss the latest articles and tips',
-      },
-      {
-        icon: FaDownload,
-        title: '100% Free to download',
-        description: 'No subscription required',
       },
     ],
     []

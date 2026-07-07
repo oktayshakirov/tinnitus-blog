@@ -14,6 +14,8 @@ import {
   FaBrain,
   FaLightbulb,
   FaChevronDown,
+  FaThLarge,
+  FaRegCalendarCheck,
 } from 'react-icons/fa';
 import {
   StyledContainer,
@@ -144,6 +146,14 @@ const KEY_FEATURES: KeyFeature[] = [
   {
     icon: <Icon icon={FaHeadphones} />,
     title: 'Sound Therapy',
+  },
+  {
+    icon: <Icon icon={FaRegCalendarCheck} />,
+    title: 'Daily Journal',
+  },
+  {
+    icon: <Icon icon={FaThLarge} />,
+    title: 'Home-Screen Widgets',
   },
   {
     icon: <Icon icon={FaBrain} />,
@@ -359,6 +369,70 @@ const App = ({}: Props) => {
               </FeatureItem>
             ))}
           </Box>
+
+          <FeaturesSection>
+            <SectionTitle subtitle="Bring tinnitus relief into your daily routine, right from your home screen">
+              Track & Stay on Top of It
+            </SectionTitle>
+
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+                gap: 3,
+              }}
+            >
+              <FeatureItem>
+                <div className="icon-wrapper">
+                  <Icon icon={FaRegCalendarCheck} />
+                </div>
+                <div className="content">
+                  <Typography
+                    variant="h6"
+                    sx={{ fontWeight: 'bold', mb: 0.5, fontSize: '1.1rem' }}
+                  >
+                    Daily Tinnitus Journal
+                  </Typography>
+                  <div className="feature-content-wrapper">
+                    <Typography
+                      color="text.secondary"
+                      sx={{ fontSize: '1rem', lineHeight: 1.6 }}
+                    >
+                      Check in each day with how your tinnitus feels and note
+                      what might have played a role, like sleep, stress or
+                      caffeine. Build a streak, browse your calendar and watch
+                      your 7-day trend to understand what affects you most.
+                    </Typography>
+                  </div>
+                </div>
+              </FeatureItem>
+
+              <FeatureItem>
+                <div className="icon-wrapper">
+                  <Icon icon={FaThLarge} />
+                </div>
+                <div className="content">
+                  <Typography
+                    variant="h6"
+                    sx={{ fontWeight: 'bold', mb: 0.5, fontSize: '1.1rem' }}
+                  >
+                    Home-Screen Widgets
+                  </Typography>
+                  <div className="feature-content-wrapper">
+                    <Typography
+                      color="text.secondary"
+                      sx={{ fontSize: '1rem', lineHeight: 1.6 }}
+                    >
+                      Add TinnitusHelp.me widgets to your home screen: a daily
+                      tinnitus tip, a relaxing sound of the day, and your journal
+                      streak with today&apos;s level at a glance. Available in
+                      two sizes and refreshed every day.
+                    </Typography>
+                  </div>
+                </div>
+              </FeatureItem>
+            </Box>
+          </FeaturesSection>
 
           <FeaturesSection>
             <SectionTitle subtitle="Everything you need to manage your tinnitus effectively">
