@@ -87,7 +87,7 @@ export const FeaturesSection = styled(Box)`
 export const FeaturesGrid = styled(Box)`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: ${theme.spacing(4)};
     margin-top: ${theme.spacing(8)};
 
