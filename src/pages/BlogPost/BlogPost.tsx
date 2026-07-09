@@ -15,6 +15,8 @@ import {
 import AdComponent from '@components/AdComponent';
 import GoBackLink from '@components/GoBackLink';
 import ViewsCounter from '@components/ViewsCounter';
+import AuthorByline from '@components/AuthorByline';
+import { getDefaultAuthor } from '@const/authors';
 import { FaCalendarAlt } from 'react-icons/fa';
 import Icon from '@components/Icon';
 
@@ -34,6 +36,7 @@ const BlogPost = ({
     typeof frontmatter?.description === 'string' ? frontmatter.description : undefined;
   const image = typeof frontmatter?.image === 'string' ? frontmatter.image : undefined;
   const date = typeof frontmatter?.date === 'string' ? frontmatter.date : undefined;
+  const author = getDefaultAuthor();
 
   return (
     <>
@@ -63,6 +66,8 @@ const BlogPost = ({
           <Grid container spacing={{ xs: 2, md: 4 }}>
             <Grid item xs={12} md={8}>
               <MDXContent content={content} />
+              <StyledDivider />
+              <AuthorByline author={author} date={date} />
               <StyledDivider />
             </Grid>
             <Grid container item xs={12} md={4} direction="column" spacing={4}>
