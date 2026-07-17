@@ -73,7 +73,11 @@ export const StyledTabContainer = styled(Container)`
     border-radius: 25px;
     margin-bottom: ${theme.spacing(5)};
     margin-top: ${theme.spacing(5)};
-    padding: ${theme.spacing(3)};
+    padding: ${theme.spacing(3)} ${theme.spacing(1)};
+
+    ${theme.breakpoints.up('md')} {
+      padding: ${theme.spacing(3)};
+    }
   `}
 `;
 
