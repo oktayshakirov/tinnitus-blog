@@ -28,6 +28,10 @@ export const StyledTabContainer = styled(Container)`
     background-color: rgba(0, 0, 0, 0.05);
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
     border-radius: 25px;
-    padding: ${theme.spacing(3)};
+    padding: ${theme.spacing(3)} ${theme.spacing(1)};
+
+    ${theme.breakpoints.up('md')} {
+      padding: ${theme.spacing(3)};
+    }
   `}
 `;
