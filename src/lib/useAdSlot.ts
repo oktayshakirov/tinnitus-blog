@@ -99,13 +99,13 @@ export const useAdSlot = ({ enabled }: UseAdSlotOptions) => {
         return;
       }
 
-      // Already initialised – just make sure it fits its content.
+      // Already initialised - just make sure it fits its content.
       if (ins.hasAttribute('data-adsbygoogle-status')) {
         fitToContent();
         return;
       }
 
-      // Script not ready yet – retry shortly instead of a tight 100ms loop.
+      // Script not ready yet - retry shortly instead of a tight 100ms loop.
       if (!window.adsbygoogle) {
         waitTimer = setTimeout(pushAd, 200);
         return;

@@ -1,5 +1,18 @@
-import { ArticleJsonLd, NextSeo } from 'next-seo';
-import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
+import { NextSeo } from 'next-seo';
+import JsonLd from '@components/JsonLd';
+import {
+  DEFAULT_OG_IMAGE,
+  DOMAIN,
+  DOMAIN_NAME,
+  TWITTER_HANDLE,
+} from '@const/general';
+import { getDefaultAuthor } from '@const/authors';
+import {
+  articleSchema,
+  breadcrumbSchema,
+  buildGraph,
+  personSchema,
+} from '@lib/schema';
 
 type Props = {
   title?: string;
@@ -21,7 +34,30 @@ const ZenPostSEO = ({
 }: Props) => {
   const canonical = `${DOMAIN}/zen/${slug}`;
   const imageUrl = `${DOMAIN}${image}`;
+  const imageType = image.endsWith('.png') ? 'image/png' : 'image/jpeg';
   const fullTitle = `${title} | Tinnitus Help`;
+  const author = getDefaultAuthor();
+
+  const graph = buildGraph([
+    personSchema(author),
+    title
+      ? articleSchema({
+          url: canonical,
+          headline: title,
+          description,
+          image: imageUrl,
+          datePublished: new Date(createdAt).toISOString(),
+          dateModified: new Date(updatedAt).toISOString(),
+          keywords: tags,
+          author,
+        })
+      : null,
+    breadcrumbSchema([
+      { name: 'Home', url: DOMAIN },
+      { name: 'Relief Sounds', url: `${DOMAIN}/zen` },
+      { name: title ?? slug, url: canonical },
+    ]),
+  ]);
 
   return (
     <>
@@ -33,28 +69,15 @@ const ZenPostSEO = ({
           url: canonical,
           title: fullTitle,
           description: description,
-          images: [{ url: imageUrl, type: 'image/jpeg' }],
+          images: [{ url: imageUrl, type: imageType, alt: title }],
           siteName: DOMAIN_NAME,
         }}
         twitter={{
           cardType: 'summary_large_image',
-          site: '@TinnitusHelp_me',
+          site: TWITTER_HANDLE,
         }}
       />
-      {title && description && (
-        <ArticleJsonLd
-          type="BlogPosting"
-          url={canonical}
-          title={fullTitle}
-          images={[imageUrl]}
-          description={description}
-          authorName={DOMAIN_NAME}
-          publisherName={DOMAIN_NAME}
-          datePublished={new Date(createdAt)?.toISOString()}
-          dateModified={new Date(updatedAt)?.toISOString()}
-          keywords={tags}
-        />
-      )}
+      <JsonLd id={`zen-${slug}`} data={graph} />
     </>
   );
 };

@@ -41,7 +41,7 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
                 </Typography>
                 <Grid item xs={12} md={12}>
                   <Typography component="h3" variant="h6">
-                    Discover the fascinating phenomenon of tinnitus – perceiving
+                    Discover the fascinating phenomenon of tinnitus - perceiving
                     sound without any external source. Living with this
                     condition can be challenging, but you’re not alone. Explore
                     valuable tips to help you manage and cope, because

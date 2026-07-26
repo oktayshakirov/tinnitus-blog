@@ -8,7 +8,7 @@ const SITE = 'https://www.tinnitushelp.me';
 
 // Low-quality thumbnail via Next's image optimizer. `w` must be one of the
 // sizes in next.config.js (332 is the smallest deviceSize) and `q` must be an
-// allowed quality — this deployment only accepts q=75 (q=50 returns HTTP 400).
+// allowed quality - this deployment only accepts q=75 (q=50 returns HTTP 400).
 function thumbnail(imagePath: string): string {
   const abs = imagePath.startsWith('http') ? imagePath : `${SITE}${imagePath}`;
   return `${SITE}/_next/image?url=${encodeURIComponent(abs)}&w=332&q=75`;

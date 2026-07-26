@@ -16,9 +16,34 @@ import AdComponent from '@components/AdComponent';
 import GoBackLink from '@components/GoBackLink';
 import ViewsCounter from '@components/ViewsCounter';
 import AuthorByline from '@components/AuthorByline';
+import FaqSection from '@components/FaqSection';
+import References, { Source } from '@components/References';
+import MedicalDisclaimer from '@components/MedicalDisclaimer';
 import { getDefaultAuthor } from '@const/authors';
 import { FaCalendarAlt } from 'react-icons/fa';
 import Icon from '@components/Icon';
+import { FaqItem } from '@lib/schema';
+
+const asString = (value: unknown): string | undefined =>
+  typeof value === 'string' ? value : undefined;
+
+const asFaq = (value: unknown): FaqItem[] =>
+  Array.isArray(value)
+    ? value.filter(
+        (item): item is FaqItem =>
+          !!item &&
+          typeof item.question === 'string' &&
+          typeof item.answer === 'string'
+      )
+    : [];
+
+const asSources = (value: unknown): Source[] =>
+  Array.isArray(value)
+    ? value.filter(
+        (item): item is Source =>
+          !!item && typeof item.title === 'string' && typeof item.url === 'string'
+      )
+    : [];
 
 const BlogPost = ({
   content,
@@ -31,11 +56,15 @@ const BlogPost = ({
   updatedAt,
 }: Props) => {
   const { frontmatter } = content;
-  const title = typeof frontmatter?.title === 'string' ? frontmatter.title : undefined;
-  const description =
-    typeof frontmatter?.description === 'string' ? frontmatter.description : undefined;
-  const image = typeof frontmatter?.image === 'string' ? frontmatter.image : undefined;
-  const date = typeof frontmatter?.date === 'string' ? frontmatter.date : undefined;
+  const title = asString(frontmatter?.title);
+  const description = asString(frontmatter?.description);
+  const image = asString(frontmatter?.image);
+  const date = asString(frontmatter?.date);
+  const tags = (frontmatter?.tags as unknown as string[]) ?? [];
+  const faq = asFaq(frontmatter?.faq);
+  const sources = asSources(frontmatter?.sources);
+  // Health content is the default here; culture/history posts opt out.
+  const medical = frontmatter?.medical !== false;
   const author = getDefaultAuthor();
 
   return (
@@ -47,6 +76,9 @@ const BlogPost = ({
         slug={slug}
         createdAt={createdAt}
         updatedAt={updatedAt}
+        tags={tags}
+        faq={faq}
+        medical={medical}
       />
       <Layout>
         <StyledContainer>
@@ -66,6 +98,9 @@ const BlogPost = ({
           <Grid container spacing={{ xs: 2, md: 4 }}>
             <Grid item xs={12} md={8}>
               <MDXContent content={content} />
+              <FaqSection faq={faq} />
+              <References sources={sources} />
+              {medical && <MedicalDisclaimer />}
               <StyledDivider />
               <AuthorByline author={author} date={date} />
               <StyledDivider />
@@ -75,7 +110,7 @@ const BlogPost = ({
                 <ArticleNavigation
                   prev={prev}
                   next={next}
-                  tags={frontmatter?.tags as unknown as string[]}
+                  tags={tags}
                   blogRecommendations={blogRecommendations}
                   zenRecommendations={zenRecommendations}
                 />

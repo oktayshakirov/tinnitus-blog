@@ -44,6 +44,7 @@ const ZenPost = ({
         slug={slug}
         createdAt={createdAt}
         updatedAt={updatedAt}
+        tags={(frontmatter?.tags as unknown as string[]) ?? []}
       />
       <Layout>
         <StyledContainer>

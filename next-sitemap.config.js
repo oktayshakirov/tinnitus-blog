@@ -1,10 +1,32 @@
+const fs = require('fs');
+const path = require('path');
+
+/**
+ * Real modification dates per URL. Stamping every entry with "now" on each
+ * build teaches Google to ignore our lastmod, so read it from the source file.
+ */
+const contentLastmod = (urlPath) => {
+  const match = urlPath.match(/^\/(blog|zen)\/([^/]+)$/);
+  if (!match) return null;
+
+  const [, section, slug] = match;
+  const dir = section === 'zen' ? 'zen' : 'posts';
+  const filePath = path.join(process.cwd(), 'content', dir, `${slug}.mdx`);
+
+  try {
+    return fs.statSync(filePath).mtime.toISOString();
+  } catch {
+    return null;
+  }
+};
+
 const config = {
   siteUrl: 'https://www.tinnitushelp.me/',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   transform: async (config, path) => {
     let priority = 0.7;
-    let changefreq = 'daily';
+    let changefreq = 'weekly';
 
     // Exclude tag pages
     if (path.startsWith('/tags')) {
@@ -28,21 +50,31 @@ const config = {
         '/disclaimer',
       ].includes(path)
     ) {
-      priority = 0.6;
+      // Legal pages carry no search value and were pulling crawl attention
+      // away from articles; keep them indexable but clearly deprioritised.
+      priority = ['/privacy', '/terms', '/disclaimer'].includes(path)
+        ? 0.2
+        : 0.6;
+      changefreq = 'monthly';
+    } else if (path === '/app') {
+      priority = 0.9;
       changefreq = 'monthly';
     } else if (path.startsWith('/blog')) {
       priority = 0.8;
       changefreq = 'weekly';
     } else if (path.startsWith('/zen')) {
-      priority = 0.6;
-      changefreq = 'weekly';
+      priority = 0.7;
+      changefreq = 'monthly';
+    } else if (path.startsWith('/authors')) {
+      priority = 0.4;
+      changefreq = 'monthly';
     }
 
     return {
       loc: path,
       changefreq,
       priority,
-      lastmod: new Date().toISOString(),
+      lastmod: contentLastmod(path) ?? new Date().toISOString(),
     };
   },
   robotsTxtOptions: {
@@ -50,6 +82,8 @@ const config = {
       {
         userAgent: '*',
         allow: '/',
+        // Parameterised URLs like /app?ref=producthunt are deliberately left
+        // crawlable so Google can see their canonical and fold them into /app.
         disallow: ['/tags'],
       },
     ],
