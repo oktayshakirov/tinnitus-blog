@@ -9,13 +9,26 @@ interface ViewsCounterProps {
   slug: string;
 }
 
-const StyledViewsCounter = styled('p')`
-  ${({ theme }) => css`
+// The counter occupies its final footprint from first paint and fades in as a
+// single unit once the count arrives, so nothing around it shifts and there is
+// no half-rendered state where the icon sits next to an empty space.
+const StyledViewsCounter = styled('p', {
+  shouldForwardProp: (prop) => prop !== 'isVisible',
+})<{ isVisible: boolean }>`
+  ${({ theme, isVisible }) => css`
     color: ${theme.palette.text.secondary};
     margin: 0;
     display: flex;
     align-items: center;
     gap: ${theme.spacing(0.5)};
+    min-height: ${theme.spacing(3)};
+    min-width: 9ch;
+    opacity: ${isVisible ? 1 : 0};
+    transition: opacity 200ms ease-in;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   `}
 `;
 
@@ -103,14 +116,16 @@ const ViewsCounter = ({ type, slug }: ViewsCounterProps) => {
     incrementViews();
   }, [type, slug]);
 
-  if (isLoading || views === null) {
-    return null;
-  }
+  const hasViews = !isLoading && views !== null;
 
   return (
-    <StyledViewsCounter>
-      <Icon icon={FaEye} />
-      {views.toLocaleString()} {views === 1 ? 'view' : 'views'}
+    <StyledViewsCounter isVisible={hasViews} aria-hidden={!hasViews}>
+      {hasViews && (
+        <>
+          <Icon icon={FaEye} />
+          {views.toLocaleString()} {views === 1 ? 'view' : 'views'}
+        </>
+      )}
     </StyledViewsCounter>
   );
 };
