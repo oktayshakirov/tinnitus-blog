@@ -108,7 +108,7 @@ export const FeatureBox = styled(Box)`
     padding: ${theme.spacing(4)};
     ${glassEffect}
     ${commonHoverEffect}
-    
+
     .icon-wrapper {
       font-size: 48px;
       margin-bottom: ${theme.spacing(2)};

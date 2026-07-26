@@ -14,6 +14,10 @@ import { global } from '@theme/global';
 import { theme } from '@theme/theme';
 import { GA_TRACKING_ID } from '@const/general';
 import * as gtag from '@lib/gtag';
+import JsonLd from '@components/JsonLd';
+import { buildGraph, organizationSchema, websiteSchema } from '@lib/schema';
+
+const SITE_GRAPH = buildGraph([organizationSchema(), websiteSchema()]);
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -109,6 +113,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
 
       <DefaultSeo {...SEO_CONFIG} />
+      <JsonLd id="site-graph" data={SITE_GRAPH} />
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}

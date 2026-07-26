@@ -4,6 +4,25 @@ const nextConfig = {
     emotion: true,
   },
   reactStrictMode: true,
+  async redirects() {
+    return [
+      // Legacy pagination pattern. Google has /blog?page=N indexed alongside
+      // /blog/page/N; collapse it onto the one canonical pattern. Page 1 is
+      // built too (canonicalling back to /blog) so ?page=1 has a target.
+      {
+        source: '/blog',
+        has: [{ type: 'query', key: 'page', value: '(?<page>\\d+)' }],
+        destination: '/blog/page/:page',
+        permanent: true,
+      },
+      {
+        source: '/zen',
+        has: [{ type: 'query', key: 'page', value: '(?<page>\\d+)' }],
+        destination: '/zen/page/:page',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

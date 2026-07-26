@@ -36,7 +36,7 @@ const About = ({}: Props) => {
             </p>
             <p>
               Having developed tinnitus in my twenties, I understand the
-              challenges it brings—the initial shock, the confusion and the
+              challenges it brings - the initial shock, the confusion and the
               overwhelming search for answers. This site was born out of my
               personal journey to find reliable, comprehensive tinnitus
               information.

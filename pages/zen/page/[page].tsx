@@ -16,11 +16,11 @@ const ZenPage = (props: Props) => <Zen {...props} />;
 export const getStaticPaths: GetStaticPaths = async () => {
   const zenMeta = getAllZen().map((post) => post.meta);
   const pageCount = Math.ceil(zenMeta.length / ZEN_PER_PAGE);
-  const paths = Array.from({ length: pageCount }, (_, i) => {
-    const pageNum = i + 1;
-    if (pageNum === 1) return null; // Do not generate /zen/page/1
-    return { params: { page: pageNum.toString() } };
-  }).filter((p): p is { params: { page: string } } => p !== null);
+  // Page 1 is built as well so the legacy /zen?page=1 redirect has a target.
+  // Its canonical points back at /zen, so it will not be indexed separately.
+  const paths = Array.from({ length: pageCount }, (_, i) => ({
+    params: { page: (i + 1).toString() },
+  }));
   return {
     paths,
     fallback: false,
