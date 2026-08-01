@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 
 declare global {
   interface Window {
@@ -29,18 +29,30 @@ type UseAdSlotOptions = {
   enabled: boolean;
 };
 
+export type AdStatus = 'filled' | 'unfilled' | null;
+
 /**
  * Shared AdSense slot loader.
  *
  * Responsibilities:
  * - Wait for the adsbygoogle script, then push the slot exactly once.
- * - Re-initialise the same slot on client-side route changes.
- * - Collapse the reserved space so smaller creatives don't leave empty
- *   square padding on mobile: when filled, shrink the <ins> to the real
- *   iframe height; when unfilled, collapse it to zero.
+ * - Request a fresh ad on client-side route changes. AdSense does not support
+ *   recycling an `<ins>`, so the caller must apply `adKey` as the element's
+ *   React key: the old node is unmounted and a brand new one is pushed.
+ * - Report the fill status so the caller can keep its frame hidden until an
+ *   ad actually arrives.
+ *
+ * Deliberately does NOT try to resize the slot to its creative. The creative
+ * lives in a cross-origin iframe that always fills the `<ins>` box Google
+ * reserved, so its real height is unmeasurable from here; the previous attempt
+ * could never shrink anything and risked clipping ads that grew later.
  */
 export const useAdSlot = ({ enabled }: UseAdSlotOptions) => {
   const insRef = useRef<HTMLModElement>(null);
+  const [status, setStatus] = useState<AdStatus>(null);
+  const { asPath } = useRouter();
+  // The query string never changes which creative is served.
+  const adKey = asPath.split('?')[0];
 
   useEffect(() => {
     if (!enabled || typeof window === 'undefined') {
@@ -49,59 +61,17 @@ export const useAdSlot = ({ enabled }: UseAdSlotOptions) => {
 
     let cancelled = false;
     let waitTimer: ReturnType<typeof setTimeout> | null = null;
-    const fitTimers: ReturnType<typeof setTimeout>[] = [];
-    let observer: MutationObserver | null = null;
 
-    // Match the rendered <ins> box to the actual ad creative so a smaller
-    // ad served into a larger responsive slot doesn't leave empty space.
-    const fitToContent = () => {
-      const ins = insRef.current;
-      if (!ins) {
-        return;
-      }
+    setStatus(null);
 
-      const status = ins.getAttribute('data-ad-status');
-
-      if (status === 'unfilled') {
-        // The global CSS hides unfilled ads; also drop reserved height.
-        ins.style.height = '0px';
-        return;
-      }
-
-      if (status === 'filled') {
-        const iframe = ins.querySelector('iframe');
-        const height = iframe?.offsetHeight ?? 0;
-        // Only ever shrink to the creative; never force it taller.
-        if (height > 0 && height < ins.offsetHeight) {
-          ins.style.height = `${height}px`;
-        }
-      }
-    };
-
-    const observe = (ins: HTMLModElement) => {
-      observer?.disconnect();
-      observer = new MutationObserver(fitToContent);
-      observer.observe(ins, {
-        attributes: true,
-        attributeFilter: ['data-ad-status'],
-        childList: true,
-        subtree: true,
-      });
-      // Fallbacks in case the creative resizes after the initial fill.
-      [600, 1500, 3500].forEach((delay) => {
-        fitTimers.push(setTimeout(fitToContent, delay));
-      });
+    const readStatus = () => {
+      const value = insRef.current?.getAttribute('data-ad-status');
+      setStatus(value === 'filled' || value === 'unfilled' ? value : null);
     };
 
     const pushAd = () => {
       const ins = insRef.current;
-      if (cancelled || !ins) {
-        return;
-      }
-
-      // Already initialised - just make sure it fits its content.
-      if (ins.hasAttribute('data-adsbygoogle-status')) {
-        fitToContent();
+      if (cancelled || !ins || ins.hasAttribute('data-adsbygoogle-status')) {
         return;
       }
 
@@ -112,31 +82,24 @@ export const useAdSlot = ({ enabled }: UseAdSlotOptions) => {
       }
 
       try {
-        ins.style.removeProperty('height');
         (window.adsbygoogle = window.adsbygoogle || []).push({});
-        observe(ins);
       } catch {
         /* AdSense will log its own error; nothing to recover here. */
       }
     };
 
+    const observer = new MutationObserver(readStatus);
+    if (insRef.current) {
+      observer.observe(insRef.current, {
+        attributes: true,
+        attributeFilter: ['data-ad-status'],
+      });
+    }
+
     const handleScriptLoad = () => pushAd();
-
-    const handleRouteChange = () => {
-      const ins = insRef.current;
-      if (ins) {
-        // Reset so the same element can request a fresh ad on the new page.
-        ins.removeAttribute('data-adsbygoogle-status');
-        ins.removeAttribute('data-ad-status');
-        ins.style.removeProperty('height');
-        ins.innerHTML = '';
-      }
-      setTimeout(pushAd, 300);
-    };
-
     window.addEventListener('adsbygoogle-loaded', handleScriptLoad);
-    Router.events.on('routeChangeComplete', handleRouteChange);
 
+    // Give layout a tick so the slot is measured at its final width.
     const mountTimer = setTimeout(pushAd, 100);
 
     return () => {
@@ -145,12 +108,10 @@ export const useAdSlot = ({ enabled }: UseAdSlotOptions) => {
       if (waitTimer) {
         clearTimeout(waitTimer);
       }
-      fitTimers.forEach(clearTimeout);
-      observer?.disconnect();
+      observer.disconnect();
       window.removeEventListener('adsbygoogle-loaded', handleScriptLoad);
-      Router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [enabled]);
+  }, [enabled, adKey]);
 
-  return insRef;
+  return { insRef, adKey, status };
 };
