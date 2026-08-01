@@ -4,8 +4,7 @@ import AdSlot from '@components/AdSlot';
 const AdComponent: React.FC = () => (
   <AdSlot
     slot="3845515975"
-    format="fluid"
-    layout="in-article"
+    variant="in-article"
     placeholder="Ad Example (Content)"
   />
 );

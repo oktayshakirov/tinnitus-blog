@@ -2,10 +2,14 @@ import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 
 /**
- * Frame around an AdSense unit. Google reserves a box from the slot width and
- * often serves a shorter creative into it, leaving transparent space we cannot
- * measure or collapse. Framing the slot makes that space read as a deliberate
- * placement instead of a broken layout.
+ * Frame around an AdSense unit.
+ *
+ * Fixed slots are sized to a standard 300x250, so AdSense fills the box
+ * exactly and the frame hugs the ad. Everything else is sized by AdSense from
+ * the slot width; it can serve a shorter creative into the box it reserved,
+ * and that leftover space is inside a cross-origin iframe we cannot measure or
+ * collapse - framing it at least makes it read as a placement rather than a
+ * broken layout.
  *
  * The frame only paints once an ad is actually there, so blocked or unfilled
  * slots leave nothing behind.
@@ -17,6 +21,16 @@ export const StyledAdSlot = styled('div')`
     ins.adsbygoogle {
       display: block;
       width: 100%;
+    }
+
+    &[data-fixed='true'] {
+      width: fit-content;
+
+      ins.adsbygoogle {
+        display: inline-block;
+        width: 300px;
+        height: 250px;
+      }
     }
 
     &[data-filled='true'] {
@@ -37,6 +51,7 @@ export const StyledAdLabel = styled('span')`
     line-height: 1;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    text-align: left;
     color: ${theme.palette.text.secondary};
   `}
 `;
