@@ -9,6 +9,7 @@ import Highlighter from '@components/MDX/Highlighter';
 import AdComponent from '@components/MDX/AdComponent';
 import StreamingPlatforms from './StreamingPlatforms';
 import Table from '@components/MDX/Table';
+import { StyledMDXContent } from './MDXContent.styled';
 
 export const components: MDXComponents = {
   a: Link,
@@ -31,7 +32,11 @@ type Props = {
   content: MDXRemoteProps;
 };
 const MDXContent = ({ content }: Props) => {
-  return <MDXRemote components={components} {...content} />;
+  return (
+    <StyledMDXContent>
+      <MDXRemote components={components} {...content} />
+    </StyledMDXContent>
+  );
 };
 
 export default MDXContent;
