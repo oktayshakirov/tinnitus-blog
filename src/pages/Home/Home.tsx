@@ -25,9 +25,15 @@ type HomeProps = {
   latestPosts: ArticleMeta[];
   latestZen: ArticleMeta[];
   featuredPosts: ArticleMeta[];
+  mostViewedPosts: ArticleMeta[];
 };
 
-const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
+const Home = ({
+  latestPosts,
+  latestZen,
+  featuredPosts,
+  mostViewedPosts,
+}: HomeProps) => {
   return (
     <>
       <HomeSEO />
@@ -103,6 +109,36 @@ const Home = ({ latestPosts, latestZen, featuredPosts }: HomeProps) => {
             </Grid>
           </StyledTabContainer>
         </Container>
+        {mostViewedPosts.length > 0 && (
+          <Container>
+            <StyledTabContainer>
+              <Typography gutterBottom variant="h4" align="center">
+                Most Viewed Posts:
+              </Typography>
+              <Grid container spacing={4}>
+                {mostViewedPosts.map((article, index) => (
+                  <StyledGrid key={article.slug}>
+                    <ArticleCard article={article} index={index} />
+                  </StyledGrid>
+                ))}
+              </Grid>
+              <StyledTextContainer>
+                <Typography component="h2" variant="h6" align="center">
+                  <NextLink href="/blog/popular" passHref>
+                    <Button
+                      size="large"
+                      variant="text"
+                      sx={{ color: 'white', borderColor: 'white' }}
+                      endIcon={<DoubleArrowRoundedIcon />}
+                    >
+                      Show Most Viewed
+                    </Button>
+                  </NextLink>
+                </Typography>
+              </StyledTextContainer>
+            </StyledTabContainer>
+          </Container>
+        )}
         <Container>
           <AdComponent />
         </Container>
