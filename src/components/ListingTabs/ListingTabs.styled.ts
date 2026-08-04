@@ -4,7 +4,10 @@ import { alpha } from '@mui/system/colorManipulator';
 
 export const StyledTabs = styled('nav')`
   ${({ theme }) => css`
-    display: inline-flex;
+    /* inline-flex ignores auto margins, which left this hard against the
+       left edge; a fit-content block centres in the listing column. */
+    display: flex;
+    width: fit-content;
     margin: 0 auto ${theme.spacing(3)};
     padding: ${theme.spacing(0.5)};
     border: 1px solid ${alpha(theme.palette.common.white, 0.12)};
