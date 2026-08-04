@@ -7,27 +7,27 @@ import { ArticleMeta } from '@types';
 // One clean row. The homepage already carries Latest, Must Read and Zen, so
 // this is a taste that sends people to /blog/popular rather than a fourth wall
 // of cards.
-const MOST_VIEWED_COUNT = 3;
+const MOST_POPULAR_COUNT = 3;
 
 type HomePageProps = {
   latestPosts: ArticleMeta[];
   latestZen: ArticleMeta[];
   featuredPosts: ArticleMeta[];
-  mostViewedPosts: ArticleMeta[];
+  mostPopularPosts: ArticleMeta[];
 };
 
 const HomePage = ({
   latestPosts,
   latestZen,
   featuredPosts,
-  mostViewedPosts,
+  mostPopularPosts,
 }: HomePageProps) => {
   return (
     <Home
       latestPosts={latestPosts}
       latestZen={latestZen}
       featuredPosts={featuredPosts}
-      mostViewedPosts={mostViewedPosts}
+      mostPopularPosts={mostPopularPosts}
     />
   );
 };
@@ -47,19 +47,19 @@ export const getStaticProps: GetStaticProps = async () => {
     ...latestPosts.map((post) => post.slug),
     ...featuredPosts.map((post) => post.slug),
   ]);
-  const mostViewedPosts = rankByViews(
+  const mostPopularPosts = rankByViews(
     getAllPosts().map((post) => post.meta),
     'blog'
   )
     .filter((post) => !alreadyShown.has(post.slug))
-    .slice(0, MOST_VIEWED_COUNT);
+    .slice(0, MOST_POPULAR_COUNT);
 
   return {
     props: {
       latestPosts,
       latestZen,
       featuredPosts,
-      mostViewedPosts,
+      mostPopularPosts,
     },
   };
 };

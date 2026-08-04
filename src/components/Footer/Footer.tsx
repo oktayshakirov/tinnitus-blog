@@ -69,6 +69,10 @@ const Footer = ({ isApp = false }: FooterProps) => {
         <Link href="/faq" style={{ textDecoration: 'none' }}>
           <StyledText>FAQ</StyledText>
         </Link>
+        <StyledText>|</StyledText>
+        <Link href="/impressum" style={{ textDecoration: 'none' }}>
+          <StyledText>Impressum</StyledText>
+        </Link>
       </StyledContainer>
       <StyledIconContainer>
         {isApp ? (
