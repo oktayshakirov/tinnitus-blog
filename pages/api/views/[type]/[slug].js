@@ -1,4 +1,5 @@
 import admin from 'firebase-admin';
+import { clientKey, isPublished, isRateLimited } from '@lib/viewsGuard';
 
 if (!admin.apps.length) {
   const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
@@ -31,6 +32,16 @@ export default async function handler(req, res) {
 
   if (!type || !slug) {
     return res.status(400).json({ error: 'Type and slug are required' });
+  }
+
+  // Checked for reads too: an unknown key can only ever answer 0, so there is
+  // no reason to spend a Firestore read finding that out.
+  if (!isPublished(type, slug)) {
+    return res.status(404).json({ error: 'Unknown content' });
+  }
+
+  if (req.method === 'POST' && isRateLimited(clientKey(req))) {
+    return res.status(429).json({ error: 'Too many requests' });
   }
 
   const viewKey = getViewKey(type, slug);

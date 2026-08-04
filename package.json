@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node scripts/generateContentIndex.js && next dev",
-    "build": "node scripts/generateContentIndex.js && next build",
+    "start": "node scripts/generateContentIndex.js && node scripts/generateViews.js && next dev",
+    "build": "node scripts/generateContentIndex.js && node scripts/generateViews.js && next build",
     "sync-content": "node scripts/syncContent.js",
     "start:prod": "next start",
     "lint": "next lint",

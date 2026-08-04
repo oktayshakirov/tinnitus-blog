@@ -5,6 +5,7 @@ import PaginationItem from '@mui/material/PaginationItem';
 import Link from '@components/Link';
 import Layout from '@components/Layout';
 import ArticlesGrid from '@components/ArticlesGrid';
+import ListingTabs from '@components/ListingTabs';
 import Headline from '@ui/pages/shared/Headline';
 import ZenSEO from './Zen.SEO';
 import {
@@ -19,9 +20,15 @@ export type Props = {
   zenMeta: ArticleMeta[];
   page: number;
   pageCount: number;
+  variant?: 'latest' | 'popular';
 };
 
-const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
+const Zen = ({
+  page: pageFromUrl,
+  pageCount,
+  zenMeta,
+  variant = 'latest',
+}: Props) => {
   const [page, setPage] = useState(pageFromUrl);
 
   const handleChange = (event: ChangeEvent<unknown>, value: number) => {
@@ -48,6 +55,7 @@ const Zen = ({ page: pageFromUrl, pageCount, zenMeta }: Props) => {
               />
               SOUNDS
             </Headline>
+            <ListingTabs basePath="/zen" active={variant} />
             <ArticlesGrid articles={zenMeta} />
             {pageCount > 1 && (
               <StyledPagination
