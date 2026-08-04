@@ -25,14 +25,14 @@ type HomeProps = {
   latestPosts: ArticleMeta[];
   latestZen: ArticleMeta[];
   featuredPosts: ArticleMeta[];
-  mostViewedPosts: ArticleMeta[];
+  mostPopularPosts: ArticleMeta[];
 };
 
 const Home = ({
   latestPosts,
   latestZen,
   featuredPosts,
-  mostViewedPosts,
+  mostPopularPosts,
 }: HomeProps) => {
   return (
     <>
@@ -109,14 +109,14 @@ const Home = ({
             </Grid>
           </StyledTabContainer>
         </Container>
-        {mostViewedPosts.length > 0 && (
+        {mostPopularPosts.length > 0 && (
           <Container>
             <StyledTabContainer>
               <Typography gutterBottom variant="h4" align="center">
-                Most Viewed Posts:
+                Most Popular Posts:
               </Typography>
               <Grid container spacing={4}>
-                {mostViewedPosts.map((article, index) => (
+                {mostPopularPosts.map((article, index) => (
                   <StyledGrid key={article.slug}>
                     <ArticleCard article={article} index={index} />
                   </StyledGrid>
@@ -131,7 +131,7 @@ const Home = ({
                       sx={{ color: 'white', borderColor: 'white' }}
                       endIcon={<DoubleArrowRoundedIcon />}
                     >
-                      Show Most Viewed
+                      Show Most Popular
                     </Button>
                   </NextLink>
                 </Typography>

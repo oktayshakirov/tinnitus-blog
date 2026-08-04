@@ -6,7 +6,7 @@ type Props = {
   active: 'latest' | 'popular';
 };
 
-// "Latest" is the paginated, date-ordered listing; "Most viewed" is a single
+// "Latest" is the paginated, date-ordered listing; "Most popular" is a single
 // ranked page. Kept as two routes rather than one route with a sort parameter
 // so both stay static and keep their own URLs.
 const ListingTabs = ({ basePath, active }: Props) => (
@@ -21,7 +21,7 @@ const ListingTabs = ({ basePath, active }: Props) => (
       href={`${basePath}/popular`}
       aria-current={active === 'popular' ? 'page' : undefined}
     >
-      Most viewed
+      Most popular
     </Link>
   </StyledTabs>
 );

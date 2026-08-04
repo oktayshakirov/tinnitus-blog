@@ -37,6 +37,12 @@ const config = {
       return null;
     }
 
+    // The Impressum carries the operator's postal address. It stays linked and
+    // crawlable as section 5 DDG requires, but is noindex and not submitted.
+    if (path === '/impressum') {
+      return null;
+    }
+
     if (path === '/') {
       priority = 1.0;
       changefreq = 'daily';
