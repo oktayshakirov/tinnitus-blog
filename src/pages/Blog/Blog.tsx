@@ -5,6 +5,7 @@ import PaginationItem from '@mui/material/PaginationItem';
 import Link from '@components/Link';
 import Layout from '@components/Layout';
 import ArticlesGrid from '@components/ArticlesGrid';
+import ListingTabs from '@components/ListingTabs';
 import Headline from '@ui/pages/shared/Headline';
 import BlogSEO from './Blog.SEO';
 import {
@@ -19,9 +20,15 @@ export type Props = {
   postsMeta: ArticleMeta[];
   page: number;
   pageCount: number;
+  variant?: 'latest' | 'popular';
 };
 
-const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
+const Blog = ({
+  page: pageFromUrl,
+  pageCount,
+  postsMeta,
+  variant = 'latest',
+}: Props) => {
   const [page, setPage] = useState(pageFromUrl);
 
   const handleChange = (event: ChangeEvent<unknown>, value: number) => {
@@ -48,6 +55,7 @@ const Blog = ({ page: pageFromUrl, pageCount, postsMeta }: Props) => {
               />
               POSTS
             </Headline>
+            <ListingTabs basePath="/blog" active={variant} />
             <ArticlesGrid articles={postsMeta} />
             {pageCount > 1 && (
               <StyledPagination
