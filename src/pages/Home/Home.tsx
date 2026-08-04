@@ -95,20 +95,6 @@ const Home = ({
         <Container>
           <AdComponent />
         </Container>
-        <Container>
-          <StyledTabContainer>
-            <Typography gutterBottom variant="h4" align="center">
-              Must Read Posts:
-            </Typography>
-            <Grid container spacing={4}>
-              {featuredPosts.map((article, index) => (
-                <StyledGrid key={article.slug}>
-                  <ArticleCard article={article} index={index} />
-                </StyledGrid>
-              ))}
-            </Grid>
-          </StyledTabContainer>
-        </Container>
         {mostPopularPosts.length > 0 && (
           <Container>
             <StyledTabContainer>
@@ -139,6 +125,20 @@ const Home = ({
             </StyledTabContainer>
           </Container>
         )}
+        <Container>
+          <StyledTabContainer>
+            <Typography gutterBottom variant="h4" align="center">
+              Must Read Posts:
+            </Typography>
+            <Grid container spacing={4}>
+              {featuredPosts.map((article, index) => (
+                <StyledGrid key={article.slug}>
+                  <ArticleCard article={article} index={index} />
+                </StyledGrid>
+              ))}
+            </Grid>
+          </StyledTabContainer>
+        </Container>
         <Container>
           <AdComponent />
         </Container>

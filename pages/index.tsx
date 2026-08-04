@@ -4,10 +4,8 @@ import { getFeaturedPosts, getAllPosts, getAllZen } from '@lib/mdx';
 import { rankByViews } from '@lib/popularity';
 import { ArticleMeta } from '@types';
 
-// One clean row. The homepage already carries Latest, Must Read and Zen, so
-// this is a taste that sends people to /blog/popular rather than a fourth wall
-// of cards.
-const MOST_POPULAR_COUNT = 3;
+// Matches the Latest Posts row above it.
+const MOST_POPULAR_COUNT = 6;
 
 type HomePageProps = {
   latestPosts: ArticleMeta[];
