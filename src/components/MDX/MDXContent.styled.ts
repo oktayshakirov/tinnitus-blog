@@ -31,15 +31,6 @@ export const StyledMDXContent = styled('div')`
       margin-bottom: 0;
     }
 
-    /* Colour alone is a weak signal for a link at this size. */
-    > p a,
-    > ul a,
-    > ol a {
-      text-decoration: underline !important;
-      text-decoration-color: ${alpha(theme.palette.primary.main, 0.45)};
-      text-underline-offset: 3px;
-    }
-
     > hr {
       margin: ${theme.spacing(4)} 0;
       border: 0;
