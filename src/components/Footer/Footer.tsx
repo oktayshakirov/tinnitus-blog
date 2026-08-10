@@ -6,6 +6,7 @@ import {
   FaInstagram,
   FaTelegramPlane,
   FaTiktok,
+  FaYoutube,
 } from 'react-icons/fa';
 import Icon from '@components/Icon';
 import {
@@ -113,6 +114,13 @@ const Footer = ({ isApp = false }: FooterProps) => {
               aria-label="TikTok"
             >
               <Icon icon={FaTiktok} size={24} />
+            </Link>
+            <Link
+              href="https://www.youtube.com/@TinnitusHelpMe"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <Icon icon={FaYoutube} size={24} />
             </Link>
             <Link
               href="https://t.me/tinnitushelpme"
