@@ -19,6 +19,7 @@ import {
   FaInstagram,
   FaTelegramPlane,
   FaTiktok,
+  FaYoutube,
 } from 'react-icons/fa';
 import Icon from '@components/Icon';
 
@@ -103,6 +104,13 @@ const Contact = ({}: Props) => {
                   aria-label="TikTok"
                 >
                   <Icon icon={FaTiktok} size={28} />
+                </Link>
+                <Link
+                  href="https://www.youtube.com/@TinnitusHelpMe"
+                  target="_blank"
+                  aria-label="YouTube"
+                >
+                  <Icon icon={FaYoutube} size={28} />
                 </Link>
                 <Link
                   href="https://t.me/tinnitushelpme"

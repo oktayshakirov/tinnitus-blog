@@ -9,4 +9,5 @@ export const SOCIAL_PROFILES = [
   'https://www.facebook.com/TheTinnitusHelp',
   'https://x.com/TinnitusHelp_me',
   'https://instagram.com/tinnitushelp.me',
+  'https://www.youtube.com/@TinnitusHelpMe',
 ];
