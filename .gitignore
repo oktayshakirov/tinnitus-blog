@@ -40,3 +40,8 @@ next-env.d.ts
 
 # Single lockfile: this project uses yarn.lock
 package-lock.json
+
+# A nested content/ inside a content section is never real content. It appears
+# when a command using a repo-root-relative path (content/posts/...) is run
+# from inside content/posts instead of the repo root.
+/content/*/content/

@@ -16,6 +16,10 @@ const TagArticlesSEO = ({ tag }: Props) => {
       title={title}
       description={description}
       canonical={canonical}
+      // Same as /tags: noindex, follow. These listings duplicate article
+      // snippets and have never been a search entry point.
+      noindex
+      nofollow={false}
       openGraph={{
         url: canonical,
         title: title,

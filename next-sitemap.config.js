@@ -88,9 +88,14 @@ const config = {
       {
         userAgent: '*',
         allow: '/',
-        // Parameterised URLs like /app?ref=producthunt are deliberately left
-        // crawlable so Google can see their canonical and fold them into /app.
-        disallow: ['/tags'],
+        // Nothing is disallowed. Tag pages are linked from every article, and
+        // blocking them turned ~780 internal links into dead ends that no
+        // crawler could follow through to the posts. They carry a noindex
+        // instead, which keeps them out of the index while letting crawlers
+        // read the links on them. Parameterised URLs like /app?ref=producthunt
+        // are likewise left crawlable so Google can see their canonical and
+        // fold them into /app.
+        disallow: [],
       },
     ],
     additionalSitemaps: ['https://www.tinnitushelp.me/sitemap.xml'],

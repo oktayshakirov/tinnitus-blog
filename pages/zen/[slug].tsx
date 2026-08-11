@@ -22,7 +22,10 @@ export type Props = {
 const ZenPostPage = (props: Props) => <ZenPost {...props} />;
 
 const getStaticPaths: GetStaticPaths = async () => {
-  const files = fs.readdirSync(path.join('content', 'zen'));
+  // Only .mdx files are tracks; see the note in pages/blog/[slug].tsx.
+  const files = fs
+    .readdirSync(path.join('content', 'zen'))
+    .filter((filename) => filename.endsWith('.mdx'));
 
   const paths = files.map((filename) => ({
     params: {

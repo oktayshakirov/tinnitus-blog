@@ -22,7 +22,12 @@ export type Props = {
 const BlogArticlePage = (props: Props) => <BlogPost {...props} />;
 
 const getStaticPaths: GetStaticPaths = async () => {
-  const files = fs.readdirSync(path.join('content', 'posts'));
+  // Only .mdx files are posts. Anything else in the directory - a stray
+  // folder, an editor backup - would otherwise become a route that has no
+  // source file and fails the build at export time.
+  const files = fs
+    .readdirSync(path.join('content', 'posts'))
+    .filter((filename) => filename.endsWith('.mdx'));
 
   const paths = files.map((filename) => ({
     params: {
