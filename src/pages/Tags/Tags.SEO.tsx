@@ -13,6 +13,10 @@ const TagsSEO = () => {
       title={title}
       description={description}
       canonical={canonical}
+      // Navigational, not search content. Crawlable and followed so link
+      // equity reaches the articles, but kept out of the index.
+      noindex
+      nofollow={false}
       openGraph={{
         url: canonical,
         title: title,

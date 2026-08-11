@@ -21,6 +21,18 @@ const nextConfig = {
         destination: '/zen/page/:page',
         permanent: true,
       },
+      // The popular listings were briefly paginated, and those URLs made it
+      // into the sitemap. Fold them back onto the single ranked page.
+      {
+        source: '/blog/popular/page/:page',
+        destination: '/blog/popular',
+        permanent: true,
+      },
+      {
+        source: '/zen/popular/page/:page',
+        destination: '/zen/popular',
+        permanent: true,
+      },
     ];
   },
   async headers() {

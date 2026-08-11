@@ -30,8 +30,6 @@ const Blog = ({
   variant = 'latest',
 }: Props) => {
   const [page, setPage] = useState(pageFromUrl);
-  // Popular has its own paginated route, so page links must stay inside it.
-  const listBase = variant === 'popular' ? '/blog/popular' : '/blog';
 
   const handleChange = (event: ChangeEvent<unknown>, value: number) => {
     setPage(value);
@@ -40,7 +38,7 @@ const Blog = ({
 
   return (
     <>
-      <BlogSEO page={pageFromUrl} />
+      <BlogSEO page={pageFromUrl} variant={variant} />
       <Layout>
         <Container>
           <AdComponent />
@@ -71,9 +69,7 @@ const Blog = ({
                   <PaginationItem
                     component={Link}
                     href={
-                      item.page === 1
-                        ? listBase
-                        : `${listBase}/page/${item.page}`
+                      item.page === 1 ? '/blog' : `/blog/page/${item.page}`
                     }
                     {...item}
                   />
