@@ -1,0 +1,54 @@
+{
+  "_comment": "Source of truth for YouTube videos attached to pages. Hand-edited on upload - see docs/site-video-integration.md in the video-edit-automation repo. Do not put video data in MDX frontmatter.",
+  "_fields": {
+    "kind": "long = article explainer (one per page, compact bar). session = sound therapy, where the video IS the content; MANY sessions share one /zen album. short = vertical, feed only, never on an article.",
+    "label": "Sessions only. Short distinguishing phrase - the album name is already the page title, so do not repeat it. 'Paced breathing', not 'White noise with paced breathing'.",
+    "target": "The page it renders on. For sessions this is the /zen album the sound came from; several videos may point at the same one.",
+    "placement": "auto = the layout places it. inline = the MDX body carries <PostVideo /> and places it. none = registry only, off every page."
+  },
+  "videos": [
+    {
+      "slug": "does-tinnitus-go-away",
+      "id": "RR_qU3FA0OY",
+      "kind": "long",
+      "title": "Does Tinnitus Go Away? Temporary vs Chronic Explained",
+      "description": "Whether tinnitus goes away depends on one distinction almost nobody makes - and there are five signs that mean you should see somebody.",
+      "uploadDate": "2026-08-13T12:21:34Z",
+      "duration": "PT2M40S",
+      "seconds": 160,
+      "poster": "/images/videos/does-tinnitus-go-away.webp",
+      "target": { "type": "blog", "slug": "does-tinnitus-go-away" },
+      "alsoOn": [],
+      "placement": "auto"
+    },
+    {
+      "slug": "masking-breathing-5min",
+      "id": "O5uCEwgOwvM",
+      "kind": "session",
+      "title": "Tinnitus Masking Sound + Paced Breathing (5 Minutes)",
+      "label": "Paced breathing",
+      "description": "Five minutes of deep, hiss-free masking sound with a breathing circle to follow. In as it grows, out as it shrinks, on a 4 second inhale and a 6 second exhale.",
+      "uploadDate": "2026-08-14T14:08:19Z",
+      "duration": "PT5M",
+      "seconds": 300,
+      "poster": "/images/videos/masking-breathing-5min.webp",
+      "target": { "type": "zen", "slug": "white-noise" },
+      "alsoOn": [],
+      "placement": "auto"
+    },
+    {
+      "slug": "masking-breathing-1min",
+      "id": "VI_CrobXOFk",
+      "kind": "short",
+      "title": "Tinnitus Masking Sound + Paced Breathing (1 Minute)",
+      "description": "Set the sound just below your tinnitus - loud enough that the ringing gets hard to follow, but not so loud that it disappears completely.",
+      "uploadDate": "2026-08-10T16:31:49Z",
+      "duration": "PT1M1S",
+      "seconds": 61,
+      "poster": "/images/videos/masking-breathing-1min.webp",
+      "target": null,
+      "alsoOn": [],
+      "placement": "none"
+    }
+  ]
+}

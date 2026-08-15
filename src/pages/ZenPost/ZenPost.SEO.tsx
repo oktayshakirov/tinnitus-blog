@@ -13,6 +13,7 @@ import {
   buildGraph,
   personSchema,
 } from '@lib/schema';
+import { videoObjectSchema, SiteVideo } from '@lib/videos';
 
 type Props = {
   title?: string;
@@ -22,6 +23,7 @@ type Props = {
   createdAt: string;
   updatedAt: string;
   tags?: string[];
+  sessions?: SiteVideo[];
 };
 const ZenPostSEO = ({
   title,
@@ -31,6 +33,7 @@ const ZenPostSEO = ({
   createdAt,
   updatedAt,
   tags = [],
+  sessions = [],
 }: Props) => {
   const canonical = `${DOMAIN}/zen/${slug}`;
   const imageUrl = `${DOMAIN}${image}`;
@@ -57,6 +60,10 @@ const ZenPostSEO = ({
       { name: 'Relief Sounds', url: `${DOMAIN}/zen` },
       { name: title ?? slug, url: canonical },
     ]),
+    // One node per session. These pages are the only ones on the site where
+    // video is genuinely the page's main content, which is the condition
+    // Google's August 2023 change put on the video rich result.
+    ...sessions.map((session) => videoObjectSchema(session, DOMAIN)),
   ]);
 
   return (

@@ -17,6 +17,8 @@ import GoBackLink from '@components/GoBackLink';
 import ViewsCounter from '@components/ViewsCounter';
 import { FaCalendarAlt } from 'react-icons/fa';
 import Icon from '@components/Icon';
+import ZenSessions from '@components/ZenSessions';
+import { getAlbumSessions } from '@lib/videos';
 
 const ZenPost = ({
   content,
@@ -34,6 +36,7 @@ const ZenPost = ({
     typeof frontmatter?.description === 'string' ? frontmatter.description : undefined;
   const image = typeof frontmatter?.image === 'string' ? frontmatter.image : undefined;
   const date = typeof frontmatter?.date === 'string' ? frontmatter.date : undefined;
+  const sessions = getAlbumSessions(slug);
 
   return (
     <>
@@ -45,6 +48,7 @@ const ZenPost = ({
         createdAt={createdAt}
         updatedAt={updatedAt}
         tags={(frontmatter?.tags as unknown as string[]) ?? []}
+        sessions={sessions}
       />
       <Layout>
         <StyledContainer>
@@ -64,6 +68,7 @@ const ZenPost = ({
           <Grid container spacing={{ xs: 2, md: 4 }}>
             <Grid item xs={12} md={8}>
               <MDXContent content={content} />
+              <ZenSessions sessions={sessions} />
               <StyledDivider />
             </Grid>
             <Grid item xs={12} md={4} container direction="column" spacing={4}>

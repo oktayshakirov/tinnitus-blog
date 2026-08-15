@@ -8,7 +8,9 @@ import HomeSEO from './Home.SEO';
 import { Button, Box } from '@mui/material';
 import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import NextLink from 'next/link';
+import { allSessions } from '@lib/videos';
 import {
   StyledContainer,
   StyledHeadingContainer,
@@ -34,6 +36,9 @@ const Home = ({
   featuredPosts,
   mostPopularPosts,
 }: HomeProps) => {
+  // The registry is bundled, so this is a build-time constant - no prop needed.
+  const hasSessions = allSessions().length > 0;
+
   return (
     <>
       <HomeSEO />
@@ -178,7 +183,7 @@ const Home = ({
             </Grid>
             <StyledTextContainer>
               <Typography component="h2" variant="h6" align="center">
-                <NextLink href="zen" passHref>
+                <NextLink href="/zen" passHref>
                   <Button
                     size="large"
                     variant="text"
@@ -188,6 +193,18 @@ const Home = ({
                     Zen Library
                   </Button>
                 </NextLink>
+                {hasSessions && (
+                  <NextLink href="/zen/videos" passHref>
+                    <Button
+                      size="large"
+                      variant="text"
+                      sx={{ color: 'white', borderColor: 'white' }}
+                      startIcon={<PlayCircleOutlineIcon />}
+                    >
+                      Video Sessions
+                    </Button>
+                  </NextLink>
+                )}
               </Typography>
             </StyledTextContainer>
           </StyledTabContainer>
