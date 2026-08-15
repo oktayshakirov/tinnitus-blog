@@ -15,6 +15,7 @@ import {
   personSchema,
   FaqItem,
 } from '@lib/schema';
+import { videoObjectSchema, SiteVideo } from '@lib/videos';
 
 type Props = {
   title?: string;
@@ -27,6 +28,7 @@ type Props = {
   faq?: FaqItem[];
   /** Health content is typed as MedicalWebPage; opt out for culture/history posts. */
   medical?: boolean;
+  video?: SiteVideo | null;
 };
 
 const BlogPostSEO = ({
@@ -39,6 +41,7 @@ const BlogPostSEO = ({
   tags = [],
   faq = [],
   medical = true,
+  video = null,
 }: Props) => {
   const canonical = `${DOMAIN}/blog/${slug}`;
   const imageUrl = `${DOMAIN}${image}`;
@@ -67,6 +70,7 @@ const BlogPostSEO = ({
       { name: title ?? slug, url: canonical },
     ]),
     faq.length ? faqSchema(faq) : null,
+    videoObjectSchema(video, DOMAIN),
   ]);
 
   return (

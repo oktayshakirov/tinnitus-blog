@@ -9,6 +9,7 @@ import Highlighter from '@components/MDX/Highlighter';
 import AdComponent from '@components/MDX/AdComponent';
 import StreamingPlatforms from './StreamingPlatforms';
 import Table from '@components/MDX/Table';
+import PostVideo from '@components/MDX/PostVideo';
 import { StyledMDXContent } from './MDXContent.styled';
 
 export const components: MDXComponents = {
@@ -25,6 +26,7 @@ export const components: MDXComponents = {
   Highlighter,
   AdComponent,
   StreamingPlatforms,
+  PostVideo,
   table: Table,
 };
 

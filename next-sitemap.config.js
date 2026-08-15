@@ -6,6 +6,10 @@ const path = require('path');
  * build teaches Google to ignore our lastmod, so read it from the source file.
  */
 const contentLastmod = (urlPath) => {
+  // /zen/videos and /zen/popular are listings, not MDX files; without this they
+  // send the lookup after a content/zen/videos.mdx that does not exist.
+  if (urlPath === '/zen/videos' || urlPath === '/zen/popular') return null;
+
   const match = urlPath.match(/^\/(blog|zen)\/([^/]+)$/);
   if (!match) return null;
 
@@ -66,6 +70,11 @@ const config = {
       priority = 0.9;
       changefreq = 'monthly';
     } else if (path.startsWith('/blog')) {
+      priority = 0.8;
+      changefreq = 'weekly';
+    } else if (path === '/zen/videos') {
+      // The sound-therapy session listing - the one page here whose main
+      // content is video, so it is the page worth submitting most eagerly.
       priority = 0.8;
       changefreq = 'weekly';
     } else if (path.startsWith('/zen')) {

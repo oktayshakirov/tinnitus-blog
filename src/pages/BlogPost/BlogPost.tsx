@@ -23,6 +23,8 @@ import { getDefaultAuthor } from '@const/authors';
 import { FaCalendarAlt } from 'react-icons/fa';
 import Icon from '@components/Icon';
 import { FaqItem } from '@lib/schema';
+import PostVideo, { PageVideoProvider } from '@components/MDX/PostVideo';
+import { getPageVideo } from '@lib/videos';
 
 const asString = (value: unknown): string | undefined =>
   typeof value === 'string' ? value : undefined;
@@ -66,6 +68,7 @@ const BlogPost = ({
   // Health content is the default here; culture/history posts opt out.
   const medical = frontmatter?.medical !== false;
   const author = getDefaultAuthor();
+  const video = getPageVideo('blog', slug);
 
   return (
     <>
@@ -79,6 +82,7 @@ const BlogPost = ({
         tags={tags}
         faq={faq}
         medical={medical}
+        video={video}
       />
       <Layout>
         <StyledContainer>
@@ -97,7 +101,13 @@ const BlogPost = ({
           </StyledHeadline>
           <Grid container spacing={{ xs: 2, md: 4 }}>
             <Grid item xs={12} md={8}>
-              <MDXContent content={content} />
+              <PageVideoProvider video={video}>
+                {/* "auto" is the volume path: the layout places the video and
+                    the MDX file is never touched. "inline" means the body
+                    carries a <PostVideo /> tag and places it itself. */}
+                {video?.placement === 'auto' && <PostVideo video={video} />}
+                <MDXContent content={content} />
+              </PageVideoProvider>
               <FaqSection faq={faq} />
               <References sources={sources} />
               {medical && <MedicalDisclaimer />}
