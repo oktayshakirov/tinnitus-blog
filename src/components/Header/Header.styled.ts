@@ -4,6 +4,10 @@ import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 
+// Width at which the full nav row (8 links) still fits inside the container.
+// Bump this if links are added, otherwise the row overflows the viewport.
+const NAV_FITS_QUERY = '@media (min-width: 760px)';
+
 export const StyledAppBar = styled(AppBar)`
   ${({ theme }) => css`
     display: flex;
@@ -43,7 +47,7 @@ export const StyledMenuButton = styled(IconButton)`
     position: absolute;
     right: 26px;
 
-    ${theme.breakpoints.up('sm')} {
+    ${NAV_FITS_QUERY} {
       display: none;
     }
   `}
@@ -53,7 +57,7 @@ export const StyledNav = styled('nav')`
   ${({ theme }) => css`
     display: none;
 
-    ${theme.breakpoints.up('sm')} {
+    ${NAV_FITS_QUERY} {
       display: flex;
       align-items: center;
     }
@@ -62,10 +66,10 @@ export const StyledNav = styled('nav')`
       margin: 0;
       padding: 0;
       display: flex;
-      gap: ${theme.spacing(2)};
+      gap: ${theme.spacing(1.5)};
 
-      ${theme.breakpoints.up('md')} {
-        gap: ${theme.spacing(5)};
+      ${theme.breakpoints.up('lg')} {
+        gap: ${theme.spacing(4)};
       }
     }
 
@@ -95,7 +99,7 @@ export const StyledNav = styled('nav')`
         color: #ffffff;
       }
 
-      ${theme.breakpoints.up('md')} {
+      ${theme.breakpoints.up('lg')} {
         font-size: 17px;
         width: 100px;
       }
