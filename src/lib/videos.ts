@@ -19,6 +19,14 @@ export type VideoPlacement = 'auto' | 'inline' | 'none';
 
 export type VideoTarget = { type: VideoTargetType; slug: string };
 
+/**
+ * One chapter of a long-form video: where it starts, what it is called, and the
+ * narration spoken in it. The text is the script, not the article's prose, so a
+ * full transcript is 450-700 words that exist nowhere else on the site - which
+ * is what keeps /videos/<slug> from being a thin page.
+ */
+export type VideoChapter = { start: number; title: string; text: string };
+
 export type SiteVideo = {
   slug: string;
   id: string;
@@ -38,6 +46,8 @@ export type SiteVideo = {
   target: VideoTarget | null;
   alsoOn: VideoTarget[];
   placement: VideoPlacement;
+  /** Long form only; a session has no narration to transcribe. */
+  chapters?: VideoChapter[];
 };
 
 const VIDEOS = videosJson.videos as SiteVideo[];
@@ -90,14 +100,15 @@ export const allSessions = (): SiteVideo[] =>
   );
 
 /**
- * Everything the /videos hub lists - article explainers and sound-therapy
- * sessions together, newest first.
+ * The /videos feed: article explainers, newest first.
  *
- * Shorts are deliberately left out: a one-minute vertical clip makes a bad
- * 16:9 card, and it has no page of its own to send anybody to.
+ * These are exactly the videos with a page of their own, because they are the
+ * ones carrying chapters and a transcript. Shorts have neither and make a bad
+ * 16:9 card besides; sessions have no narration to transcribe and get their own
+ * listing at /zen/videos, grouped by the album each was cut from.
  */
-export const feedVideos = (): SiteVideo[] =>
-  VIDEOS.filter((video) => video.kind !== 'short').sort((a, b) =>
+export const longVideos = (): SiteVideo[] =>
+  VIDEOS.filter((video) => video.kind === 'long').sort((a, b) =>
     a.uploadDate < b.uploadDate ? 1 : -1
   );
 
@@ -126,9 +137,14 @@ export const formatDuration = (seconds: number): string => {
  * article with a supplementary embed generally does not qualify. /videos and
  * /zen/videos are the exception - there the video really is the content.
  */
-export const videoObjectSchema = (video: SiteVideo | null, domain: string) => {
+export const videoObjectSchema = (
+  video: SiteVideo | null,
+  domain: string,
+  { withClips = false }: { withClips?: boolean } = {}
+) => {
   if (!video) return null;
-  return {
+  const contentUrl = `https://www.youtube.com/watch?v=${video.id}`;
+  const schema: Record<string, unknown> = {
     '@type': 'VideoObject',
     name: video.title,
     description: video.description,
@@ -136,6 +152,24 @@ export const videoObjectSchema = (video: SiteVideo | null, domain: string) => {
     uploadDate: video.uploadDate,
     duration: video.duration,
     embedUrl: `https://www.youtube-nocookie.com/embed/${video.id}`,
-    contentUrl: `https://www.youtube.com/watch?v=${video.id}`,
+    contentUrl,
   };
+
+  // Key moments. Only worth emitting on /videos/<slug>, where the video is the
+  // page's main content - on an article the embed is supplementary and Google
+  // will not surface them. The chapter data is validated on render by
+  // `meta.check_chapters` in the video repo.
+  const chapters = video.chapters ?? [];
+  if (withClips && chapters.length) {
+    schema.hasPart = chapters.map((chapter, index) => ({
+      '@type': 'Clip',
+      name: chapter.title,
+      startOffset: chapter.start,
+      endOffset:
+        index + 1 < chapters.length ? chapters[index + 1].start : video.seconds,
+      url: `${contentUrl}&t=${chapter.start}s`,
+    }));
+  }
+
+  return schema;
 };

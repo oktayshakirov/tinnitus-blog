@@ -10,7 +10,7 @@ type Props = {
 
 export const VIDEOS_TITLE = `Tinnitus Videos | ${DOMAIN_NAME}`;
 export const VIDEOS_DESCRIPTION =
-  'Every Tinnitus Help video in one place - short explainers on what tinnitus is and how to live with it, plus masking and paced-breathing sound sessions you can play straight through.';
+  'Short explainers on what tinnitus is, what causes it and how to live with it - each one with chapters and a full transcript, and the article it came from.';
 
 const VideosSEO = ({ videos }: Props) => {
   const canonical = `${DOMAIN}/videos`;

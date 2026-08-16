@@ -4,7 +4,8 @@
     "kind": "long = article explainer (one per page, compact bar). session = sound therapy, where the video IS the content; MANY sessions share one /zen album. short = vertical, feed only, never on an article.",
     "label": "Sessions only. Short distinguishing phrase - the album name is already the page title, so do not repeat it. 'Paced breathing', not 'White noise with paced breathing'.",
     "target": "The page it renders on. For sessions this is the /zen album the sound came from; several videos may point at the same one.",
-    "placement": "auto = the layout places it. inline = the MDX body carries <PostVideo /> and places it. none = registry only, off every page."
+    "placement": "auto = the layout places it. inline = the MDX body carries <PostVideo /> and places it. none = registry only, off every page.",
+    "chapters": "start (seconds), title, and the narration spoken in that chapter. Long form only. Titles and start times come from the uploaded YouTube description; the text is the script from the project module in video-edit-automation, which exists nowhere else on the site. Drives the transcript and the jump links on /videos/<slug>."
   },
   "videos": [
     {
@@ -19,7 +20,49 @@
       "poster": "/images/videos/does-tinnitus-go-away.webp",
       "target": { "type": "blog", "slug": "does-tinnitus-go-away" },
       "alsoOn": [],
-      "placement": "auto"
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "The wait",
+          "text": "Your ears have been ringing for days. And you are waiting for it to stop. Whether it will comes down to a single distinction, and almost nobody makes it. By the end of this you will know which kind you are dealing with — and the five signs that mean you should see somebody."
+        },
+        {
+          "start": 14,
+          "title": "Tinnitus is not a disease",
+          "text": "It is a symptom. A sound your hearing reports when nothing outside is making it. Ringing, buzzing, hissing, sometimes a low roar. The sound you hear is real. The source of it is not. And that matters, because a symptom goes away when the thing underneath it does."
+        },
+        {
+          "start": 31,
+          "title": "There are two kinds",
+          "text": "Temporary tinnitus follows a loud noise. It fades within hours or days. And nothing lasting is driving it. Chronic tinnitus runs three to six months or longer. Usually there is hearing loss behind it. And it is managed rather than waited out."
+        },
+        {
+          "start": 49,
+          "title": "So does it go away?",
+          "text": "If it is temporary, often yes. The ears recover and the sound fades. Earwax or an ear infection can do the same thing, and clear once they are treated. Chronic is a different answer. If it is tied to hearing loss, or to the way the brain has adapted to hearing less, it is unlikely to disappear on its own. That is not a verdict on you. It is a description of the cause."
+        },
+        {
+          "start": 73,
+          "title": "What is usually behind it",
+          "text": "Most of it traces to a short list. Loud noise. Hearing loss. Earwax or an infection. Some medications. Or another health condition entirely. The first three are often fixable. The others are usually managed rather than removed."
+        },
+        {
+          "start": 89,
+          "title": "When should you see someone?",
+          "text": "These are the five worth acting on. It has lasted more than a few weeks. It is getting louder. It is only in one ear. It pulses along with your heartbeat. Or it comes with dizziness or hearing loss. Any one of those is a reason to see an ear specialist. Not to panic — to get the cause identified."
+        },
+        {
+          "start": 109,
+          "title": "For chronic tinnitus, the goal changes",
+          "text": "There is no treatment that reliably removes chronic tinnitus for everyone. So the aim stops being silence. It becomes reducing how much room the sound takes up in your day. Sound therapy makes it less noticeable. Talking therapy changes how much it bothers you. Hearing aids help when hearing loss is part of it. None of that is a cure, and none of it is nothing. For most people it is the difference that matters."
+        },
+        {
+          "start": 136,
+          "title": "So stop waiting, start naming it",
+          "text": "If it started after one loud night and it is fading, you are probably fine. If it has been weeks, or it is in one ear, or it pulses — book the appointment. Because the useful question was never whether it goes away. It was which kind you have. If that helped, subscribe for more videos like this one."
+        }
+      ]
     },
     {
       "slug": "gaming-and-tinnitus",
@@ -31,9 +74,54 @@
       "duration": "PT3M32S",
       "seconds": 212,
       "poster": "/images/videos/gaming-and-tinnitus.webp",
-      "target": { "type": "blog", "slug": "the-gamers-guide-to-preventing-tinnitus" },
+      "target": {
+        "type": "blog",
+        "slug": "the-gamers-guide-to-preventing-tinnitus"
+      },
       "alsoOn": [],
-      "placement": "auto"
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "The footsteps",
+          "text": "You turned the volume up to hear the footsteps. Everybody does. Then the session ends, the headset comes off, and your ears are ringing. That ringing has a name. And it is not nothing. By the end of this you will know how loud your headset actually is, and how long you can play at that level. Plus the one audio setting that fixes the footstep problem without touching the volume."
+        },
+        {
+          "start": 20,
+          "title": "The ringing is a report",
+          "text": "Tinnitus is not a disease. It is a symptom. Inside your ear sit thousands of microscopic hair cells that turn sound into signal. Think of them as blades of grass. Ordinary sound is a breeze. Eight hours of loud audio is a boot. Bent grass stands back up. Broken grass does not. Those cells do not grow back. So the ringing after a long session is not the damage. It is your ears reporting it."
+        },
+        {
+          "start": 47,
+          "title": "Why gaming is a worse risk than a concert",
+          "text": "A concert is two hours and then it is over. A session can run eight. Three things stack up. How loud the game is. How long you sit in it. And headphones, which deliver all of it straight into the canal. A shooter averages around ninety decibels for as long as you are in it."
+        },
+        {
+          "start": 65,
+          "title": "What your ears are rated for",
+          "text": "Safe listening is not a matter of taste. It is a weekly budget, and it collapses fast. Eighty decibels buys you forty hours. Eighty five, twelve and a half. Ninety two — an average shooter — two and a half. A loud concert, two and a half minutes. And a gunshot in game can peak at a hundred and nineteen decibels. That is not a session limit. That is a limit measured in seconds."
+        },
+        {
+          "start": 91,
+          "title": "It is a mixing problem, not a volume problem",
+          "text": "You are not turning it up because you like it loud. You are turning it up because footsteps are mixed almost silent and gunfire is mixed deafening. So to hear the thing that wins the round, you swallow the thing that costs you your hearing. That is a mixing problem. And a mixing problem has a mixing fix. Footsteps too quiet to place. Gunshots peaking over a hundred. So you raise the master. With a compressor, footsteps lifted. Peaks held down. So the master comes back down. A compressor narrows the gap between the quietest sound and the loudest one. You hear more, at less."
+        },
+        {
+          "start": 127,
+          "title": "The setup that costs you nothing",
+          "text": "Five changes, none of which cost you a single kill. Keep the master around sixty percent. Break every hour. Pull effects and music down, leave dialogue up. Add a compressor or a limiter. And use a closed-back headset with noise cancelling. That last one is the quiet win. Less noise leaking in means less volume needed to hear the same detail. And if you want a check with no meters: hold the headset at arm's length. If you can still hear it clearly, it is too loud."
+        },
+        {
+          "start": 158,
+          "title": "If the ringing is already there",
+          "text": "Two things are worth knowing. It is common — somewhere between ten and twenty five percent of adults hear something. And the ringing itself does not make you deaf. Carrying on at the same volume is what does the rest. These are the ones to act on. It is new, or it will not settle. It is only in one ear. It came with hearing loss or dizziness. Or it is genuinely wearing you down. Any of those is a reason to see an audiologist. Not to panic. To get the cause named."
+        },
+        {
+          "start": 188,
+          "title": "Stay in the game",
+          "text": "Your reflexes are not the thing that ages out of this hobby. Your hearing is. Master down. Dialogue up. Let the limiter do the shouting. Because you turned it up to hear the footsteps. You can hear them at sixty percent instead. If that was useful, subscribe for more videos like this one."
+        }
+      ]
     },
     {
       "slug": "masking-breathing-5min",
