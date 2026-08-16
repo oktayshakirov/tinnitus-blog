@@ -22,6 +22,20 @@
       "placement": "auto"
     },
     {
+      "slug": "gaming-and-tinnitus",
+      "id": "0MAsCa2vB7M",
+      "kind": "long",
+      "title": "Gaming and Tinnitus: How Loud Is Too Loud?",
+      "description": "An average shooter runs at ninety decibels and an in-game gunshot peaks at a hundred and nineteen - here is what that buys you per week, and the audio setting that fixes the footstep problem without the volume.",
+      "uploadDate": "2026-08-16T18:10:43Z",
+      "duration": "PT3M32S",
+      "seconds": 212,
+      "poster": "/images/videos/gaming-and-tinnitus.webp",
+      "target": { "type": "blog", "slug": "the-gamers-guide-to-preventing-tinnitus" },
+      "alsoOn": [],
+      "placement": "auto"
+    },
+    {
       "slug": "masking-breathing-5min",
       "id": "O5uCEwgOwvM",
       "kind": "session",
