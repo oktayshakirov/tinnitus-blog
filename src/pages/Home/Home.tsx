@@ -10,7 +10,8 @@ import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import NextLink from 'next/link';
-import { allSessions } from '@lib/videos';
+import { allSessions, feedVideos } from '@lib/videos';
+import VideoCard from '@components/VideoCard';
 import {
   StyledContainer,
   StyledHeadingContainer,
@@ -18,10 +19,13 @@ import {
   StyledTabContainer,
   StyledTextContainer,
   StyledGrid,
+  StyledVideoGrid,
 } from './Home.styled';
 import { ArticleMeta } from '@types';
 import AdComponent from '@components/AdComponent';
 import ArticleCard from '@components/ArticleCard';
+
+const HOME_VIDEO_COUNT = 3;
 
 type HomeProps = {
   latestPosts: ArticleMeta[];
@@ -36,8 +40,10 @@ const Home = ({
   featuredPosts,
   mostPopularPosts,
 }: HomeProps) => {
-  // The registry is bundled, so this is a build-time constant - no prop needed.
+  // The registry is bundled, so these are build-time constants - no prop needed.
   const hasSessions = allSessions().length > 0;
+  // Matches the rows above it, three across on a desktop.
+  const videos = feedVideos().slice(0, HOME_VIDEO_COUNT);
 
   return (
     <>
@@ -144,6 +150,37 @@ const Home = ({
             </Grid>
           </StyledTabContainer>
         </Container>
+        {videos.length > 0 && (
+          <Container>
+            <StyledTabContainer>
+              <Typography gutterBottom variant="h4" align="center">
+                Watch:
+              </Typography>
+              <StyledVideoGrid>
+                {videos.map((video) => (
+                  // The card links to /videos rather than loading a player
+                  // here: three iframes on the home page is exactly the
+                  // third-party weight the facade elsewhere exists to avoid.
+                  <VideoCard key={video.id} video={video} href="/videos" />
+                ))}
+              </StyledVideoGrid>
+              <StyledTextContainer>
+                <Typography component="h2" variant="h6" align="center">
+                  <NextLink href="/videos" passHref>
+                    <Button
+                      size="large"
+                      variant="text"
+                      sx={{ color: 'white', borderColor: 'white' }}
+                      endIcon={<DoubleArrowRoundedIcon />}
+                    >
+                      Show All Videos
+                    </Button>
+                  </NextLink>
+                </Typography>
+              </StyledTextContainer>
+            </StyledTabContainer>
+          </Container>
+        )}
         <Container>
           <AdComponent />
         </Container>

@@ -68,8 +68,9 @@ export const getPageVideo = (
   type: VideoTargetType,
   slug: string
 ): SiteVideo | null =>
-  VIDEOS.find((video) => video.kind !== 'session' && onPage(video, type, slug)) ??
-  null;
+  VIDEOS.find(
+    (video) => video.kind !== 'session' && onPage(video, type, slug)
+  ) ?? null;
 
 /**
  * Every sound-therapy session cut from one /zen album, shortest first. The
@@ -88,6 +89,25 @@ export const allSessions = (): SiteVideo[] =>
     (a, b) => a.seconds - b.seconds
   );
 
+/**
+ * Everything the /videos hub lists - article explainers and sound-therapy
+ * sessions together, newest first.
+ *
+ * Shorts are deliberately left out: a one-minute vertical clip makes a bad
+ * 16:9 card, and it has no page of its own to send anybody to.
+ */
+export const feedVideos = (): SiteVideo[] =>
+  VIDEOS.filter((video) => video.kind !== 'short').sort((a, b) =>
+    a.uploadDate < b.uploadDate ? 1 : -1
+  );
+
+/**
+ * The page a video came from - the article for an explainer, the sound album
+ * for a session. Used for the "read the article" link under a feed card.
+ */
+export const videoSourceHref = (video: SiteVideo): string | null =>
+  video.target ? `/${video.target.type}/${video.target.slug}` : null;
+
 // 160 -> "2:40". The registry also carries ISO 8601 `duration`, but that is for
 // schema, not for humans.
 export const formatDuration = (seconds: number): string => {
@@ -103,8 +123,8 @@ export const formatDuration = (seconds: number): string => {
  *
  * Note what this does *not* buy: since Google's August 2023 change the video
  * rich result is shown mainly where video is the page's main content, so an
- * article with a supplementary embed generally does not qualify. Sound-therapy
- * sessions on /zen are the exception - there the video really is the content.
+ * article with a supplementary embed generally does not qualify. /videos and
+ * /zen/videos are the exception - there the video really is the content.
  */
 export const videoObjectSchema = (video: SiteVideo | null, domain: string) => {
   if (!video) return null;
