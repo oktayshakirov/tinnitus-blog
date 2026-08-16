@@ -1,3 +1,4 @@
+import { MouseEvent, useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -14,6 +15,7 @@ import {
   StyledMeta,
   StyledChapters,
   StyledTimestamp,
+  StyledToggle,
   StyledTranscript,
   StyledRelated,
 } from './VideoSingle.styled';
@@ -37,6 +39,32 @@ export type Props = {
 const VideoSingle = ({ video, related }: Props) => {
   const sourceHref = videoSourceHref(video);
   const chapters = video.chapters ?? [];
+  const words = chapters.reduce(
+    (total, chapter) => total + chapter.text.split(/\s+/).length,
+    0
+  );
+
+  const transcriptId = `transcript-${video.slug}`;
+  const [transcriptOpen, setTranscriptOpen] = useState(false);
+  const [pendingJump, setPendingJump] = useState<number | null>(null);
+
+  // A chapter link points into the transcript, so it has to open it first, and
+  // the jump has to wait for that: while collapsed the target has no box to
+  // scroll to. Hence the effect rather than the browser's own anchor handling.
+  useEffect(() => {
+    if (pendingJump === null) return;
+    document
+      .getElementById(`t-${pendingJump}`)
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setPendingJump(null);
+  }, [pendingJump]);
+
+  const jumpToChapter =
+    (start: number) => (event: MouseEvent<HTMLAnchorElement>) => {
+      event.preventDefault();
+      setTranscriptOpen(true);
+      setPendingJump(start);
+    };
 
   return (
     <>
@@ -71,7 +99,10 @@ const VideoSingle = ({ video, related }: Props) => {
               <StyledChapters>
                 {chapters.map((chapter) => (
                   <li key={chapter.start}>
-                    <a href={`#t-${chapter.start}`}>
+                    <a
+                      href={`#t-${chapter.start}`}
+                      onClick={jumpToChapter(chapter.start)}
+                    >
                       <StyledTimestamp>
                         {formatDuration(chapter.start)}
                       </StyledTimestamp>
@@ -81,10 +112,29 @@ const VideoSingle = ({ video, related }: Props) => {
                 ))}
               </StyledChapters>
 
+              {/* Folded away by default. Nobody opens a video page to read
+                  four hundred words, and a wall of narration under the player
+                  buries the article link and the other videos.
+
+                  Hidden with CSS rather than unmounted: the text has to stay
+                  in the served HTML, because being indexable is the entire
+                  point of having a transcript. Google reads collapsed content
+                  the same either way, but it cannot read what was never
+                  rendered. */}
               <Typography component="h2" variant="h6" mb={1}>
                 Transcript
               </Typography>
-              <StyledTranscript>
+              <StyledToggle
+                type="button"
+                aria-expanded={transcriptOpen}
+                aria-controls={transcriptId}
+                onClick={() => setTranscriptOpen((open) => !open)}
+              >
+                {transcriptOpen
+                  ? 'Hide the transcript'
+                  : `Read the transcript (${words} words)`}
+              </StyledToggle>
+              <StyledTranscript id={transcriptId} shown={transcriptOpen}>
                 {chapters.map((chapter) => (
                   <div key={chapter.start} id={`t-${chapter.start}`}>
                     <h3>
