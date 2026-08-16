@@ -47,8 +47,42 @@ export const StyledTimestamp = styled('span')`
   `}
 `;
 
-export const StyledTranscript = styled('div')`
+export const StyledToggle = styled('button')`
   ${({ theme }) => css`
+    display: inline-flex;
+    align-items: center;
+    gap: ${theme.spacing(1)};
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    color: ${theme.palette.primary.main};
+
+    &::before {
+      content: '';
+      width: 0.45em;
+      height: 0.45em;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 150ms ease;
+    }
+
+    &[aria-expanded='true']::before {
+      transform: rotate(-135deg);
+    }
+  `}
+`;
+
+export const StyledTranscript = styled('div', {
+  shouldForwardProp: (prop) => prop !== 'shown',
+})<{ shown?: boolean }>`
+  ${({ theme, shown }) => css`
+    /* display:none rather than unmounting - the words have to stay in the
+       served HTML for this page to be worth having. */
+    display: ${shown ? 'block' : 'none'};
     margin-bottom: ${theme.spacing(5)};
 
     h3 {
