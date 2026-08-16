@@ -2,27 +2,25 @@ import NextImage from 'next/image';
 import { FaPlay } from 'react-icons/fa';
 import Icon from '@components/Icon';
 import { SiteVideo, formatDuration } from '@lib/videos';
-import { StyledButtonCard, StyledLinkCard } from './VideoCard.styled';
+import { StyledCard } from './VideoCard.styled';
 
 type Props = {
   video: SiteVideo;
-  /** The /videos hub plays the video in place; pass this and omit `href`. */
-  onPlay?: (video: SiteVideo) => void;
-  /** Whether this card's video is the one currently playing. */
-  active?: boolean;
-  /** The home row sends the click to /videos rather than loading a player. */
-  href?: string;
 };
 
 /**
- * Poster card for a video feed. Still a facade - the poster is our own WebP and
- * nothing reaches Google until somebody asks for the player.
+ * Feed card. Links to /videos/<slug> rather than out to YouTube: that page has
+ * the player anyway, plus the transcript and the link back to the article, so
+ * sending the click to YouTube only gives the view away.
+ *
+ * The poster is our own WebP and nothing is requested from Google here, which
+ * is what keeps a page of twelve of these cheap.
  */
-const VideoCard = ({ video, onPlay, active = false, href }: Props) => {
+const VideoCard = ({ video }: Props) => {
   const length = formatDuration(video.seconds);
 
-  const inner = (
-    <>
+  return (
+    <StyledCard href={`/videos/${video.slug}`}>
       <span className="video-poster">
         <NextImage
           src={video.poster}
@@ -37,21 +35,7 @@ const VideoCard = ({ video, onPlay, active = false, href }: Props) => {
         {length && <span className="video-length">{length}</span>}
       </span>
       <span className="video-title">{video.title}</span>
-    </>
-  );
-
-  if (href) {
-    return <StyledLinkCard href={href}>{inner}</StyledLinkCard>;
-  }
-
-  return (
-    <StyledButtonCard
-      active={active}
-      onClick={() => onPlay?.(video)}
-      aria-label={`Play video: ${video.title}${length ? ` (${length})` : ''}`}
-    >
-      {inner}
-    </StyledButtonCard>
+    </StyledCard>
   );
 };
 

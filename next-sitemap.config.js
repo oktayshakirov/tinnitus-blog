@@ -72,9 +72,10 @@ const config = {
     } else if (path.startsWith('/blog')) {
       priority = 0.8;
       changefreq = 'weekly';
-    } else if (path === '/videos') {
-      // The site-wide video hub. Like /zen/videos its main content is video,
-      // which is what Google asks for before a video result is on the table.
+    } else if (path.startsWith('/videos')) {
+      // The video feed and the page per video. Like /zen/videos their main
+      // content is video, which is what Google asks for before a video result
+      // is on the table.
       priority = 0.8;
       changefreq = 'weekly';
     } else if (path === '/zen/videos') {

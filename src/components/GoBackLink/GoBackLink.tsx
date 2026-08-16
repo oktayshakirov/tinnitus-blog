@@ -16,8 +16,10 @@ const GoBackLink = ({ option = 'blog' }) => {
     option === 'zen'
       ? { href: '/zen', text: 'All Sounds' }
       : option === 'authors'
-        ? { href: '/authors', text: 'All Authors' }
-        : { href: '/blog', text: 'All Posts' };
+      ? { href: '/authors', text: 'All Authors' }
+      : option === 'videos'
+      ? { href: '/videos', text: 'All Videos' }
+      : { href: '/blog', text: 'All Posts' };
 
   return (
     <NoSsr>

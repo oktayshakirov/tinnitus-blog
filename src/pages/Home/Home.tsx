@@ -10,7 +10,7 @@ import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import NextLink from 'next/link';
-import { allSessions, feedVideos } from '@lib/videos';
+import { allSessions, longVideos } from '@lib/videos';
 import VideoCard from '@components/VideoCard';
 import {
   StyledContainer,
@@ -43,7 +43,7 @@ const Home = ({
   // The registry is bundled, so these are build-time constants - no prop needed.
   const hasSessions = allSessions().length > 0;
   // Matches the rows above it, three across on a desktop.
-  const videos = feedVideos().slice(0, HOME_VIDEO_COUNT);
+  const videos = longVideos().slice(0, HOME_VIDEO_COUNT);
 
   return (
     <>
@@ -158,10 +158,7 @@ const Home = ({
               </Typography>
               <StyledVideoGrid>
                 {videos.map((video) => (
-                  // The card links to /videos rather than loading a player
-                  // here: three iframes on the home page is exactly the
-                  // third-party weight the facade elsewhere exists to avoid.
-                  <VideoCard key={video.id} video={video} href="/videos" />
+                  <VideoCard key={video.id} video={video} />
                 ))}
               </StyledVideoGrid>
               <StyledTextContainer>
