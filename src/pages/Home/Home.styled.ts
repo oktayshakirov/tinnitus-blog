@@ -91,6 +91,24 @@ export const StyledTextContainer = styled(Container)`
   `}
 `;
 
+// The article rows use MUI Grid because ArticleCard stretches to fill a row;
+// video cards are fixed 16:9, so a plain grid is enough.
+export const StyledVideoGrid = styled('div')`
+  ${({ theme }) => css`
+    display: grid;
+    gap: ${theme.spacing(3)};
+    grid-template-columns: 1fr;
+
+    ${theme.breakpoints.up('sm')} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    ${theme.breakpoints.up('md')} {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  `}
+`;
+
 export const StyledGrid = styled(Grid)`
   ${({}) => css`
     display: flex;

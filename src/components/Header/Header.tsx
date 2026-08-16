@@ -35,6 +35,9 @@ const Header = () => {
                 <Link href="/zen">Sounds</Link>
               </li>
               <li>
+                <Link href="/videos">Videos</Link>
+              </li>
+              <li>
                 <Link href="/tags">Tags</Link>
               </li>
               <li>
