@@ -14,7 +14,7 @@ import {
 
 type Props = {
   sessions: SiteVideo[];
-  /** Defaults to "Video sessions"; the /zen/videos listing passes album names. */
+  /** Defaults to "Video sessions"; the /videos listing passes album names. */
   heading?: ReactNode;
   /** The listing shows the usage note once at the top, not per album. */
   showNote?: boolean;

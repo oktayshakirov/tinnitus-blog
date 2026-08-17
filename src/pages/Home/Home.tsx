@@ -228,7 +228,7 @@ const Home = ({
                   </Button>
                 </NextLink>
                 {hasSessions && (
-                  <NextLink href="/zen/videos" passHref>
+                  <NextLink href="/videos" passHref>
                     <Button
                       size="large"
                       variant="text"

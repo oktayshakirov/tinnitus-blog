@@ -1,2 +1,2 @@
 export { default } from './Videos';
-export type { Props } from './Videos';
+export type { Props, SessionAlbum, VideosTab } from './Videos';
