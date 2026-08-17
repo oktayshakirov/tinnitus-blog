@@ -74,9 +74,44 @@ function readSection(root, section) {
     .filter(Boolean);
 }
 
+/**
+ * Videos, which are not MDX and so cannot come through `readSection`.
+ *
+ * They live in src/data/videos.json because the id, uploadDate and duration
+ * only exist once a video is uploaded. Only long form is listed: those are the
+ * ones with a page at /videos/<slug> for a notification to open. Sound sessions
+ * are a tab on /videos rather than pages of their own, so they are left out.
+ */
+function readVideos(root) {
+  const file = path.join(root, 'src/data/videos.json');
+
+  if (!fs.existsSync(file)) {
+    console.warn(`Skipping missing ${file}`);
+    return [];
+  }
+
+  const { videos = [] } = JSON.parse(fs.readFileSync(file, 'utf8'));
+
+  return videos
+    .filter((video) => video.kind === 'long' && video.slug && video.title)
+    .map((video) => {
+      const publishedAt = parsePublishedAt(video.uploadDate);
+      return {
+        type: 'videos',
+        slug: video.slug,
+        title: video.title,
+        url: `${SITE_URL}/videos/${video.slug}`,
+        date: publishedAt ? publishedAt.toISOString() : null,
+      };
+    });
+}
+
 /** Every published item across every section. */
 function collectContent(root) {
-  return SECTIONS.flatMap((section) => readSection(root, section));
+  return [
+    ...SECTIONS.flatMap((section) => readSection(root, section)),
+    ...readVideos(root),
+  ];
 }
 
 module.exports = { SITE_URL, SECTIONS, collectContent, parsePublishedAt };
