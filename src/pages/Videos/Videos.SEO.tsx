@@ -3,17 +3,22 @@ import JsonLd from '@components/JsonLd';
 import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 import { buildGraph, breadcrumbSchema } from '@lib/schema';
 import { videoObjectSchema, SiteVideo } from '@lib/videos';
+import { SessionAlbum } from './Videos';
 
 type Props = {
   videos: SiteVideo[];
+  albums: SessionAlbum[];
 };
 
 export const VIDEOS_TITLE = `Tinnitus Videos | ${DOMAIN_NAME}`;
 export const VIDEOS_DESCRIPTION =
-  'Short explainers on what tinnitus is, what causes it and how to live with it - each one with chapters and a full transcript, and the article it came from.';
+  'Short explainers on what tinnitus is, what causes it and how to live with it, plus masking and paced-breathing sound sessions you can play straight through.';
 
-const VideosSEO = ({ videos }: Props) => {
+const VideosSEO = ({ videos, albums }: Props) => {
   const canonical = `${DOMAIN}/videos`;
+  // Both kinds are on this page now, so both belong in the list. Sessions used
+  // to be described by /zen/videos, which no longer exists.
+  const all = [...videos, ...albums.flatMap((album) => album.sessions)];
 
   const graph = buildGraph([
     // Video is the main content here, so the VideoObjects are the page rather
@@ -23,8 +28,8 @@ const VideosSEO = ({ videos }: Props) => {
       '@type': 'ItemList',
       name: VIDEOS_TITLE,
       url: canonical,
-      numberOfItems: videos.length,
-      itemListElement: videos.map((video, index) => ({
+      numberOfItems: all.length,
+      itemListElement: all.map((video, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         item: videoObjectSchema(video, DOMAIN),

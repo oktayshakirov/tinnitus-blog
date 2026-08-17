@@ -55,7 +55,7 @@ const Zen = ({
               />
               SOUNDS
             </Headline>
-            <ListingTabs basePath="/zen" active={variant} showVideos />
+            <ListingTabs basePath="/zen" active={variant} />
             <ArticlesGrid articles={zenMeta} />
             {pageCount > 1 && (
               <StyledPagination
