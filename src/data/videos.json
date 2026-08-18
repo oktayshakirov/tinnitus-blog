@@ -9,6 +9,70 @@
   },
   "videos": [
     {
+      "slug": "tinnitus-and-sleep",
+      "id": "VdblYzRqvog",
+      "kind": "long",
+      "title": "How to Sleep With Tinnitus: Why Is It Worse at Night?",
+      "description": "Your tinnitus did not get louder at bedtime - your room got quieter. Here is what to put in the room, and the volume setting almost everybody gets wrong.",
+      "uploadDate": "2026-08-18T15:08:42Z",
+      "duration": "PT4M1S",
+      "seconds": 241,
+      "poster": "/images/videos/tinnitus-and-sleep.webp",
+      "target": {
+        "type": "blog",
+        "slug": "tinnitus-and-sleep"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Two in the morning",
+          "text": "It is two in the morning. The house is silent. And your ears are not. All day it was manageable. Now it is the only thing in the room. So you lie there waiting for it to fade so you can finally sleep. Here is the part that changes it: your tinnitus did not get louder tonight. By the end of this you will know exactly why nights are worse, what to put in the room, and the one setting almost everybody gets wrong."
+        },
+        {
+          "start": 24,
+          "title": "Your room got quieter",
+          "text": "So start with what actually changed. Tinnitus is not heard on its own. It is heard against whatever else you can hear. All day there is traffic outside, people talking, a fridge humming in the next room. None of that is loud. All of it is covering part of the sound. Then you turn everything off. A dark bedroom at eleven at night is the quietest place most people ever spend time in. So nothing got louder. The thing it was competing with went away."
+        },
+        {
+          "start": 51,
+          "title": "What the day was doing for you",
+          "text": "So what was the day actually doing for you? Look at the two rooms side by side and the whole thing stops being mysterious. Traffic and voices outside. Appliances running. A task in front of you. Silence. Nothing to do but listen. And a whole day of tiredness behind you. Same ears. Same sound. Completely different experience of it."
+        },
+        {
+          "start": 73,
+          "title": "So why does chasing quiet backfire?",
+          "text": "So why does chasing quiet backfire? Which means the obvious move is the wrong one. If the sound is worse when it is quiet, the instinct is to make it quieter still. Earplugs. Thicker curtains. A room with nothing in it. Every one of those removes more of the sound that was covering it. Earplugs make it stand out more. A soundproofed bedroom does the same. Lying there waiting it out teaches your brain that bed is where you fight it. Low, steady sound in the room is the one that goes the other way. So stop trying to sleep in silence. Silence is the problem, not the goal."
+        },
+        {
+          "start": 110,
+          "title": "What to put in the room",
+          "text": "So what do you actually put in the room? Not music with words in it. Something steady that your attention slides off. White noise, if your tinnitus is a high ring. Brown noise, if it sits lower. Or rain, a fan, waves - if hiss irritates you. And it goes in the room, on a speaker, not in your ears. Earbuds worn for eight hours irritate the ear canal, and sealing the ear blocks the ambient sound you are adding on purpose."
+        },
+        {
+          "start": 136,
+          "title": "The setting almost everybody gets wrong",
+          "text": "And here is the setting almost everybody gets wrong. The instinct is to turn it up until the ringing disappears. Do the opposite. Set it just below your tinnitus. Quiet enough that you can still faintly hear the ringing underneath. Just below. That is the whole trick. And if you are still awake after about twenty minutes - get up. Read somewhere dim until you are sleepy, then go back. Lying there frustrated is the habit worth breaking."
+        },
+        {
+          "start": 163,
+          "title": "Tonight, in order",
+          "text": "So what does tonight actually look like? Four things, in this order. Put steady sound in the room, on a speaker. Set it just below the ringing. Out of bed if you are still awake after twenty minutes. And keep your wake-up time fixed, whatever happened. That last one is the one people drop. Sleeping in after a bad night feels like mercy and reliably wrecks the following one."
+        },
+        {
+          "start": 187,
+          "title": "When it is more than a bad night",
+          "text": "And when is it more than a bad night? Sound in the room fixes the contrast. It does not fix everything. If sleeplessness has become a nightly pattern, talking therapy for insomnia is the treatment with the strongest evidence behind it. And if the tinnitus is new, or getting louder, or only in one ear, or comes with dizziness or hearing loss - that is a reason to see an audiologist or a sleep specialist. Not to panic. To get the cause named."
+        },
+        {
+          "start": 215,
+          "title": "Give the room something to say",
+          "text": "So where does that leave tonight? You were never trying to sleep through a loud sound. You were trying to sleep in a room with nothing else in it. So give the room something quiet to do. Just below the ringing. Not on top of it. Your tinnitus did not get louder tonight. Your room got quieter. And a room is the easier one to change. If that helped, subscribe for more videos like this one."
+        }
+      ]
+    },
+    {
       "slug": "does-tinnitus-go-away",
       "id": "RR_qU3FA0OY",
       "kind": "long",
@@ -18,7 +82,10 @@
       "duration": "PT2M40S",
       "seconds": 160,
       "poster": "/images/videos/does-tinnitus-go-away.webp",
-      "target": { "type": "blog", "slug": "does-tinnitus-go-away" },
+      "target": {
+        "type": "blog",
+        "slug": "does-tinnitus-go-away"
+      },
       "alsoOn": [],
       "placement": "auto",
       "chapters": [
@@ -134,7 +201,10 @@
       "duration": "PT5M",
       "seconds": 300,
       "poster": "/images/videos/masking-breathing-5min.webp",
-      "target": { "type": "zen", "slug": "white-noise" },
+      "target": {
+        "type": "zen",
+        "slug": "white-noise"
+      },
       "alsoOn": [],
       "placement": "auto"
     },
