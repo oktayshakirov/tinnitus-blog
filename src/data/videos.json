@@ -221,6 +221,60 @@
       "target": null,
       "alsoOn": [],
       "placement": "none"
+    },
+    {
+      "slug": "airpods-and-tinnitus",
+      "id": "xRn9taQ11_E",
+      "kind": "long",
+      "title": "Can AirPods Cause Tinnitus?",
+      "description": "AirPods do not cause tinnitus - volume does, and every three decibels halves how long you can safely listen.",
+      "uploadDate": "2026-08-19T22:33:10Z",
+      "duration": "PT4M2S",
+      "seconds": 242,
+      "poster": "/images/videos/airpods-and-tinnitus.webp",
+      "target": {
+        "type": "blog",
+        "slug": "airpods-and-tinnitus"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "The ringing you forgot about",
+          "text": "Your ears rang after listening to music. Maybe after a flight. Maybe after a long train ride with the volume up. It faded within the hour. So you forgot about it. Do not. That is the whole warning, and almost everybody throws it away. Your AirPods are not giving you tinnitus. The volume is. And there is a number for it that almost nobody has been told. Stay to the end and you will know how loud you can play them, and for exactly how long. Plus the ten minutes of settings that cap it for good."
+        },
+        {
+          "start": 31,
+          "title": "It was never the earbud",
+          "text": "Well, no headphone is inherently dangerous. And no headphone is inherently safe. What damages hearing is sound energy over time. Level, multiplied by duration. A safe week is about eighty decibels, spread across forty hours. Here is the part that catches people. Every three decibels louder halves the time you can listen safely. Three decibels is one nudge on a slider. It costs you half your week. That is not a gentle curve. It collapses."
+        },
+        {
+          "start": 62,
+          "title": "A concert ends. Your commute does not",
+          "text": "Picture a concert. It is loud, and then you go home. Two hours, once or twice a year. That is the one everybody worries about. Now put the two side by side. Take a concert. Two hours, and it is over. You step outside into quiet. Twice a year, if that. Now compare that with your earbuds. Eight hours, most days. Sealed into the ear canal. And turned up to beat the traffic. So the earbud is not more dangerous than the speaker. You just never take it out. Eight hours at a moderate volume can carry more total exposure than twenty minutes at a loud one."
+        },
+        {
+          "start": 98,
+          "title": "What the volume actually costs",
+          "text": "Think of safe listening as a weekly budget. Eighty decibels, forty hours. Eighty six, ten hours. Ninety two, under three. Ninety eight, under one. Ninety two is the one that catches people. That is not an unreasonable volume. It is just music, enjoyable, over a train. Two commutes a day and your week is spent by Wednesday. Which is why noise cancellation helps here. You stop competing with the engine, so the volume you pick is lower."
+        },
+        {
+          "start": 127,
+          "title": "Why does it feel worse with them in?",
+          "text": "Usually not. Though it will absolutely feel that way. A silicone tip seals your ear canal. And noise cancellation strips out the low hum you were leaning on without knowing it. So here is what is really happening. Your tinnitus did not grow. Everything it was hiding behind went away. Some people feel a pressure sensation too. That is worth switching out of. It is not damaging anything. So use transparency mode indoors. Save noise cancellation for genuinely loud places, where it stops you reaching for the volume."
+        },
+        {
+          "start": 163,
+          "title": "Ten minutes of settings, once",
+          "text": "Five changes. Ten minutes. Once. Cap the volume in headphone safety. Check your seven day exposure. Take the hearing test. Noise cancellation outside, transparency mode inside. And at night, a speaker, not an earbud. That hearing test matters more than it looks. Five minutes, from your own phone. Amplification tuned to whatever it finds. And a log of how loud you really listen. In some countries that middle one is licensed as an actual hearing aid. But be clear about what that is. None of it treats tinnitus. What it does is find hearing loss. And most lasting tinnitus sits beside some hearing loss, which most people have never been tested for."
+        },
+        {
+          "start": 205,
+          "title": "When is it not a settings problem?",
+          "text": "Because some of this is not about volume at all. New, and only in one ear. Pulsing in time with your heartbeat. Arriving with hearing loss or dizziness. Or following one loud night, and not settling. Any of those is an appointment, not a setting. Sudden hearing loss especially. That one is treated in days, not weeks. Because the earbuds were never the villain. The volume was. And the volume is the one part you own. If that was useful, subscribe for more videos like this one."
+        }
+      ]
     }
   ]
 }
