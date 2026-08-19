@@ -1,13 +1,16 @@
 // Mirrors published content into Firestore, which is what makes the mobile app
 // send a "New Post" push notification.
 //
-// This is the *fast path*, run from a machine that has the repo checked out
-// (`npm run sync-content`) right after a deploy goes live. It is not required:
-// the app also runs a scheduled reconciler that polls
-// https://www.tinnitushelp.me/content-index.json and picks up anything that was
-// published without it, whatever tooling or machine the publishing was done
-// from. Running this just means the notification arrives in seconds instead of
-// waiting for the next reconciler tick.
+// It runs from .github/workflows/notify-new-content.yml on push to main, and
+// can also be run by hand from a checkout (`npm run sync-content`) once a
+// deploy is live.
+//
+// There is no other writer. An earlier version of this comment described a
+// scheduled reconciler in the app that polls
+// https://www.tinnitushelp.me/content-index.json as a backstop - it was never
+// built, so if this script does not run for a piece of content, that content
+// never reaches Firestore and never notifies. Keep the workflow's `paths:`
+// filter in step with every section in src/lib/contentIndex.js.
 //
 // It deliberately does NOT run during `next build`. Creating the Firestore
 // document is what fires the notification, and during a build the deployment is
