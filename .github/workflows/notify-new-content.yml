@@ -13,6 +13,10 @@ on:
     branches: [main]
     paths:
       - "content/**"
+      # Videos are not MDX under content/, they are registry entries. Leaving
+      # this out meant adding a video pushed nothing to Firestore and so never
+      # notified.
+      - "src/data/videos.json"
   # Lets a timed-out or failed run be retried by hand without an empty commit.
   workflow_dispatch:
 
