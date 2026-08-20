@@ -9,13 +9,11 @@ interface ViewsCounterProps {
   slug: string;
 }
 
-// The counter occupies its final footprint from first paint and fades in as a
-// single unit once the count arrives, so nothing around it shifts and there is
-// no half-rendered state where the icon sits next to an empty space.
-const StyledViewsCounter = styled('p', {
-  shouldForwardProp: (prop) => prop !== 'isVisible',
-})<{ isVisible: boolean }>`
-  ${({ theme, isVisible }) => css`
+// The counter keeps its footprint from first paint: the eye icon is always
+// there and a skeleton bar stands in for the number until the count arrives, so
+// there is never an empty gap and nothing around it shifts.
+const StyledViewsCounter = styled('p')`
+  ${({ theme }) => css`
     color: ${theme.palette.text.secondary};
     margin: 0;
     display: flex;
@@ -23,13 +21,47 @@ const StyledViewsCounter = styled('p', {
     gap: ${theme.spacing(0.5)};
     min-height: ${theme.spacing(3)};
     min-width: 9ch;
-    opacity: ${isVisible ? 1 : 0};
-    transition: opacity 200ms ease-in;
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
   `}
+`;
+
+const ViewsSkeleton = styled('span')`
+  height: 0.7em;
+  width: 5.5ch;
+  border-radius: 999px;
+  background-color: currentColor;
+  opacity: 0.2;
+  animation: views-skeleton-pulse 1.5s ease-in-out infinite;
+
+  @keyframes views-skeleton-pulse {
+    0%,
+    100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.08;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+`;
+
+const ViewsValue = styled('span')`
+  animation: views-fade-in 200ms ease-in both;
+
+  @keyframes views-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 `;
 
 const ViewsCounter = ({ type, slug }: ViewsCounterProps) => {
@@ -119,12 +151,14 @@ const ViewsCounter = ({ type, slug }: ViewsCounterProps) => {
   const hasViews = !isLoading && views !== null;
 
   return (
-    <StyledViewsCounter isVisible={hasViews} aria-hidden={!hasViews}>
-      {hasViews && (
-        <>
-          <Icon icon={FaEye} />
+    <StyledViewsCounter aria-live="polite" aria-busy={!hasViews}>
+      <Icon icon={FaEye} />
+      {hasViews ? (
+        <ViewsValue>
           {views.toLocaleString()} {views === 1 ? 'view' : 'views'}
-        </>
+        </ViewsValue>
+      ) : (
+        <ViewsSkeleton aria-label="Loading views" />
       )}
     </StyledViewsCounter>
   );
