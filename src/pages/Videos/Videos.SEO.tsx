@@ -8,14 +8,19 @@ import { SessionAlbum } from './Videos';
 type Props = {
   videos: SiteVideo[];
   albums: SessionAlbum[];
+  page: number;
 };
 
 export const VIDEOS_TITLE = `Tinnitus Videos | ${DOMAIN_NAME}`;
 export const VIDEOS_DESCRIPTION =
   'Short explainers on what tinnitus is, what causes it and how to live with it, plus masking and paced-breathing sound sessions you can play straight through.';
 
-const VideosSEO = ({ videos, albums }: Props) => {
-  const canonical = `${DOMAIN}/videos`;
+const VideosSEO = ({ videos, albums, page }: Props) => {
+  // Page 1 is reachable as both /videos and /videos/page/1; the canonical
+  // points at /videos so the two are not indexed separately, the same way
+  // /blog does it.
+  const canonical =
+    page > 1 ? `${DOMAIN}/videos/page/${page}` : `${DOMAIN}/videos`;
   // Both kinds are on this page now, so both belong in the list. Sessions used
   // to be described by /zen/videos, which no longer exists.
   const all = [...videos, ...albums.flatMap((album) => album.sessions)];

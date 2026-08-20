@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import PaginationItem from '@mui/material/PaginationItem';
 import Typography from '@mui/material/Typography';
 import Layout from '@components/Layout';
 import Link from '@components/Link';
@@ -10,8 +12,12 @@ import Headline from '@ui/pages/shared/Headline';
 import AdComponent from '@components/AdComponent';
 import MedicalDisclaimer from '@components/MedicalDisclaimer';
 import VideosSEO from './Videos.SEO';
-import { StyledContainer, StyledTabContainer } from '@ui/pages/Zen/Zen.styled';
-import { StyledGrid, StyledTabs, StyledAlbum, StyledNote } from './Videos.styled';
+import {
+  StyledContainer,
+  StyledTabContainer,
+  StyledPagination,
+} from '@ui/pages/Zen/Zen.styled';
+import { StyledTabs, StyledAlbum, StyledNote } from './Videos.styled';
 import { SiteVideo } from '@lib/videos';
 
 export type SessionAlbum = {
@@ -23,6 +29,8 @@ export type SessionAlbum = {
 export type Props = {
   videos: SiteVideo[];
   albums: SessionAlbum[];
+  page: number;
+  pageCount: number;
 };
 
 export type VideosTab = 'explainers' | 'sessions';
@@ -38,14 +46,19 @@ export type VideosTab = 'explainers' | 'sessions';
  *
  * This replaced /zen/videos, which listed the sessions alone.
  */
-const Videos = ({ videos, albums }: Props) => {
+const Videos = ({ videos, albums, page: pageFromUrl, pageCount }: Props) => {
   const [tab, setTab] = useState<VideosTab>('explainers');
+  const [page, setPage] = useState(pageFromUrl);
   const hasSessions = albums.length > 0;
 
+  const handlePageChange = (event: ChangeEvent<unknown>, value: number) => {
+    setPage(value);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <>
-      <VideosSEO videos={videos} albums={albums} />
+      <VideosSEO videos={videos} albums={albums} page={pageFromUrl} />
       <Layout>
         <Container>
           <AdComponent />
@@ -83,11 +96,45 @@ const Videos = ({ videos, albums }: Props) => {
               (videos.length === 0 ? (
                 <Typography>No videos published yet.</Typography>
               ) : (
-                <StyledGrid>
-                  {videos.map((video) => (
-                    <VideoCard key={video.id} video={video} />
-                  ))}
-                </StyledGrid>
+                <>
+                  {/* The same grid /blog lays its cards out on, so a short last
+                      row stays left-aligned rather than centring itself. */}
+                  <Grid container spacing={4}>
+                    {videos.map((video) => (
+                      <Grid
+                        key={video.id}
+                        item
+                        xs={12}
+                        sm={6}
+                        md={4}
+                        sx={{ display: 'flex' }}
+                      >
+                        <VideoCard video={video} />
+                      </Grid>
+                    ))}
+                  </Grid>
+                  {pageCount > 1 && (
+                    <StyledPagination
+                      count={pageCount}
+                      color="primary"
+                      hidePrevButton
+                      hideNextButton
+                      page={page}
+                      onChange={handlePageChange}
+                      renderItem={(item) => (
+                        <PaginationItem
+                          component={Link}
+                          href={
+                            item.page === 1
+                              ? '/videos'
+                              : `/videos/page/${item.page}`
+                          }
+                          {...item}
+                        />
+                      )}
+                    />
+                  )}
+                </>
               ))}
 
             {tab === 'sessions' && (
