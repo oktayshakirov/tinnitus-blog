@@ -2,22 +2,6 @@ import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import { alpha } from '@mui/system/colorManipulator';
 
-export const StyledGrid = styled('div')`
-  ${({ theme }) => css`
-    display: grid;
-    gap: ${theme.spacing(3)};
-    grid-template-columns: 1fr;
-
-    ${theme.breakpoints.up('sm')} {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    ${theme.breakpoints.up('md')} {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  `}
-`;
-
 // Buttons rather than links, because both tabs are one page: the sessions have
 // no route of their own any more. ?tab= still opens either of them.
 export const StyledTabs = styled('div')`
