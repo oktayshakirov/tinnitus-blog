@@ -10,7 +10,6 @@ import VideoCard from '@components/VideoCard';
 import ZenSessions from '@components/ZenSessions';
 import Headline from '@ui/pages/shared/Headline';
 import AdComponent from '@components/AdComponent';
-import MedicalDisclaimer from '@components/MedicalDisclaimer';
 import VideosSEO from './Videos.SEO';
 import {
   StyledContainer,
@@ -160,10 +159,6 @@ const Videos = ({ videos, albums, page: pageFromUrl, pageCount }: Props) => {
                 ))}
               </>
             )}
-
-            <Box pt={4}>
-              <MedicalDisclaimer />
-            </Box>
           </StyledTabContainer>
           <Container>
             <Box pt={3}>

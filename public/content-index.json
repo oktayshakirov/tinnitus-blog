@@ -570,6 +570,13 @@
     },
     {
       "type": "videos",
+      "slug": "airpods-and-tinnitus",
+      "title": "Can AirPods Cause Tinnitus?",
+      "url": "https://www.tinnitushelp.me/videos/airpods-and-tinnitus",
+      "date": "2026-08-19T22:33:10.000Z"
+    },
+    {
+      "type": "videos",
       "slug": "does-tinnitus-go-away",
       "title": "Does Tinnitus Go Away? Temporary vs Chronic Explained",
       "url": "https://www.tinnitushelp.me/videos/does-tinnitus-go-away",
@@ -581,6 +588,13 @@
       "title": "Gaming and Tinnitus: How Loud Is Too Loud?",
       "url": "https://www.tinnitushelp.me/videos/gaming-and-tinnitus",
       "date": "2026-08-16T18:10:43.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "tinnitus-and-sleep",
+      "title": "How to Sleep With Tinnitus: Why Is It Worse at Night?",
+      "url": "https://www.tinnitushelp.me/videos/tinnitus-and-sleep",
+      "date": "2026-08-18T15:08:42.000Z"
     }
   ]
 }
