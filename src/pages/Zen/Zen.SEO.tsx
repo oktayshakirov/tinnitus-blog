@@ -16,7 +16,9 @@ const ZenSEO = ({ page = 1, variant = 'latest' }: Props) => {
     : 'Discover sound therapy for tinnitus relief with calming sounds and white noise. Available on Spotify, YouTube and Apple Music to help mask tinnitus and relax.';
   // Self-canonical: see the note in Blog.SEO.tsx.
   const canonical = popular
-    ? `${DOMAIN}/zen/popular`
+    ? page === 1
+      ? `${DOMAIN}/zen/popular`
+      : `${DOMAIN}/zen/popular/page/${page}`
     : page === 1
     ? `${DOMAIN}/zen`
     : `${DOMAIN}/zen/page/${page}`;

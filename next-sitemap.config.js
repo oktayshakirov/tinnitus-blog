@@ -37,7 +37,7 @@ const config = {
       return null;
     }
 
-    if (path.match(/\/(blog|zen|videos)\/page\/\d+$/)) {
+    if (path.match(/\/(blog|zen|videos)(\/popular)?\/page\/\d+$/)) {
       return null;
     }
 

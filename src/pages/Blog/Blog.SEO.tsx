@@ -18,7 +18,9 @@ const BlogSEO = ({ page = 1, variant = 'latest' }: Props) => {
   // pointing at /blog - a canonical to a page with different content is a hint
   // Google ignores, and it put the page in the sitemap as non-canonical.
   const canonical = popular
-    ? `${DOMAIN}/blog/popular`
+    ? page === 1
+      ? `${DOMAIN}/blog/popular`
+      : `${DOMAIN}/blog/popular/page/${page}`
     : page === 1
     ? `${DOMAIN}/blog`
     : `${DOMAIN}/blog/page/${page}`;

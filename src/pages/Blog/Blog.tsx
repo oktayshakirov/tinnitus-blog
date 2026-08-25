@@ -36,6 +36,8 @@ const Blog = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const listBasePath = variant === 'popular' ? '/blog/popular' : '/blog';
+
   return (
     <>
       <BlogSEO page={pageFromUrl} variant={variant} />
@@ -69,7 +71,9 @@ const Blog = ({
                   <PaginationItem
                     component={Link}
                     href={
-                      item.page === 1 ? '/blog' : `/blog/page/${item.page}`
+                      item.page === 1
+                        ? listBasePath
+                        : `${listBasePath}/page/${item.page}`
                     }
                     {...item}
                   />

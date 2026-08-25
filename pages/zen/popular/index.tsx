@@ -1,31 +1,11 @@
+import PopularZenPage, {
+  getStaticProps as pageStaticProps,
+} from './page/[page]';
 import { GetStaticProps } from 'next';
-import Zen from '@ui/pages/Zen';
-import { getAllZen } from '@lib/mdx';
-import { rankByViews } from '@lib/popularity';
-import { ArticleMeta } from '@types';
 
-export type Props = {
-  zenMeta: ArticleMeta[];
-};
-
-// Unpaginated, for the same reason as /blog/popular.
-const TOP_COUNT = 6;
-
-const PopularZenPage = ({ zenMeta }: Props) => (
-  <Zen zenMeta={zenMeta} page={1} pageCount={1} variant="popular" />
-);
-
-export const getStaticProps: GetStaticProps = async () => {
-  const ranked = rankByViews(
-    getAllZen().map((item) => item.meta),
-    'zen'
-  );
-
-  return {
-    props: {
-      zenMeta: ranked.slice(0, TOP_COUNT),
-    },
-  };
-};
+// /zen/popular is page 1 of the ranked listing; the paginated pages live
+// under /zen/popular/page/N and share this component.
+export const getStaticProps: GetStaticProps = (context) =>
+  pageStaticProps({ ...context, params: { page: '1' } });
 
 export default PopularZenPage;

@@ -8,9 +8,9 @@ type Props = {
   active: ListingTab;
 };
 
-// "Latest" is the paginated, date-ordered listing; "Most popular" is a single
-// ranked page. Kept as separate routes rather than one route with a sort
-// parameter so they all stay static and keep their own URLs.
+// "Latest" is the date-ordered listing; "Most popular" is the same set ranked
+// by views. Both are paginated. Kept as separate routes rather than one route
+// with a sort parameter so they all stay static and keep their own URLs.
 const ListingTabs = ({ basePath, active }: Props) => (
   <StyledTabs aria-label="Sort order">
     <Link

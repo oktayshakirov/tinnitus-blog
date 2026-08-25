@@ -36,6 +36,8 @@ const Zen = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const listBasePath = variant === 'popular' ? '/zen/popular' : '/zen';
+
   return (
     <>
       <ZenSEO page={pageFromUrl} variant={variant} />
@@ -69,7 +71,9 @@ const Zen = ({
                   <PaginationItem
                     component={Link}
                     href={
-                      item.page === 1 ? '/zen' : `/zen/page/${item.page}`
+                      item.page === 1
+                        ? listBasePath
+                        : `${listBasePath}/page/${item.page}`
                     }
                     {...item}
                   />
