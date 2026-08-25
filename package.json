@@ -2,6 +2,9 @@
   "name": "tinnitushelp.me",
   "version": "0.1.0",
   "private": true,
+  "resolutions": {
+    "uuid": "^14.0.2"
+  },
   "scripts": {
     "start": "node scripts/generateContentIndex.js && node scripts/generateViews.js && next dev",
     "build": "node scripts/generateContentIndex.js && node scripts/generateViews.js && next build",
