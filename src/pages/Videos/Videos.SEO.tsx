@@ -4,6 +4,7 @@ import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 import { buildGraph, breadcrumbSchema } from '@lib/schema';
 import { videoObjectSchema, SiteVideo } from '@lib/videos';
 import { SessionAlbum } from './Videos';
+import { paginatedTitle, paginatedDescription } from '@lib/pagination';
 
 type Props = {
   videos: SiteVideo[];
@@ -21,6 +22,8 @@ const VideosSEO = ({ videos, albums, page }: Props) => {
   // /blog does it.
   const canonical =
     page > 1 ? `${DOMAIN}/videos/page/${page}` : `${DOMAIN}/videos`;
+  const title = paginatedTitle(VIDEOS_TITLE, page);
+  const description = paginatedDescription(VIDEOS_DESCRIPTION, page);
   // Both kinds are on this page now, so both belong in the list. Sessions used
   // to be described by /zen/videos, which no longer exists.
   const all = [...videos, ...albums.flatMap((album) => album.sessions)];
@@ -49,13 +52,13 @@ const VideosSEO = ({ videos, albums, page }: Props) => {
   return (
     <>
       <NextSeo
-        title={VIDEOS_TITLE}
-        description={VIDEOS_DESCRIPTION}
+        title={title}
+        description={description}
         canonical={canonical}
         openGraph={{
           url: canonical,
-          title: VIDEOS_TITLE,
-          description: VIDEOS_DESCRIPTION,
+          title: title,
+          description: description,
           images: [{ url: `${DOMAIN}${DEFAULT_OG_IMAGE}`, type: 'image/jpeg' }],
           siteName: DOMAIN_NAME,
         }}

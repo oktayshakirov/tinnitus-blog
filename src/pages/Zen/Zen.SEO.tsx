@@ -1,5 +1,10 @@
 import { NextSeo } from 'next-seo';
 import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
+import {
+  paginatedTitle,
+  paginatedDescription,
+  isRedundantSortPage,
+} from '@lib/pagination';
 
 type Props = {
   page?: number;
@@ -8,12 +13,14 @@ type Props = {
 
 const ZenSEO = ({ page = 1, variant = 'latest' }: Props) => {
   const popular = variant === 'popular';
-  const title = popular
+  const baseTitle = popular
     ? `Most Popular Sound Therapy Tracks | ${DOMAIN_NAME}`
     : `${DOMAIN_NAME} | Sound Therapy - Relaxing Sounds for Tinnitus Relief`;
-  const description = popular
+  const baseDescription = popular
     ? 'The most-played sound therapy tracks on Tinnitus Help - the white noise, nature and calming sounds listeners use most to mask tinnitus.'
     : 'Discover sound therapy for tinnitus relief with calming sounds and white noise. Available on Spotify, YouTube and Apple Music to help mask tinnitus and relax.';
+  const title = paginatedTitle(baseTitle, page);
+  const description = paginatedDescription(baseDescription, page);
   // Self-canonical: see the note in Blog.SEO.tsx.
   const canonical = popular
     ? page === 1
@@ -29,6 +36,8 @@ const ZenSEO = ({ page = 1, variant = 'latest' }: Props) => {
       title={title}
       description={description}
       canonical={canonical}
+      noindex={isRedundantSortPage(variant, page)}
+      nofollow={false}
       openGraph={{
         url: canonical,
         title: title,
