@@ -9,6 +9,60 @@
   },
   "videos": [
     {
+      "slug": "tinnitus-myths-vs-reality",
+      "id": "5RFJeJ1ZbWc",
+      "kind": "long",
+      "title": "Tinnitus Myths vs Reality: What Is Actually True?",
+      "description": "Only loud noise causes it. It always goes away. There is nothing you can do. Here is what the evidence actually says about the most common tinnitus myths.",
+      "uploadDate": "2026-08-25T23:51:10Z",
+      "duration": "PT3M10S",
+      "seconds": 190,
+      "poster": "/images/videos/tinnitus-myths-vs-reality.webp",
+      "target": {
+        "type": "blog",
+        "slug": "tinnitus-myths-vs-reality"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "What you have heard",
+          "text": "Almost everything you have been told about tinnitus is only half right. Loud noise causes it. It goes away on its own. And there is nothing you can do about it. One of those is partly true. The other two are just wrong. So here is what the evidence actually says, myth by myth."
+        },
+        {
+          "start": 16,
+          "title": "Is loud noise the only cause?",
+          "text": "So, myth one. Is loud noise the only thing that causes tinnitus? A concert. A shooting range. Headphones turned up too high. That is the story almost everyone knows. It is a real risk. But it is one cause among several. Here is what else can set tinnitus off. An ear infection. Ordinary aging. Certain medications. Or a health condition, like high blood pressure or a jaw disorder. So the loud noise story is not wrong. It is just not the whole story."
+        },
+        {
+          "start": 45,
+          "title": "Does tinnitus always go away on its own?",
+          "text": "Myth two. Does tinnitus always go away on its own? Sometimes it does. A loud night out, then a day of quiet, and the ringing fades. But for a lot of people, it does not work that way. Compare the two. Take temporary tinnitus first. It follows one loud event. It settles within hours or days. And the hearing system recovers on its own. Now compare that with chronic tinnitus. It needs no single loud trigger. It can persist for months or years. And it is often tied to hearing loss or another underlying cause. Either way, if it has been more than a few weeks, or it genuinely bothers you, that is worth getting checked."
+        },
+        {
+          "start": 83,
+          "title": "Is there really nothing you can do?",
+          "text": "Myth three. Is there really nothing you can do? There is currently no single cure. That part of the myth is true. But no cure is not the same as no options. Here is the actual playbook, and it is five approaches. Hearing aids, if hearing loss is part of the picture. Sound therapy, to make the tinnitus less noticeable. Cognitive behavioral therapy, for the distress around it. Medication, for the anxiety or the sleep it may be feeding. And everyday habits, around stress and sleep. None of that erases it. All of it can shrink its impact."
+        },
+        {
+          "start": 116,
+          "title": "Is tinnitus really just annoying?",
+          "text": "Myth four. Is tinnitus really just annoying? For some people, it barely registers. For a lot of others, it is not minor at all. It is not just a ringing in the ears. It can wreck a night of sleep, make it hard to concentrate, and wear down your mood, day after day. Dismissing it does not make it smaller. It just delays taking it seriously."
+        },
+        {
+          "start": 137,
+          "title": "What else is not true?",
+          "text": "And a few more, quickly. What else is not true? Three more claims worth clearing up. Only elderly people get it. It only ever affects one ear. And ear wax has nothing to do with it. Tinnitus shows up in children and young adults too, it can sit in both ears or feel centered in the head, and a blocked ear canal can trigger or worsen it."
+        },
+        {
+          "start": 158,
+          "title": "So where does that leave you?",
+          "text": "So where does that leave you? None of this replaces a professional opinion. See a doctor if it is new, if it will not settle, if it sits in one ear only, or if it comes with hearing loss or dizziness. Getting it named is not overreacting. It is the fastest way to actually manage it. So the next time someone tells you tinnitus only means one thing, you will know that is not how it works. If that was useful, subscribe for more videos like this one."
+        }
+      ]
+    },
+    {
       "slug": "tinnitus-and-sleep",
       "id": "VdblYzRqvog",
       "kind": "long",
