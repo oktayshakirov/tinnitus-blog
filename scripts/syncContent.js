@@ -16,6 +16,11 @@
 // document is what fires the notification, and during a build the deployment is
 // not live yet, so the notification would link to a page that still 404s.
 const path = require('path');
+// `next dev`/`next build` load `.env` for us; a bare `node` invocation does
+// not, which is why this threw "Missing Firebase credentials" even with a
+// correct `.env` on disk. Load the same way Next does, before anything else
+// reads `process.env`.
+require('@next/env').loadEnvConfig(path.resolve(__dirname, '..'));
 const admin = require('firebase-admin');
 const { collectContent, parsePublishedAt } = require('../src/lib/contentIndex');
 
