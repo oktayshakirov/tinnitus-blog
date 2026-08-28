@@ -9,6 +9,60 @@
   },
   "videos": [
     {
+      "slug": "why-does-tinnitus-spike",
+      "id": "hZyBrsZdeRc",
+      "kind": "long",
+      "title": "Why Does Tinnitus Spike?",
+      "description": "Some days your tinnitus is a faint hiss. Some days it roars. A spike is almost never new damage - here is what is actually happening, and what to do in the first ten minutes of one.",
+      "uploadDate": "2026-08-28T12:34:26Z",
+      "duration": "PT3M19S",
+      "seconds": 199,
+      "poster": "/images/videos/why-does-tinnitus-spike.webp",
+      "target": {
+        "type": "blog",
+        "slug": "why-does-tinnitus-spike"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Some days it roars",
+          "text": "Some days, your tinnitus is a faint hiss. Some days, it roars. That sharp jump has a name. It is a spike. It can follow a loud night, a bad sleep, a stressful week, or what feels like nothing at all. You are not back to square one, and it is almost certainly not new damage. Stay with this and you will know why spikes happen, and what to do in the first ten minutes of one."
+        },
+        {
+          "start": 21,
+          "title": "So what is a spike, exactly?",
+          "text": "A spike is a short-term rise in how loud, sharp, or intrusive your tinnitus feels. It often follows a trigger, though the trigger can be hours, or even a day, behind it. Most spikes fade within hours to a few days. Some of the bigger ones, after a loud event or an illness, can last one to three weeks. Almost all of them are reversible."
+        },
+        {
+          "start": 45,
+          "title": "Why does it spike when nothing happened?",
+          "text": "Now, the part that trips people up. There are two reasons, and neither one is damage. First, your hearing system runs on high alert, and it turns up its own internal gain the moment it senses stress or threat. Louder background, louder tinnitus. Second, triggers stack. One rough night does not do it. Three rough nights, a skipped meal, and a noisy commute together might. That is also why the cause is so hard to spot - the spike you notice on Tuesday may have started with lost sleep on Sunday."
+        },
+        {
+          "start": 76,
+          "title": "So what actually sets it off?",
+          "text": "The common triggers fall into a handful of groups. Loud noise, or sudden total silence. Stress, which tightens your neck and jaw. Broken sleep. Caffeine, alcohol, or salty food, if you are sensitive. A blocked ear, from wax or a cold. Most spikes are two or three of these at once, not one."
+        },
+        {
+          "start": 97,
+          "title": "A spike just hit. What do you do?",
+          "text": "Here is the whole routine, and it is five steps, in order. Name it a flare-up, not a setback, which on its own lowers the alarm. Slow your breathing, in for four and out for six, for a few minutes. Add quiet sound, a fan or soft noise, kept just below your tinnitus, not loud enough to bury it. Loosen your jaw and your shoulders. Then go do something absorbing, so you stop monitoring the sound. Most of that is calming your nervous system, which is the thing driving the volume up."
+        },
+        {
+          "start": 128,
+          "title": "Is a spike damaging your hearing?",
+          "text": "This is the fear underneath all of it. Compare a spike with real damage. Take a spike first. It comes and then goes. It is a stress response, not an injury. And your hearing tests stay stable. Now compare that with real damage. It does not just reverse. It usually follows a clear, loud cause. And it shows up when your hearing is tested. If a spike will not settle after a few weeks, or it only ever hits one ear, get it checked - not because a spike is dangerous, but because that pattern is worth ruling out."
+        },
+        {
+          "start": 163,
+          "title": "So the next time it spikes",
+          "text": "So the next time your tinnitus climbs for no obvious reason: it is a flare-up, not a setback. It is triggers stacking up, not your ears breaking. Slow your breathing, keep gentle sound around you, and protect tonight's sleep. Spikes usually fade on their own, and bracing against them tends to make them feel louder for longer. If yours is new, one-sided, pulsing with your heartbeat, or comes with hearing loss or dizziness, see a doctor first."
+        }
+      ]
+    },
+    {
       "slug": "tinnitus-myths-vs-reality",
       "id": "5RFJeJ1ZbWc",
       "kind": "long",
