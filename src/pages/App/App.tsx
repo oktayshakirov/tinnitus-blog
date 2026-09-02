@@ -525,6 +525,20 @@ const App = ({}: Props) => {
             </Box>
           </ReviewsSection>
 
+          <Box sx={{ textAlign: 'center', mb: 2 }}>
+            <Typography color="text.secondary" sx={{ fontSize: '1rem' }}>
+              Not sure which app is right for you?{' '}
+              <Link
+                href="/blog/best-tinnitus-apps"
+                style={{ color: 'inherit', textDecoration: 'underline' }}
+              >
+                Read our honest comparison of the best tinnitus apps
+              </Link>
+              , where we cover masking, sound therapy and CBT options side by
+              side and are upfront about where ours is not the best choice.
+            </Typography>
+          </Box>
+
           <CallToActionSection>
             <Typography variant="h4" gutterBottom>
               Ready to Find Your Peace?

@@ -100,7 +100,7 @@ export const SITE_FAQ: SiteFaqEntry[] = [
         mainly need sound masking, sleep support, or a structured therapy
         program. We compare the main options side by side, including our own, in
         our{' '}
-        <Link href="/blog/apps-that-help-tinnitus" style={linkStyle}>
+        <Link href="/blog/best-tinnitus-apps" style={linkStyle}>
           guide to the best tinnitus apps
         </Link>
         .

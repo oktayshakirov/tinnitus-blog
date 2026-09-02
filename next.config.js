@@ -6,6 +6,14 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
+      // Renamed 2026-09: the post's slug now matches its primary query
+      // ("best tinnitus apps") instead of "apps that help tinnitus". The old
+      // URL was indexed and linked from other posts, so 301 it rather than 404.
+      {
+        source: '/blog/apps-that-help-tinnitus',
+        destination: '/blog/best-tinnitus-apps',
+        permanent: true,
+      },
       // The sound sessions used to have their own listing. They are a tab on
       // /videos now, so the old URL - indexed, and linked from the app - lands
       // there rather than 404ing. It opens on the explainers; the sessions are

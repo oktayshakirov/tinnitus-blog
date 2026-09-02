@@ -10,9 +10,9 @@
     },
     {
       "type": "posts",
-      "slug": "apps-that-help-tinnitus",
-      "title": "Best Tinnitus Apps in 2026: An Honest Comparison",
-      "url": "https://www.tinnitushelp.me/blog/apps-that-help-tinnitus",
+      "slug": "best-tinnitus-apps",
+      "title": "Best Tinnitus Apps 2026: An Honest Comparison",
+      "url": "https://www.tinnitushelp.me/blog/best-tinnitus-apps",
       "date": "2024-07-26T22:00:00.000Z"
     },
     {
@@ -42,6 +42,13 @@
       "title": "Caffeine and Tinnitus",
       "url": "https://www.tinnitushelp.me/blog/caffeine-and-tinnitus",
       "date": "2026-06-29T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "can-ear-infections-cause-tinnitus",
+      "title": "Can Ear Infections Cause Tinnitus?",
+      "url": "https://www.tinnitushelp.me/blog/can-ear-infections-cause-tinnitus",
+      "date": "2026-08-31T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -133,6 +140,13 @@
       "title": "How To Explain Tinnitus To Others?",
       "url": "https://www.tinnitushelp.me/blog/explain-tinnitus-to-others",
       "date": "2026-08-09T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "ginkgo-biloba-and-tinnitus",
+      "title": "Ginkgo Biloba and Tinnitus",
+      "url": "https://www.tinnitushelp.me/blog/ginkgo-biloba-and-tinnitus",
+      "date": "2026-08-26T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -248,6 +262,13 @@
     },
     {
       "type": "posts",
+      "slug": "somatic-tinnitus",
+      "title": "Somatic Tinnitus",
+      "url": "https://www.tinnitushelp.me/blog/somatic-tinnitus",
+      "date": "2026-08-28T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
       "slug": "sudden-hearing-loss-and-tinnitus",
       "title": "Sudden Hearing Loss and Tinnitus",
       "url": "https://www.tinnitushelp.me/blog/sudden-hearing-loss-and-tinnitus",
@@ -259,6 +280,13 @@
       "title": "Can Taurine Help Tinnitus?",
       "url": "https://www.tinnitushelp.me/blog/taurine-and-tinnitus",
       "date": "2024-10-16T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "the-finger-drumming-trick-for-tinnitus",
+      "title": "The Finger Drumming Trick for Tinnitus",
+      "url": "https://www.tinnitushelp.me/blog/the-finger-drumming-trick-for-tinnitus",
+      "date": "2026-09-01T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -612,10 +640,31 @@
     },
     {
       "type": "videos",
+      "slug": "pulsatile-tinnitus",
+      "title": "Why Can You Hear Your Heartbeat in Your Ear?",
+      "url": "https://www.tinnitushelp.me/videos/pulsatile-tinnitus",
+      "date": "2026-09-02T15:33:29.000Z"
+    },
+    {
+      "type": "videos",
       "slug": "tinnitus-and-sleep",
       "title": "How to Sleep With Tinnitus: Why Is It Worse at Night?",
       "url": "https://www.tinnitushelp.me/videos/tinnitus-and-sleep",
       "date": "2026-08-18T15:08:42.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "tinnitus-myths-vs-reality",
+      "title": "Tinnitus Myths vs Reality: What Is Actually True?",
+      "url": "https://www.tinnitushelp.me/videos/tinnitus-myths-vs-reality",
+      "date": "2026-08-25T23:51:10.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "why-does-tinnitus-spike",
+      "title": "Why Does Tinnitus Spike?",
+      "url": "https://www.tinnitushelp.me/videos/why-does-tinnitus-spike",
+      "date": "2026-08-28T12:34:26.000Z"
     }
   ]
 }
