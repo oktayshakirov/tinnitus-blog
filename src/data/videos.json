@@ -9,6 +9,60 @@
   },
   "videos": [
     {
+      "slug": "pulsatile-tinnitus",
+      "id": "8Li6nmh0gSQ",
+      "kind": "long",
+      "title": "Why Can You Hear Your Heartbeat in Your Ear?",
+      "description": "A whooshing pulse in one ear is called pulsatile tinnitus. Unlike the usual ringing, this kind usually has a physical cause you can find - here is what is happening, the red flags that need a doctor, and what helps while you wait.",
+      "uploadDate": "2026-09-02T15:33:29Z",
+      "duration": "PT2M56S",
+      "seconds": 176,
+      "poster": "/images/videos/pulsatile-tinnitus.webp",
+      "target": {
+        "type": "blog",
+        "slug": "pulsatile-tinnitus-why-you-hear-your-heartbeat"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "A beat in your ear",
+          "text": "You lie down in a quiet room, and your ear starts keeping time with your heart. A soft whoosh, matched to your pulse. That sound has a name. It is called pulsatile tinnitus. It is a less common kind of tinnitus, and unlike the usual ringing, it often has a physical cause you can actually find. Stay with this and you will know why you hear it, which signs mean see a doctor soon, and what helps in the meantime."
+        },
+        {
+          "start": 23,
+          "title": "What makes this kind different?",
+          "text": "Most tinnitus is subjective. Only you can hear it. But some pulsatile tinnitus is objective. It is a real, physical sound, and a doctor can sometimes hear it too. Take the usual tinnitus. A steady ring or buzz. From hearing loss or noise. You manage the symptom. Now the pulsing kind. A whoosh timed to your pulse. Often from blood flow. And the cause can be treated. So the pulsing kind often points to one findable thing, and that can sometimes be fixed. That is the reason to get it checked. Not the reason to panic."
+        },
+        {
+          "start": 57,
+          "title": "So why is your pulse suddenly loud?",
+          "text": "Your ears sit right next to a busy network of arteries and veins. If a vessel narrows, kinks, or comes under pressure, the blood flow turns turbulent, like water forced through a pinched hose. That turbulence makes a sound, and your middle ear amplifies it into the whoosh you hear. And across everyone with tinnitus, only about four to ten percent hear this pulsing kind."
+        },
+        {
+          "start": 82,
+          "title": "So what is actually behind it?",
+          "text": "The causes fall into four groups. Blood flow changes near the ear. Pressure around the brain, more often in younger women. A middle ear problem, like fluid or a small growth. Whole-body factors, like anemia, thyroid trouble, or pregnancy. Some are harmless. Some need attention soon. Which is why this kind is worth checking."
+        },
+        {
+          "start": 101,
+          "title": "So when should you see someone?",
+          "text": "Call your doctor if any of these fit. It started suddenly. It is only in one ear. It followed a head or neck injury. It changes when you move your head. And treat it as urgent if it comes with headaches or vision changes, with severe neck pain, or with any weakness, facial droop, or slurred speech. None of this is meant to scare you. Most causes are manageable. It is about getting the right one named."
+        },
+        {
+          "start": 126,
+          "title": "So what can you do tonight?",
+          "text": "While you wait for that appointment, a few things take the edge off. Add soft sound at night, kept just below the whoosh. Raise the head of your bed a little. Keep caffeine to earlier in the day. Wind the stress down, with slow breathing or a few quiet minutes. And log what changes the sound, to show your doctor. These do not fix the cause. They just make the wait easier."
+        },
+        {
+          "start": 148,
+          "title": "So the drumbeat in your ear",
+          "text": "So, that whoosh in your ear is the sound of your pulse, carried to your hearing by blood flow nearby. Usually it points to something a doctor can find, and often to something they can help. Get it checked, especially if it is new, one-sided, or came on suddenly. You do not have to let that drumbeat run the show. And if this helped, subscribe for more videos like this one."
+        }
+      ]
+    },
+    {
       "slug": "why-does-tinnitus-spike",
       "id": "hZyBrsZdeRc",
       "kind": "long",
