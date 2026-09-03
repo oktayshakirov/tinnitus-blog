@@ -12,7 +12,7 @@
     "start:prod": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap && node scripts/fix-robots.js"
   },
   "browserslist": [
     "defaults and supports es6-module",
