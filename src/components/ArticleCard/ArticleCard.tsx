@@ -13,12 +13,14 @@ import {
   StyledLink,
   StyledTags,
   StyledTag,
+  StyledVideoBadge,
 } from './ArticleCard.styled';
 import { getTagsPath } from '@lib/paths';
 import { Divider } from '@mui/material';
 import StreamingIcons from '@components/StreamingIcons';
-import { FaHashtag, FaClock } from 'react-icons/fa';
+import { FaHashtag, FaClock, FaVideo } from 'react-icons/fa';
 import Icon from '@components/Icon';
+import { hasPageVideo } from '@lib/videos';
 
 type Props = {
   article: ArticleMeta;
@@ -28,6 +30,7 @@ type Props = {
 const ArticleCard = ({ className, article, index }: Props) => {
   const { title, description, slug, image, tags, type, readingTime } = article;
   const path = type === ArticleType.POST ? '/blog' : '/zen';
+  const hasVideo = hasPageVideo(type === ArticleType.POST ? 'blog' : 'zen', slug);
 
   return (
     <Grow in timeout={(index || 0) * 150}>
@@ -39,6 +42,11 @@ const ArticleCard = ({ className, article, index }: Props) => {
             priority={index === 0}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
+          {hasVideo && (
+            <StyledVideoBadge>
+              <Icon icon={FaVideo} />
+            </StyledVideoBadge>
+          )}
           {type === ArticleType.POST && (
             <StyledTime
               icon={

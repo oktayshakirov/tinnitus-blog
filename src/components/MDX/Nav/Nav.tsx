@@ -1,9 +1,8 @@
 import { ReactNode, useState } from 'react';
-import Typography from '@mui/material/Typography';
 import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { StyledHeader, StyledNav, StyledDivider } from './Nav.styled';
+import ListIcon from '@mui/icons-material/List';
+import { StyledWrapper, StyledToggle, StyledNav } from './Nav.styled';
 
 type Props = {
   children?: ReactNode;
@@ -15,21 +14,25 @@ const Nav = ({ children, ...rest }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div id="toc-wrapper">
-      <StyledDivider $position="top" />
-      <StyledHeader>
-        <Typography component="p">
-          Article Navigation: Quick Access to Sections
-        </Typography>
-        <IconButton onClick={() => setIsOpen(!isOpen)}>
-          <KeyboardArrowDownIcon />
-        </IconButton>
-      </StyledHeader>
+    <StyledWrapper id="toc-wrapper">
+      <StyledToggle
+        type="button"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span>
+          <ListIcon fontSize="small" />
+          On this page
+        </span>
+        <KeyboardArrowDownIcon
+          className={isOpen ? 'open' : undefined}
+          fontSize="small"
+        />
+      </StyledToggle>
       <Collapse in={isOpen}>
         <StyledNav {...rest}>{children}</StyledNav>
       </Collapse>
-      <StyledDivider $position="bottom" />
-    </div>
+    </StyledWrapper>
   );
 };
 

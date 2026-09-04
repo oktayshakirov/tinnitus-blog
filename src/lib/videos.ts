@@ -82,6 +82,10 @@ export const getPageVideo = (
     (video) => video.kind !== 'session' && onPage(video, type, slug)
   ) ?? null;
 
+// For card badges, where only the yes/no matters.
+export const hasPageVideo = (type: VideoTargetType, slug: string): boolean =>
+  getPageVideo(type, slug) !== null;
+
 /**
  * Every sound-therapy session cut from one /zen album, shortest first. The
  * many-to-one relation is the whole reason sessions are not modelled like

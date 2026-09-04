@@ -1,6 +1,4 @@
 import NextImage from 'next/image';
-import { FaPlay } from 'react-icons/fa';
-import Icon from '@components/Icon';
 import { SiteVideo, formatDuration } from '@lib/videos';
 import { StyledCard } from './VideoCard.styled';
 
@@ -29,9 +27,6 @@ const VideoCard = ({ video }: Props) => {
           height={360}
           sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
         />
-        <span className="video-badge">
-          <Icon icon={FaPlay} />
-        </span>
         {length && <span className="video-length">{length}</span>}
       </span>
       <span className="video-title">{video.title}</span>

@@ -114,6 +114,24 @@ export const StyledReadingTime = styled(Chip)`
   `}
 `;
 
+export const StyledVideoBadge = styled('span')`
+  ${({ theme }) => css`
+    position: absolute;
+    top: ${theme.spacing(2)};
+    right: ${theme.spacing(2)};
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.7);
+    color: ${theme.palette.common.white};
+    font-size: 0.7rem;
+  `}
+`;
+
 export const StyledTags = styled('div')`
   ${({ theme }) => css`
     display: flex;
