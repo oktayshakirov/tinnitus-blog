@@ -1,8 +1,6 @@
 import { useState, ReactNode } from 'react';
 import NextImage from 'next/image';
 import Typography from '@mui/material/Typography';
-import { FaPlay } from 'react-icons/fa';
-import Icon from '@components/Icon';
 import { SiteVideo, formatDuration } from '@lib/videos';
 import {
   StyledSection,
@@ -80,14 +78,9 @@ const ZenSessions = ({
                   height={360}
                   sizes="(max-width: 600px) 100vw, 320px"
                 />
-                <span className="session-badge">
-                  <Icon icon={FaPlay} />
-                </span>
+                {length && <span className="session-length">{length}</span>}
               </span>
-              <span className="session-body">
-                <span className="session-label">{label}</span>
-                <span className="session-length">{length}</span>
-              </span>
+              <span className="session-label">{label}</span>
             </StyledCard>
           );
         })}

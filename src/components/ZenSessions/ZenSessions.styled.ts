@@ -1,6 +1,5 @@
 import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
-import { alpha } from '@mui/system/colorManipulator';
 import ButtonBase from '@mui/material/ButtonBase';
 
 export const StyledSection = styled('section')`
@@ -46,27 +45,16 @@ export const StyledCard = styled(ButtonBase, {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    overflow: hidden;
+    width: 100%;
     text-align: left;
-    border: 1px solid
-      ${active
-        ? theme.palette.primary.main
-        : alpha(theme.palette.common.white, 0.15)};
-    border-radius: ${theme.shape.borderRadius}px;
-    background: ${alpha(theme.palette.common.white, active ? 0.08 : 0.04)};
-    transition: border-color 150ms ease, background-color 150ms ease;
-
-    &:hover,
-    &:focus-visible {
-      border-color: ${theme.palette.primary.main};
-      background: ${alpha(theme.palette.common.white, 0.07)};
-    }
 
     .session-poster {
       position: relative;
       display: block;
       width: 100%;
       line-height: 0;
+      border-radius: ${theme.shape.borderRadius}px;
+      overflow: hidden;
 
       img {
         display: block;
@@ -77,37 +65,36 @@ export const StyledCard = styled(ButtonBase, {
       }
     }
 
-    .session-badge {
+    .session-length {
       position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
+      right: ${theme.spacing(0.75)};
+      bottom: ${theme.spacing(0.75)};
+      padding: 0 ${theme.spacing(0.75)};
+      border-radius: 4px;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.6;
       color: #fff;
-      background: rgba(0, 0, 0, 0.3);
-    }
-
-    .session-body {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: ${theme.spacing(1)};
-      width: 100%;
-      padding: ${theme.spacing(1.25)} ${theme.spacing(1.5)};
+      background: rgba(0, 0, 0, 0.8);
     }
 
     .session-label {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-top: ${theme.spacing(1)};
+      font-size: 1rem;
       font-weight: 600;
-      line-height: 1.3;
-      color: ${theme.palette.text.primary};
+      line-height: 1.35;
+      color: ${active ? theme.palette.primary.main : theme.palette.text.primary};
+      transition: color 150ms ease;
     }
 
-    .session-length {
-      flex-shrink: 0;
-      font-size: 0.85rem;
-      font-variant-numeric: tabular-nums;
-      color: ${theme.palette.text.secondary};
+    &:hover .session-label,
+    &:focus-visible .session-label {
+      color: ${theme.palette.primary.main};
     }
   `}
 `;
