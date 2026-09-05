@@ -570,6 +570,24 @@
           "text": "If your ringing is steady and your sleep is solid, your usual coffee is probably fine. If you suspect it, do not quit overnight. Move it earlier, taper slowly, and watch the trend across weeks. Because the question was never really caffeine, yes or no. It was how it sits with everything else in your day. So tomorrow morning, same cup: is it the coffee, or the night before it?"
         }
       ]
+    },
+    {
+      "slug": "478-breathing-white-noise",
+      "id": "rvYOnvp7ufY",
+      "kind": "session",
+      "title": "4-7-8 Breathing + White Noise for Tinnitus (20 Minutes)",
+      "label": "4-7-8 breathing",
+      "description": "Twenty minutes of generated white noise, tuned for a high, thin whistle, paired with 4-7-8 paced breathing - inhale 4 seconds, hold 7, exhale 8.",
+      "uploadDate": "2026-09-05T00:43:32Z",
+      "duration": "PT20M",
+      "seconds": 1200,
+      "poster": "/images/videos/478-breathing-white-noise.webp",
+      "target": {
+        "type": "zen",
+        "slug": "white-noise"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
