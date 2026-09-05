@@ -62,11 +62,9 @@ const ZenSessions = ({
       <StyledGrid>
         {sessions.map((session) => {
           const length = formatDuration(session.seconds);
-          const label = session.label ?? session.title;
           return (
             <StyledCard
               key={session.id}
-              active={session.id === openId}
               onClick={() => setOpenId(session.id)}
               aria-label={`Play session: ${session.title}`}
             >
@@ -80,7 +78,6 @@ const ZenSessions = ({
                 />
                 {length && <span className="session-length">{length}</span>}
               </span>
-              <span className="session-label">{label}</span>
             </StyledCard>
           );
         })}

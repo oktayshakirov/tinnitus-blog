@@ -38,13 +38,9 @@ export const StyledGrid = styled('div')`
   `}
 `;
 
-export const StyledCard = styled(ButtonBase, {
-  shouldForwardProp: (prop) => prop !== 'active',
-})<{ active?: boolean }>`
-  ${({ theme, active }) => css`
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+export const StyledCard = styled(ButtonBase)`
+  ${({ theme }) => css`
+    display: block;
     width: 100%;
     text-align: left;
 
@@ -77,24 +73,6 @@ export const StyledCard = styled(ButtonBase, {
       line-height: 1.6;
       color: #fff;
       background: rgba(0, 0, 0, 0.8);
-    }
-
-    .session-label {
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      margin-top: ${theme.spacing(1)};
-      font-size: 1rem;
-      font-weight: 600;
-      line-height: 1.35;
-      color: ${active ? theme.palette.primary.main : theme.palette.text.primary};
-      transition: color 150ms ease;
-    }
-
-    &:hover .session-label,
-    &:focus-visible .session-label {
-      color: ${theme.palette.primary.main};
     }
   `}
 `;
