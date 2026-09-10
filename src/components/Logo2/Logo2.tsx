@@ -7,7 +7,8 @@ type Props = {
 };
 
 const Logo2 = ({ width = 220 }: Props) => (
-  <Image src={logo} alt="Logo 2" width={width} height={width} />
+  // Fixed-size brand asset - see Logo.tsx; skip Vercel optimization.
+  <Image src={logo} alt="Logo 2" width={width} height={width} unoptimized />
 );
 
 export default Logo2;

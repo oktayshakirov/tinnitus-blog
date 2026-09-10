@@ -36,6 +36,7 @@ const Authors = () => {
                     alt={author.name}
                     fill
                     sizes="110px"
+                    unoptimized
                   />
                 </StyledAvatar>
                 <StyledName className="card-name">{author.name}</StyledName>

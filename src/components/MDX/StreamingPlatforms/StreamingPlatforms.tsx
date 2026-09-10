@@ -85,6 +85,7 @@ const StreamingPlatforms: React.FC<StreamingPlatformsProps> = ({
               alt={platform.name}
               width={60}
               height={60}
+              unoptimized
             />
             <Typography variant="body2" sx={{ fontSize: textFontSize }}>
               {platform.name}

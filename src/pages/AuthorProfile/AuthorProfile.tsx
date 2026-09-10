@@ -48,6 +48,7 @@ const AuthorProfile = ({ author }: Props) => {
                   fill
                   sizes="140px"
                   priority
+                  unoptimized
                 />
               </StyledAvatar>
               <Typography component="h1" variant="h4">

@@ -76,9 +76,20 @@ const nextConfig = {
     ];
   },
   images: {
-    deviceSizes: [332, 400, 450, 640, 750, 828, 1080, 1200, 1920],
+    // Every entry here multiplies the number of optimized variants Vercel
+    // generates per source image (billed as "Image Optimization -
+    // Transformations"). The content column tops out around 800px, so a
+    // handful of steps up to a retina desktop hero is enough - trimmed from
+    // nine to five in 2026-09 to keep the shared Vercel team under the Hobby
+    // transformation cap.
+    deviceSizes: [400, 640, 828, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96],
-    formats: ['image/webp', 'image/avif'],
+    // WebP only. AVIF shaves ~10% more off the bytes but doubles the
+    // transformation count, which is the metric we are actually near.
+    formats: ['image/webp'],
+    // Source images under /images/* are served immutable, so there is no
+    // reason to let optimized variants fall out of cache and be regenerated.
+    minimumCacheTTL: 2678400, // 31 days
     domains: ['www.tinnitushelp.me'],
   },
 };

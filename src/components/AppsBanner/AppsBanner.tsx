@@ -34,6 +34,7 @@ const AppsBanner = () => {
               alt="Download on the App Store"
               width={120}
               height={40}
+              unoptimized
             />
           </Link>
           <Link
@@ -45,6 +46,7 @@ const AppsBanner = () => {
               alt="Get it on Google Play"
               width={123}
               height={40}
+              unoptimized
             />
           </Link>
         </BadgeSection>

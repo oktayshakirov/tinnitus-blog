@@ -7,7 +7,9 @@ type Props = {
 };
 
 const Logo = ({ width = 220 }: Props) => (
-  <Image src={logo} alt="Logo" width={width} height={width} />
+  // Fixed-size brand asset served on every page - optimizing it just burns
+  // Vercel image transformations for no visible gain.
+  <Image src={logo} alt="Logo" width={width} height={width} unoptimized />
 );
 
 export default Logo;

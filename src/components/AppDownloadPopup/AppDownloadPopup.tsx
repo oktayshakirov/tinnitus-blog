@@ -325,6 +325,7 @@ const AppDownloadPopup = ({ isApp = false }: AppDownloadPopupProps) => {
                   width={160}
                   height={53}
                   className="badge-image"
+                  unoptimized
                 />
               </Link>
               <Link
@@ -340,6 +341,7 @@ const AppDownloadPopup = ({ isApp = false }: AppDownloadPopupProps) => {
                   width={160}
                   height={53}
                   className="badge-image"
+                  unoptimized
                 />
               </Link>
             </StyledAppBadges>

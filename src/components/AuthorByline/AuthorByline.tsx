@@ -13,7 +13,13 @@ const AuthorByline = ({ author, date }: Props) => {
   return (
     <StyledByline href={`/authors/${author.slug}`} aria-label={`Author: ${author.name}`}>
       <StyledAvatar>
-        <Image src={author.image} alt={author.name} fill sizes="48px" />
+        <Image
+          src={author.image}
+          alt={author.name}
+          fill
+          sizes="48px"
+          unoptimized
+        />
       </StyledAvatar>
       <StyledMeta>
         <span className="written-by">Written by</span>
