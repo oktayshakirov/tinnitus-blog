@@ -588,6 +588,55 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "brown-noise-vs-white-noise-for-tinnitus",
+      "id": "6yel5kdUDCU",
+      "kind": "long",
+      "title": "White Noise vs Brown Noise for Tinnitus",
+      "description": "The colour is the least important choice. What actually matters is roughly matching the pitch of your tinnitus and keeping the volume low - here is how each colour sounds, which suits which pitch, and how to set the level.",
+      "uploadDate": "2026-09-10T17:48:32Z",
+      "duration": "PT3M24S",
+      "seconds": 204,
+      "poster": "/images/videos/brown-noise-vs-white-noise-for-tinnitus.webp",
+      "target": {
+        "type": "blog",
+        "slug": "brown-noise-vs-white-noise-for-tinnitus"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "The colour wheel",
+          "text": "Your favourite tinnitus app has a colour wheel now. White, pink, brown, green - and nothing telling you which one to pick. So here is the short version. The colour matters less than two other things: getting close to the pitch of your ringing, and keeping it quiet. By the end you will know which colour to start with tonight, and how loud to set it."
+        },
+        {
+          "start": 19,
+          "title": "What do the noise colours actually mean?",
+          "text": "The names are not marketing. Each colour is a real description of how the sound spreads its energy across low and high. You will see five of them most often. White noise is a flat, even hiss, like television static. Pink noise pulls the energy down a little, and sounds like steady rain. Brown noise pulls it down hard, into a deep waterfall. Grey noise is shaped to match how your own ears hear. And green noise sits in the middle, like a forest. Here is the catch. White noise sounds far harsher than that flat recipe suggests, because your ears are much more sensitive to high sounds than low ones. That is why pink and brown feel more natural. They are leaning against your hearing instead of fighting it."
+        },
+        {
+          "start": 64,
+          "title": "Which colour matches your tinnitus?",
+          "text": "Masking works by overlap. A sound only covers your tinnitus if it carries energy at the same pitch. So it comes down to what your tinnitus actually sounds like. If it is a high whistle or ring - the most common kind by far, sitting up at a high pitch, start with white or pink. If it is a low hum or roar instead - less common, but real, sitting down low, reach for brown. Put white noise under a low hum and it does nothing useful. It misses the hum completely and piles tiring hiss on top. If you have no idea what pitch yours is, use pink, and give each colour a full evening before you judge it."
+        },
+        {
+          "start": 103,
+          "title": "How loud should it be?",
+          "text": "This matters more than the colour, and almost everyone gets it wrong. The instinct is to turn it up until the ringing is gone. Aim for something called partial masking. Set the sound just below your tinnitus, so you can still faintly hear it underneath. Push it past that line, burying the ringing completely, and you lose the gentle exposure your brain needs to tune it out. And keep it under about eighty decibels. Masking runs for hours, so the total adds up. For all night, use a speaker on the bedside table, not earbuds. Sealed ears make the ringing louder the moment the sound stops."
+        },
+        {
+          "start": 141,
+          "title": "What about notched sound therapy?",
+          "text": "There is a completely different approach worth knowing about. Instead of covering your tinnitus, notched therapy removes its exact pitch from the sound. It cuts your exact pitch out of music or noise. That frequency band goes quiet. Nerve cells around it start turning the area down. And over months, the overactive signal can weaken. The evidence is genuinely mixed, and it needs you to know your tinnitus pitch fairly well. It is a slow experiment, not a quick fix - but it is free to try."
+        },
+        {
+          "start": 172,
+          "title": "So which one do you start with?",
+          "text": "Start with pink. Move toward white if your tinnitus is a high whistle, toward brown if it is a low hum. Keep the volume just under the ringing, and give each colour a full night before you switch. And keep the expectation honest. Masking makes tonight easier to sit with. It does not treat the tinnitus itself - the things that change that work slower, in the background. So tonight, when the room goes quiet: which colour are you reaching for?"
+        }
+      ]
     }
   ]
 }
