@@ -9,6 +9,55 @@
   },
   "videos": [
     {
+      "slug": "does-magnesium-help-tinnitus",
+      "id": "vbN3LiJpnb8",
+      "kind": "long",
+      "title": "Does Magnesium Help Tinnitus?",
+      "description": "Nobody knows yet - and the single placebo-controlled trial people cite tested magnesium mixed with vitamins and a plant extract, so it cannot tell you what the magnesium did. Here is what the research found, how much is in ordinary food, and how to test it on yourself in four weeks.",
+      "uploadDate": "2026-09-13T15:56:54Z",
+      "duration": "PT3M48S",
+      "seconds": 228,
+      "poster": "/images/videos/does-magnesium-help-tinnitus.webp",
+      "target": {
+        "type": "blog",
+        "slug": "does-magnesium-help-tinnitus"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "The most recommended supplement",
+          "text": "Magnesium is the supplement people recommend most for tinnitus. There is one placebo-controlled trial behind that reputation, and magnesium was not the only ingredient in the pill they tested. So the useful question is not whether magnesium treats your tinnitus. It is whether you are short of it in the first place. By the end you will know what the research actually found, how much magnesium is in ordinary food, and how to test it on yourself in four weeks."
+        },
+        {
+          "start": 27,
+          "title": "So what does the research actually show?",
+          "text": "Two findings, and they pull in opposite directions. Some small studies have found lower magnesium levels in people with tinnitus. Others found no difference at all. The one placebo-controlled trial did report less tinnitus handicap over three months. But it tested magnesium combined with vitamins and a plant extract, so nobody can say which part of that pill did the work. Which leaves the article's own answer. The honest answer is that nobody knows yet. No health body recommends magnesium as a tinnitus treatment. Not one."
+        },
+        {
+          "start": 64,
+          "title": "So why does the idea keep coming up?",
+          "text": "Because the biology behind it is genuinely reasonable. Magnesium sits in the doorway of a gate that lets calcium into nerve cells. When magnesium runs low, that gate opens more easily. More calcium moves into the hearing nerve cells. Those cells fire harder than they should. And a brain that is already generating a phantom sound has more to amplify. Magnesium also supports blood flow in the inner ear. That is a good story. A good story is not evidence, and the gap between the two is where this whole topic lives."
+        },
+        {
+          "start": 99,
+          "title": "So can you just eat it?",
+          "text": "Usually, yes, and this is the part that gets skipped. Most people who are genuinely low on magnesium are low because of what is on their plate. A day's magnesium for an adult is roughly four hundred milligrams. An ounce of pumpkin seeds carries about a hundred and fifty six. A cup of black beans, a hundred and twenty. An ounce of almonds, eighty. An ounce of dark chocolate, sixty five. None of that is exotic. Seeds, beans, nuts, leafy greens, wholegrains and dark chocolate. Food is also much harder to overdo than a high-dose tablet."
+        },
+        {
+          "start": 135,
+          "title": "So how would you test it on yourself?",
+          "text": "Check with a pharmacist or a doctor first, and that is not a formality. Magnesium can block the absorption of some antibiotics and of thyroid medication, and it needs real care if your kidneys are not working well. If you get the go-ahead, run it as an experiment rather than as a habit. Week zero, log your tinnitus for seven days while you change nothing. Week one, start low, in the evening. Weeks two and three, hold every other routine steady. Week four, compare the log against your baseline. Then keep it or drop it, on what you wrote down. Two things to check on the label. Read the elemental magnesium, not the weight of the whole compound. Glycinate is the gentlest on the stomach. Oxide is the cheapest, and the least absorbed. And if it loosens your bowels, the dose is too high."
+        },
+        {
+          "start": 186,
+          "title": "So is it worth trying?",
+          "text": "Magnesium is not a treatment for tinnitus, and nobody is claiming it is. What it can be is one variable you have settled. If your diet has been thin on magnesium, that is worth correcting anyway. The things with the strongest evidence behind them are slower, and much less exciting. Sound therapy, sleep, and talking therapy. And some tinnitus needs a person, not a supplement. If yours is new, one-sided, or pulsing with your heartbeat, or it comes with dizziness or hearing loss, see a doctor or an ear specialist. So before you buy anything: when did you last eat something off that list?"
+        }
+      ]
+    },
+    {
       "slug": "pulsatile-tinnitus",
       "id": "8Li6nmh0gSQ",
       "kind": "long",
