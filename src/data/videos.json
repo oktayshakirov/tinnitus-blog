@@ -686,6 +686,24 @@
           "text": "Start with pink. Move toward white if your tinnitus is a high whistle, toward brown if it is a low hum. Keep the volume just under the ringing, and give each colour a full night before you switch. And keep the expectation honest. Masking makes tonight easier to sit with. It does not treat the tinnitus itself - the things that change that work slower, in the background. So tonight, when the room goes quiet: which colour are you reaching for?"
         }
       ]
+    },
+    {
+      "slug": "waterfall-478-breathing",
+      "id": "DKzUkSqIKS8",
+      "kind": "session",
+      "title": "Waterfall + 4-7-8 Breathing for Tinnitus (20 Minutes)",
+      "label": "4-7-8 breathing",
+      "description": "Twenty minutes of a real waterfall recording, paired with 4-7-8 paced breathing - inhale 4 seconds, hold 7, exhale 8.",
+      "uploadDate": "2026-09-14T13:20:07Z",
+      "duration": "PT20M",
+      "seconds": 1200,
+      "poster": "/images/videos/waterfall-478-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "water-sounds"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
