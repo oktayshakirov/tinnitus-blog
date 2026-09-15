@@ -704,6 +704,60 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "noise-canceling-headphones-for-tinnitus",
+      "id": "vS4xws8FjMc",
+      "kind": "long",
+      "title": "Can Noise-Canceling Headphones Make Tinnitus Worse?",
+      "description": "Active noise control blocks the outside sound your tinnitus was competing with - which helps in a noisy place and can backfire in a silent one. Here is why quiet can make the ringing louder, the real downsides worth knowing, and the one setting that fixes it either way.",
+      "uploadDate": "2026-09-15T20:17:30Z",
+      "duration": "PT2M45S",
+      "seconds": 165,
+      "poster": "/images/videos/noise-canceling-headphones-for-tinnitus.webp",
+      "target": {
+        "type": "blog",
+        "slug": "noise-canceling-headphones-for-tinnitus"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Noise-canceling headphones",
+          "text": "You buy noise-canceling headphones to make your tinnitus quieter. You put them on, and the ringing gets louder instead. That is not a broken pair of headphones. It is how your brain handles quiet. Stay with this and you will know when noise-canceling actually helps, when it can backfire, and the one setting that fixes it either way."
+        },
+        {
+          "start": 19,
+          "title": "What Is Noise-Canceling Actually Doing?",
+          "text": "Tiny microphones on the outside listen to the noise around you. And the headphones generate the exact opposite wave, to cancel it out before it reaches your ear. It works best on one kind of sound: steady, low, and constant - an engine hum, an air conditioner, the drone of a plane. It is not built for a doorbell, a voice, or a sudden clatter."
+        },
+        {
+          "start": 43,
+          "title": "Does the Quiet Actually Help?",
+          "text": "So does the quiet noise-canceling makes actually help? It depends on where you already are. In a loud place, it cuts the drone and the clatter, it lowers your stress, and your tinnitus can feel smaller by comparison. In a silent room, there is nothing left to compete with it, your brain turns its own gain up to fill the gap, and the ringing can feel louder, not quieter. So the headphones did not change your tinnitus at all. They only changed what was around it."
+        },
+        {
+          "start": 72,
+          "title": "Why Would Quiet Make It Louder?",
+          "text": "Your hearing system is always listening for signal, even signal that is not really there. Take away the outside noise, and there is nothing left to mask the one your brain was already making. So in a very quiet room, your own ring can suddenly be the loudest thing in the house."
+        },
+        {
+          "start": 91,
+          "title": "What Should You Watch For?",
+          "text": "For a few people, the headphones add a few problems of their own. A feeling of pressure or fullness in the ear. A faint hiss of their own, from the electronics. Muffled alarms, doorbells, and other people's voices. And a real cost, for the models that do this well. None of that means anything is wrong with you. It just means the headphones are not free of trade-offs."
+        },
+        {
+          "start": 116,
+          "title": "How Do You Use Them Right?",
+          "text": "The fix is not to throw them away. It is to stop asking them for total silence. Play a soft, steady sound through them. Keep it just under your tinnitus, not over it. Save total silence for when you actually want to sleep. And take them off for a few minutes every hour. That one change is usually the difference between headphones that help, and headphones that backfire."
+        },
+        {
+          "start": 140,
+          "title": "Is It Actually Worth It?",
+          "text": "So noise-canceling headphones were never built to fix tinnitus, and they still are not one. Paired with a little sound instead of none at all, they can make a loud world quiet without turning up your own ring. So next time the noise gets to be too much, would you reach for silence, or would you reach for sound?"
+        }
+      ]
     }
   ]
 }
