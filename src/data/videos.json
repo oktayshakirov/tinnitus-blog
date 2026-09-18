@@ -9,6 +9,60 @@
   },
   "videos": [
     {
+      "slug": "tinnitus-after-a-concert",
+      "id": "ZlYCm5JS90o",
+      "kind": "long",
+      "title": "How Long Does Tinnitus Last After a Concert?",
+      "description": "Ears ringing after a concert? For most people it fades within hours, and almost always within three days. Here is why a loud show makes your ears ring, what helps in the first 72 hours, the signs that mean do not wait, and how to protect your ears next time.",
+      "uploadDate": "2026-09-18T14:02:50Z",
+      "duration": "PT3M12S",
+      "seconds": 192,
+      "poster": "/images/videos/tinnitus-after-a-concert.webp",
+      "target": {
+        "type": "blog",
+        "slug": "tinnitus-after-a-concert"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Ringing after a concert",
+          "text": "Ringing ears after a concert usually fade within three days. For most people, it is gone in a few hours. It is still worth taking seriously, because that ringing is your ears saying the show was louder than they could handle. By the end, you will know how long yours should last, what actually helps in the first seventy-two hours, and the signs that mean do not wait."
+        },
+        {
+          "start": 21,
+          "title": "Why do your ears ring after a show?",
+          "text": "So why do your ears ring after a show at all? A loud show runs at ninety-five to a hundred and ten decibels. At a hundred decibels, the safe limit can be as short as fifteen minutes. And a full show runs for hours. So what does that much sound actually do? The tiny hair cells in your inner ear get worn out. So less detail reaches your brain. Your brain turns up its own volume to make up for it, and that extra gain is the ringing you hear. It even has a name, a temporary threshold shift, and temporary is the word that matters."
+        },
+        {
+          "start": 54,
+          "title": "How long does the ringing last?",
+          "text": "So how long does the ringing actually last? Most cases settle within a few hours to a day, some take up to three days, and past a week is the point to get it checked. A muffled, stuffed-up feeling often comes with it, and it usually fades on the same clock. If either one is still there after a week, book a hearing test."
+        },
+        {
+          "start": 74,
+          "title": "What helps in the first 72 hours?",
+          "text": "So what actually helps in the first seventy-two hours? Start with what helps. Give your ears a few quiet days. Keep soft sound in the background. Sleep, and drink water as normal. Now, what to hold off on. Another loud venue. Turning headphones up to drown it out. And sitting in total silence. That last one surprises people. In silence, there is nothing for the ringing to hide behind, so it stands out more. So keep the sound soft, just below the ringing, so you can still faintly hear it. And try not to spend the night reading forums about it. If you feel anxious, slow your breathing for a few minutes. A calmer body tends to notice the ringing less."
+        },
+        {
+          "start": 115,
+          "title": "When should you get it checked?",
+          "text": "But when should you get it checked? Most concert ringing settles on its own. These four signs are the exception. Sudden hearing loss. Dizziness, or the room spinning. Ear pain or discharge. Or ringing that is no better after three to seven days, or sits in one ear only. The first three, get seen the same day. The last one, book a hearing test."
+        },
+        {
+          "start": 137,
+          "title": "How do you protect your ears next time?",
+          "text": "So how do you protect your ears at the next show, without losing the music? Foam plugs cut about twenty to thirty-three decibels, earmuffs about twenty to thirty, and musician plugs about ten to twenty-five. Musician plugs cut less, but they lower everything evenly, so it sounds like the same mix, just quieter. Earmuffs are the easiest on and off, which is why they suit festivals. Stand away from the speaker stacks, because even a few metres matter. And take quiet breaks between sets. Your ears recover across the night."
+        },
+        {
+          "start": 169,
+          "title": "So your ears are ringing tonight",
+          "text": "It is usually temporary, and it usually fades within three days. Give your ears quiet, keep soft sound around you, and let them recover. And if any of those four signs show up, do not wait it out. The ringing is the warning. So at the next show, will you bring earplugs?"
+        }
+      ]
+    },
+    {
       "slug": "does-magnesium-help-tinnitus",
       "id": "vbN3LiJpnb8",
       "kind": "long",
