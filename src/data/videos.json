@@ -1038,6 +1038,24 @@
           "text": "So, back to the two fingers in front of your ear. If the sound moves when your jaw moves, you have found something you can actually work on. Not a cause. A control. So, check it now: are your teeth touching, right at this moment?"
         }
       ]
+    },
+    {
+      "slug": "cat-purr-comfort-20min",
+      "id": "DQohsxR94NQ",
+      "kind": "session",
+      "title": "Cat Purring Sounds for Tinnitus and Calm (20 Minutes)",
+      "label": "Comfort session",
+      "description": "Twenty minutes of cat purring with a breathing circle to follow, four seconds in and six seconds out. Deep, resonant and rhythmic: a sound of comfort to settle under.",
+      "uploadDate": "2026-09-28T16:01:03Z",
+      "duration": "PT20M",
+      "seconds": 1200,
+      "poster": "/images/videos/cat-purr-comfort-20min.webp",
+      "target": {
+        "type": "zen",
+        "slug": "cat-purr-sounds"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
