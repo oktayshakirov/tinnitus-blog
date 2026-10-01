@@ -5,10 +5,21 @@
 // is what used to send push notifications pointing at a 404.
 //
 // public/content-index.json ships inside the deployment, so the live copy is a
-// direct statement of which commit production is currently serving. Once it
-// lists everything this checkout has, the deploy carrying it is live.
+// direct statement of which content production is currently serving.
+//
+// Waiting for every slug to appear used to be enough, but that check was blind
+// to edits: changing an existing post adds no slug, so the PREVIOUS deployment
+// already satisfied it and this returned in seconds against stale content.
+// Harmless alone, since syncContent only notifies for slugs it has never seen,
+// but a commit that edited one post and added another could sync and notify
+// the new one against the old deployment. Compare contentRev instead, and fall
+// back to the slug report only for deployments built before it existed.
 const path = require('path');
-const { SITE_URL, collectContent } = require('../src/lib/contentIndex');
+const {
+  SITE_URL,
+  collectContent,
+  contentRev,
+} = require('../src/lib/contentIndex');
 
 // Generous enough for a slow build plus alias promotion; the job fails loudly
 // rather than silently syncing against a stale deployment.
@@ -21,7 +32,7 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function fetchLiveKeys() {
+async function fetchLiveIndex() {
   // Cache-bust so a CDN edge cannot hand back the previous deployment's copy.
   const response = await fetch(
     `${SITE_URL}/content-index.json?t=${Date.now()}`,
@@ -40,30 +51,45 @@ async function fetchLiveKeys() {
     throw new Error('content-index.json has no items array');
   }
 
-  return new Set(body.items.map(key));
+  return {
+    contentRev: typeof body.contentRev === 'string' ? body.contentRev : null,
+    keys: new Set(body.items.map(key)),
+  };
 }
 
 async function main() {
-  const expected = collectContent(path.join(__dirname, '..')).map(key);
+  const root = path.join(__dirname, '..');
+  const expected = collectContent(root).map(key);
+  const expectedRev = contentRev(root);
   const deadline = Date.now() + TIMEOUT_MS;
 
   console.log(
-    `Waiting for ${expected.length} item(s) to be live on ${SITE_URL}`
+    `Waiting for contentRev ${expectedRev} (${expected.length} item(s)) on ${SITE_URL}`
   );
 
   while (Date.now() < deadline) {
     try {
-      const live = await fetchLiveKeys();
-      const missing = expected.filter((item) => !live.has(item));
+      const live = await fetchLiveIndex();
 
-      if (missing.length === 0) {
+      if (live.contentRev === expectedRev) {
         console.log("Production is serving this commit's content.");
         return;
       }
 
-      console.log(
-        `Not live yet - waiting on ${missing.length}: ${missing.slice(0, 3).join(', ')}`
-      );
+      if (live.contentRev === null) {
+        // Expected exactly once: the deploy that first ships contentRev is
+        // still being promoted over one built before the field existed.
+        console.log(
+          'Live deployment predates contentRev - waiting for the new build'
+        );
+      } else {
+        const missing = expected.filter((item) => !live.keys.has(item));
+        console.log(
+          missing.length === 0
+            ? `Serving contentRev ${live.contentRev}, want ${expectedRev} - an edit is still being promoted`
+            : `Not live yet - waiting on ${missing.length}: ${missing.slice(0, 3).join(', ')}`
+        );
+      }
     } catch (error) {
       console.log(`${error.message} - retrying`);
     }

@@ -1,5 +1,6 @@
 {
   "version": 1,
+  "contentRev": "c92974326e5a0b38",
   "items": [
     {
       "type": "posts",
@@ -129,6 +130,13 @@
     },
     {
       "type": "posts",
+      "slug": "ear-piercings-and-tinnitus",
+      "title": "Ear Piercings and Tinnitus",
+      "url": "https://www.tinnitushelp.me/blog/ear-piercings-and-tinnitus",
+      "date": "2026-09-03T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
       "slug": "earwax-and-tinnitus",
       "title": "Earwax and Tinnitus",
       "url": "https://www.tinnitushelp.me/blog/earwax-and-tinnitus",
@@ -213,10 +221,24 @@
     },
     {
       "type": "posts",
+      "slug": "migraine-and-tinnitus",
+      "title": "Migraine and Tinnitus",
+      "url": "https://www.tinnitushelp.me/blog/migraine-and-tinnitus",
+      "date": "2026-09-29T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
       "slug": "new-tinnitus-research-in-2026",
       "title": "New Tinnitus Research in 2026",
       "url": "https://www.tinnitushelp.me/blog/new-tinnitus-research-in-2026",
       "date": "2026-01-14T23:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "new-tinnitus-what-to-do-first-week",
+      "title": "New Tinnitus: What To Do In The First Week",
+      "url": "https://www.tinnitushelp.me/blog/new-tinnitus-what-to-do-first-week",
+      "date": "2026-09-06T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -245,6 +267,13 @@
       "title": "Why Can I Hear My Heartbeat in My Ear? Pulsatile Tinnitus",
       "url": "https://www.tinnitushelp.me/blog/pulsatile-tinnitus-why-you-hear-your-heartbeat",
       "date": "2025-12-09T23:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "reactive-tinnitus",
+      "title": "Reactive Tinnitus",
+      "url": "https://www.tinnitushelp.me/blog/reactive-tinnitus",
+      "date": "2026-09-24T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -332,6 +361,13 @@
     },
     {
       "type": "posts",
+      "slug": "tinnitus-after-a-concert",
+      "title": "Tinnitus After a Concert",
+      "url": "https://www.tinnitushelp.me/blog/tinnitus-after-a-concert",
+      "date": "2026-09-17T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
       "slug": "tinnitus-and-air-travel",
       "title": "Tinnitus And Air Travel",
       "url": "https://www.tinnitushelp.me/blog/tinnitus-and-air-travel",
@@ -339,10 +375,24 @@
     },
     {
       "type": "posts",
+      "slug": "tinnitus-and-allergies",
+      "title": "Tinnitus and Allergies",
+      "url": "https://www.tinnitushelp.me/blog/tinnitus-and-allergies",
+      "date": "2026-09-20T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
       "slug": "tinnitus-and-anxiety-staying-mentally-strong",
       "title": "Anxiety: Staying Mentally Strong",
       "url": "https://www.tinnitushelp.me/blog/tinnitus-and-anxiety-staying-mentally-strong",
       "date": "2025-03-09T23:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "tinnitus-and-diabetes-the-blood-sugar-link",
+      "title": "Tinnitus and Diabetes: The Blood Sugar Link",
+      "url": "https://www.tinnitushelp.me/blog/tinnitus-and-diabetes-the-blood-sugar-link",
+      "date": "2026-09-04T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -392,6 +442,13 @@
       "title": "Tinnitus and the Pandemic",
       "url": "https://www.tinnitushelp.me/blog/tinnitus-and-the-pandemic",
       "date": "2023-08-05T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "tinnitus-and-vaping",
+      "title": "Tinnitus and Vaping",
+      "url": "https://www.tinnitushelp.me/blog/tinnitus-and-vaping",
+      "date": "2026-09-10T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -455,6 +512,13 @@
       "title": "Tinnitus: Myths vs. Reality",
       "url": "https://www.tinnitushelp.me/blog/tinnitus-myths-vs-reality",
       "date": "2023-08-01T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "tinnitus-retraining-therapy",
+      "title": "Tinnitus Retraining Therapy",
+      "url": "https://www.tinnitushelp.me/blog/tinnitus-retraining-therapy",
+      "date": "2026-09-26T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -619,10 +683,38 @@
     },
     {
       "type": "videos",
+      "slug": "brown-noise-vs-white-noise-for-tinnitus",
+      "title": "White Noise vs Brown Noise for Tinnitus",
+      "url": "https://www.tinnitushelp.me/videos/brown-noise-vs-white-noise-for-tinnitus",
+      "date": "2026-09-10T17:48:32.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "caffeine-and-tinnitus",
+      "title": "Does Caffeine Make Tinnitus Worse?",
+      "url": "https://www.tinnitushelp.me/videos/caffeine-and-tinnitus",
+      "date": "2026-09-04T12:57:20.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "can-neck-tension-cause-tinnitus",
+      "title": "Can Neck Tension Cause Tinnitus?",
+      "url": "https://www.tinnitushelp.me/videos/can-neck-tension-cause-tinnitus",
+      "date": "2026-09-24T15:07:02.000Z"
+    },
+    {
+      "type": "videos",
       "slug": "can-silence-make-tinnitus-worse",
       "title": "Does Silence Make Tinnitus Worse?",
       "url": "https://www.tinnitushelp.me/videos/can-silence-make-tinnitus-worse",
       "date": "2026-08-23T14:20:00.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "does-magnesium-help-tinnitus",
+      "title": "Does Magnesium Help Tinnitus?",
+      "url": "https://www.tinnitushelp.me/videos/does-magnesium-help-tinnitus",
+      "date": "2026-09-13T15:56:54.000Z"
     },
     {
       "type": "videos",
@@ -633,6 +725,13 @@
     },
     {
       "type": "videos",
+      "slug": "explain-tinnitus-to-others",
+      "title": "How to Explain Tinnitus to Family, Friends and Work",
+      "url": "https://www.tinnitushelp.me/videos/explain-tinnitus-to-others",
+      "date": "2026-09-22T10:46:38.000Z"
+    },
+    {
+      "type": "videos",
       "slug": "gaming-and-tinnitus",
       "title": "Gaming and Tinnitus: How Loud Is Too Loud?",
       "url": "https://www.tinnitushelp.me/videos/gaming-and-tinnitus",
@@ -640,10 +739,31 @@
     },
     {
       "type": "videos",
+      "slug": "new-tinnitus-what-to-do-first-week",
+      "title": "New Tinnitus? What To Do In The First Week",
+      "url": "https://www.tinnitushelp.me/videos/new-tinnitus-what-to-do-first-week",
+      "date": "2026-09-20T22:05:28.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "noise-canceling-headphones-for-tinnitus",
+      "title": "Can Noise-Canceling Headphones Make Tinnitus Worse?",
+      "url": "https://www.tinnitushelp.me/videos/noise-canceling-headphones-for-tinnitus",
+      "date": "2026-09-15T20:17:30.000Z"
+    },
+    {
+      "type": "videos",
       "slug": "pulsatile-tinnitus",
       "title": "Why Can You Hear Your Heartbeat in Your Ear?",
       "url": "https://www.tinnitushelp.me/videos/pulsatile-tinnitus",
       "date": "2026-09-02T15:33:29.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "tinnitus-after-a-concert",
+      "title": "How Long Does Tinnitus Last After a Concert?",
+      "url": "https://www.tinnitushelp.me/videos/tinnitus-after-a-concert",
+      "date": "2026-09-18T14:02:50.000Z"
     },
     {
       "type": "videos",
@@ -658,6 +778,13 @@
       "title": "Tinnitus Myths vs Reality: What Is Actually True?",
       "url": "https://www.tinnitushelp.me/videos/tinnitus-myths-vs-reality",
       "date": "2026-08-25T23:51:10.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "tmj-and-tinnitus-the-jaw-connection",
+      "title": "Can TMJ Cause Tinnitus?",
+      "url": "https://www.tinnitushelp.me/videos/tmj-and-tinnitus-the-jaw-connection",
+      "date": "2026-09-26T18:36:35.000Z"
     },
     {
       "type": "videos",

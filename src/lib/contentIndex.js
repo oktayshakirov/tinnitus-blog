@@ -8,6 +8,7 @@
 //   - scripts/syncContent.js          -> writes those entries into Firestore
 //   - the URL a push notification links to (mirrored in the app's
 //     functions/src/index.ts)
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
@@ -114,4 +115,57 @@ function collectContent(root) {
   ];
 }
 
-module.exports = { SITE_URL, SECTIONS, collectContent, parsePublishedAt };
+/** Every file whose bytes decide what the site publishes, repo-relative. */
+function contentSourceFiles(root) {
+  const files = [];
+
+  for (const section of SECTIONS) {
+    const directory = path.join(root, section.dir);
+    if (!fs.existsSync(directory)) continue;
+    for (const file of fs.readdirSync(directory)) {
+      if (/\.mdx?$/.test(file)) files.push(`${section.dir}/${file}`);
+    }
+  }
+
+  if (fs.existsSync(path.join(root, 'src/data/videos.json'))) {
+    files.push('src/data/videos.json');
+  }
+
+  return files.sort();
+}
+
+/**
+ * A fingerprint of the content in this checkout.
+ *
+ * scripts/waitForDeploy.js uses this to tell whether production is serving
+ * THIS commit's content. The slug list alone cannot: editing an existing post
+ * adds no slug, so the previous deployment already satisfied the old check and
+ * the wait returned instantly against stale content.
+ *
+ * Hashed over raw file bytes keyed by repo-relative path, so it is identical
+ * in any checkout of the same commit. Deliberately not the git SHA: this file
+ * is committed, and a build cannot know the SHA of the commit containing it.
+ */
+function contentRev(root) {
+  const hash = crypto.createHash('sha256');
+
+  for (const relative of contentSourceFiles(root)) {
+    // The path is hashed too, so a rename changes the rev even when the bytes
+    // do not. NUL separators keep path and body unambiguous.
+    hash.update(relative);
+    hash.update('\0');
+    hash.update(fs.readFileSync(path.join(root, relative)));
+    hash.update('\0');
+  }
+
+  return hash.digest('hex').slice(0, 16);
+}
+
+module.exports = {
+  SITE_URL,
+  SECTIONS,
+  collectContent,
+  contentRev,
+  contentSourceFiles,
+  parsePublishedAt,
+};
