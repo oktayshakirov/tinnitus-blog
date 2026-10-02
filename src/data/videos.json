@@ -1056,6 +1056,65 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "tinnitus-in-musicians",
+      "id": "zmmX2NSX1H0",
+      "kind": "long",
+      "title": "Why Do So Many Musicians Have Tinnitus?",
+      "description": "Pooling 67 studies and more than 28,000 musicians, a 2026 review found tinnitus in about 42.6% of musicians against 13.2% of non-musicians - roughly three times the rate, and about the same for classical players as for rock and pop. Here is where the dose actually comes from, the musicians who have spoken about it, what protects hearing without ruining the sound, and when ringing after a show is worth a hearing test.",
+      "uploadDate": "2026-10-02T13:51:28Z",
+      "duration": "PT3M59S",
+      "seconds": 239,
+      "poster": "/images/videos/tinnitus-in-musicians.webp",
+      "target": {
+        "type": "blog",
+        "slug": "tinnitus-in-musicians"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Why so many musicians",
+          "text": "Why do so many musicians end up with tinnitus? Pool sixty-seven studies together, and it is about forty-three percent of them. For everybody else, it is about thirteen. And the part that surprises musicians is where the dose comes from - not the big shows, but the rehearsals, the sound checks and the practice hours nobody counts. By the end you will know where the dose really comes from, what protects a working musician's hearing, and when ringing after a show needs a hearing test."
+        },
+        {
+          "start": 28,
+          "title": "How common is it, really?",
+          "text": "So how common is it, really? That figure is not one survey of one orchestra. A review published this year pooled more than twenty-eight thousand of them. And the proportions it found look like this. Musicians, about forty-three percent reporting tinnitus. People who are not musicians, about thirteen. Roughly three times the rate, with more hearing loss behind it. And it was not only the loud genres - the classical players came out about the same as the rock and pop ones."
+        },
+        {
+          "start": 59,
+          "title": "Why does the job do this?",
+          "text": "But why does the job itself do this? Three things stack up, and only the first one is obvious. Safe listening sits around eighty-five decibels. A loud show runs past a hundred, and parts of an orchestra peak between a hundred and a hundred and twenty. The second is time. A show is two hours; a career is thousands of them, and the dose is cumulative. The third is the only one anybody chooses: the protection gets left out, because plugs are supposed to ruin the sound."
+        },
+        {
+          "start": 90,
+          "title": "One thing worth being clear about",
+          "text": "So before the gear, one thing worth being clear about. The sound is the job. The dose is the choice. You cannot turn the music down to nothing and still do the work - but how much of it reaches your ears is something you can put your hands on."
+        },
+        {
+          "start": 104,
+          "title": "Who else is in this room?",
+          "text": "And who else is in this room? If it has already happened to you, you are in very large company. Pete Townshend of The Who has spoken for years about severe tinnitus and hearing loss. Chris Martin of Coldplay says he has had it since early in his career. Lars Ulrich of Metallica talks about it from behind the drum kit. And Eric Clapton has described tinnitus and hearing loss as part of what the work cost him. Sting, Phil Collins, Neil Young and Ozzy Osbourne have all said the same thing publicly. And nearly every one of them went public for one reason: to tell the people coming up behind them to protect it early."
+        },
+        {
+          "start": 142,
+          "title": "What actually protects a musician's hearing?",
+          "text": "So what actually protects a working musician's hearing? Mostly not the foam plugs from the chemist. Foam takes the high frequencies down first, so the mix goes muddy, and the plugs come straight back out. Musician earplugs lower the whole thing evenly instead. The high fidelity ones, or a custom pair moulded by an audiologist. The music still sounds like music. Quieter. In-ear monitors do the same job from the other side: a clean mix at a level you set, rather than a wall of stage volume to shout over. And for ordinary headphone listening there is the sixty sixty rule: sixty percent of the volume, sixty minutes, then a break. None of that is a treatment, and none of it undoes anything. It is how the dose stays smaller for the next twenty years of playing."
+        },
+        {
+          "start": 190,
+          "title": "When does ringing need a hearing test?",
+          "text": "But when does ringing after a show need a hearing test? Ringing and muffled hearing straight after a loud night usually settle within hours to a couple of days. Ringing still there after about a week, or after loud night following loud night, is more likely to be lasting. That one is worth a hearing test rather than another weekend. And if you play regularly, get one once a year anyway."
+        },
+        {
+          "start": 215,
+          "title": "Loud job, long hours, one choice",
+          "text": "So, back to why it is so many. Not because musicians have weaker ears. Because the job is loud, the hours are long, and only one part of that is optional. So, what would it take to put the plugs in at the next rehearsal, rather than at the next big show?"
+        }
+      ]
     }
   ]
 }
