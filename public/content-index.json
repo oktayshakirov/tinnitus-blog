@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "contentRev": "c92974326e5a0b38",
+  "contentRev": "53cfceb0175e28c7",
   "items": [
     {
       "type": "posts",
@@ -494,6 +494,13 @@
     },
     {
       "type": "posts",
+      "slug": "tinnitus-in-one-ear",
+      "title": "Tinnitus In One Ear",
+      "url": "https://www.tinnitushelp.me/blog/tinnitus-in-one-ear",
+      "date": "2026-10-03T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
       "slug": "tinnitus-in-wildlife",
       "title": "Tinnitus in Wildlife",
       "url": "https://www.tinnitushelp.me/blog/tinnitus-in-wildlife",
@@ -771,6 +778,13 @@
       "title": "How to Sleep With Tinnitus: Why Is It Worse at Night?",
       "url": "https://www.tinnitushelp.me/videos/tinnitus-and-sleep",
       "date": "2026-08-18T15:08:42.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "tinnitus-in-musicians",
+      "title": "Why Do So Many Musicians Have Tinnitus?",
+      "url": "https://www.tinnitushelp.me/videos/tinnitus-in-musicians",
+      "date": "2026-10-02T13:51:28.000Z"
     },
     {
       "type": "videos",
