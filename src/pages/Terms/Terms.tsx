@@ -4,7 +4,7 @@ import Divider from '@mui/material/Divider';
 import { Props } from '@pages/tags';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
-import Link from 'next/link';
+import Link from '@components/Link/NextLink';
 import TermsSEO from './Terms.SEO';
 
 const Terms = ({}: Props) => {

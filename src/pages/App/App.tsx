@@ -30,7 +30,7 @@ import {
   CallToActionSection,
 } from './App.styled';
 import Rating from '@mui/material/Rating';
-import Link from 'next/link';
+import Link from '@components/Link/NextLink';
 import Icon from '@components/Icon';
 
 interface Feature {

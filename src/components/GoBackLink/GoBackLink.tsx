@@ -1,5 +1,5 @@
 import React from 'react';
-import NextLink from 'next/link';
+import NextLink from '@components/Link/NextLink';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Link from '@mui/material/Link';
 import { useTheme } from '@mui/material/styles';

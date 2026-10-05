@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@components/Link/NextLink';
 import { DrawerProps } from '@mui/material/Drawer';
 import CloseIcon from '@mui/icons-material/Close';
 import Sidenav from '@components/Sidenav';

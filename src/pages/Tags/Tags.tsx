@@ -10,7 +10,7 @@ import {
   StyledButton,
   StyledTabContainer,
 } from './Tags.styled';
-import Link from 'next/link';
+import Link from '@components/Link/NextLink';
 
 const Tags = ({ tags }: Props) => (
   <>

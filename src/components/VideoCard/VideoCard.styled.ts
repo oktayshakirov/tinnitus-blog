@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
-import NextLink from 'next/link';
+import NextLink from '@components/Link/NextLink';
 
 export const StyledCard = styled(NextLink)`
   ${({ theme }) => css`

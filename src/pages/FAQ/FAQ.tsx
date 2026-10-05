@@ -3,7 +3,7 @@ import { StyledContainer } from './FAQ.styled';
 import Divider from '@mui/material/Divider';
 import Layout from '@components/Layout';
 import Headline from '@ui/pages/shared/Headline';
-import Link from 'next/link';
+import Link from '@components/Link/NextLink';
 import { Typography, Box, Paper } from '@mui/material';
 import FAQSEO from './FAQ.SEO';
 import { SITE_FAQ } from '@const/faq';

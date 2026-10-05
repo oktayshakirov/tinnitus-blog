@@ -9,7 +9,7 @@ import { Button, Box } from '@mui/material';
 import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
 import SpatialTrackingIcon from '@mui/icons-material/SpatialTracking';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-import NextLink from 'next/link';
+import NextLink from '@components/Link/NextLink';
 import { allSessions, longVideos } from '@lib/videos';
 import VideoCard from '@components/VideoCard';
 import {

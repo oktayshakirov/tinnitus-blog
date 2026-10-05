@@ -1,5 +1,5 @@
 import NextImage from 'next/image';
-import NextLink from 'next/link';
+import NextLink from '@components/Link/NextLink';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Layout from '@components/Layout';

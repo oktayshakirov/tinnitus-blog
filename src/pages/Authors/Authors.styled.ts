@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-import Link from 'next/link';
+import Link from '@components/Link/NextLink';
 
 export const StyledContainer = styled(Container)`
   ${({ theme }) => css`

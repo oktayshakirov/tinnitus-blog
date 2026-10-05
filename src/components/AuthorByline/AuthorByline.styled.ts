@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
-import Link from 'next/link';
+import Link from '@components/Link/NextLink';
 
 export const StyledByline = styled(Link)`
   ${({ theme }) => css`
