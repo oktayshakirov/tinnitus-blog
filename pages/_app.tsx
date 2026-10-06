@@ -8,7 +8,7 @@ import { DefaultSeo } from 'next-seo';
 import { Global } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
-import { Nunito } from 'next/font/google';
+import localFont from 'next/font/local';
 import SEO_CONFIG from '../next-seo.config';
 import { global } from '@theme/global';
 import { theme } from '@theme/theme';
@@ -19,8 +19,12 @@ import { buildGraph, organizationSchema, websiteSchema } from '@lib/schema';
 
 const SITE_GRAPH = buildGraph([organizationSchema(), websiteSchema()]);
 
-const nunito = Nunito({
-  subsets: ['latin'],
+// Committed rather than fetched by next/font/google at build time: that fetch
+// failed two crypto-wiki production builds in a row on 2026-10-06. Google's
+// Nunito v32 latin variable font, the full 200-1000 range it served before.
+const nunito = localFont({
+  src: '../src/fonts/nunito-latin.woff2',
+  weight: '200 1000',
   display: 'swap',
 });
 
