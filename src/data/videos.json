@@ -1174,6 +1174,24 @@
           "text": "Who else has tinnitus? Pete Townshend, Chris Martin, Lars Ulrich, Eric Clapton, Phil Collins, Ozzy Osbourne, Jeff Beck, Liam Gallagher, and will.i.am. So, which of these stories sounded most like your own?"
         }
       ]
+    },
+    {
+      "slug": "rain-masking-20min",
+      "id": "qaodCuHY6ss",
+      "kind": "session",
+      "title": "Rain Sounds for Tinnitus Masking (20 Minutes)",
+      "label": "Masking session",
+      "description": "Twenty minutes of steady rain with a breathing circle to follow, four counts in and six counts out. Set it just below your tinnitus, so you can still hear it faintly underneath.",
+      "uploadDate": "2026-10-12T15:55:57Z",
+      "duration": "PT20M",
+      "seconds": 1200,
+      "poster": "/images/videos/rain-masking-20min.webp",
+      "target": {
+        "type": "zen",
+        "slug": "nature-sounds"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
