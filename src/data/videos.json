@@ -1192,6 +1192,65 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "your-tinnitus-as-stressometer",
+      "id": "99PAGDLYd1A",
+      "kind": "long",
+      "title": "Does Stress Make Tinnitus Worse? Your Tinnitus as a Stress Meter",
+      "description": "Your tinnitus can read eight out of ten at half past two and four by seven - same ears, same day. That swing turns your tinnitus into your own personal stress-o-meter, and that one idea can change your whole perspective on it. Here is why stress can turn the ringing up, how to read it with a simple log, and what to do the moment it reads high.",
+      "uploadDate": "2026-10-13T16:33:08Z",
+      "duration": "PT3M34S",
+      "seconds": 214,
+      "poster": "/images/videos/your-tinnitus-as-stressometer.webp",
+      "target": {
+        "type": "blog",
+        "slug": "your-tinnitus-as-stressometer"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Does stress make tinnitus worse?",
+          "text": "Your tinnitus can read eight out of ten at half past two. By seven that evening, it reads four. Same ears, same day, five hours apart. That swing turns your tinnitus into your own personal stress-o-meter. And that one idea can change your whole perspective on it. Between those two readings came a deadline, an argument, and a short walk. By the end, you will know how to read yours, and what to do the moment it reads high."
+        },
+        {
+          "start": 25,
+          "title": "Why would stress turn it up?",
+          "text": "So why would stress turn the ringing up at all? When stress hits, your body's alarm system switches on. Adrenaline and cortisol rise, and every sense goes on high alert, your hearing included. And it can keep itself going. Stress puts you on alert, so the ringing seems louder, the louder ringing feels like a threat, and the threat keeps the alarm switched on. It is a smoke alarm going off for burnt toast. Well-meaning, far too loud, and not your fault."
+        },
+        {
+          "start": 54,
+          "title": "Why does listening make it louder?",
+          "text": "But why does listening for it make it louder? Stress narrows your focus, and your attention turns inward. The part of your brain that handles emotion talks constantly to your hearing pathways. So the harder you listen for the ringing, the louder it seems. That is the frustrating part, and it is also the useful one. Because if it climbs with stress, it can tell you when stress is climbing."
+        },
+        {
+          "start": 78,
+          "title": "How do you read the meter?",
+          "text": "So how do you actually read it? Start by giving it a number, the same way every time. Zero is silence, and ten is as loud as it gets. On a deadline afternoon, it might read an eight. Then write down what was going on, and how you felt. Here is what a few log entries look like. A deadline and an argument, eight. A quiet evening after a walk, four. A restless night before a presentation, five. After a week or two, look back at what the high numbers have in common. A tense meeting. Coffee late in the day. A silent room at night. For many people, the high numbers start to line up with stress, like an early warning."
+        },
+        {
+          "start": 119,
+          "title": "What makes a loud day worse?",
+          "text": "So what makes a loud day even worse? Usually, it is how you react to it. Compare the two ways a high reading can go. Take reacting first. You think, this is awful. You listen harder. And the alarm gets louder. Now compare that with reading it. You think, it is an eight. You ask what is going on. And you choose what to do next. It is like noticing a cloud. You see it, and it does not have to ruin your day. Talking therapy is built around exactly that part: not the sound, but your reaction to it."
+        },
+        {
+          "start": 151,
+          "title": "What do you do when it reads high?",
+          "text": "So what do you do when it reads high? Have a routine ready before you need it. First, note the number. Then breathe slowly, deep into your belly. Tense your shoulders and jaw, and let them go. And step away, even just around the room. Practice it on calm days too, so it is there on the hard ones. Over weeks, the same log shows which habits bring your stress down."
+        },
+        {
+          "start": 174,
+          "title": "When is it not just stress?",
+          "text": "But when is it not just stress? A meter like this is a self-check, not a diagnosis. If your tinnitus is severe, keeps distressing you, or changes suddenly, see a doctor or an audiologist. The same goes if it comes with hearing loss, dizziness, or pain."
+        },
+        {
+          "start": 191,
+          "title": "Back to that afternoon",
+          "text": "So, back to that afternoon. Eight at half past two, four by seven, and the same ears both times. Tinnitus is not a gift, and none of this makes it one. But on the days it climbs, it may be telling you something about the day. So the next time yours reads high, what will you check first?"
+        }
+      ]
     }
   ]
 }
