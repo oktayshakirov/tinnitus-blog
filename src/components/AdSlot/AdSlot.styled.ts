@@ -13,10 +13,15 @@ import { styled } from '@mui/material/styles';
  *
  * The frame only paints once an ad is actually there, so blocked or unfilled
  * slots leave nothing behind.
+ *
+ * Centred here rather than by the call site: AdSense wraps the creative in an
+ * inline-block host sized to the ad, so it follows the surrounding text-align
+ * and sat flush left wherever the parent was not centred.
  */
 export const StyledAdSlot = styled('div')`
   ${({ theme }) => css`
     margin: ${theme.spacing(1)} auto;
+    text-align: center;
 
     ins.adsbygoogle {
       display: block;
