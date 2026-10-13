@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useAdSlot, useAdsEnabled } from '@lib/useAdSlot';
@@ -31,9 +32,23 @@ const AdSlot = ({ slot, variant, placeholder }: Props) => {
   const isProduction = process.env.NODE_ENV === 'production';
   const theme = useTheme();
   // Ads only ever render after hydration, so this is accurate on first paint.
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'), { noSsr: true });
+  const matchesDesktop = useMediaQuery(theme.breakpoints.up('md'), {
+    noSsr: true,
+  });
   const shouldRenderAd = useAdsEnabled();
   const { insRef, adKey, status } = useAdSlot({ enabled: shouldRenderAd });
+
+  // Fixed once per ad request, not tracked: AdSense sizes a unit when it is
+  // pushed and an <ins> cannot be pushed twice, so following a rotation across
+  // md would only restyle a creative that was cut for the old width.
+  const [sizing, setSizing] = useState({
+    key: adKey,
+    isDesktop: matchesDesktop,
+  });
+  if (sizing.key !== adKey) {
+    setSizing({ key: adKey, isDesktop: matchesDesktop });
+  }
+  const { isDesktop } = sizing;
 
   if (!shouldRenderAd) {
     return null;
@@ -55,8 +70,7 @@ const AdSlot = ({ slot, variant, placeholder }: Props) => {
     <StyledAdSlot data-filled={status === 'filled'} data-fixed={isFixed}>
       {status === 'filled' && <StyledAdLabel>Advertisement</StyledAdLabel>}
       <ins
-        // A size change swaps the tag AdSense reads, so request a fresh unit.
-        key={`${adKey}-${isFixed ? 'fixed' : 'auto'}`}
+        key={adKey}
         ref={insRef}
         className="adsbygoogle"
         data-ad-client={AD_CLIENT}

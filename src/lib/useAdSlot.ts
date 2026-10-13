@@ -24,6 +24,24 @@ export const useAdsEnabled = (): boolean => {
   return enabled;
 };
 
+/**
+ * Injects the AdSense library the first time a slot asks for an ad, so a page
+ * without slots never loads it: not the app, not the legal and about pages,
+ * and not development, where slots render placeholders. With Auto ads overlays
+ * switched on, this is also what keeps anchors and vignettes off those pages.
+ */
+const loadAdSense = () => {
+  if (document.querySelector('script[src*="adsbygoogle.js"]')) {
+    return;
+  }
+  const script = document.createElement('script');
+  script.async = true;
+  script.src =
+    'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
+  script.crossOrigin = 'anonymous';
+  document.head.appendChild(script);
+};
+
 type UseAdSlotOptions = {
   /** Only load the ad when this is true (e.g. not inside the native app). */
   enabled: boolean;
@@ -35,7 +53,9 @@ export type AdStatus = 'filled' | 'unfilled' | null;
  * Shared AdSense slot loader.
  *
  * Responsibilities:
- * - Wait for the adsbygoogle script, then push the slot exactly once.
+ * - Load the library on first use, then push this slot's own `<ins>` exactly
+ *   once. Pushing before it has loaded is fine: `window.adsbygoogle` is a
+ *   queue it drains on arrival.
  * - Request a fresh ad on client-side route changes. AdSense does not support
  *   recycling an `<ins>`, so the caller must apply `adKey` as the element's
  *   React key: the old node is unmounted and a brand new one is pushed.
@@ -49,69 +69,62 @@ export type AdStatus = 'filled' | 'unfilled' | null;
  */
 export const useAdSlot = ({ enabled }: UseAdSlotOptions) => {
   const insRef = useRef<HTMLModElement>(null);
-  const [status, setStatus] = useState<AdStatus>(null);
   const { asPath } = useRouter();
-  // The query string never changes which creative is served.
-  const adKey = asPath.split('?')[0];
+  // Neither the query string nor the hash changes which creative is served,
+  // and an in-page anchor jump must not re-request every ad on the page.
+  const adKey = asPath.split(/[?#]/)[0];
+  // Keyed by page so a status left over from the previous route never frames
+  // the fresh, still empty slot.
+  const [fill, setFill] = useState<{ key: string | null; status: AdStatus }>({
+    key: null,
+    status: null,
+  });
 
   useEffect(() => {
-    if (!enabled || typeof window === 'undefined') {
+    const ins = insRef.current;
+    if (!enabled || !ins) {
       return;
     }
 
-    let cancelled = false;
-    let waitTimer: ReturnType<typeof setTimeout> | null = null;
+    loadAdSense();
 
-    setStatus(null);
+    const observer = new MutationObserver(() => {
+      const value = ins.getAttribute('data-ad-status');
+      setFill({
+        key: adKey,
+        status: value === 'filled' || value === 'unfilled' ? value : null,
+      });
+    });
+    observer.observe(ins, {
+      attributes: true,
+      attributeFilter: ['data-ad-status'],
+    });
 
-    const readStatus = () => {
-      const value = insRef.current?.getAttribute('data-ad-status');
-      setStatus(value === 'filled' || value === 'unfilled' ? value : null);
-    };
-
-    const pushAd = () => {
-      const ins = insRef.current;
-      if (cancelled || !ins || ins.hasAttribute('data-adsbygoogle-status')) {
+    // Give layout a tick so the slot is measured at its final width.
+    const timer = setTimeout(() => {
+      if (ins.hasAttribute('data-adsbygoogle-status')) {
         return;
       }
-
-      // Script not ready yet - retry shortly instead of a tight 100ms loop.
-      if (!window.adsbygoogle) {
-        waitTimer = setTimeout(pushAd, 200);
-        return;
-      }
-
       try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        // Name the element. A bare push({}) fills the first unfilled <ins> in
+        // the DOM, not this one: after a route change the slots that survive
+        // it push first, fill the new in-article units above them, those then
+        // skip their own push, and the last slot on the page stays empty.
+        (window.adsbygoogle = window.adsbygoogle || []).push({ element: ins });
       } catch {
         /* AdSense will log its own error; nothing to recover here. */
       }
-    };
-
-    const observer = new MutationObserver(readStatus);
-    if (insRef.current) {
-      observer.observe(insRef.current, {
-        attributes: true,
-        attributeFilter: ['data-ad-status'],
-      });
-    }
-
-    const handleScriptLoad = () => pushAd();
-    window.addEventListener('adsbygoogle-loaded', handleScriptLoad);
-
-    // Give layout a tick so the slot is measured at its final width.
-    const mountTimer = setTimeout(pushAd, 100);
+    }, 100);
 
     return () => {
-      cancelled = true;
-      clearTimeout(mountTimer);
-      if (waitTimer) {
-        clearTimeout(waitTimer);
-      }
+      clearTimeout(timer);
       observer.disconnect();
-      window.removeEventListener('adsbygoogle-loaded', handleScriptLoad);
     };
   }, [enabled, adKey]);
 
-  return { insRef, adKey, status };
+  return {
+    insRef,
+    adKey,
+    status: fill.key === adKey ? fill.status : null,
+  };
 };

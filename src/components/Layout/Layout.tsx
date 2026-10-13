@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Footer from '@components/Footer';
 
@@ -12,12 +12,15 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
-  const [isApp] = useState<boolean>(() => {
-    if (typeof document !== 'undefined') {
-      return document.documentElement.classList.contains('is-app');
-    }
-    return false;
-  });
+  // False on the server and on the first client render alike, so hydration
+  // matches inside the app too; the real value lands right after mount. What
+  // the app must never see is hidden from first paint by the `is-app` class
+  // _document sets and the `.is-app .isApp` rule in _app.
+  const [isApp, setIsApp] = useState(false);
+
+  useEffect(() => {
+    setIsApp(document.documentElement.classList.contains('is-app'));
+  }, []);
 
   return (
     <>

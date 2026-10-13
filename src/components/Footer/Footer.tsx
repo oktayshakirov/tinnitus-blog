@@ -28,12 +28,11 @@ type FooterProps = {
 const Footer = ({ isApp = false }: FooterProps) => {
   const currentYear = new Date().getFullYear();
   const pathname = usePathname();
-  const shouldHideAppsBanner = isApp || pathname === '/app';
 
   return (
     <StyledFooter>
-      <StyledContainer>
-        {!shouldHideAppsBanner && <AppsBanner />}
+      <StyledContainer className="isApp">
+        {pathname !== '/app' && <AppsBanner />}
       </StyledContainer>
       {!['/disclaimer', '/about', '/contact'].includes(pathname) && (
         <StyledContainer>
@@ -77,9 +76,12 @@ const Footer = ({ isApp = false }: FooterProps) => {
       </StyledContainer>
       <StyledIconContainer>
         {isApp ? (
+          // Keeps the footer clear of the app's tab bar.
           <Box sx={{ height: '60px' }} />
         ) : (
-          <>
+          // Rendered on the first pass in the app too, so the class hides
+          // them there until `isApp` arrives after mount.
+          <Box className="isApp" sx={{ display: 'contents' }}>
             <Link
               href="https://github.com/oktayshakirov/tinnitus-blog"
               target="_blank"
@@ -129,7 +131,7 @@ const Footer = ({ isApp = false }: FooterProps) => {
             >
               <Icon icon={FaTelegramPlane} size={24} />
             </Link>
-          </>
+          </Box>
         )}
       </StyledIconContainer>
     </StyledFooter>

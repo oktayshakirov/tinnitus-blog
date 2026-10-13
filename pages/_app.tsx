@@ -28,36 +28,13 @@ const nunito = localFont({
   display: 'swap',
 });
 
-if (typeof window !== 'undefined') {
-  window.adsbygoogle = window.adsbygoogle || [];
-}
-
-const AdsWrapper = () => {
+// Remembers the app across full reloads that drop the ?isApp=true flag. The
+// AdSense library is loaded by the first ad slot that needs it (useAdSlot).
+const AppFlag = () => {
   useEffect(() => {
-    const appFlag = document.documentElement.classList.contains('is-app');
-
-    if (appFlag) {
+    if (document.documentElement.classList.contains('is-app')) {
       localStorage.setItem('isApp', 'true');
     } else {
-      if (!document.querySelector('script[src*="adsbygoogle.js"]')) {
-        const script = document.createElement('script');
-        script.async = true;
-        script.src =
-          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5852582960793521';
-        script.crossOrigin = 'anonymous';
-
-        script.onload = () => {
-          if (typeof window !== 'undefined') {
-            window.dispatchEvent(new Event('adsbygoogle-loaded'));
-          }
-        };
-
-        document.head.appendChild(script);
-      } else {
-        if (typeof window !== 'undefined') {
-          window.dispatchEvent(new Event('adsbygoogle-loaded'));
-        }
-      }
       localStorage.removeItem('isApp');
     }
   }, []);
@@ -65,7 +42,7 @@ const AdsWrapper = () => {
   return null;
 };
 
-const DynamicAdsWrapper = dynamic(() => Promise.resolve(AdsWrapper), {
+const DynamicAppFlag = dynamic(() => Promise.resolve(AppFlag), {
   ssr: false,
 });
 
@@ -136,7 +113,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           `,
         }}
       />
-      <DynamicAdsWrapper />
+      <DynamicAppFlag />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Global styles={global} />
