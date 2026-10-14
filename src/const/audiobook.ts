@@ -11,6 +11,9 @@ export const AUDIOBOOK = {
   chapters: 13,
   price: '4.99',
   cover: '/images/audiobook-cover.jpg',
+  // 192px for the footer card: 2x its 96px slot, served as-is so it costs no
+  // Image Optimization transformations.
+  coverThumb: '/images/audiobook-cover-thumb.jpg',
   ogImage: '/images/audiobook-og.jpg',
   narrator: 'Kokoro (AI Voice)',
   author: 'Oktay Shakirov',

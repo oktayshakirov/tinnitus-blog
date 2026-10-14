@@ -2,28 +2,39 @@ import Image from 'next/image';
 import { Typography } from '@mui/material';
 import Link from '@components/Link';
 import {
-  StyledContainer,
-  BannerWrapper,
+  StyledCard,
+  Artwork,
+  Eyebrow,
   TextSection,
   BadgeSection,
-} from './AppsBanner.styled';
+} from '@components/PromoCard/PromoCard.styled';
 
 const AppsBanner = () => {
   return (
-    <StyledContainer>
-      <BannerWrapper>
-        <TextSection>
-          <Typography variant="h5" component="h2">
-            Download our app
-          </Typography>
-          <Typography variant="body2">
-            Managing tinnitus is even easier with our app. Stay up to date with
-            the new posts and sounds.{' '}
-            <Link href="/app" style={{ textDecoration: 'underline' }}>
-              Learn more
-            </Link>
-          </Typography>
-        </TextSection>
+    <StyledCard>
+      <Artwork className="promo-artwork">
+        <Link href="/app" aria-label="About the TinnitusHelp.me app">
+          <Image
+            src="/apple-touch-icon.png"
+            alt="TinnitusHelp.me app icon"
+            width={96}
+            height={96}
+            unoptimized
+          />
+        </Link>
+      </Artwork>
+      <TextSection>
+        <Eyebrow>Mobile app</Eyebrow>
+        <Typography variant="h5" component="h2">
+          Download our app
+        </Typography>
+        <Typography variant="body1">
+          Managing tinnitus is even easier with our app. Stay up to date with
+          the new posts and sounds.{' '}
+          <Link href="/app" style={{ textDecoration: 'underline' }}>
+            Learn more
+          </Link>
+        </Typography>
         <BadgeSection>
           <Link
             href="https://apps.apple.com/de/app/tinnitushelp-me/id6741688965"
@@ -50,8 +61,8 @@ const AppsBanner = () => {
             />
           </Link>
         </BadgeSection>
-      </BannerWrapper>
-    </StyledContainer>
+      </TextSection>
+    </StyledCard>
   );
 };
 

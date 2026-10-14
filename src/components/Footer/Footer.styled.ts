@@ -23,6 +23,14 @@ export const StyledContainer = styled(Container)`
   `}
 `;
 
+// The app and audiobook cards. Stretch keeps the pair the same height when one
+// description runs a line longer than the other.
+export const StyledBanners = styled(StyledContainer)`
+  align-items: stretch;
+  gap: 10px;
+  margin-bottom: 10px;
+`;
+
 export const StyledCopyright = styled('div')`
   text-align: center;
 `;

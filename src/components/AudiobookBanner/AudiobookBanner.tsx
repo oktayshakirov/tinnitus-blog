@@ -3,25 +3,39 @@ import { Typography } from '@mui/material';
 import Link from '@components/Link';
 import { AUDIOBOOK, AUDIOBOOK_BADGES } from '@const/audiobook';
 import {
-  StyledContainer,
-  BannerWrapper,
+  StyledCard,
+  Artwork,
+  Eyebrow,
   TextSection,
   BadgeSection,
-} from './AudiobookBanner.styled';
+} from '@components/PromoCard/PromoCard.styled';
 
 const AudiobookBanner = () => {
   return (
-    <StyledContainer>
-      <BannerWrapper>
-        <TextSection>
-          <Typography variant="h5" component="h2">
-            {AUDIOBOOK.title}
-          </Typography>
-          <Typography variant="body2">
-            Our {AUDIOBOOK.runtime} audiobook on why your ears ring, why it
-            gets louder, and how to stop it running your life.
-          </Typography>
-        </TextSection>
+    <StyledCard>
+      <Artwork className="promo-artwork">
+        <Link href="/audiobook" aria-label={`About ${AUDIOBOOK.title}`}>
+          <Image
+            src={AUDIOBOOK.coverThumb}
+            alt={`${AUDIOBOOK.title} audiobook cover`}
+            width={96}
+            height={96}
+            unoptimized
+          />
+        </Link>
+      </Artwork>
+      <TextSection>
+        <Eyebrow>Audiobook</Eyebrow>
+        <Typography variant="h5" component="h2">
+          {AUDIOBOOK.title}
+        </Typography>
+        <Typography variant="body1">
+          {AUDIOBOOK.runtime} on why your ears ring, why it gets louder, and
+          how to stop it running your life.{' '}
+          <Link href="/audiobook" style={{ textDecoration: 'underline' }}>
+            Learn more
+          </Link>
+        </Typography>
         <BadgeSection>
           {AUDIOBOOK_BADGES.map(({ href, src, alt, width, height }) => (
             <Link key={href} href={href} target="_blank">
@@ -35,8 +49,8 @@ const AudiobookBanner = () => {
             </Link>
           ))}
         </BadgeSection>
-      </BannerWrapper>
-    </StyledContainer>
+      </TextSection>
+    </StyledCard>
   );
 };
 

@@ -12,6 +12,7 @@ import Icon from '@components/Icon';
 import {
   StyledFooter,
   StyledContainer,
+  StyledBanners,
   StyledCopyright,
   StyledText,
   StyledIconContainer,
@@ -32,10 +33,10 @@ const Footer = ({ isApp = false }: FooterProps) => {
 
   return (
     <StyledFooter>
-      <StyledContainer className="isApp">
+      <StyledBanners className="isApp">
         {pathname !== '/app' && <AppsBanner />}
         {pathname !== '/audiobook' && <AudiobookBanner />}
-      </StyledContainer>
+      </StyledBanners>
       {!['/disclaimer', '/about', '/contact'].includes(pathname) && (
         <StyledContainer>
           <StyledDisclaimer>
