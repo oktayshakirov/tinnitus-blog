@@ -15,6 +15,11 @@ export const AUDIOBOOK = {
   narrator: 'Kokoro (AI Voice)',
   author: 'Oktay Shakirov',
   released: '2026-10-07',
+  // The free sample on YouTube: introduction plus chapter 1. Registered in
+  // src/data/videos.json, which owns its metadata and its VideoObject schema
+  // on /videos/<slug>, so nothing here duplicates it.
+  sampleVideoId: 'AGjidIWwqPg',
+  sampleVideoSlug: 'shut-up-tinnitus-sample',
 } as const;
 
 // One row per track, as the stores list them. Lengths are measured from the

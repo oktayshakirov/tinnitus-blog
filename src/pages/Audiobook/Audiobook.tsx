@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Typography, Box } from '@mui/material';
 import Layout from '@components/Layout';
 import Link from '@components/Link';
+import PostVideo from '@components/MDX/PostVideo';
 import AudiobookSEO from './Audiobook.SEO';
 import {
   AUDIOBOOK,
@@ -134,9 +135,22 @@ const Audiobook = () => {
             </Box>
           </Section>
 
-          {/* TODO: the sample video goes here once it is on YouTube, above the
-              excerpt. Hearing the narrator is worth more than reading about
-              them, so it should sit as high on the page as the cover allows. */}
+          <Section>
+            <SectionTitle>Hear the first eight minutes</SectionTitle>
+            <Typography sx={{ mb: 3, opacity: 0.7 }}>
+              The introduction and chapter one, free and unbroken. It is the
+              real opening rather than a highlight reel, so if you like this you
+              will like the book.
+            </Typography>
+            <PostVideo id={AUDIOBOOK.sampleVideoId} />
+            <Typography variant="body2" sx={{ mt: 2, opacity: 0.7 }}>
+              Also on{' '}
+              <Link href={`/videos/${AUDIOBOOK.sampleVideoSlug}`}>
+                its own page
+              </Link>
+              , with a full transcript.
+            </Typography>
+          </Section>
 
           <Section>
             <SectionTitle>How it opens</SectionTitle>
