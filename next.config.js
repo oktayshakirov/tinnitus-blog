@@ -55,15 +55,10 @@ const nextConfig = {
   },
   async headers() {
     return [
-      {
-        source: '/_next/static/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
+      // No rule for /_next/static: Next.js already serves it immutable in
+      // production. Adding one here also applies it in dev, where Turbopack
+      // keeps chunk names stable across edits, so the browser keeps running a
+      // year-cached old chunk and every edit shows up as a hydration mismatch.
       {
         source: '/images/(.*)',
         headers: [
