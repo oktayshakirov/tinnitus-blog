@@ -66,7 +66,9 @@ const config = {
         ? 0.2
         : 0.6;
       changefreq = 'monthly';
-    } else if (path === '/app') {
+    } else if (path === '/app' || path === '/audiobook') {
+      // The two product pages. Both are landing pages people are sent to from
+      // outside the site, so they rank above articles.
       priority = 0.9;
       changefreq = 'monthly';
     } else if (path.startsWith('/blog')) {

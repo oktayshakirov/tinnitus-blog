@@ -34,7 +34,7 @@ const Footer = ({ isApp = false }: FooterProps) => {
     <StyledFooter>
       <StyledContainer className="isApp">
         {pathname !== '/app' && <AppsBanner />}
-        <AudiobookBanner />
+        {pathname !== '/audiobook' && <AudiobookBanner />}
       </StyledContainer>
       {!['/disclaimer', '/about', '/contact'].includes(pathname) && (
         <StyledContainer>

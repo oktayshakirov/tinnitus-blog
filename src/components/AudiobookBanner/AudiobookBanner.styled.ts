@@ -29,11 +29,19 @@ export const TextSection = styled(Box)(({ theme }) => ({
   },
 }));
 
+// Deliberately the same shape as AppsBanner's BadgeSection, with no wrapping:
+// the two banners sit on top of each other in the footer, so a row that breaks
+// differently reads as a mistake. flexShrink keeps the badges on one line even
+// though the Spotify badge is a little wider than the app ones.
 export const BadgeSection = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   gap: '10px',
   marginTop: theme.spacing(1.5),
-  flexWrap: 'wrap',
+
+  '& a': {
+    flexShrink: 0,
+    display: 'inline-flex',
+  },
 }));
