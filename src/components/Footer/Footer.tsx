@@ -19,6 +19,7 @@ import {
 } from '@components/Footer/Footer.styled';
 import Box from '@mui/material/Box';
 import AppsBanner from '@components/AppsBanner';
+import AudiobookBanner from '@components/AudiobookBanner';
 import { usePathname } from 'next/navigation';
 
 type FooterProps = {
@@ -33,6 +34,7 @@ const Footer = ({ isApp = false }: FooterProps) => {
     <StyledFooter>
       <StyledContainer className="isApp">
         {pathname !== '/app' && <AppsBanner />}
+        <AudiobookBanner />
       </StyledContainer>
       {!['/disclaimer', '/about', '/contact'].includes(pathname) && (
         <StyledContainer>

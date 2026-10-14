@@ -7,6 +7,7 @@ import Image from '@components/MDX/Image';
 import Blockquote from '@components/MDX/Blockquote';
 import Highlighter from '@components/MDX/Highlighter';
 import AdComponent from '@components/MDX/AdComponent';
+import AudiobookCta from '@components/MDX/AudiobookCta';
 import StreamingPlatforms from './StreamingPlatforms';
 import Table from '@components/MDX/Table';
 import PostVideo from '@components/MDX/PostVideo';
@@ -25,6 +26,7 @@ export const components: MDXComponents = {
   Blockquote,
   Highlighter,
   AdComponent,
+  AudiobookCta,
   StreamingPlatforms,
   PostVideo,
   table: Table,
