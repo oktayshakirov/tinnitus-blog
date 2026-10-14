@@ -1,10 +1,9 @@
 import React from 'react';
+import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { FaSpotify, FaGooglePlay } from 'react-icons/fa';
-import Icon from '@components/Icon';
 import Link from '@components/Link';
-import { AUDIOBOOK } from '@const/audiobook';
+import { AUDIOBOOK, AUDIOBOOK_BADGES } from '@const/audiobook';
 
 type Props = {
   /** Which chapter this post feeds, e.g. "Chapter 10: Stop Listening For It". */
@@ -46,22 +45,17 @@ const AudiobookCta: React.FC<Props> = ({ chapter, teaser }) => (
         'The whole argument in under an hour, with every claim sourced.'}
     </Typography>
     <Box sx={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-      <Link
-        href={AUDIOBOOK.spotify}
-        target="_blank"
-        style={{ display: 'inline-flex', alignItems: 'center', gap: '7px' }}
-      >
-        <Icon icon={FaSpotify} size={17} />
-        Listen on Spotify
-      </Link>
-      <Link
-        href={AUDIOBOOK.googlePlay}
-        target="_blank"
-        style={{ display: 'inline-flex', alignItems: 'center', gap: '7px' }}
-      >
-        <Icon icon={FaGooglePlay} size={15} />
-        Google Play Books
-      </Link>
+      {AUDIOBOOK_BADGES.map(({ href, src, alt, width, height }) => (
+        <Link key={href} href={href} target="_blank">
+          <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            unoptimized
+          />
+        </Link>
+      ))}
     </Box>
   </Box>
 );
