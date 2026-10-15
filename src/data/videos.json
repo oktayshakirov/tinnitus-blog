@@ -1295,6 +1295,24 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "forest-chorus-box-breathing",
+      "id": "GIOaF-uas1s",
+      "kind": "session",
+      "title": "Forest Chorus + Box Breathing for Tinnitus (20 Minutes)",
+      "label": "Forest chorus",
+      "description": "Twenty minutes of a real forest chorus, paired with box breathing - inhale 4 seconds, hold 4, exhale 4, hold 4. Bring the sound up until your tinnitus starts to blend in, so you can still hear it faintly underneath.",
+      "uploadDate": "2026-10-15T18:20:08Z",
+      "duration": "PT20M",
+      "seconds": 1200,
+      "poster": "/images/videos/forest-chorus-box-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "jungle-stillness"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
