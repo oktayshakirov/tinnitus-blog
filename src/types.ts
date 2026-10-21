@@ -1,5 +1,4 @@
 import { ArticleType } from '@enums/articles';
-import { ReadTimeResults } from 'reading-time';
 
 export type ArticleMeta = {
   slug: string;
@@ -9,7 +8,6 @@ export type ArticleMeta = {
   tags: string[];
   date: string;
   image: string;
-  readingTime: ReadTimeResults;
   type: ArticleType;
   featured: boolean;
 };

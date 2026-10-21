@@ -8,7 +8,7 @@ import Image from '@components/Image';
 import {
   StyledCard,
   StyledContent,
-  StyledTime,
+  StyledNewBadge,
   StyledFooter,
   StyledLink,
   StyledTags,
@@ -18,9 +18,11 @@ import {
 import { getTagsPath } from '@lib/paths';
 import { Divider } from '@mui/material';
 import StreamingIcons from '@components/StreamingIcons';
-import { FaHashtag, FaClock, FaVideo } from 'react-icons/fa';
+import { FaHashtag, FaVideo } from 'react-icons/fa';
+import { HiSparkles } from 'react-icons/hi';
 import Icon from '@components/Icon';
 import { hasPageVideo } from '@lib/videos';
+import { useIsNew } from '@lib/useIsNew';
 
 type Props = {
   article: ArticleMeta;
@@ -28,9 +30,13 @@ type Props = {
 } & AllHTMLAttributes<HTMLDivElement>;
 
 const ArticleCard = ({ className, article, index }: Props) => {
-  const { title, description, slug, image, tags, type, readingTime } = article;
+  const { title, description, slug, image, tags, type, date } = article;
   const path = type === ArticleType.POST ? '/blog' : '/zen';
-  const hasVideo = hasPageVideo(type === ArticleType.POST ? 'blog' : 'zen', slug);
+  const hasVideo = hasPageVideo(
+    type === ArticleType.POST ? 'blog' : 'zen',
+    slug
+  );
+  const isNew = useIsNew(date);
 
   return (
     <Grow in timeout={(index || 0) * 150}>
@@ -47,15 +53,15 @@ const ArticleCard = ({ className, article, index }: Props) => {
               <Icon icon={FaVideo} />
             </StyledVideoBadge>
           )}
-          {type === ArticleType.POST && (
-            <StyledTime
+          {type === ArticleType.POST && isNew && (
+            <StyledNewBadge
               icon={
                 <Icon
-                  icon={FaClock}
-                  style={{ color: 'inherit', transform: 'translateY(-2px)' }}
+                  icon={HiSparkles}
+                  style={{ color: 'inherit', transform: 'translateY(-1px)' }}
                 />
               }
-              label={readingTime.text}
+              label="New"
             />
           )}
           <StyledContent>

@@ -52,7 +52,7 @@ export const StyledContent = styled('div')`
   `}
 `;
 
-export const StyledTime = styled(Chip)`
+export const StyledNewBadge = styled(Chip)`
   ${({ theme }) => css`
     background: ${theme.palette.primary.main};
     color: ${theme.palette.common.black};
@@ -62,6 +62,9 @@ export const StyledTime = styled(Chip)`
     left: ${theme.spacing(2)};
     z-index: 1;
     font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
   `}
 `;
 
@@ -90,27 +93,6 @@ export const StyledFooter = styled('div')`
     gap: ${theme.spacing(3)};
     padding: ${theme.spacing(1.5)} ${theme.spacing(2)};
     margin-top: auto;
-  `}
-`;
-
-export const StyledReadingTime = styled(Chip)`
-  ${({ theme }) => css`
-    position: relative;
-    background: ${theme.palette.primary.main};
-    color: ${theme.palette.common.black};
-    margin: 0;
-    font-weight: bold;
-
-    &:after {
-      display: block;
-      content: '';
-      border-right: 1px solid ${theme.palette.divider};
-      position: absolute;
-      right: -${theme.spacing(1.5)};
-      top: ${theme.spacing(0.5)};
-      z-index: 1;
-      height: ${theme.spacing(3)};
-    }
   `}
 `;
 

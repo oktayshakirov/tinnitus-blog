@@ -2,7 +2,6 @@ import fs from 'fs';
 import { sync } from 'glob';
 import matter from 'gray-matter';
 import path from 'path';
-import readingTimeLib from 'reading-time';
 import { Article } from '@types';
 import { ArticleType } from '@enums/articles';
 
@@ -28,7 +27,6 @@ export const getArticleFromSlug = (
   const articlePath = path.join(directory, `${slug}.mdx`);
   const source = fs.readFileSync(articlePath);
   const { content, data } = matter(source);
-  const readingTime = readingTimeLib(content);
 
   return {
     content,
@@ -42,7 +40,6 @@ export const getArticleFromSlug = (
       image: data.image ?? '',
       featured: data.featured ?? false,
       type,
-      readingTime,
     },
   };
 };
