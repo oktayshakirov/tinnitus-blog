@@ -9,6 +9,70 @@
   },
   "videos": [
     {
+      "slug": "tinnitus-in-history",
+      "id": "SxbxPnbIuAg",
+      "kind": "long",
+      "title": "The History of Tinnitus: 3,500 Years of Ringing Ears",
+      "description": "Tinnitus is not a modern problem. Three and a half thousand years ago, Egyptian doctors were already writing about a bewitched ear, and every age since has heard the same sound and blamed something different - spirits, humours, blocked energy, a message from God. Here is the whole history, where the name comes from, and where the sound is really made.",
+      "uploadDate": "2026-10-21T17:11:24Z",
+      "duration": "PT3M58S",
+      "seconds": 238,
+      "poster": "/images/videos/tinnitus-in-history.webp",
+      "target": {
+        "type": "blog",
+        "slug": "tinnitus-in-history"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "The history of tinnitus",
+          "text": "You might think tinnitus is a modern problem. It is a myth. Three and a half thousand years ago, Egyptian doctors were already writing about a bewitched ear. Since then, every age has heard the same sound, and blamed something completely different. By the end, you will know where the name comes from, where almost every old cure went wrong, and where the sound is really made."
+        },
+        {
+          "start": 22,
+          "title": "What did the Egyptians blame?",
+          "text": "What did the Egyptians blame? The oldest record is the Ebers Papyrus, a medical scroll from around 1550 BC. It describes a humming in the ear. And the explanation was spirits, something foreign that had got inside. So the remedy was to drive it out, with oils, frankincense and myrrh, often alongside a spell. It sounds strange now. But it means someone, that long ago, took the sound seriously enough to write it down."
+        },
+        {
+          "start": 50,
+          "title": "Was it in the blood?",
+          "text": "Was it in the blood? Hippocrates, often called the father of medicine, described ringing in the ears. He, and later Galen, blamed an imbalance of the four humours: blood, phlegm, yellow bile and black bile. So the fix was to rebalance them, with diet, exercise, and sometimes bloodletting. Rome took that medicine and kept it. The writer Celsus suggested rose extract, dropped into the ear. And the word itself comes from Latin: tinnitus, from a verb that means to ring. A Roman soldier, standing in the noise of battle, may well have gone home ringing, with no record of it at all."
+        },
+        {
+          "start": 88,
+          "title": "What did the East see in it?",
+          "text": "What did the East see in it? In India, Ayurveda gave the ear noises a name of their own. It blamed too much Vata, the body's energy of air and movement. So warm herbal oils went into the ear, alongside cleansing and a change of diet. In China, the explanation was blocked Qi, the energy said to flow through the body. The ears were thought to depend on the kidneys, so acupuncture and herbs aimed to get that flow moving again."
+        },
+        {
+          "start": 117,
+          "title": "A message from God?",
+          "text": "A message from God? For some, it was. A ringing in the ears could be read as a sign from heaven, or a warning. Monks kept the old herbal remedies alive, with plants like mistletoe and plantain. And then the whole story changed, with a book of drawings."
+        },
+        {
+          "start": 135,
+          "title": "When did it become science?",
+          "text": "When did it become science? In 1543, the anatomist Andreas Vesalius published the most detailed atlas of the human body anyone had seen. For the first time, doctors could study the ear as it really is, instead of guessing. By the 1800s, the ear had a medical field of its own, called otology. Doctors tried syringing, electric currents, and the first hearing devices."
+        },
+        {
+          "start": 162,
+          "title": "Where were they all looking?",
+          "text": "Where were they all looking? Spirits. Bad humours. Too much air. Blocked energy. A message from God. Five explanations, and almost every remedy went into the ear. Put the whole story on one line, and something stands out. A bewitched ear, around 1550 BC. The four humours, a thousand years later. The body, drawn as it is, in 1543. And only in our own time, the brain. For almost all of that line, people were guessing."
+        },
+        {
+          "start": 192,
+          "title": "Where is the sound really made?",
+          "text": "Where is the sound really made? Today, research points further along, to the brain. When less sound reaches it, the brain can turn up its own volume, and a sound can appear that is not really there. That is why pouring something into the ear so rarely reached it. So the tools today are built around the brain's side of it: sound therapy, hearing aids, and talking therapy."
+        },
+        {
+          "start": 215,
+          "title": "Back to that papyrus",
+          "text": "Back to that papyrus Three and a half thousand years, and the sound has not changed. What changed is where we look for it. If your own ringing is new, or has changed, it is worth getting your hearing checked. And if you could ask that Egyptian doctor one question, what would it be?"
+        }
+      ]
+    },
+    {
       "slug": "tinnitus-after-a-concert",
       "id": "ZlYCm5JS90o",
       "kind": "long",
