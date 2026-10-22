@@ -1377,6 +1377,24 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "nebula-pulse-478-breathing",
+      "id": "r7NqyOv5_9Y",
+      "kind": "session",
+      "title": "Nebula Pulse + 4-7-8 Breathing for Tinnitus (20 Minutes)",
+      "label": "Nebula Pulse",
+      "description": "Twenty minutes of Nebula Pulse, a deep, low hum with a soft pulse, paired with 4-7-8 breathing - inhale 4 seconds, hold 7, exhale 8. Keep it low and comfortable: a session to settle into rather than a masking sound.",
+      "uploadDate": "2026-10-22T16:45:54Z",
+      "duration": "PT20M",
+      "seconds": 1200,
+      "poster": "/images/videos/nebula-pulse-478-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "white-noise"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
