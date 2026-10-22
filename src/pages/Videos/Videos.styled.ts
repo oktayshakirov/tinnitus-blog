@@ -2,35 +2,34 @@ import { css } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import { alpha } from '@mui/system/colorManipulator';
 
-// Buttons rather than links, because both tabs are one page: the sessions have
-// no route of their own any more. ?tab= still opens either of them.
-export const StyledTabs = styled('div')`
+// Links, because each tab is a route of its own: /videos and /videos/sessions.
+export const StyledTabs = styled('nav')`
   ${({ theme }) => css`
     display: flex;
     justify-content: center;
     gap: ${theme.spacing(1)};
     margin-bottom: ${theme.spacing(4)};
 
-    button {
+    a {
+      display: inline-flex;
+      align-items: center;
       min-height: 44px;
       padding: 0 ${theme.spacing(2)};
       border: 1px solid ${alpha(theme.palette.common.white, 0.15)};
       border-radius: 999px;
-      background: none;
-      font: inherit;
       font-size: 0.95rem;
+      text-decoration: none;
       color: ${theme.palette.text.secondary};
-      cursor: pointer;
       transition: color 150ms ease, border-color 150ms ease,
         background-color 150ms ease;
     }
 
-    button:hover {
+    a:hover {
       color: ${theme.palette.text.primary};
       border-color: ${theme.palette.primary.main};
     }
 
-    button[aria-current='page'] {
+    a[aria-current='page'] {
       color: ${theme.palette.primary.main};
       border-color: ${theme.palette.primary.main};
       background: ${alpha(theme.palette.common.white, 0.06)};
@@ -38,31 +37,20 @@ export const StyledTabs = styled('div')`
   `}
 `;
 
-export const StyledAlbum = styled('div')`
+export const StyledPlayer = styled('div')`
   ${({ theme }) => css`
-    /* ZenSessions already opens with a top margin; this only separates albums
-       from each other. */
-    & + & {
-      margin-top: ${theme.spacing(2)};
-    }
+    position: relative;
+    aspect-ratio: 16 / 9;
+    margin-bottom: ${theme.spacing(4)};
+    overflow: hidden;
+    border-radius: ${theme.shape.borderRadius}px;
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
-
-    a:hover {
-      color: ${theme.palette.primary.main};
-    }
-  `}
-`;
-
-export const StyledNote = styled('p')`
-  ${({ theme }) => css`
-    max-width: 60ch;
-    margin: 0 auto ${theme.spacing(3)};
-    text-align: center;
-    line-height: 1.7;
-    color: ${theme.palette.text.secondary};
   `}
 `;

@@ -81,7 +81,8 @@ function readSection(root, section) {
  * They live in src/data/videos.json because the id, uploadDate and duration
  * only exist once a video is uploaded. Only long form is listed: those are the
  * ones with a page at /videos/<slug> for a notification to open. Sound sessions
- * are a tab on /videos rather than pages of their own, so they are left out.
+ * are listed on /videos/sessions rather than pages of their own, so they are
+ * left out.
  */
 function readVideos(root) {
   const file = path.join(root, 'src/data/videos.json');

@@ -3,30 +3,38 @@ import JsonLd from '@components/JsonLd';
 import { DEFAULT_OG_IMAGE, DOMAIN, DOMAIN_NAME } from '@const/general';
 import { buildGraph, breadcrumbSchema } from '@lib/schema';
 import { videoObjectSchema, SiteVideo } from '@lib/videos';
-import { SessionAlbum } from './Videos';
+import { VideosTab, VIDEOS_TAB_PATH } from './Videos';
 import { paginatedTitle, paginatedDescription } from '@lib/pagination';
 
 type Props = {
+  tab: VideosTab;
   videos: SiteVideo[];
-  albums: SessionAlbum[];
   page: number;
 };
 
 export const VIDEOS_TITLE = `Tinnitus Videos | ${DOMAIN_NAME}`;
 export const VIDEOS_DESCRIPTION =
-  'Short explainers on what tinnitus is, what causes it and how to live with it, plus masking and paced-breathing sound sessions you can play straight through.';
+  'Short explainers on what tinnitus is, what causes it and how to live with it, from causes and treatments to the science behind the ringing.';
 
-const VideosSEO = ({ videos, albums, page }: Props) => {
-  // Page 1 is reachable as both /videos and /videos/page/1; the canonical
-  // points at /videos so the two are not indexed separately, the same way
+export const SESSIONS_TITLE = `Tinnitus Sound Therapy Sessions | ${DOMAIN_NAME}`;
+export const SESSIONS_DESCRIPTION =
+  'Masking and paced-breathing sound sessions for tinnitus: white noise, rain, waterfalls and more, ready to play straight through.';
+
+const VideosSEO = ({ tab, videos, page }: Props) => {
+  const basePath = `${DOMAIN}${VIDEOS_TAB_PATH[tab]}`;
+  // Page 1 is reachable as both the tab root and its /page/1; the canonical
+  // points at the root so the two are not indexed separately, the same way
   // /blog does it.
-  const canonical =
-    page > 1 ? `${DOMAIN}/videos/page/${page}` : `${DOMAIN}/videos`;
-  const title = paginatedTitle(VIDEOS_TITLE, page);
-  const description = paginatedDescription(VIDEOS_DESCRIPTION, page);
-  // Both kinds are on this page now, so both belong in the list. Sessions used
-  // to be described by /zen/videos, which no longer exists.
-  const all = [...videos, ...albums.flatMap((album) => album.sessions)];
+  const canonical = page > 1 ? `${basePath}/page/${page}` : basePath;
+  const isSessions = tab === 'sessions';
+  const title = paginatedTitle(
+    isSessions ? SESSIONS_TITLE : VIDEOS_TITLE,
+    page
+  );
+  const description = paginatedDescription(
+    isSessions ? SESSIONS_DESCRIPTION : VIDEOS_DESCRIPTION,
+    page
+  );
 
   const graph = buildGraph([
     // Video is the main content here, so the VideoObjects are the page rather
@@ -34,10 +42,10 @@ const VideosSEO = ({ videos, albums, page }: Props) => {
     // of them and not one video with duplicates.
     {
       '@type': 'ItemList',
-      name: VIDEOS_TITLE,
+      name: title,
       url: canonical,
-      numberOfItems: all.length,
-      itemListElement: all.map((video, index) => ({
+      numberOfItems: videos.length,
+      itemListElement: videos.map((video, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         item: videoObjectSchema(video, DOMAIN),
@@ -45,7 +53,8 @@ const VideosSEO = ({ videos, albums, page }: Props) => {
     },
     breadcrumbSchema([
       { name: 'Home', url: DOMAIN },
-      { name: 'Videos', url: canonical },
+      { name: 'Videos', url: `${DOMAIN}/videos` },
+      ...(isSessions ? [{ name: 'Sound sessions', url: basePath }] : []),
     ]),
   ]);
 

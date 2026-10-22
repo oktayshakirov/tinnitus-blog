@@ -1,9 +1,14 @@
 import NextImage from 'next/image';
 import { SiteVideo, formatDuration } from '@lib/videos';
-import { StyledCard } from './VideoCard.styled';
+import { StyledCard, StyledPlayCard } from './VideoCard.styled';
 
 type Props = {
   video: SiteVideo;
+  /**
+   * Plays the video in place instead of linking to /videos/<slug>. For sound
+   * sessions, which have no page of their own.
+   */
+  onPlay?: () => void;
 };
 
 /**
@@ -14,11 +19,11 @@ type Props = {
  * The poster is our own WebP and nothing is requested from Google here, which
  * is what keeps a page of twelve of these cheap.
  */
-const VideoCard = ({ video }: Props) => {
+const VideoCard = ({ video, onPlay }: Props) => {
   const length = formatDuration(video.seconds);
 
-  return (
-    <StyledCard href={`/videos/${video.slug}`}>
+  const body = (
+    <>
       <span className="video-poster">
         <NextImage
           src={video.poster}
@@ -30,8 +35,18 @@ const VideoCard = ({ video }: Props) => {
         {length && <span className="video-length">{length}</span>}
       </span>
       <span className="video-title">{video.title}</span>
-    </StyledCard>
+    </>
   );
+
+  if (onPlay) {
+    return (
+      <StyledPlayCard onClick={onPlay} aria-label={`Play: ${video.title}`}>
+        {body}
+      </StyledPlayCard>
+    );
+  }
+
+  return <StyledCard href={`/videos/${video.slug}`}>{body}</StyledCard>;
 };
 
 export default VideoCard;

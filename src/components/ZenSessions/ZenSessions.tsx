@@ -1,4 +1,4 @@
-import { useState, ReactNode } from 'react';
+import { useState } from 'react';
 import NextImage from 'next/image';
 import Typography from '@mui/material/Typography';
 import { SiteVideo, formatDuration } from '@lib/videos';
@@ -12,10 +12,6 @@ import {
 
 type Props = {
   sessions: SiteVideo[];
-  /** Defaults to "Video sessions"; the /videos listing passes album names. */
-  heading?: ReactNode;
-  /** The listing shows the usage note once at the top, not per album. */
-  showNote?: boolean;
 };
 
 /**
@@ -31,11 +27,7 @@ type Props = {
  * content, which is also why they are the strongest video rich-result
  * candidate we have.
  */
-const ZenSessions = ({
-  sessions,
-  heading = 'Video sessions',
-  showNote = true,
-}: Props) => {
+const ZenSessions = ({ sessions }: Props) => {
   const [openId, setOpenId] = useState<string | null>(null);
 
   if (!sessions.length) return null;
@@ -45,7 +37,7 @@ const ZenSessions = ({
   return (
     <StyledSection>
       <Typography component="h2" variant="h5" gutterBottom>
-        {heading}
+        Video sessions
       </Typography>
 
       {open && (
@@ -85,13 +77,10 @@ const ZenSessions = ({
 
       {/* The one instruction that matters, and the one most people get
           backwards: burying the ringing completely is not what masking is for. */}
-      {showNote && (
-        <StyledNote>
-          Use headphones, and set the volume so the sound sits{' '}
-          <em>just below</em> your tinnitus - you should still hear the ringing
-          faintly underneath.
-        </StyledNote>
-      )}
+      <StyledNote>
+        Use headphones, and set the volume so the sound sits <em>just below</em>{' '}
+        your tinnitus - you should still hear the ringing faintly underneath.
+      </StyledNote>
     </StyledSection>
   );
 };

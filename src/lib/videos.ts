@@ -97,7 +97,7 @@ export const getAlbumSessions = (albumSlug: string): SiteVideo[] =>
     (video) => video.kind === 'session' && onPage(video, 'zen', albumSlug)
   ).sort((a, b) => a.seconds - b.seconds);
 
-/** Every session on the site, for the sessions tab on /videos. */
+/** Every session on the site, for /videos/sessions. */
 export const allSessions = (): SiteVideo[] =>
   VIDEOS.filter((video) => video.kind === 'session').sort(
     (a, b) => a.seconds - b.seconds
@@ -108,8 +108,8 @@ export const allSessions = (): SiteVideo[] =>
  *
  * These are exactly the videos with a page of their own, because they are the
  * ones carrying chapters and a transcript. Shorts have neither and make a bad
- * 16:9 card besides; sessions have no narration to transcribe and get their own
- * tab on /videos, grouped by the album each was cut from.
+ * 16:9 card besides; sessions have no narration to transcribe and are listed
+ * on /videos/sessions instead.
  */
 export const longVideos = (): SiteVideo[] =>
   VIDEOS.filter((video) => video.kind === 'long').sort((a, b) =>

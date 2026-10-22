@@ -5,7 +5,7 @@ import { videosPageProps } from '@lib/videosPage';
 const VideosPage = (props: Props) => <Videos {...props} />;
 
 export const getStaticProps: GetStaticProps = async () => ({
-  props: videosPageProps(1),
+  props: videosPageProps('explainers', 1),
 });
 
 export default VideosPage;

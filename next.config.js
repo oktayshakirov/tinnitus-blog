@@ -14,14 +14,12 @@ const nextConfig = {
         destination: '/blog/best-tinnitus-apps',
         permanent: true,
       },
-      // The sound sessions used to have their own listing. They are a tab on
-      // /videos now, so the old URL - indexed, and linked from the app - lands
-      // there rather than 404ing. It opens on the explainers; the sessions are
-      // one tap away and this page is statically generated, so there is no
-      // honest way to preselect a tab from a query string.
+      // The sound sessions used to have their own listing here. They live at
+      // /videos/sessions now, so the old URL - indexed, and linked from the
+      // app - lands there rather than 404ing.
       {
         source: '/zen/videos',
-        destination: '/videos',
+        destination: '/videos/sessions',
         permanent: true,
       },
       // Legacy pagination pattern. Google has /blog?page=N indexed alongside
