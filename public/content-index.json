@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "contentRev": "53cfceb0175e28c7",
+  "contentRev": "b772d8bb39233433",
   "items": [
     {
       "type": "posts",
@@ -92,6 +92,13 @@
       "title": "Daily Routines to Minimize Tinnitus",
       "url": "https://www.tinnitushelp.me/blog/daily-routines-to-minimize-tinnitus",
       "date": "2024-11-17T23:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "did-beethoven-have-tinnitus",
+      "title": "Did Beethoven Have Tinnitus?",
+      "url": "https://www.tinnitushelp.me/blog/did-beethoven-have-tinnitus",
+      "date": "2026-10-14T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -225,6 +232,13 @@
       "title": "Migraine and Tinnitus",
       "url": "https://www.tinnitushelp.me/blog/migraine-and-tinnitus",
       "date": "2026-09-29T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "musical-ear-syndrome",
+      "title": "Musical Ear Syndrome",
+      "url": "https://www.tinnitushelp.me/blog/musical-ear-syndrome",
+      "date": "2026-10-11T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -407,6 +421,13 @@
       "title": "The Genetics of Tinnitus: What the Research Has Found",
       "url": "https://www.tinnitushelp.me/blog/tinnitus-and-genetics",
       "date": "2023-08-18T22:00:00.000Z"
+    },
+    {
+      "type": "posts",
+      "slug": "tinnitus-and-hearing-loss",
+      "title": "Tinnitus and Hearing Loss",
+      "url": "https://www.tinnitushelp.me/blog/tinnitus-and-hearing-loss",
+      "date": "2026-10-06T22:00:00.000Z"
     },
     {
       "type": "posts",
@@ -718,6 +739,13 @@
     },
     {
       "type": "videos",
+      "slug": "celebrities-with-tinnitus",
+      "title": "Celebrities With Tinnitus - and How Each of Them Got It",
+      "url": "https://www.tinnitushelp.me/videos/celebrities-with-tinnitus",
+      "date": "2026-10-09T12:53:46.000Z"
+    },
+    {
+      "type": "videos",
       "slug": "does-magnesium-help-tinnitus",
       "title": "Does Magnesium Help Tinnitus?",
       "url": "https://www.tinnitushelp.me/videos/does-magnesium-help-tinnitus",
@@ -767,6 +795,13 @@
     },
     {
       "type": "videos",
+      "slug": "shut-up-tinnitus-sample",
+      "title": "Shut Up, Tinnitus - Free Audiobook Sample (Introduction and Chapter 1)",
+      "url": "https://www.tinnitushelp.me/videos/shut-up-tinnitus-sample",
+      "date": "2026-10-14T16:36:20.000Z"
+    },
+    {
+      "type": "videos",
       "slug": "tinnitus-after-a-concert",
       "title": "How Long Does Tinnitus Last After a Concert?",
       "url": "https://www.tinnitushelp.me/videos/tinnitus-after-a-concert",
@@ -778,6 +813,13 @@
       "title": "How to Sleep With Tinnitus: Why Is It Worse at Night?",
       "url": "https://www.tinnitushelp.me/videos/tinnitus-and-sleep",
       "date": "2026-08-18T15:08:42.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "tinnitus-in-history",
+      "title": "The History of Tinnitus: 3,500 Years of Ringing Ears",
+      "url": "https://www.tinnitushelp.me/videos/tinnitus-in-history",
+      "date": "2026-10-21T17:11:24.000Z"
     },
     {
       "type": "videos",
@@ -806,6 +848,13 @@
       "title": "Why Does Tinnitus Spike?",
       "url": "https://www.tinnitushelp.me/videos/why-does-tinnitus-spike",
       "date": "2026-08-28T12:34:26.000Z"
+    },
+    {
+      "type": "videos",
+      "slug": "your-tinnitus-as-stressometer",
+      "title": "Does Stress Make Tinnitus Worse? Your Tinnitus as a Stress Meter",
+      "url": "https://www.tinnitushelp.me/videos/your-tinnitus-as-stressometer",
+      "date": "2026-10-13T16:33:08.000Z"
     }
   ]
 }
