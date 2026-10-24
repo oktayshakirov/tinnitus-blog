@@ -19,7 +19,6 @@ import { getTagsPath } from '@lib/paths';
 import { Divider } from '@mui/material';
 import StreamingIcons from '@components/StreamingIcons';
 import { FaHashtag, FaVideo } from 'react-icons/fa';
-import { HiSparkles } from 'react-icons/hi';
 import Icon from '@components/Icon';
 import { hasPageVideo } from '@lib/videos';
 import { useIsNew } from '@lib/useIsNew';
@@ -54,15 +53,7 @@ const ArticleCard = ({ className, article, index }: Props) => {
             </StyledVideoBadge>
           )}
           {type === ArticleType.POST && isNew && (
-            <StyledNewBadge
-              icon={
-                <Icon
-                  icon={HiSparkles}
-                  style={{ color: 'inherit', transform: 'translateY(-1px)' }}
-                />
-              }
-              label="New"
-            />
+            <StyledNewBadge label="New" />
           )}
           <StyledContent>
             <Typography component="h2" variant="h6" mb={1}>
