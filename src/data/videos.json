@@ -9,6 +9,60 @@
   },
   "videos": [
     {
+      "slug": "did-beethoven-have-tinnitus",
+      "id": "TzJoZMNEhUg",
+      "kind": "long",
+      "title": "Did Beethoven Have Tinnitus?",
+      "description": "Beethoven had tinnitus, and he described it himself. In June 1801 he wrote to a friend that his ears were buzzing and ringing perpetually, day and night. Here is what his letters say, what his doctors tried, why a quiet village did not bring his hearing back, and what a soundproof room revealed in 1953 about the sound he heard.",
+      "uploadDate": "2026-10-24T17:04:07Z",
+      "duration": "PT3M57S",
+      "seconds": 237,
+      "poster": "/images/videos/did-beethoven-have-tinnitus.webp",
+      "target": {
+        "type": "blog",
+        "slug": "did-beethoven-have-tinnitus"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Did Beethoven have tinnitus?",
+          "text": "Did Beethoven have tinnitus? He did, and he described it himself, in a letter he asked a friend to keep secret. He was thirty, already famous, and his ears were ringing day and night. By the end, you will know what he wrote, what his doctors tried, and what a silent room revealed about the sound he heard."
+        },
+        {
+          "start": 19,
+          "title": "Who did he tell?",
+          "text": "Who did he tell? Franz Wegeler, a doctor who had known him since they were boys in Bonn. In June 1801, Beethoven wrote to him from Vienna: his hearing had been failing for three years. He heard none of the high notes of the orchestra, and in conversation he could make out the tones, but not the words. For two years he had avoided company, because he could not bring himself to say he was deaf. In any other profession, he wrote, this might be more tolerable, but in mine it is truly frightful."
+        },
+        {
+          "start": 51,
+          "title": "What did his doctors try?",
+          "text": "What did his doctors try? The same letter lists them: oil of almonds, which did him, in his words, no good whatever. Warm baths in the Danube, which helped his stomach, not his hearing. And a lotion for his ears. He felt better and stronger, he wrote. But my ears are buzzing and ringing perpetually, day and night. By November, he was wearing blisters of tree bark on both arms. Then the ringing eased a little, especially in his left ear. But his hearing did not come back. If anything, it got worse. If your own ringing rises and falls, that may sound familiar."
+        },
+        {
+          "start": 90,
+          "title": "Could quiet fix it?",
+          "text": "Could quiet fix it? In 1802, to spare his hearing, he spent six months in Heiligenstadt, a village outside Vienna. Rest, distance from the city, and quiet. It did not bring his hearing back. That October, he wrote a long letter to his brothers, about how alone his deafness had made him. He never sent it. It was found among his papers after he died. If your ears ever leave you feeling that alone, please talk to your doctor, or someone you trust. Advice has changed: today, clinicians tend to suggest gentle background sound, because silence can make the ringing stand out."
+        },
+        {
+          "start": 130,
+          "title": "What was he actually hearing?",
+          "text": "What was he actually hearing? The best clue came a hundred and fifty years later, from a very simple experiment. In 1953, Morris Heller and Moe Bergman took eighty adults with normal hearing and no tinnitus. They sat them, one at a time, in a soundproof room. Ninety-four percent of them heard a sound. Maybe a strange room just makes people imagine things? In 2008, an Italian team tested exactly that. In 1953, ninety-four percent heard a sound. In 2008, in an empty room, eighty-three percent did. And with a dummy loudspeaker, connected to nothing, ninety-two. So suggestion played a part, but only a small one."
+        },
+        {
+          "start": 176,
+          "title": "Why don't we all notice it?",
+          "text": "Why don't we all notice it? Think of the hum of a fridge, which you stop hearing after a minute. In silence, most ears make a faint sound of their own. Most of the time, the brain filters it out. With tinnitus, something it used to ignore gets through. That is not the whole story. Lasting tinnitus is usually louder, does not stop when you leave a quiet room, and is often tied to hearing loss, as Beethoven's was. But it does change the question: not, what is this strange sound, but why has my brain stopped ignoring it?"
+        },
+        {
+          "start": 211,
+          "title": "Back to that letter",
+          "text": "Back to that letter Beethoven went looking for quiet, to escape a sound he was carrying with him. And he kept composing, for another quarter of a century. If your own ringing is new, in one ear only, or comes with a sudden drop in hearing, get it checked promptly. If you could send Beethoven one line back, what would it say?"
+        }
+      ]
+    },
+    {
       "slug": "tinnitus-in-history",
       "id": "SxbxPnbIuAg",
       "kind": "long",
