@@ -1449,6 +1449,65 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "how-to-manage-a-tinnitus-spike",
+      "id": "2Du9dVq-LgA",
+      "kind": "long",
+      "title": "How to Manage a Tinnitus Spike",
+      "description": "A tinnitus spike is your brain on alert, turning up the volume on its own signals. Here is what to do in the first ten minutes, how loud a background sound should be, what to do tonight, how to find where a spike came from, and which signs mean you should see a doctor.",
+      "uploadDate": "2026-10-27T00:33:14Z",
+      "duration": "PT3M35S",
+      "seconds": 215,
+      "poster": "/images/videos/how-to-manage-a-tinnitus-spike.webp",
+      "target": {
+        "type": "blog",
+        "slug": "how-to-manage-a-tinnitus-spike"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "How do you manage a tinnitus spike?",
+          "text": "How do you manage a tinnitus spike? Most people do two things that make the brain listen harder: they find a quiet room, and they check on the ringing. A spike is your brain on alert, turning up the volume on its own signals. So every step here does one job: it tells your brain there is no threat. By the end, you will have a plan for the first ten minutes, for tonight, and for knowing when a spike needs a doctor."
+        },
+        {
+          "start": 25,
+          "title": "Is a spike new damage?",
+          "text": "Is a spike new damage? A spike is a short-term rise in how loud, how sharp, or how intrusive your tinnitus feels. It can follow a trigger by hours, or even a day, so it often seems to come from nowhere. Most spikes settle within hours to a few days. After a bigger trigger, like a loud concert or an illness, some last one to three weeks. But a spike is usually reversible. It does not automatically mean new damage."
+        },
+        {
+          "start": 56,
+          "title": "Why does it get louder?",
+          "text": "Why does it get louder? Think of a spike as a stress response, inside your hearing. Something puts your brain on alert: stress, a loud evening, a short night. On alert, it turns up the gain on every signal, the ringing included. So you notice it, and listen harder, which keeps the alert going. So the steps do not fight the sound. They calm the alert underneath it."
+        },
+        {
+          "start": 82,
+          "title": "What do you do in the first ten minutes?",
+          "text": "What do you do in the first ten minutes? Five steps, and each one has a reason. One. Name it a flare-up, not a setback, because fear is one more alarm. Two. Breathe in for four, and out for six to eight, for a few minutes. Three. Put on a gentle sound, because silence gives your brain a reason to listen harder. Four. Drop your shoulders and unclench your jaw, because tension there can feed the volume. Five. Do something absorbing, a walk or a book, so you stop checking on it. How loud should that sound be? Somewhere between silence and drowning it out. Just below your tinnitus, or level with it. Enough to blend with the ringing, never so loud it hides the world."
+        },
+        {
+          "start": 126,
+          "title": "What about tonight?",
+          "text": "What about tonight? Drink some water, and go easy on salt today. Hold off on extra coffee, if you are sensitive to it. Tonight, protect your sleep: the same bedtime, dim lights, and screens out of bed. And a gentle sound in the room, instead of silence. A short night lowers your resilience, and the next day the ringing can feel louder."
+        },
+        {
+          "start": 149,
+          "title": "Where did this one come from?",
+          "text": "Where did this one come from? While it is fresh, write a short note. How you slept, your stress, out of ten, any loud noise, and how much caffeine. Do it for two to four weeks, and a pattern often shows up. A spike on Tuesday can turn out to have started with a short night on Sunday. And a spike you can trace is far less frightening."
+        },
+        {
+          "start": 171,
+          "title": "When is it more than a spike?",
+          "text": "When is it more than a spike? Most spikes are harmless. A few signs need a doctor within a day or two. A sudden drop in hearing, a new sound that pulses with your heartbeat, severe ear pain, discharge, or a fever. And book a check if it stays in one ear, gets worse over weeks, or the worry is wearing you down."
+        },
+        {
+          "start": 193,
+          "title": "So the next time it spikes",
+          "text": "So the next time it spikes Do the opposite of what most people do. Not a silent room and a close listen, but a gentle sound, a long breath out, and your shoulders down. It is a flare-up, and flare-ups usually settle. Which of the five will you try first?"
+        }
+      ]
     }
   ]
 }
