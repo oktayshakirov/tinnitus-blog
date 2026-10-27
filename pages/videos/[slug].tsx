@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import VideoSingle, { Props } from '@ui/pages/VideoSingle';
-import { longVideos, getVideoBySlug } from '@lib/videos';
+import { longVideos, getVideoBySlug, videoCard } from '@lib/videos';
 
 const VideoPage = (props: Props) => <VideoSingle {...props} />;
 
@@ -22,7 +22,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       video,
       related: longVideos()
         .filter((item) => item.slug !== video.slug)
-        .slice(0, 3),
+        .slice(0, 3)
+        .map(videoCard),
     },
   };
 };

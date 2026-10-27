@@ -119,16 +119,25 @@ export const getAllTags = (): string[] => {
   );
 };
 
+// An article as a card: prev/next links and recommendations only render meta.
+// The full markdown body would otherwise ride along in the page's props - five
+// cards put ~65 KB of unused text into every post, and Vercel bills ISR reads
+// by the 8 KB of page data served.
+export const articleCard = (article: Article): Article => ({
+  ...article,
+  content: '',
+});
+
 export const getRandomPosts = (excludeSlug: string, count = 3): Article[] => {
   const posts = getAllPosts();
   const filtered = posts.filter((post) => post.meta.slug !== excludeSlug);
   const shuffled = [...filtered].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count);
+  return shuffled.slice(0, count).map(articleCard);
 };
 
 export const getRandomZen = (excludeSlug: string, count = 3): Article[] => {
   const zen = getAllZen();
   const filtered = zen.filter((zenPost) => zenPost.meta.slug !== excludeSlug);
   const shuffled = [...filtered].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count);
+  return shuffled.slice(0, count).map(articleCard);
 };

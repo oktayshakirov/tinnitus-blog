@@ -117,6 +117,17 @@ export const longVideos = (): SiteVideo[] =>
   );
 
 /**
+ * A video as a feed or "related" card. Cards never show chapters, and each
+ * long video carries ~4 KB of transcript in them, so leaving them in bloats
+ * every listing's page data (Vercel bills ISR reads per 8 KB served).
+ */
+export const videoCard = (video: SiteVideo): SiteVideo => {
+  const card = { ...video };
+  delete card.chapters;
+  return card;
+};
+
+/**
  * The page a video came from - the article for an explainer, the sound album
  * for a session. Used for the "read the article" link under a feed card.
  */

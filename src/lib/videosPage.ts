@@ -1,4 +1,4 @@
-import { longVideos, allSessions } from '@lib/videos';
+import { longVideos, allSessions, videoCard } from '@lib/videos';
 import { Props, VideosTab } from '@ui/pages/Videos';
 
 export const VIDEOS_PER_PAGE = 6;
@@ -28,7 +28,7 @@ export const videosPageProps = (tab: VideosTab, page: number): Props => {
 
   return {
     tab,
-    videos: videos.slice(start, start + VIDEOS_PER_PAGE),
+    videos: videos.slice(start, start + VIDEOS_PER_PAGE).map(videoCard),
     hasSessions: allSessions().length > 0,
     page,
     pageCount: Math.ceil(videos.length / VIDEOS_PER_PAGE),

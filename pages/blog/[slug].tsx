@@ -5,7 +5,10 @@ import { MDXRemoteProps } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import BlogPost from '@ui/pages/BlogPost';
 import rehypeSlug from 'rehype-slug';
-import { getAllPosts, getRandomZen, getRandomPosts } from '@lib/mdx';
+import {
+  articleCard,
+  getAllPosts, getRandomZen, getRandomPosts,
+} from '@lib/mdx';
 import { Article } from '@types';
 import remarkGfm from 'remark-gfm';
 
@@ -46,8 +49,8 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
   const filePath = path.join('content', 'posts', slug + '.mdx');
   const posts = getAllPosts();
   const postIndex = posts.findIndex((post) => post.meta.slug === slug);
-  const prev = posts[postIndex - 1] || null;
-  const next = posts[postIndex + 1] || null;
+  const prev = posts[postIndex - 1] ? articleCard(posts[postIndex - 1]) : null;
+  const next = posts[postIndex + 1] ? articleCard(posts[postIndex + 1]) : null;
   const blogRecommendations = getRandomPosts(slug as string, 3);
   const zenRecommendations = getRandomZen(slug as string, 2);
 
