@@ -24,6 +24,23 @@ const contentLastmod = (urlPath) => {
   }
 };
 
+const BLOCKED_CRAWLERS = [
+  'GPTBot',
+  'ClaudeBot',
+  'CCBot',
+  'Bytespider',
+  'meta-externalagent',
+  'Amazonbot',
+  'ImageSiftBot',
+  'SemrushBot',
+  'MJ12bot',
+  'DotBot',
+  'DataForSeoBot',
+  'Barkrowler',
+  'BLEXBot',
+  'serpstatbot',
+];
+
 const config = {
   siteUrl: 'https://www.tinnitushelp.me/',
   generateRobotsTxt: true,
@@ -109,6 +126,13 @@ const config = {
         // fold them into /app.
         disallow: [],
       },
+      // Crawlers that take the content and send no visitors back: AI training
+      // scrapers and SEO-tool indexes. Every page they fetch is an ISR read on
+      // Vercel. Search engines and the AI *search* bots (OAI-SearchBot,
+      // ChatGPT-User, PerplexityBot, Claude-SearchBot) stay allowed because they
+      // cite and link. AhrefsBot stays allowed for our own Ahrefs reports. A
+      // Vercel firewall rule matches the same list for bots that ignore this.
+      ...BLOCKED_CRAWLERS.map((userAgent) => ({ userAgent, disallow: '/' })),
     ],
     additionalSitemaps: ['https://www.tinnitushelp.me/sitemap.xml'],
   },
