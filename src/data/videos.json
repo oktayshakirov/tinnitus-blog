@@ -1557,6 +1557,24 @@
           "text": "So, what does yours sound like? Ringing is only the best known. Yours might hiss, hum, roar or click, and it is still tinnitus. And if it keeps time with your heartbeat, that is the one to get checked. If you had to name yours, which of the five would it be?"
         }
       ]
+    },
+    {
+      "slug": "bird-chirps-55-breathing",
+      "id": "45fMzBWiPbE",
+      "kind": "session",
+      "title": "Bird Chirps + 5-In 5-Out Breathing for Tinnitus (20 Minutes)",
+      "label": "Bird chirps",
+      "description": "Twenty minutes of bird chirps from our Feathered Tunes album, paired with slow breathing - inhale 5 seconds, exhale 5. Keep it low and comfortable: bright calls that come and go, a session to settle into rather than a masking sound.",
+      "uploadDate": "2026-10-28T17:46:29Z",
+      "duration": "PT20M",
+      "seconds": 1200,
+      "poster": "/images/videos/bird-chirps-55-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "bird-sounds"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
