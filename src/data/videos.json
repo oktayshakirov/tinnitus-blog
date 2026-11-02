@@ -1575,6 +1575,60 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "is-tinnitus-in-the-ear-or-the-brain",
+      "id": "BsCgHmvdmGs",
+      "kind": "long",
+      "title": "What Really Causes Tinnitus? Your Ears or Your Brain",
+      "description": "Tinnitus usually starts in the ear, but the sound itself is made in the brain. Here is the path a sound takes, why the brain turns its own volume up when the ear sends less, why noticing it and stress make it seem louder, and why none of that means you are imagining it.",
+      "uploadDate": "2026-11-02T17:17:11Z",
+      "duration": "PT3M43S",
+      "seconds": 223,
+      "poster": "/images/videos/is-tinnitus-in-the-ear-or-the-brain.webp",
+      "target": {
+        "type": "blog",
+        "slug": "the-role-of-neural-pathways-in-tinnitus-perception"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Is tinnitus in your ears, or your brain?",
+          "text": "Is tinnitus in your ears, or in your brain? It usually starts in the ear. But the sound you hear is not made there. Brain scans show extra activity in the hearing part of the brain, even in total silence. And how loud it seems depends on what the rest of your brain is doing. By the end, you will know where the sound is made, why noticing it turns it up, and why none of that means you are imagining it."
+        },
+        {
+          "start": 25,
+          "title": "How does a sound reach your brain?",
+          "text": "It starts as a vibration in the air. In your inner ear, tiny hair cells turn it into electrical signals. The auditory nerve carries those signals out of the ear. They climb through the brainstem to the thalamus, a relay that filters what gets through. And only in the auditory cortex does a signal become something you hear. So your ears collect sound. Your brain is what hears it."
+        },
+        {
+          "start": 54,
+          "title": "What happens when the signal goes quiet?",
+          "text": "Loud noise, or age, can wear down some of those hair cells. Then fewer signals reach the brain, for the pitches those cells used to carry. But the brain does not simply accept the quiet. Think of a volume knob inside it, for everything you hear. With less coming in, the brain turns that knob up. Researchers call this central gain. Turned up that far, the brain's own background activity starts to come through as a sound. That is the ringing. Not a noise in your ear, but your hearing system turned up too far. Over time the brain can rewire around the lost pitches, which may be part of why the sound stays."
+        },
+        {
+          "start": 97,
+          "title": "Why does it get louder when you notice it?",
+          "text": "Your hearing does not work alone. It is wired to the parts of the brain that handle emotion, memory and attention. One of them is the amygdala, the brain's alarm, which decides what counts as a threat. You notice the sound in a quiet room. Your brain's alarm reacts, and stress kicks in. Stress turns the hearing system up further. So the sound seems louder, and you notice it more. That is why it often seems loudest in a quiet room, on a stressful day, or the moment you check for it. Scans back this up. In people with tinnitus, the hearing areas and the alarm are more closely linked."
+        },
+        {
+          "start": 139,
+          "title": "Does that mean it is all in your head?",
+          "text": "No. Made by the brain does not mean made up. The activity is real, it sits in real places, and researchers can measure it. Recordings of brain waves show different patterns in people with tinnitus, linked to how strong it is. It just has no source outside you."
+        },
+        {
+          "start": 158,
+          "title": "What is research doing with the brain side?",
+          "text": "The brain's ability to rewire is called neuroplasticity, and it works both ways. So most newer approaches aim at the brain, not the ear. Sound therapy gives the hearing system something else to listen to, so the tinnitus stands out less. Talking therapy works on the alarm side: how the brain reacts, even when the sound itself stays. And magnetic stimulation, or music with your tone's pitch cut out, are still being studied. None of these reliably removes tinnitus for everyone. And if yours is new, in one ear only, pulses with your heartbeat, or comes with dizziness or hearing loss, see a doctor first."
+        },
+        {
+          "start": 199,
+          "title": "So, ears or brain?",
+          "text": "Most of the time, it starts in the ear. But the sound is made, turned up and noticed in the brain. Which is why it changes with silence, stress and attention. Next time yours gets louder, what was your brain busy noticing just before?"
+        }
+      ]
     }
   ]
 }
