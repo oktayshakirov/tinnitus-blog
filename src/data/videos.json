@@ -1629,6 +1629,24 @@
           "text": "Most of the time, it starts in the ear. But the sound is made, turned up and noticed in the brain. Which is why it changes with silence, stress and attention. Next time yours gets louder, what was your brain busy noticing just before?"
         }
       ]
+    },
+    {
+      "slug": "wild-echoes-478-breathing",
+      "id": "UnK4GCnNZw0",
+      "kind": "session",
+      "title": "4-7-8 Breathing + Jungle Sounds for Tinnitus (1 Hour)",
+      "label": "Wild Echoes, one hour",
+      "description": "An hour of Wild Echoes, a steady jungle chorus, paired with 4-7-8 breathing - inhale 4 seconds, hold 7, exhale 8. Start a little louder than your tinnitus, then bring the sound down until you can just hear your tinnitus again, faintly underneath.",
+      "uploadDate": "2026-11-03T16:03:48Z",
+      "duration": "PT1H",
+      "seconds": 3600,
+      "poster": "/images/videos/wild-echoes-478-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "jungle-stillness"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
