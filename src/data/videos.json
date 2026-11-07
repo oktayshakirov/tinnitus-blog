@@ -1647,6 +1647,24 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "low-gravity-box-breathing",
+      "id": "6Eq_txUHZPw",
+      "kind": "session",
+      "title": "4-4-4-4 Box Breathing + Space Sounds for Tinnitus (1 Hour)",
+      "label": "Low Gravity, one hour",
+      "description": "An hour of Low Gravity, slow and floating space sounds from our Quiet Universe album, paired with 4-4-4-4 box breathing - inhale 4 seconds, hold 4, exhale 4, rest empty for 4. Keep the volume low and comfortable and follow the dot around the square.",
+      "uploadDate": "2026-11-07T12:54:11Z",
+      "duration": "PT1H",
+      "seconds": 3600,
+      "poster": "/images/videos/low-gravity-box-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "quiet-universe"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
