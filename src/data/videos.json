@@ -1665,6 +1665,24 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "soft-orbit-6666-breathing",
+      "id": "hlPJNY9698k",
+      "kind": "session",
+      "title": "6-6-6-6 Box Breathing + Deep Space Sounds for Tinnitus (1 Hour)",
+      "label": "Soft Orbit, one hour",
+      "description": "An hour of Soft Orbit, deep, low and slow space sounds from our Quiet Universe album, paired with 6-6-6-6 box breathing - inhale 6 seconds, hold 6, exhale 6, rest empty for 6. Keep the volume low and comfortable and follow the hand around the clock.",
+      "uploadDate": "2026-11-08T00:33:48Z",
+      "duration": "PT1H",
+      "seconds": 3600,
+      "poster": "/images/videos/soft-orbit-6666-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "quiet-universe"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
