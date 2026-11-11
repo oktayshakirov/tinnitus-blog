@@ -1683,6 +1683,50 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "tinnitus-in-one-ear",
+      "id": "4vy8IgJqIro",
+      "kind": "long",
+      "title": "Why Is My Tinnitus Only in One Ear? When to Get It Checked",
+      "description": "Tinnitus in one ear usually has an ordinary cause - and it is still the one pattern the clinical guideline says to check promptly. Here is what usually causes ringing on one side, the one sign that makes it same-day care, the other red flags, and what a hearing check actually involves.",
+      "uploadDate": "2026-11-11T02:02:57Z",
+      "duration": "PT2M56S",
+      "seconds": 176,
+      "poster": "/images/videos/tinnitus-in-one-ear.webp",
+      "target": {
+        "type": "blog",
+        "slug": "tinnitus-in-one-ear"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Tinnitus in one ear",
+          "text": "Ringing in only one ear feels different from ringing in both. And if you searched it at night, the scariest answer was probably near the top. Actually, it usually has an ordinary cause. But it is also the one pattern the clinical guideline tells doctors to check promptly. Both are true. By the end, you will know which of two lists you are on."
+        },
+        {
+          "start": 21,
+          "title": "What causes tinnitus in one ear?",
+          "text": "Your two ears keep separate histories. Wax builds up on one side, an infection picks one ear, and noise rarely hits both the same. A driver's ear nearest the open window often hears worse than the other one. So the causes sort into two groups. Most often, something ordinary. Wax against the eardrum. An infection, or fluid. More noise on one side, or the jaw. Less often, a sudden loss of hearing, an inner-ear condition, or a rare, benign growth on the hearing nerve. And a sound that beats in time with your heartbeat is its own kind, with its own check."
+        },
+        {
+          "start": 59,
+          "title": "When is it urgent?",
+          "text": "Most of this can wait for a normal appointment. One thing cannot. If the ringing came with a sudden drop in hearing on that side, that is same-day care. The US hearing institute's own page says to treat sudden deafness as a medical emergency, and see a doctor immediately. It is easy to mistake for a blocked ear that will clear on its own. But treatment works best early, and after two to four weeks it is much less likely to bring the hearing back. So here is the first list. Hearing that dropped suddenly. A sound that beats with your pulse. A weak or numb face. New dizziness or vertigo. If none of those fit, you are on the second list: a hearing test, booked in the coming weeks. That covers new ringing in one ear, ringing that has stayed for weeks, or hearing on that side that feels even slightly different."
+        },
+        {
+          "start": 112,
+          "title": "What happens when you get it checked?",
+          "text": "The guideline ear specialists follow is plain: one-sided tinnitus gets a prompt, full hearing test. Scans are kept for some cases, and even then the hearing test usually comes first. The appointment itself is simpler than most people expect. Questions about when it started, a look in the ear, with any wax cleared, a hearing test, one ear at a time, and the two sides compared. On the chart they draw, each ear gets its own line. When one line sags below the other, that gap is what they look for. In most cases, that finds an ordinary explanation, or nothing alarming at all."
+        },
+        {
+          "start": 152,
+          "title": "So should you worry?",
+          "text": "One-sided ringing is usually ordinary, and it is still the pattern worth checking. Same day if your hearing dropped. A hearing test in the coming weeks if it did not. This video is general information, not medical advice. So, how does the hearing in that ear compare to the other one?"
+        }
+      ]
     }
   ]
 }
