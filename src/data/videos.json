@@ -1727,6 +1727,24 @@
           "text": "One-sided ringing is usually ordinary, and it is still the pattern worth checking. Same day if your hearing dropped. A hearing test in the coming weeks if it did not. This video is general information, not medical advice. So, how does the hearing in that ear compare to the other one?"
         }
       ]
+    },
+    {
+      "slug": "tranquil-zenith-21-breathing",
+      "id": "Glm_pdgMU9Q",
+      "kind": "session",
+      "title": "2:1 Breathing + White Noise for Tinnitus (1 Hour)",
+      "label": "Tranquil Zenith, one hour",
+      "description": "An hour of Tranquil Zenith, soft white noise from our White Noise Therapy album, paired with 2:1 breathing - in for 4 seconds, then out, slowly, for 8. Set the sound just below your tinnitus, so you can still faintly hear it, and follow the dot along the line.",
+      "uploadDate": "2026-11-11T18:35:09Z",
+      "duration": "PT1H",
+      "seconds": 3600,
+      "poster": "/images/videos/tranquil-zenith-21-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "white-noise"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
