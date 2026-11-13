@@ -1745,6 +1745,50 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "what-makes-tinnitus-worse",
+      "id": "0UR3tplqSg0",
+      "kind": "long",
+      "title": "What Makes Tinnitus Worse? The Triggers Worth Testing",
+      "description": "Almost everyone with tinnitus blames something for the louder days, and almost nobody has tested it. Here is why memory picks the wrong culprit, which suspects the evidence actually backs, and how a four-week diary finds your own.",
+      "uploadDate": "2026-11-13T15:52:47Z",
+      "duration": "PT2M53S",
+      "seconds": 173,
+      "poster": "/images/videos/what-makes-tinnitus-worse.webp",
+      "target": {
+        "type": "blog",
+        "slug": "tinnitus-trigger-tracking"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "What makes tinnitus worse",
+          "text": "Almost everyone with tinnitus blames something for the louder days. Almost nobody has tested it. The coffee, the glass of wine, the salty dinner, the late night. Some of those hold up in the research. Some have never shown a link at all. By the end, you will know why memory gets it wrong, which suspects hold up, and how to test yours."
+        },
+        {
+          "start": 20,
+          "title": "Why does memory pick the wrong culprit?",
+          "text": "Tinnitus goes up and down from day to day, often for no reason anyone can find. Here is a month of it, one square a day. You remember the bad night after the wine. You forget the four bad nights without any. And the wine before a night that was fine. Actually, it runs the other way too. You assume stress made it loud, when often the loud day made you stressed. A louder day puts you on edge. Being on edge costs you sleep. And a short night makes the next day louder. Then there are the worst days. Whatever you tried on one gets the credit for a drop that was coming anyway."
+        },
+        {
+          "start": 59,
+          "title": "Which triggers actually hold up?",
+          "text": "Sleep holds up, the most consistent link of all. Stress holds up, and it is the same loop. Caffeine: population studies have not found a link. Salt mostly matters in one inner-ear condition, not tinnitus in general. Alcohol gets blamed a lot, but it probably works through the sleep it costs you. If the sound changes when you clench your jaw, or when you turn your head, tell a clinician about it. Loud noise is one you never test. It is a real risk to your hearing, so protect your ears regardless. And check a new medicine against the list of drugs that can affect hearing, then ask your prescriber before stopping anything."
+        },
+        {
+          "start": 101,
+          "title": "How do you find your own triggers?",
+          "text": "Keep a diary for four weeks: thirty seconds, once a day, at about the same time. Write down how loud it was, and, separately, how much it bothered you, how long you slept, and your stress, drinks and loud noise. In this example month, loudness starts at six, and ends at about six. Bother starts at six too, and ends at three and a half. Loudness barely moved. Bother almost halved, and sleep moved with it. That sounds like bad news. But the bother is the part most treatments work on. When the month is up, compare averages, not single bad days, look one day back, and count how often your suspect turns up on the good days too. Most suspects come out innocent, which means you can stop giving things up for nothing. Then stop logging, because watching it every day keeps it in front of you."
+        },
+        {
+          "start": 154,
+          "title": "So what is making yours worse?",
+          "text": "Maybe the thing you blame really is guilty. Give it four weeks before you convict it. This video is general information, not medical advice. So, which suspect would you put on trial first?"
+        }
+      ]
     }
   ]
 }
