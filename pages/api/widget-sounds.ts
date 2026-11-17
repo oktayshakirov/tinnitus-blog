@@ -7,11 +7,14 @@ import { getAllZen } from '@lib/mdx';
 const SITE = 'https://www.tinnitushelp.me';
 
 // Low-quality thumbnail via Next's image optimizer. `w` must be one of the
-// sizes in next.config.js (332 is the smallest deviceSize) and `q` must be an
-// allowed quality - this deployment only accepts q=75 (q=50 returns HTTP 400).
+// sizes in next.config.js (`deviceSizes` or `imageSizes`) or the optimizer
+// answers HTTP 400 - which is what happened when 332 was trimmed from
+// deviceSizes in 2026-09 and every widget thumbnail broke. 400 is the
+// smallest deviceSize now. `q` must be an allowed quality too - this
+// deployment only accepts q=75 (q=50 returns HTTP 400).
 function thumbnail(imagePath: string): string {
   const abs = imagePath.startsWith('http') ? imagePath : `${SITE}${imagePath}`;
-  return `${SITE}/_next/image?url=${encodeURIComponent(abs)}&w=332&q=75`;
+  return `${SITE}/_next/image?url=${encodeURIComponent(abs)}&w=400&q=75`;
 }
 
 export default function handler(_req: NextApiRequest, res: NextApiResponse) {
