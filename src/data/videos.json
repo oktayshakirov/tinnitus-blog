@@ -1789,6 +1789,24 @@
           "text": "Maybe the thing you blame really is guilty. Give it four weeks before you convict it. This video is general information, not medical advice. So, which suspect would you put on trial first?"
         }
       ]
+    },
+    {
+      "slug": "soft-flames-66-breathing",
+      "id": "4PNNr5AmFR0",
+      "kind": "session",
+      "title": "Coherent Breathing + Fireplace Sounds for Tinnitus (1 Hour)",
+      "label": "Soft Flames, one hour",
+      "description": "An hour of Soft Flames & Breezes, a quiet fire and a gentle breeze from our Fireside Harmony album, paired with coherent breathing - in for 6 seconds, then out for 6. Keep the volume low and comfortable, and follow the dot along the line.",
+      "uploadDate": "2026-11-17T01:37:56Z",
+      "duration": "PT1H",
+      "seconds": 3600,
+      "poster": "/images/videos/soft-flames-66-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "fire-sounds"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
