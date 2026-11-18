@@ -1807,6 +1807,24 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "brown-noise-478-breathing",
+      "id": "I7x65UUtcl0",
+      "kind": "session",
+      "title": "Brown Noise for Tinnitus + 4-7-8 Breathing (1 Hour)",
+      "label": "Cloudscape Serenity, one hour",
+      "description": "An hour of Cloudscape Serenity, deep, soft brown noise from our White Noise Therapy album, paired with 4-7-8 breathing - in for 4 seconds, hold for 7, then out for 8. Keep it low, somewhere it can sit in the background, and follow the hand around the clock.",
+      "uploadDate": "2026-11-18T18:20:12Z",
+      "duration": "PT1H",
+      "seconds": 3600,
+      "poster": "/images/videos/brown-noise-478-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "white-noise"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
