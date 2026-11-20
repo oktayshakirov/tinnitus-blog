@@ -108,13 +108,17 @@ async function writeWidgetFeed() {
   const sounds = fs
     .readdirSync(dir)
     .filter((file) => file.endsWith('.mdx') && !file.startsWith('_'))
+    .sort()
     .map((file) => {
       const { data } = matter(fs.readFileSync(path.join(dir, file), 'utf8'));
       return { slug: file.replace(/\.mdx$/, ''), data };
     })
     .filter(({ data }) => data.image && data.draft !== true)
-    // Newest first, as getAllZen() orders them for the site.
-    .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+    // Newest first, exactly as getAllZen() orders them: oldest-first sort,
+    // then reversed, so sounds sharing a date keep the same relative order.
+    // The widget picks the day's sound by position in this list.
+    .sort((a, b) => new Date(a.data.date) - new Date(b.data.date))
+    .reverse();
 
   const items = [];
   for (const { slug, data } of sounds) {
