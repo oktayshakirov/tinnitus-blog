@@ -5,6 +5,12 @@
   "name": "tinnitushelp",
   "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
+  // The site lives on www. The apex (tinnitushelp.me) is a Cloudflare
+  // Redirect Rule to www, set in the dashboard, not a Worker route.
+  "routes": [{ "pattern": "www.tinnitushelp.me", "custom_domain": true }],
+  // No public *.workers.dev copy of the site: it would be a duplicate of www
+  // for search engines. Preview a build locally with `yarn preview`.
+  "workers_dev": false,
   "assets": {
     "directory": "./out",
     "binding": "ASSETS",
