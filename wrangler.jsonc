@@ -5,9 +5,13 @@
   "name": "tinnitushelp",
   "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
-  // The site lives on www. The apex (tinnitushelp.me) is a Cloudflare
-  // Redirect Rule to www, set in the dashboard, not a Worker route.
-  "routes": [{ "pattern": "www.tinnitushelp.me", "custom_domain": true }],
+  // The site lives on www, as a zone route on the proxied www DNS record.
+  // (A route rather than a custom domain so the cutover from Vercel had no
+  // DNS gap: the route was added first, then the record's proxy switched on.
+  // The record still targets cname.vercel-dns.com, but every request on
+  // www is answered here and never reaches it.) The apex (tinnitushelp.me) is
+  // a Cloudflare Redirect Rule to www, set in the dashboard.
+  "routes": [{ "pattern": "www.tinnitushelp.me/*", "zone_name": "tinnitushelp.me" }],
   // No public *.workers.dev copy of the site: it would be a duplicate of www
   // for search engines. Preview a build locally with `yarn preview`.
   "workers_dev": false,
