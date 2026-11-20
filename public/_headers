@@ -1,5 +1,12 @@
-# Cache headers for Cloudflare's static assets. Everything else gets
+# Headers for Cloudflare's static assets. Cache: anything not listed gets
 # Cloudflare's default (revalidate with ETag), which is right for HTML.
+
+# Carried over from Vercel, which sent both on every response: browsers that
+# already cached the two-year HSTS policy keep it renewed, and anything that
+# fetches the JSON feeds (content-index.json) cross-origin keeps working.
+/*
+  Strict-Transport-Security: max-age=63072000
+  Access-Control-Allow-Origin: *
 
 # Source images are never edited in place (a changed image gets a new name).
 /images/*
