@@ -1825,6 +1825,65 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "tinnitus-treatments-ranked",
+      "id": "vU4yugMm3lA",
+      "kind": "long",
+      "title": "Tinnitus Treatments Ranked by the New 2026 Guideline",
+      "description": "The US tinnitus guideline has been rewritten for the first time in twelve years, and it grades every treatment. Here is all of it, ranked by the panel's own grades: what it advises against (supplements, magnetic brain stimulation, medicines for the ringing itself), what it lists as an option (sound enrichment, bimodal neuromodulation), what it recommends (hearing aids, cochlear implant checks, cognitive behavioral therapy), and the one grade no treatment reached.",
+      "uploadDate": "2026-11-19T23:48:08Z",
+      "duration": "PT5M50S",
+      "seconds": 350,
+      "poster": "/images/videos/tinnitus-treatments-ranked.webp",
+      "target": {
+        "type": "blog",
+        "slug": "tinnitus-guideline-2026"
+      },
+      "alsoOn": [],
+      "placement": "auto",
+      "chapters": [
+        {
+          "start": 0,
+          "title": "Tinnitus treatments, ranked",
+          "text": "The US guideline for treating tinnitus has just been rewritten. It is the first update in twelve years, and it grades every treatment you have probably been offered. Some it recommends. Some it tells doctors not to recommend at all. And the one most people try first, a supplement, is on that second list. Here is all of it, ranked, from what it advises against up to what it recommends. Stay to the end for the one grade no treatment reached."
+        },
+        {
+          "start": 27,
+          "title": "What is the 2026 tinnitus guideline?",
+          "text": "It is the clinical practice guideline from America's ear, nose and throat surgeons, the Tinnitus Update, published in October. It is written for the people who treat you: family doctors, ear specialists, audiologists and psychologists. And it is about adults whose tinnitus has lasted six months or more, and bothers them. Each of its sixteen recommendations carries a grade, and there are four. A strong recommendation, the panel's top grade, a recommendation, which is a firm should, an option, which a doctor may offer, on less certain evidence, and a recommendation against. So start at the bottom of the board."
+        },
+        {
+          "start": 68,
+          "title": "What does the guideline advise against?",
+          "text": "These are the treatments doctors are told not to recommend for tinnitus itself. Dietary supplements, magnetic brain stimulation, and medicines given to treat the ringing itself. The supplement line is the one that surprises people most. In its own words, clinicians should not recommend dietary supplements for persistent, bothersome tinnitus. The 2014 version had already named ginkgo, melatonin and zinc, and the new patient guide still uses ginkgo as its example. A blood test that finds a real deficiency is a separate question, for your doctor. Magnetic brain stimulation holds a magnetic coil against the scalp, and sends pulses into the brain. In 2014 it was advised against for routine use. In 2026, the word routine is gone. The medicines are antidepressants, anti-seizure drugs, anti-anxiety drugs, and injections through the eardrum. Actually, the key words are for tinnitus itself. If you also have depression or anxiety, treating that is a separate decision. And never stop a prescribed medicine without the doctor who prescribed it."
+        },
+        {
+          "start": 142,
+          "title": "Which treatments are only an option?",
+          "text": "One row up are the options: things a doctor may offer, where the evidence is less certain. Sound enrichment, and bimodal neuromodulation. Sound enrichment is what the 2014 version called sound therapy. It means adding gentle sound to a quiet room: a fan, soft music, or a steady sound like white noise. Bimodal neuromodulation is new to the guideline. It pairs sound in headphones with mild pulses on the tongue. One device that works this way is called Lenire. As an option, it is something you might be offered, not something to expect first."
+        },
+        {
+          "start": 182,
+          "title": "What does the guideline recommend?",
+          "text": "The row it recommends has four in it. Explaining what tinnitus is, hearing aids when hearing is a struggle, a cochlear implant check when hearing loss is severe, and cognitive behavioral therapy. The first sounds too simple to count. But doctors should explain what tinnitus is, how it tends to behave over time, and what you can do about it. Hearing aids used to need a documented hearing loss. Now it is anyone who struggles to hear, with tinnitus that stays and bothers them. Making the sounds around you louder is how they make the ringing less noticeable. And for hearing loss that is severe enough, a referral to check for a cochlear implant is new this year. Cognitive behavioral therapy does not aim to switch the sound off. It works on how you react to it: the worry, the attention it grabs, and what it does to your sleep and mood. It is one of only a handful of treatments the guideline actively recommends."
+        },
+        {
+          "start": 242,
+          "title": "So what got the top grade?",
+          "text": "Look at the top row again. Not one treatment is in it. The strongest grades went to the appointment itself, and there are three. Tell bothersome tinnitus apart from the kind that is not, ask about your mood, including any thoughts of self-harm, and skip the brain scan unless there is a warning sign. That is the shift since 2014: more attention on the person, and less on pills and scans. If the ringing has worn your mood down that far, say so. It is now part of the exam."
+        },
+        {
+          "start": 276,
+          "title": "When do you still need more tests?",
+          "text": "Fewer scans does not mean ignoring the rare serious cause. The patient guide lists these as reasons for more tests, or prompt care. Ringing in one ear only. Ringing that pulses with your heartbeat. Hearing loss in one ear, or hearing that drops suddenly. New dizziness, weakness or numbness. Hearing that drops suddenly needs care the same day. And the guideline gives you questions worth taking to your next appointment. Can I have a full hearing test? Would a hearing aid help me? Can you refer me for cognitive behavioral therapy? And how will we know if it is working? That last one is new too: doctors are now asked to measure whether a treatment is helping."
+        },
+        {
+          "start": 321,
+          "title": "So what does it change for you?",
+          "text": "The guideline that took twelve years to rewrite has no cure in it, and it does not pretend to. What it has is a clearer standard: a proper hearing test, real attention to mood, hearing devices and therapy where they fit, and fewer pills, supplements and scans. This video is general information, not medical advice. So, which row is the treatment you were offered in?"
+        }
+      ]
     }
   ]
 }
