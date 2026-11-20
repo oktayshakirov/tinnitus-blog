@@ -45,3 +45,9 @@ package-lock.json
 # when a command using a repo-root-relative path (content/posts/...) is run
 # from inside content/posts instead of the repo root.
 /content/*/content/
+
+# Cloudflare: wrangler state, local Worker secrets (copy of .env values), and
+# the build-time WebP variant cache (scripts/finalizeExport.js)
+.wrangler
+.dev.vars
+.image-cache/

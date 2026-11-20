@@ -1,0 +1,14 @@
+# Cache headers for Cloudflare's static assets. Everything else gets
+# Cloudflare's default (revalidate with ETag), which is right for HTML.
+
+# Source images are never edited in place (a changed image gets a new name).
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Build-time WebP variants of those images, named after their source.
+/_img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Next's chunks are content-hashed.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

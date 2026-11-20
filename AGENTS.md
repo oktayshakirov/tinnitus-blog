@@ -4,8 +4,11 @@ Guidance for coding agents. Humans: this doubles as an onboarding note.
 
 ## What this is
 
-A Next.js **pages-router** site (TypeScript + Emotion). Content is MDX. Deploys
-automatically from `main` (Vercel). There is no staging; **a push to `main` is a
+A Next.js **pages-router** site (TypeScript + Emotion). Content is MDX. It is a
+**static export** served by **Cloudflare Workers** (static assets + a small
+Worker in `worker/index.js` for the view counter and the widget feed); see the
+README's "Hosting" section. Deploys automatically from `main` via
+`.github/workflows/deploy.yml`. There is no staging; **a push to `main` is a
 production deploy**, and `.github/workflows/notify-new-content.yml` fires a
 social notification once it's live.
 
@@ -14,11 +17,12 @@ social notification once it's live.
 | Task | Command | Notes |
 | --- | --- | --- |
 | Dev server | `npm run start` | port 3000. Regenerates content index + views first. (`start`, not `dev`, is the dev command here.) |
-| Production build | `npm run build` | Must pass before any commit that touches rendered output. `postbuild` runs `next-sitemap`. |
+| Production build | `yarn build` | Must pass before any commit that touches rendered output. Writes `out/`; `postbuild` runs `next-sitemap`, `fix-robots` and `finalizeExport` (image variants, widget feed). |
+| Serve the build | `yarn preview` | `out/` + the Worker via `wrangler dev`, as production serves it. Needs `.dev.vars`. |
 | Typecheck | `npx tsc --noEmit` | Run after touching any `.ts`/`.tsx`. |
 | Lint / format | `npm run lint` / `npm run format` | |
 
-Node deps: both `package-lock.json` and `yarn.lock` exist — **npm** is primary.
+Node deps via **yarn** (`yarn.lock` is the tracked lockfile; `package-lock.json` is git-ignored).
 
 ## Content model
 
@@ -71,8 +75,8 @@ gate output before and after your change.
   build-generated. They're committed in **structural/SEO** commits (a slug
   rename, a new schema) but not in routine "new post" commits — match the
   surrounding history.
-- Slug renames: add a 301 in `next.config.js` (`redirects()` already has
-  several), update every inbound `/blog/<old>` link in `content/posts/`, plus
+- Slug renames: add a 301 in `public/_redirects` (static export ignores
+  `next.config.js` redirects), update every inbound `/blog/<old>` link in `content/posts/`, plus
   `src/const/faq.tsx` and any `src/pages/*` reference, plus the
   `content-database.json` key in `tinnitus-help-automation`.
 - `tinnitus-help-automation` is the throwaway generation repo (`.claude/skills/`
@@ -81,11 +85,12 @@ gate output before and after your change.
 
 ## Verifying a change
 
-1. `npm run build` — must pass. `npx tsc --noEmit` if you touched TS.
+1. `yarn build` — must pass. `npx tsc --noEmit` if you touched TS.
 2. Gate any `.mdx` you edited; confirm no new failures vs. `git stash` baseline.
 3. If visible in the browser: `npm run start`, load the page, check the rendered
    `<title>`, the answer-first first paragraph, and the `FAQPage` JSON-LD. For a
-   slug change, `curl -sI` the old path and confirm a 308 to the new one.
+   slug change, `yarn build && yarn preview`, then `curl -sI` the old path and
+   confirm a 301 to the new one (redirects only exist in the built site).
 
 ## Git
 

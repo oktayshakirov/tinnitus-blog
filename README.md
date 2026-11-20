@@ -39,11 +39,26 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Hosting (Cloudflare Workers)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site is a static export (`output: 'export'`) served by Cloudflare as static
+assets, plus one small Worker (`worker/index.js`) for the only dynamic parts:
+the view counter (`/api/views/:type/:slug`, Firestore REST), the app widget's
+feed (`/api/widget-sounds`), the legacy `?page=N` redirects and trailing-slash
+308s. Static requests never invoke the Worker.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Deploy:** automatic. `.github/workflows/deploy.yml` builds and runs
+  `wrangler deploy` on every push to `main`, every Monday (to refresh the
+  "Most popular" ranking) and on demand. By hand: `yarn build && yarn deploy`.
+- **Local check of the real thing:** `yarn build && yarn preview` serves `out/`
+  plus the Worker on localhost (needs `.dev.vars` with the `FIREBASE_*` values).
+- **Redirects:** `public/_redirects`. **Cache headers:** `public/_headers`.
+  `next.config.js` `redirects()`/`headers()` do nothing in a static export.
+- **Images:** `next/image` uses `src/lib/imageLoader.js`, which points at WebP
+  variants `scripts/finalizeExport.js` renders into `out/_img/` at build time
+  (cached in `.image-cache/`). There is no runtime image optimizer.
+- **Worker secrets:** `FIREBASE_PROJECT_ID`, `FIREBASE_CLIENT_EMAIL`,
+  `FIREBASE_PRIVATE_KEY`, set with `wrangler secret put`.
 
 ## Push notifications for new content
 
@@ -57,7 +72,8 @@ It needs three repository secrets — `FIREBASE_PROJECT_ID`,
 variables → Actions.
 
 **Do not move the sync back into `npm run build`.** It used to live there, and
-because a Vercel build finishes before the production alias is promoted,
+because a build finishes before the new version is serving (true on Vercel,
+where this was learned, and on Cloudflare),
 notifications went out while the URL still returned 404 — taps in the first ~15
 seconds hit a missing page. That is why the trigger is a post-deploy workflow
 rather than a build step.

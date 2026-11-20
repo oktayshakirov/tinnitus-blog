@@ -9,10 +9,11 @@
     "start": "node scripts/generateContentIndex.js && node scripts/generateViews.js && next dev",
     "build": "node scripts/generateContentIndex.js && node scripts/generateViews.js && next build",
     "sync-content": "node scripts/syncContent.js",
-    "start:prod": "next start",
+    "preview": "wrangler dev",
+    "deploy": "wrangler deploy",
     "lint": "next lint",
     "format": "prettier --write .",
-    "postbuild": "next-sitemap && node scripts/fix-robots.js"
+    "postbuild": "next-sitemap && node scripts/fix-robots.js && node scripts/finalizeExport.js"
   },
   "browserslist": [
     "defaults and supports es6-module",
@@ -50,6 +51,8 @@
     "eslint-config-next": "^12.0.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "sharp": "0.34.5",
+    "wrangler": "4"
   }
 }

@@ -1,0 +1,17 @@
+# Permanent redirects, served by Cloudflare's static assets before any file.
+# (Static export ignores next.config.js redirects(), so they live here.)
+# Query-string redirects (/blog?page=N, /zen?page=N) can't be expressed in this
+# file; worker/index.js handles those.
+
+# Renamed 2026-09: the slug now matches its primary query ("best tinnitus
+# apps"). The old URL was indexed and linked from other posts.
+/blog/apps-that-help-tinnitus /blog/best-tinnitus-apps 301
+
+# The sound sessions used to have their own listing here. They live at
+# /videos/sessions now; the old URL is indexed and linked from the app.
+/zen/videos /videos/sessions 301
+
+# The popular listings were briefly paginated and those URLs made it into the
+# sitemap. Fold them back onto the single ranked page.
+/blog/popular/page/* /blog/popular 301
+/zen/popular/page/* /zen/popular 301
