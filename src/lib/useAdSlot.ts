@@ -9,16 +9,14 @@ declare global {
 
 /**
  * Ads render on the website but never inside the native app wrapper.
- * Detected via the `is-app` html class or the persisted `isApp` flag.
+ * Detected via the `is-app` html class, which _document sets before first
+ * paint (and which already accounts for the stored flag, inside the app only).
  */
 export const useAdsEnabled = (): boolean => {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    const isApp =
-      document.documentElement.classList.contains('is-app') ||
-      localStorage.getItem('isApp') === 'true';
-    setEnabled(!isApp);
+    setEnabled(!document.documentElement.classList.contains('is-app'));
   }, []);
 
   return enabled;

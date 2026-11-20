@@ -28,13 +28,21 @@ const nunito = localFont({
   display: 'swap',
 });
 
-// Remembers the app across full reloads that drop the ?isApp=true flag. The
-// AdSense library is loaded by the first ad slot that needs it (useAdSlot).
+// Remembers the app across full reloads that drop the ?isApp=true flag - but
+// only inside the app's WebView (see the note in _document). Persisting it in
+// a normal browser left anyone who opened an ?isApp=true link without the
+// site's header, footer and ads for good. The AdSense library is loaded by the
+// first ad slot that needs it (useAdSlot).
 const AppFlag = () => {
   useEffect(() => {
-    if (document.documentElement.classList.contains('is-app')) {
+    const inWebView = !!(window as { ReactNativeWebView?: unknown })
+      .ReactNativeWebView;
+    if (
+      inWebView &&
+      document.documentElement.classList.contains('is-app')
+    ) {
       localStorage.setItem('isApp', 'true');
-    } else {
+    } else if (!inWebView) {
       localStorage.removeItem('isApp');
     }
   }, []);
