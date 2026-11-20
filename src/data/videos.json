@@ -1827,6 +1827,24 @@
       "placement": "auto"
     },
     {
+      "slug": "fan-noise-444-breathing",
+      "id": "kYd-lWg3k_M",
+      "kind": "session",
+      "title": "Fan Noise for Tinnitus + Triangle Breathing (1 Hour)",
+      "label": "Ambient Fan, one hour",
+      "description": "An hour of Ambient Fan, a fan's low, steady hum from our Background Blur album, paired with triangle breathing - in for 4 seconds, hold for 4, then out for 4. Keep the sound low, in the background, and follow the dot along the line.",
+      "uploadDate": "2026-11-20T13:03:54Z",
+      "duration": "PT1H",
+      "seconds": 3600,
+      "poster": "/images/videos/fan-noise-444-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "evening-sounds"
+      },
+      "alsoOn": [],
+      "placement": "auto"
+    },
+    {
       "slug": "tinnitus-treatments-ranked",
       "id": "vU4yugMm3lA",
       "kind": "long",
