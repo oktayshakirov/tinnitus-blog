@@ -1902,6 +1902,24 @@
           "text": "The guideline that took twelve years to rewrite has no cure in it, and it does not pretend to. What it has is a clearer standard: a proper hearing test, real attention to mood, hearing devices and therapy where they fit, and fewer pills, supplements and scans. This video is general information, not medical advice. So, which row is the treatment you were offered in?"
         }
       ]
+    },
+    {
+      "slug": "pink-noise-box-breathing",
+      "id": "8I2P7Ts5sgs",
+      "kind": "session",
+      "title": "Pink Noise for Tinnitus + Box Breathing (1 Hour)",
+      "label": "Rose Haze, one hour",
+      "description": "An hour of Rose Haze, soft pink noise from our Colors of Calm album, paired with box breathing - in for 4 seconds, hold for 4, out for 4, then hold for 4. Set the sound just below your tinnitus, so you can still faintly hear it, and follow the dot around the square.",
+      "uploadDate": "2026-11-21T18:35:45Z",
+      "duration": "PT1H",
+      "seconds": 3600,
+      "poster": "/images/videos/pink-noise-box-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "noise-colors"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
