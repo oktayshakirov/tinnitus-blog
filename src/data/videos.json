@@ -1920,6 +1920,24 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "white-noise-sigh-breathing",
+      "id": "xF8HHuhZq-g",
+      "kind": "session",
+      "title": "High Frequency White Noise for Tinnitus + Physiological Sigh (1 Hour)",
+      "label": "Ethereal Resonance, one hour",
+      "description": "An hour of Ethereal Resonance, high-frequency white noise from our White Noise Therapy album, paired with the physiological sigh - in through your nose, a short second breath in on top, then a long, slow breath out. Start it quiet, set it just below your tinnitus, so you can still faintly hear it, and follow the dot along the line.",
+      "uploadDate": "2026-11-23T00:05:26Z",
+      "duration": "PT1H",
+      "seconds": 3600,
+      "poster": "/images/videos/white-noise-sigh-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "white-noise"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
