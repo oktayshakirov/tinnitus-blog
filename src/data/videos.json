@@ -1938,6 +1938,24 @@
       },
       "alsoOn": [],
       "placement": "auto"
+    },
+    {
+      "slug": "green-noise-46-breathing",
+      "id": "mwieQ3fC5z0",
+      "kind": "session",
+      "title": "Green Noise for Tinnitus + 4-6 Breathing (1 Hour)",
+      "label": "Green Meadow, one hour",
+      "description": "An hour of Green Meadow, soft green noise from our Colors of Calm album, with a clock to breathe by - in for four, out for six. Keep it quiet, just enough that the room is never silent, and follow the hand round the dial.",
+      "uploadDate": "2026-11-25T20:28:31Z",
+      "duration": "PT1H",
+      "seconds": 3600,
+      "poster": "/images/videos/green-noise-46-breathing.webp",
+      "target": {
+        "type": "zen",
+        "slug": "noise-colors"
+      },
+      "alsoOn": [],
+      "placement": "auto"
     }
   ]
 }
